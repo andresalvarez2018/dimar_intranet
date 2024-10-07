@@ -1,0 +1,8 @@
+uuid: 85da71fb-d065-4b45-b0f1-0b272ecd6aaa
+langcode: es
+status: true
+dependencies: {  }
+name: 'menu regimen interno disciplinario'
+vid: menu_regimen_interno_disciplinar
+description: ''
+weight: 0

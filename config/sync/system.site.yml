@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: es
+uuid: c95408f3-7b17-4d46-b028-44c3bc8492fe
+name: 'Dirección General Marítima '
+mail: cldap@dimar.mil.co
+slogan: ''
+page:
+  403: ''
+  404: /node/90
+  front: /node/40
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: es
+mail_notification: ''

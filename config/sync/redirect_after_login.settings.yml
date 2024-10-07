@@ -1,0 +1,4 @@
+login_redirection:
+  anonymous: null
+  authenticated: /
+  administrator: /

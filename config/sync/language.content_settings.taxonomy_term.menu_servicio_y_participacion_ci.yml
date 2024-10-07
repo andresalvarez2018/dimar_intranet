@@ -1,0 +1,11 @@
+uuid: 271a511f-842c-41af-bf66-5432f5be9de1
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.menu_servicio_y_participacion_ci
+id: taxonomy_term.menu_servicio_y_participacion_ci
+target_entity_type_id: taxonomy_term
+target_bundle: menu_servicio_y_participacion_ci
+default_langcode: site_default
+language_alterable: false

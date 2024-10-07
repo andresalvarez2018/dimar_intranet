@@ -1,0 +1,442 @@
+uuid: 9fccc09c-9318-4db8-b4b0-932728992d8b
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: encuesta_cliente_interno_planeac
+title: 'Encuesta cliente Interno- Planeación'
+description: ''
+categories: {  }
+elements: |-
+  unidad_o_dependencia_donde_labora_:
+    '#type': select
+    '#title': "Unidad o dependencia donde labora\t"
+    '#options':
+      Buenaventura: Buenaventura
+      Tumaco: Tumaco
+      Barranquilla: Barranquilla
+      'Santa Marta': 'Santa Marta'
+      Cartagena: Cartagena
+      Riohacha: Riohacha
+      'San Andrés': 'San Andrés'
+      Turbo: Turbo
+      Coveñas: Coveñas
+      'Bahía Solano': 'Bahía Solano'
+      Guapi: Guapi
+  seleccione_el_proceso_en_el_que_participa_:
+    '#type': select
+    '#title': "Seleccione el proceso en el que participa\t"
+    '#options':
+      'Direccionamiento Estratégico': 'Direccionamiento Estratégico'
+      Planeación: Planeación
+      Jurídico: Jurídico
+      'Relaciones Internacionales': 'Relaciones Internacionales'
+      Reglamentación: Reglamentación
+      'Gestión de Información para la Seguridad en la Navegación': 'Gestión de Información para la Seguridad en la Navegación'
+      'Servicio de Tráfico Marítimo': 'Servicio de Tráfico Marítimo'
+      'Protección del Medio Marino ': 'Protección del Medio Marino '
+      'Litorales y Áreas Marinas': 'Litorales y Áreas Marinas'
+      'Investigación Científica Marina': 'Investigación Científica Marina'
+      'Gestión Marítima': 'Gestión Marítima'
+      'Gestión de Personal': 'Gestión de Personal'
+      'Gestión Administrativa y Financiera': 'Gestión Administrativa y Financiera'
+      'Gestión Informática y Comunicaciones': 'Gestión Informática y Comunicaciones'
+      Evaluación: Evaluación
+  con_cual_es_de_las_siguientes_areas_del_grupo_de_planeacion_uste:
+    '#type': select
+    '#title': "Con cuál(es) de las siguientes áreas del Grupo de Planeación usted interactúa\t"
+    '#options':
+      'Proyección institucional': 'Proyección institucional'
+      'Planeamiento presupuestal': 'Planeamiento presupuestal'
+      Proyectos: Proyectos
+      'Mejoramiento continuo': 'Mejoramiento continuo'
+      'Todas las anteriores ': 'Todas las anteriores '
+  _conoce_las_funciones_del_proceso_de_planeacion_gplad_:
+    '#type': select
+    '#title': '¿Conoce las funciones del Proceso de Planeación (Gplad)?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _considera_que_las_politicas_y_lineamientos_emitidos_por_el_proc:
+    '#type': select
+    '#title': '¿Considera que las políticas y lineamientos emitidos por el Proceso de Planeación son claros y pertinentes?'
+    '#options':
+      Si: Si
+      'No': 'No'
+      NS/NR: NS/NR
+  _considera_que_el_proceso_de_planeacion_aporta_en_el_desarrollo_:
+    '#type': select
+    '#title': '¿Considera que el Proceso de Planeación aporta en el desarrollo del proceso en el que usted participa?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  califique_el_aporte_del_proceso_de_planeacion_en_el_desarrollo_d:
+    '#type': select
+    '#title': 'Califique el aporte del proceso de Planeación en el desarrollo del proceso en el que usted participa'
+    '#options':
+      '1- Mala': '1- Mala'
+      '2- Deficiente': '2- Deficiente'
+      '3- Aceptable': '3- Aceptable'
+      '4- Buena': '4- Buena'
+      '5- Excelente': '5- Excelente'
+      NS/NR: NS/NR
+  _por_que_:
+    '#type': textfield
+    '#title': '¿Por qué?'
+  califique_el_aporte_del_proceso_de_planeacio_en_el_desarrollo:
+    '#type': webform_message
+    '#message_message': 'Califique las &aacute;reas del proceso con las que ha tenido interacci&oacute;n, si no ha tenido interacci&oacute;n alguna dir&iacute;jase al espacio sugerencias /observaciones'
+  califique_las_areas_del_proceso_con_las_que:
+    '#type': webform_message
+    '#message_message': 'Califique las &aacute;reas del proceso con las que ha tenido interacci&oacute;n, si no ha tenido interacci&oacute;n alguna dir&iacute;jase al espacio sugerencias /observaciones'
+  mejoramiento_continuo:
+    '#type': webform_message
+    '#message_message': 'Mejoramiento Continuo'
+  _conoce_el_manual_de_calidad_de_la_dimar_:
+    '#type': select
+    '#title': '¿Conoce el manual de calidad de la Dimar?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _conoce_los_procedimientos_obligatorios_del_sgi_:
+    '#type': select
+    '#title': '¿Conoce los procedimientos obligatorios del SGI?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _conoce_y_aplica_los_procedimientos_del_proceso_en_el_que_usted_:
+    '#type': select
+    '#title': '¿Conoce y aplica los procedimientos del proceso en el que usted participa?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  califique_la_gestion_y_el_apoyo_recibido_por_el_lider_de_calidad:
+    '#type': select
+    '#title': 'Califique la gestión y el apoyo recibido por el líder de calidad de su proceso en la sede central.'
+    '#options':
+      Si: Si
+      'No': 'No'
+  califique_la_gestion_y_el_apoyo_recibido_por_los_funcionarios_de:
+    '#type': select
+    '#title': 'Califique la gestión y el apoyo recibido por los funcionarios de Mejoramiento Continuo'
+    '#options':
+      Si: Si
+      'No': 'No'
+  proyeccion_institucional:
+    '#type': webform_message
+    '#message_message': 'Proyecci&oacute;n Institucional'
+  _conoce_el_nuevo_plan_estrategico_de_desarrollo_2015_2030_de_dim:
+    '#type': select
+    '#title': '¿Conoce el nuevo Plan Estratégico de Desarrollo 2015-2030 de Dimar?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _considera_que_el_ped_se_ha_divulgado_de_la_forma_adecuada_:
+    '#type': select
+    '#title': '¿Considera que el PED se ha divulgado de la forma adecuada?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _considera_que_su_trabajo_aporta_a_los_objetivos_estrategicos_de:
+    '#type': select
+    '#title': '¿Considera que su trabajo aporta a los objetivos estratégicos de la Entidad?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  califique_la_gestion_y_el_apoyo_recibido_por_los_funcionarios_d1:
+    '#type': select
+    '#title': 'Califique la gestión y el apoyo recibido por los funcionarios de Proyección Institucional'
+    '#options':
+      '1- Mala': '1- Mala'
+      '2- Deficiente': '2- Deficiente'
+      '3- Aceptable': '3- Aceptable'
+      '4- Buena': '4- Buena'
+      '5- Excelente': '5- Excelente'
+      NS/NR: NS/NR
+  planes_y_proyectos:
+    '#type': webform_message
+    '#message_message': Proyectos
+  _las_politicas_definidas_por_la_entidad_para_la_gestion_de_los_p:
+    '#type': select
+    '#title': '¿Las políticas definidas por la Entidad para la gestión de los Proyectos son claras y pertinentes?'
+    '#options':
+      Si: Si
+      'No': 'No'
+      'NS/NR ': 'NS/NR '
+  _conoce_los_proyectos_de_inversion_que_desarrolla_la_entidad_:
+    '#type': select
+    '#title': '¿Conoce los proyectos de Inversión que desarrolla la Entidad?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  considera_que_el_seguimiento_y_control_de_los_proyectos_es_:
+    '#type': select
+    '#title': 'Considera que el seguimiento y control de los proyectos es…. '
+    '#options':
+      Pertinente: Pertinente
+      'No Pertinente': 'No Pertinente'
+      NS/NR: NS/NR
+  _considera_que_gplad_apoya_la_planeacion_y_ejecucion_de_los_proy:
+    '#type': select
+    '#title': '¿Considera que Gplad apoya la planeación y ejecución de los proyectos formulados? '
+    '#options':
+      Si: Si
+      'No': 'No'
+      NS/NR: NS/NR
+  califique_la_gestion_y_el_apoyo_recibido_por_los_funcionarios_d2:
+    '#type': select
+    '#title': 'Califique la gestión y el apoyo recibido por los funcionarios de Proyectos'
+    '#options':
+      '1- Mala': '1- Mala'
+      '2- Deficiente': '2- Deficiente'
+      '3- Aceptable': '3- Aceptable'
+      '4- Buena': '4- Buena'
+      '5- Excelente': '5- Excelente'
+      NS/NR: NS/NR
+  planeamiento_presupuestal:
+    '#type': webform_message
+    '#message_message': 'Planeamiento Presupuestal'
+  _las_politicas_definidas_por_la_entidad_para_el_planeamiento_pre:
+    '#type': select
+    '#title': '¿Las políticas definidas por la Entidad para el planeamiento presupuestal son claras y pertinentes?'
+    '#options':
+      Si: Si
+      'No': 'No'
+      NS/NR: NS/NR
+  _usted_considera_que_en_la_entidad_se_asignan_los_recursos_de_ma:
+    '#type': select
+    '#title': '¿Usted considera que en la entidad se asignan los recursos de manera objetiva y priorizada?'
+    '#options':
+      Si: Si
+      'No': 'No'
+      NS/NR: NS/NR
+  califique_la_asesoria_prestada_por_los_funcionarios_de_planeamie:
+    '#type': select
+    '#title': 'Califique la asesoría prestada por los funcionarios de planeamiento presupuestal en cuanto al apoyo que brinda y solución de inquietudes para el ejercicio de planeación presupuestal de su unidad/proceso'
+    '#options':
+      '1- Mala': '1- Mala'
+      '2- Deficiente': '2- Deficiente'
+      '3- Aceptable': '3- Aceptable'
+      '4- Buena': '4- Buena'
+      '5- Excelente': '5- Excelente'
+  _ha_recibido_sensibilizacion_en_temas_ambientales_:
+    '#type': select
+    '#title': '¿Ha recibido Sensibilización en temas ambientales?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _en_su_percepcion_considera_que_la_direccion_general_maritima_es:
+    '#type': select
+    '#title': '¿En su percepción, considera que la Dirección General Marítima es una Entidad comprometida con el medio ambiente?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _por_que_2:
+    '#type': textfield
+    '#title': '¿Por qué?'
+  califique_la_gestion_y_el_apoyo_recibido_por_los_funcionarios_d3:
+    '#type': select
+    '#title': 'Califique la gestión y el apoyo recibido por los funcionarios de Gestión Ambiental'
+    '#options':
+      '1- Mala': '1- Mala'
+      '2- Deficiente': '2- Deficiente'
+      '3- Aceptable': '3- Aceptable'
+      '4- Buena': '4- Buena'
+      '5- Excelente': '5- Excelente'
+  sugerencias_observaciones_de_la_encuesta_en_general:
+    '#type': textarea
+    '#title': 'Sugerencias / Observaciones de la encuesta en general'
+  actions:
+    '#type': webform_actions
+    '#title': Enviar
+    '#submit__label': Enviar
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

@@ -1,0 +1,24 @@
+uuid: b7514d39-0ff6-4ab5-b4b3-72b1017a3bd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_la_norma
+    - node.type.normatividad
+  module:
+    - datetime
+id: node.normatividad.field_fecha_de_la_norma
+field_name: field_fecha_de_la_norma
+entity_type: node
+bundle: normatividad
+label: 'Fecha de la Norma'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

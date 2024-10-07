@@ -1,0 +1,17 @@
+uuid: 9715e5ba-aa8a-413b-82f2-da1232335448
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_holding
+label: 'Homepage holding'
+logic: or
+conditions:
+  56bb94f1-3c2b-4a6b-90c8-3a396fdb4587:
+    id: request_path
+    negate: false
+    uuid: 56bb94f1-3c2b-4a6b-90c8-3a396fdb4587
+    context_mapping: {  }
+    pages: /node/50
+allow_other_conditions: false

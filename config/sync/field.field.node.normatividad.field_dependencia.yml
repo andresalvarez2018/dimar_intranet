@@ -1,0 +1,21 @@
+uuid: 81154ed4-7983-4327-81bc-18a04c59cade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dependencia
+    - node.type.normatividad
+  module:
+    - options
+id: node.normatividad.field_dependencia
+field_name: field_dependencia
+entity_type: node
+bundle: normatividad
+label: Dependencia
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

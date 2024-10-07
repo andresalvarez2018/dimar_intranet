@@ -1,0 +1,19 @@
+uuid: 72a20530-86d4-4276-9e43-b4819cdc3862
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_video_id_youtube
+    - node.type.portfolio
+id: node.portfolio.field_pt_video_id_youtube
+field_name: field_pt_video_id_youtube
+entity_type: node
+bundle: portfolio
+label: 'Video ID'
+description: 'Allowed video id youtube.<br>Eg: <em>bKZf39YqcnM</em>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

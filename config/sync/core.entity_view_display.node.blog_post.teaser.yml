@@ -1,0 +1,81 @@
+uuid: fd847641-6b8e-4574-ae02-2cfa5e1e1121
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_archivos_adjuntos_noticias
+    - field.field.node.blog_post.field_blog_category
+    - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_tags
+    - field.field.node.blog_post.field_datos_propiedad_de_la_imag
+    - field.field.node.blog_post.field_display_mode
+    - field.field.node.blog_post.field_fecha_en_que_sucedio_la_no
+    - field.field.node.blog_post.field_image
+    - field.field.node.blog_post.field_imagen_pequena
+    - field.field.node.blog_post.field_mantener_en_la_cabecera_ha
+    - field.field.node.blog_post.field_palabras_clave
+    - field.field.node.blog_post.field_pt_animation_layer
+    - field.field.node.blog_post.field_pt_icon_class
+    - field.field.node.blog_post.field_pt_image_backgroun
+    - field.field.node.blog_post.field_pt_style
+    - field.field.node.blog_post.field_pt_video_id_youtube
+    - field.field.node.blog_post.field_pt_video_mp4
+    - field.field.node.blog_post.field_resumen
+    - field.field.node.blog_post.field_subtitle
+    - node.type.blog_post
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: gqUHHx-4UwnTezIrGlysysNxX28eHO9wB-FBt5WHnf4
+id: node.blog_post.teaser
+targetEntityType: node
+bundle: blog_post
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_blog_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_archivos_adjuntos_noticias: true
+  field_blog_comments: true
+  field_blog_tags: true
+  field_datos_propiedad_de_la_imag: true
+  field_display_mode: true
+  field_fecha_en_que_sucedio_la_no: true
+  field_image: true
+  field_imagen_pequena: true
+  field_mantener_en_la_cabecera_ha: true
+  field_palabras_clave: true
+  field_pt_animation_layer: true
+  field_pt_icon_class: true
+  field_pt_image_backgroun: true
+  field_pt_style: true
+  field_pt_video_id_youtube: true
+  field_pt_video_mp4: true
+  field_resumen: true
+  field_subtitle: true
+  langcode: true

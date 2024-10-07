@@ -1,0 +1,17 @@
+uuid: 13035646-c903-404d-abd9-ce26c849bc8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: services_2_page
+label: 'Services 2 page'
+logic: or
+conditions:
+  c977f43f-dfa1-4649-a005-8fc7329528dc:
+    id: request_path
+    negate: false
+    uuid: c977f43f-dfa1-4649-a005-8fc7329528dc
+    context_mapping: {  }
+    pages: /node/72
+allow_other_conditions: false

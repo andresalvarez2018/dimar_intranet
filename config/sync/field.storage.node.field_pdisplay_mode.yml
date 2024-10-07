@@ -1,0 +1,27 @@
+uuid: c71eb0e4-e9ca-4a60-b068-dcb5f7d6a5db
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pdisplay_mode
+field_name: field_pdisplay_mode
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: type1
+      label: 'Style 1'
+    -
+      value: type2
+      label: 'Style 2'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

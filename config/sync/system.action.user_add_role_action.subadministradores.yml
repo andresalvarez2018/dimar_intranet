@@ -1,0 +1,14 @@
+uuid: d464c7ce-d0fa-4a49-a3ff-31f2b71c3366
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.subadministradores
+  module:
+    - user
+id: user_add_role_action.subadministradores
+label: 'Añade el rol Subadministradores al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: subadministradores

@@ -1,0 +1,17 @@
+uuid: 38d66b9b-9412-40ef-9c8d-6ebb1a3afe19
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_freelancer
+label: 'Homepage freelancer'
+logic: or
+conditions:
+  292b0698-a5b5-48d3-9747-acceed6fa299:
+    id: request_path
+    negate: false
+    uuid: 292b0698-a5b5-48d3-9747-acceed6fa299
+    context_mapping: {  }
+    pages: /node/48
+allow_other_conditions: false

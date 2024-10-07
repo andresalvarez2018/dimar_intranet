@@ -1,0 +1,19 @@
+uuid: e25d4871-4b1a-4620-a905-f4f59c2cd703
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_datos_propiedad_de_la_imag
+    - node.type.blog_post
+id: node.blog_post.field_datos_propiedad_de_la_imag
+field_name: field_datos_propiedad_de_la_imag
+entity_type: node
+bundle: blog_post
+label: 'Datos propiedad de la imagen'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

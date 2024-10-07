@@ -1,0 +1,24 @@
+uuid: 40ab1a4e-a4db-4cf3-b12e-bfcfc67ebb43
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.album
+_core:
+  default_config_hash: lGpHOfoG-H3DtQWfv4ISGsaofLvJ3JM8rnvqVbb978E
+id: node.album.promote
+field_name: promote
+entity_type: node
+bundle: album
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

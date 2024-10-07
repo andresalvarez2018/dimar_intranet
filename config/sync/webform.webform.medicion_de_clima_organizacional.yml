@@ -1,0 +1,959 @@
+uuid: 853a4089-b0a7-4538-b49c-c1212d8214a4
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: false
+archive: false
+id: medicion_de_clima_organizacional
+title: 'Medición de clima organizacional 2019'
+description: ''
+categories: {  }
+elements: |-
+  instrucciones1:
+    '#type': item
+    '#title': Instrucciones
+    '#description': 'Para DIMAR es muy importante su opini&oacute;n, esta nos permite seguir construyendo un gran lugar para trabajar. La medici&oacute;n de Clima Organizacional 2019 &nbsp;permitir&aacute; conocer como nos sentimos al interior de la entidad y as&iacute; poder dise&ntilde;ar y generar acciones orientadas a seguir mejorando como Entidad. Tenga en cuenta que la encuesta es anonima y los resultados son confidenciales. Gracias por dedicar un momento a diligenciar la encuesta.'
+  demografico:
+    '#type': item
+    '#title': Demografico
+  unidad_donde_labora:
+    '#type': select
+    '#title': 'Unidad donde labora'
+    '#options':
+      'CP01/ BUENAVENTURA': 'CP01/ BUENAVENTURA'
+      'CP02/  TUMACO': 'CP02/  TUMACO'
+      'CP03/ BARRANQUILLA': 'CP03/ BARRANQUILLA'
+      'CP04/ SANTA MARTA': 'CP04/ SANTA MARTA'
+      'CP05/ CARTAGENA': 'CP05/ CARTAGENA'
+      'CP06/ RIOHACHA': 'CP06/ RIOHACHA'
+      'CP07/ SAN ANDRES': 'CP07/ SAN ANDRES'
+      'CP08/ TURBO': 'CP08/ TURBO'
+      CP09/COVEÑAS: CP09/COVEÑAS
+      'CP10/ BAHÍA SOLANO': 'CP10/ BAHÍA SOLANO'
+      'CP11/ GUAPI': 'CP11/ GUAPI'
+      'CP12/ PROVIDENCIA': 'CP12/ PROVIDENCIA'
+      'CP14/ PUERTO BOLÍVAR': 'CP14/ PUERTO BOLÍVAR'
+      'CP15/ PUERTO CARREÑO': 'CP15/ PUERTO CARREÑO'
+      'CP16/ LETICIA': 'CP16/ LETICIA'
+      'CP17/ INIRIDA': 'CP17/ INIRIDA'
+      'CP19/ LEGUIZAMO': 'CP19/ LEGUIZAMO'
+      'CIOH/ CARTAGENA': 'CIOH/ CARTAGENA'
+      'CCCP/ TUMACO': 'CCCP/ TUMACO'
+      '5KLO/ ARC PROVIDENCIA': '5KLO/ ARC PROVIDENCIA'
+      '5KLP/ ARC MALPELO': '5KLP/ ARC MALPELO'
+      '5KLA/ ARC GORGONA': '5KLA/ ARC GORGONA'
+      '5KMZ/ ARC RONCADOR': '5KMZ/ ARC RONCADOR'
+      '5KOZ/ ARC ABADIA MENDEZ': '5KOZ/ ARC ABADIA MENDEZ'
+      '5KFL/ARC ISLA CASCAJAL': '5KFL/ARC ISLA CASCAJAL'
+      '5KFS/ ARC ISLA PALMA': '5KFS/ ARC ISLA PALMA'
+      '5KTG/ ARC CIE. MAYORQUIN': '5KTG/ ARC CIE. MAYORQUIN'
+      '5KTK/ ARC ISLA TESORO': '5KTK/ ARC ISLA TESORO'
+      '5KGC/ ARC GORGONILLA': '5KGC/ ARC GORGONILLA'
+      '5KFW/ ARC ISLA FUERTE': '5KFW/ ARC ISLA FUERTE'
+      '5KFZ/ ARC ISLA SERRANA': '5KFZ/ ARC ISLA SERRANA'
+      '5KFY/ ARC ISLA MORRO': '5KFY/ ARC ISLA MORRO'
+      '5KMQ/ ARC CARIBE': '5KMQ/ ARC CARIBE'
+      'SEMAC/ CARTAGENA': 'SEMAC/ CARTAGENA'
+      'SEMAB/ BARRANQUILLA': 'SEMAB/ BARRANQUILLA'
+      'SEMAP/ BUENAVENTURA': 'SEMAP/ BUENAVENTURA'
+      INRED1/BUENAVENTURA: INRED1/BUENAVENTURA
+      INRED3/BARRANQUILLA: INRED3/BARRANQUILLA
+      INRED4/CARTAGENA: INRED4/CARTAGENA
+      DIMAR: DIMAR
+      GRUCOG: GRUCOG
+      SUBAFIN: SUBAFIN
+      GRUDHU: GRUDHU
+      GRUINCO: GRUINCO
+      SUBMERC: SUBMERC
+      SUBDEMAR: SUBDEMAR
+      GINSEM: GINSEM
+      GRUCOI: GRUCOI
+      GRASI: GRASI
+      GLEMAR: GLEMAR
+      GPLAD: GPLAD
+      ASIMPO: ASIMPO
+      AMAT: AMAT
+  genero:
+    '#type': select
+    '#title': Genero
+    '#options':
+      Femenino: Femenino
+      Masculino: Masculino
+  estado_civil:
+    '#type': select
+    '#title': 'Estado Civil'
+    '#options':
+      Casado: Casado
+      'Unión Libre': 'Unión Libre'
+      Soltero: Soltero
+      Separado/Divorciado: Separado/Divorciado
+      'Viudo (a)': 'Viudo (a)'
+  edad:
+    '#type': select
+    '#title': Edad
+    '#options':
+      '18 a 22 Años': '18 a 22 Años'
+      '23 a 26 Años': '23 a 26 Años'
+      '27 a 30 Años': '27 a 30 Años'
+      '31 a 35 Años': '31 a 35 Años'
+      '36 a 40 Años': '36 a 40 Años'
+      '41 a 50 Años': '41 a 50 Años'
+  antiguedad:
+    '#type': select
+    '#title': Antigüedad
+    '#options':
+      ' 0 a 6 Meses': ' 0 a 6 Meses'
+      ' 6 Meses a 3 Años': ' 6 Meses a 3 Años'
+      '3 Años  a 7 Años': '3 Años  a 7 Años'
+      '7 Años a  12 Años': '7 Años a  12 Años'
+      'Mayor a 12 Años': 'Mayor a 12 Años'
+  escolaridad:
+    '#type': select
+    '#title': Escolaridad
+    '#options':
+      Primaria: Primaria
+      Secundaria: Secundaria
+      'Estudiante Técnico o Tecnólogo': 'Estudiante Técnico o Tecnólogo'
+      'Técnico o Tecnólogo': 'Técnico o Tecnólogo'
+      'Estudiante Universitario': 'Estudiante Universitario'
+      Profesional: Profesional
+      Posgrado: Posgrado
+  _que_tipo_de_nombramiento_tiene_:
+    '#type': select
+    '#title': '¿Qué tipo de Nombramiento tiene?'
+    '#options':
+      'Civil DIMAR': 'Civil DIMAR'
+      'Civil Armada': 'Civil Armada'
+      'Militar Armada': 'Militar Armada'
+  cargo:
+    '#type': select
+    '#title': Cargo
+    '#options':
+      Auxiliar: Auxiliar
+      Técnico: Técnico
+      ' Profesional': ' Profesional'
+      'Asesor de Defensa': 'Asesor de Defensa'
+      Director: Director
+  por_favor_lea_detenidamente_el_enunciado_y_elija_un_numero_segun:
+    '#type': item
+    '#title': 'Por favor lea detenidamente el enunciado y elija un número según su grado de acuerdo de la siguiente manera:'
+    '#markup': '<img alt="cuadro.JPG" height="114" src="/intranet/sites/default/files/cuadro.JPG" width="631" />'
+  clima_comunicacion_y_cultura:
+    '#type': item
+    '#title': 'Clima, comunicación y cultura'
+  en_dimar_se_realizan_actividades_que_contribuyen_al_bienestar_de:
+    '#type': select
+    '#title': '1.En DIMAR se realizan actividades que contribuyen al bienestar de mi familia'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  el_portafolio_de_bienestar_ha_contribuido_al_bienestar_de_mi_fam:
+    '#type': select
+    '#title': '2. El portafolio de bienestar ha contribuido al bienestar de mi familia'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_valora_a_las_personas_que_se_destacan_por_la_calidad:
+    '#type': select
+    '#title': '3. En DIMAR se valora a las personas que se destacan por la calidad  en su trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_hacen_reconocimientos_y_o_estimulos_no_economicos_pa:
+    '#type': select
+    '#title': '4. En DIMAR se hacen reconocimientos y/o estímulos no económicos para incentivar el trabajo bien hecho'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  el_balance_entre_mi_trabajo_y_mi_vida_personal_es_el_adecuado_pa:
+    '#type': select
+    '#title': '5. El balance entre mi trabajo y mi vida personal, es el adecuado para mi calidad de vida'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_se_interesa_por_incentivar_mi_participacion_en_actividades:
+    '#type': select
+    '#title': '6. DIMAR se interesa por incentivar mi participación en actividades Culturales y/o Deportivas'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  el_plan_de_bienestar_de_la_organizacion_cubre_mis_necesidades_y_:
+    '#type': select
+    '#title': '7. El plan de BIENESTAR de la organización cubre mis necesidades y expectativas'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  la_relacion_que_existe_entre_los_funcionarios_es_cordial_y_coope:
+    '#type': select
+    '#title': '8. La relación que existe entre los funcionarios es cordial y cooperativa'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  la_relacion_que_existe_entre_los_funcionarios_y_jefes_dimar_es_c:
+    '#type': select
+    '#title': '9. La relación que existe entre los funcionarios y jefes DIMAR es cordial y cooperativa'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_es_un_lugar_donde_se_puede_crear_e_innovar:
+    '#type': select
+    '#title': '10. En DIMAR es un lugar  donde se puede crear e innovar'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  estoy_satisfecho_con_el_cargo_que_desempeno_en_la_entidad:
+    '#type': select
+    '#title': '11. Estoy satisfecho con el cargo que desempeño en la Entidad'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  las_areas_de_dimar_interactuan_y_comparten_sus_practicas_y_la_in:
+    '#type': select
+    '#title': '12. Las Áreas de DIMAR interactúan y comparten sus prácticas y la información para hacer mejor su trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_implementa_acciones_que_demuestran_su_preocupacion_y_cuida:
+    '#type': select
+    '#title': '13. DIMAR implementa acciones que demuestran su preocupación y cuidado por el interés de sus usuarios y/o clientes'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  nuestra_entidad_facilita_que_yo_obtenga_la_formacion_necesaria_p:
+    '#type': select
+    '#title': '14. Nuestra Entidad facilita que yo obtenga la formación necesaria para desarrollar y fortalecer mis habilidades'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  las_personas_que_se_vinculan_o_cambian_de_cargo_reciben_entrenam:
+    '#type': select
+    '#title': '15. Las personas que se vinculan o cambian de cargo reciben entrenamiento y la inducción necesaria para realizar su trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  recibo_retroalimentacion_oportuna_con_respecto_a_mi_gestion:
+    '#type': select
+    '#title': '16. Recibo retroalimentación oportuna con respecto a mi gestión'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_nos_prepara_para_enfrentar_los_nuevos_retos_y_cambios_orga:
+    '#type': select
+    '#title': '17. DIMAR nos prepara para enfrentar los nuevos retos y cambios organizacionales'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  me_siento_satisfecho_con_el_ambiente_de_trabajo_que_se_vive_dent:
+    '#type': select
+    '#title': '18. Me siento satisfecho con el ambiente de trabajo que se vive dentro de DIMAR '
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  me_siento_satisfecho_con_el_ambierabajo_que_se_vive_dent:
+    '#type': select
+    '#title': '19. Me siento orgulloso de pertenecer a DIMAR'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  liderazgo:
+    '#type': item
+    '#title': Liderazgo
+  considero_que_dimar_es_una_entidad_lider:
+    '#type': select
+    '#title': '20. Considero que DIMAR es una entidad LIDER'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_posee_mecanismos_de_comunicacion_hacia_adentro_y_hacia_fue:
+    '#type': select
+    '#title': '21. Dimar posee mecanismos de comunicación hacia adentro y hacia fuera de la organización, para mostrar los resultados financieros, económicos y sociales de su operación'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_inmediato_asigna_el_trabajo_dando_claridad_sobre_el_resu:
+    '#type': select
+    '#title': '22. Mi jefe inmediato asigna el trabajo, dando claridad sobre el resultado que espera'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_hace_seguimiento_adecuado_a_la_forma_en_como_estamos_hac:
+    '#type': select
+    '#title': '23. Mi Jefe hace seguimiento adecuado a la forma en como estamos haciendo el trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_me_apoya_y_reconoce_por_el_trabajo_bien_hecho:
+    '#type': select
+    '#title': '24. Mi jefe, me apoya y reconoce por el trabajo bien hecho'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  cuando_hay_trabajo_duro_mi_jefe_trabaja_con_nosotros_en_el_logro:
+    '#type': select
+    '#title': '25. Cuando hay trabajo duro, mi Jefe trabaja con nosotros en el logro de los resultados'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_asigna_el_trabajo_de_acuerdo_a_los_roles_y_capacidades_d:
+    '#type': select
+    '#title': '26. Mi Jefe asigna el trabajo de acuerdo a los roles y capacidades de los miembros del equipo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_asigna_el_trabajo_de_acuerdo_a_los_r_y_capacidades_d:
+    '#type': select
+    '#title': '27. Mi Jefe asigna el trabajo de acuerdo a los roles y capacidades de los miembros del equipoMi Jefe utiliza las capacidades de los miembros del equipo de forma que saca el mayor potencial del mismo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_genera_acciones_que_incentivan_mi_formacion_capacitacion:
+    '#type': select
+    '#title': '28. Mi jefe  genera acciones que incentivan mi formación, capacitación y desarrollo profesional'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  cuando_tengo_dificultades_en_mi_trabajo_encuentro_en_mi_jefe_un_:
+    '#type': select
+    '#title': '29. Cuando tengo dificultades en mi trabajo, encuentro en mi jefe un apoyo para realizar mis actividades'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_brinda_retroalimentacion_efectiva_y_oportuna_de_la_forma:
+    '#type': select
+    '#title': '30. Mi jefe  brinda retroalimentación efectiva y oportuna, de la forma como realizo mi trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_jefe_es_un_lider:
+    '#type': select
+    '#title': '31. Mi Jefe es un lider'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_brinda_las_herramientas_necesarias_para_el_cumplimiento_de:
+    '#type': select
+    '#title': '32. DIMAR brinda las herramientas necesarias para el cumplimiento de mis funciones'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  equipo:
+    '#type': item
+    '#title': Equipo
+  puedo_sugerir_alternativas_y_aportar_a_la_toma_de_decisiones_par:
+    '#type': select
+    '#title': '33. Puedo sugerir alternativas y aportar a la toma de decisiones para solucionar los problemas que se presenten'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_nuestro_equipo_podemos_tomar_decisiones_acerca_de_la_forma_en:
+    '#type': select
+    '#title': '34. En nuestro equipo podemos tomar decisiones acerca de la forma en cómo hacer nuestro trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_area_se_adapta_con_facilidad_a_las_nuevas_estrategias_de_dima:
+    '#type': select
+    '#title': '35. Mi área se adapta con facilidad a las nuevas estrategias de DIMAR'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_mi_area_de_trabajo_las_reuniones_son_efectivas:
+    '#type': select
+    '#title': '36. En mi área de trabajo las reuniones son efectivas'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_mi_equipo_todos_tenemos_claras_nuestras_responsabilidades:
+    '#type': select
+    '#title': '37. En mi equipo todos tenemos claras nuestras responsabilidades'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_mi_equipo_todos_tclaras_nuestras_responsabilidades:
+    '#type': select
+    '#title': '38. Pienso que existe una relación de compañerismo y apoyo en mi grupo de trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  mi_rol_agrega_valor_al_logro_de_los_objetivos_del_equipo:
+    '#type': select
+    '#title': '39. Mi Rol agrega valor al logro de los objetivos del equipo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_nuestro_equipo_nos_comunicamos_de_forma_clara_y_honesta:
+    '#type': select
+    '#title': '40. En nuestro equipo, nos comunicamos de forma clara y honesta'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_nuestro_equipo_nos_comunic_forma_clara_y_honesta:
+    '#type': select
+    '#title': '41. La información clave para hacer nuestro trabajo es difundida de manera oportuna en el equipo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  existe_un_ambiente_de_cooperacion_entre_mis_companeros_de_otras_:
+    '#type': select
+    '#title': '42. Existe un ambiente de cooperación entre mis compañeros de otras áreas '
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  valores:
+    '#type': item
+    '#title': Valores
+  conozco_cuales_son_los_comportamientos_esperados_que_reflejan_lo:
+    '#type': select
+    '#title': '43. Conozco cuales son los comportamientos esperados que reflejan los valores institucionales'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_asumimos_y_cumplimos_los_compromisos_que_adquirimos:
+    '#type': select
+    '#title': '44. En DIMAR asumimos y cumplimos los compromisos que adquirimos'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_promueve_la_confianza_:
+    '#type': select
+    '#title': '45. En Dimar se promueve la confianza '
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_refleja_en_los_comportamientos_el_rigor_tecnico_:
+    '#type': select
+    '#title': '46. En Dimar se refleja en los comportamientos el Rigor Tecnico '
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_promueve_el_liderazgo:
+    '#type': select
+    '#title': '47. En Dimar se promueve el Liderazgo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_impulsa_acciones_sociales_enfocadas_a_mejorar_nuestra_soci:
+    '#type': select
+    '#title': '48. DIMAR  impulsa acciones sociales enfocadas a mejorar nuestra sociedad y me permite participar de manera voluntaria en estas iniciativas de responsabilidad social empresarial'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_servimos_eficiente_y_efectivamente_al_usuario_externo_o:
+    '#type': select
+    '#title': '49. En Dimar servimos eficiente y efectivamente al usuario externo o interno'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  la_entidad_cuenta_con_mecanismos_que_permiten_conocer_el_nivel_d:
+    '#type': select
+    '#title': '50. La Entidad cuenta con mecanismos que permiten conocer el nivel de satisfacción de nuestros clientes'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  los_funcionarios_de_dimar_se_comportan_de_forma_transparente_con:
+    '#type': select
+    '#title': '51. Los funcionarios de  DIMAR se comportan de forma transparente consistente con nuestros principios y valores'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  direccionamiento_estrategico:
+    '#type': item
+    '#title': 'Direccionamiento Estratégico'
+  conozco_la_mision_vision_de_dimar:
+    '#type': select
+    '#title': '52. Conozco la Misión, Visión  de DIMAR'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  conozco_los_objetivos_estrategicos_de_dimar:
+    '#type': select
+    '#title': '53. Conozco los objetivos estrategicos de DIMAR'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  conozco_los_indicadores_que_contribuye_mi_gestion:
+    '#type': select
+    '#title': '54. Conozco los indicadores  que contribuye mi gestión'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  los_mecanismos_utilizados_por_dimar_para_informarme_acerca_del_s:
+    '#type': select
+    '#title': '55. Los mecanismos utilizados por DIMAR para informarme acerca del sistema de Gestión Institucional son efectivos'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  tengo_clara_la_contribucion_de_mi_area_al_cumplimiento_de_las_me:
+    '#type': select
+    '#title': '56. Tengo clara la contribución de mi área al cumplimiento de las metas de DIMAR'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  el_equipo_directivo_de_dimar_tiene_una_vision_clara_hacia_donde_:
+    '#type': select
+    '#title': '57. El Equipo Directivo de DIMAR tiene una VISION clara  hacia donde queremos llegar'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  la_estructura_y_los_procesos_de_la_empresa_facilita_el_logro_de_:
+    '#type': select
+    '#title': '58. La estructura y los procesos de la empresa facilita el logro de los Objetivos de DIMAR'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_hace_seguimiento_al_progreso_y_logro_de_los_objetivo:
+    '#type': select
+    '#title': '59. En DIMAR se hace seguimiento al progreso y logro de los  objetivos y metas'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  conozco_los_criterios_y_o_indicadores_para_evaluar_mi_trabajo_y_:
+    '#type': select
+    '#title': '60. Conozco los criterios y/o indicadores para evaluar mi trabajo y resultados  '
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  pienso_que_en_mi_area_se_ejecuta_lo_planeado:
+    '#type': select
+    '#title': '61. Pienso que en mi área se ejecuta lo planeado'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_implementa_acciones_emuestran_su_preocupacion_y_cuida:
+    '#type': select
+    '#title': '62. DIMAR implementa acciones que demuestran su preocupación y cuidado por el interés de sus usuarios y/o clientes'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  las_condiciones_fisicas_en_mi_puesto_de_trabajo_limpieza_ilumina:
+    '#type': select
+    '#title': '63. Las condiciones físicas en mi puesto de trabajo (limpieza, iluminación, espacio, seguridad, ventilación, etc.) me permiten desempeñarme con tranquilidad y concentración'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_implementa_a_nivel_externo_programas_para_reducir_o_minimi:
+    '#type': select
+    '#title': '64. DIMAR implementa, a nivel externo, programas para reducir o minimizar la contaminación directa e indirecta que tiene sobre el medio ambiente'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  dimar_implementa_a_nivel_interno_acciones_para_el_manejo_y_reduc:
+    '#type': select
+    '#title': '65. DIMAR implementa a nivel interno acciones para el manejo y reducción de energía, agua y residuos (reciclaje)'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_difunden_los_temas_de_medicina_preventiva_y_de_traba:
+    '#type': select
+    '#title': '66. En DIMAR se difunden los temas de Medicina Preventiva y de Trabajo  y Salud y en el Trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  en_dimar_se_hace_participe_a_los_funcionarios_en_los_programas_o:
+    '#type': select
+    '#title': '67. En Dimar se hace participe a los funcionarios en los programas o planes de Salud y Seguridad en el Trabajo'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  hay_mecanismos_que_ponen_a_disposicion_de_todos_los_empleados_la:
+    '#type': select
+    '#title': '68. Hay mecanismos que ponen a disposición de todos los empleados la información relevante.'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  recomendaciones_y_o_sugerencias:
+    '#type': textarea
+    '#title': 'Recomendaciones y/o sugerencias'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

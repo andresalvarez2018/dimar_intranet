@@ -1,0 +1,17 @@
+uuid: c0538a33-1696-4b42-af64-a7b276c30949
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _whites_portfolio_4_gutted_full_width
+label: '[Whites] Portfolio 4 gutted full width'
+logic: or
+conditions:
+  d1255cfd-545c-49f9-9e77-b99e57738e8e:
+    id: request_path
+    negate: false
+    uuid: d1255cfd-545c-49f9-9e77-b99e57738e8e
+    context_mapping: {  }
+    pages: /node/17
+allow_other_conditions: false

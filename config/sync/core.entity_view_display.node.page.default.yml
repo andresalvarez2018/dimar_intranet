@@ -1,0 +1,84 @@
+uuid: 25392c63-5e1f-4f6e-a3ba-3344524ffae7
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.page.body
+    - field.field.node.page.field_archivos_adjuntos
+    - field.field.node.page.field_comentarios_page_basic
+    - field.field.node.page.field_pt_animation_layer
+    - field.field.node.page.field_pt_icon_class
+    - field.field.node.page.field_pt_image_backgroun
+    - field.field.node.page.field_pt_style
+    - field.field.node.page.field_pt_video_id_youtube
+    - field.field.node.page.field_pt_video_mp4
+    - field.field.node.page.field_subtitle
+    - node.type.page
+  module:
+    - comment
+    - entity_print
+    - file
+    - text
+    - user
+third_party_settings:
+  entity_print:
+    pdf_label: 'Versión PDF'
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  entity_print_view_pdf:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_archivos_adjuntos:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_comentarios_page_basic:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_word_docx: true
+  field_pt_animation_layer: true
+  field_pt_icon_class: true
+  field_pt_image_backgroun: true
+  field_pt_style: true
+  field_pt_video_id_youtube: true
+  field_pt_video_mp4: true
+  field_subtitle: true
+  langcode: true
+  sharethis: true

@@ -1,0 +1,328 @@
+uuid: 6822f0ca-199a-4c4a-97a3-b6407e0e2fd2
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: encuesta_sobre_condiciones_fisic
+title: 'Encuesta sobre condiciones físicas de trabajo'
+description: ''
+categories: {  }
+elements: |-
+  1_esta_satisfecho_con_su_puesto_de_trabajo_superficie_cajonero_s:
+    '#type': select
+    '#title': '1. ¿Está satisfecho con su puesto de trabajo (superficie, cajonero, silla)?'
+    '#options':
+      Satisfecho: Satisfecho
+      'Medianamente satisfecho': 'Medianamente satisfecho'
+      Insatisfecho: Insatisfecho
+      'No tengo puesto de trabajo asignado': 'No tengo puesto de trabajo asignado'
+  otro_especifique_:
+    '#type': textfield
+    '#title': 'Otro (especifique): '
+  2_como_considera_la_iluminacion_de_su_puesto_de_trabajo_:
+    '#type': select
+    '#title': "2. ¿Cómo considera la iluminación de su puesto de trabajo?\t"
+    '#options':
+      'Muy buena': 'Muy buena'
+      'Moderadamente buena': 'Moderadamente buena'
+      'Poco buena ': 'Poco buena '
+  otro_especifique_2:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  3_cree_que_los_servicios_complementarios_son_suficientes_para_el:
+    '#type': select
+    '#title': "3. ¿Cree que los servicios complementarios son suficientes para el personal de sus oficinas (baños, cafetería)?\t"
+    '#options':
+      'Son suficientes': 'Son suficientes'
+      'Medianamente suficientes': 'Medianamente suficientes'
+      Insuficientes: Insuficientes
+  otro_especifique_3:
+    '#type': textfield
+    '#title': 'Otro (especifique):'
+  4_se_siente_satisfecho_con_los_espacios_de_oficinas_espacio_labo:
+    '#type': select
+    '#title': "4. ¿Se siente satisfecho con los espacios de oficinas / espacio laboral donde labora?\t"
+    '#options':
+      Satisfecho: Satisfecho
+      'Medianamente satisfecho': 'Medianamente satisfecho'
+      Insatisfecho: Insatisfecho
+  otro_especifique_4:
+    '#type': textfield
+    '#title': 'Otro (especifique):'
+  5_se_siente_seguro_fisicamente_en_el_edificio_donde_labora_:
+    '#type': select
+    '#title': "5. ¿Se siente seguro físicamente en el edificio donde labora?\t"
+    '#options':
+      'Me siento seguro': 'Me siento seguro'
+      'Medianamente seguro': 'Medianamente seguro'
+      'Me siento inseguro': 'Me siento inseguro'
+  otro_especifique_5:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  6_considera_que_el_edificio_donde_labora_mantiene_un_clima_tempe:
+    '#type': select
+    '#title': "6. ¿Considera que el edificio donde labora mantiene un clima (temperatura) adecuada para laborar?\t"
+    '#options':
+      'Mantiene clima adecuado': 'Mantiene clima adecuado'
+      'Clima no adecuado': 'Clima no adecuado'
+      'Es variado en cada espacio': 'Es variado en cada espacio'
+      'No tiene equipos para tal fin': 'No tiene equipos para tal fin'
+  otro_especifique_6:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  7_cree_que_el_edificio_donde_labora_tiene_buen_diseno_de_oficina:
+    '#type': select
+    '#title': "7. ¿Cree que el edificio donde labora tiene buen diseño de oficinas?\t"
+    '#options':
+      'Tiene buen diseño': 'Tiene buen diseño'
+      'Medianamente lo tiene ': 'Medianamente lo tiene '
+      'Carece de diseño': 'Carece de diseño'
+  otro_especifique_7:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  8_cree_que_el_edificio_donde_labora_esta_en_buen_estado_bien_cui:
+    '#type': select
+    '#title': "8. ¿Cree que el edificio donde labora está en buen estado / bien cuidado?\t"
+    '#options':
+      'Está en buen estado': 'Está en buen estado'
+      'Regular estado': 'Regular estado'
+      'No está en buen estado': 'No está en buen estado'
+  otro_especifique_8:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  9_cree_que_el_edificio_donde_labora_tiene_zonas_espacios_de_arch:
+    '#type': select
+    '#title': '9. ¿Cree que el edificio donde labora, tiene zonas / espacios de archivo adecuados y suficientes?'
+    '#options':
+      'Tiene zonas de archivo adecuadas y suficientes': 'Tiene zonas de archivo adecuadas y suficientes'
+      'Tiene zonas de archivo medianamente suficientes': 'Tiene zonas de archivo medianamente suficientes'
+      'No tiene suficiente ni adecuadas zonas de archivo': 'No tiene suficiente ni adecuadas zonas de archivo'
+  otro_especifique_9:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  10_cree_que_son_adecuadas_y_suficientes_las_zonas_de_corredor_tr:
+    '#type': select
+    '#title': "10. ¿Cree que son adecuadas y suficientes las zonas de corredor / tránsito de personal, al interior del edificio?\t"
+    '#options':
+      'Son adecuadas y suficientes': 'Son adecuadas y suficientes'
+      'Son medianamente adecuadas y suficientes': 'Son medianamente adecuadas y suficientes'
+      'No son adecuadas ni suficientes': 'No son adecuadas ni suficientes'
+  otro_especifique_10:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  11_cree_que_el_edifico_donde_labora_es_un_buen_referente_en_el_e:
+    '#type': select
+    '#title': '11. ¿Cree que el edifico donde labora es un buen referente en el entorno en que está construido?'
+    '#options':
+      'Es un buen referente': 'Es un buen referente'
+      'Es medianamente referente ': 'Es medianamente referente '
+      'No es referente': 'No es referente'
+  otro_especifique_11:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  12_cree_que_el_edificio_donde_labora_esta_bien_ubicado_para_la_f:
+    '#type': select
+    '#title': "12. ¿Cree que el edificio donde labora está bien ubicado para la función que desempeña en la comunidad?\t"
+    '#options':
+      'Está bien ubicado ': 'Está bien ubicado '
+      'Medianamente lo esta ': 'Medianamente lo esta '
+      'No está bien ubicado': 'No está bien ubicado'
+  otro_especifique_12:
+    '#type': textfield
+    '#title': "Otro (especifique):\t"
+  flexbox:
+    '#type': webform_flexbox
+  actions:
+    '#type': webform_actions
+    '#title': Enviar
+    '#submit__label': Enviar
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

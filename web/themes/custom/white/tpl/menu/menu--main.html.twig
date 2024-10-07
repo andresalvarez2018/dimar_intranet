@@ -1,0 +1,122 @@
+
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+{% import _self as menus %}
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{% set node = menu__node %}
+
+{% set theme_menu_style__menu_style = theme_menu_style %}
+
+{% if node.field_menu_style.value  %}
+    {% set menu_style = node.field_menu_style.value %}
+{% else %}
+    {% set menu_style = theme_menu_style__menu_style %}
+{% endif %}
+
+{% set menu__site_name = site_name %}
+
+{% set m_middle_logo = menu_middle_logo %}
+
+{% set count_items_lv0 = items|length %}
+{% set middle = count_items_lv0 // 2 + 1 %}
+
+{{ menus.menu_links(items, attributes, 0, false, false, middle, m_middle_logo, menu_style, menu__site_name) }}
+
+{% macro menu_links(items, attributes, menu_level, is_item_mega, mega_ul, middle, m_middle_logo, menu_style, menu__site_name) %}
+  {% import _self as menus %}
+  {% if items %}
+
+    {% set bl = is_item_mega %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('nav', 'navbar-nav') }}>
+    {% else %}
+      {% if is_item_mega == true %}
+        <div class="mega-menu dropdown-menu multi-level row bg-menu">
+          <div class="tab-box" data-tab-anima="fade-left">
+            <div class="panel active">
+      {% else %}
+        {% if mega_ul == true %}
+          <ul class="fa-ul text-s">
+        {% else %}
+          <ul class="dropdown-menu multi-level">
+        {% endif %}
+      {% endif %}
+    {% endif %}
+    {% for item in items %}
+      {% if menu_style == 'middle-logo' %}
+        {% if menu_level == 0 %}
+          {% set total = total + 1 %}
+        {% endif %}
+      {% endif %}
+
+      {% set is_item_mega = false %}
+      {% if 'whites-mega-menu' in item.attributes.class %}
+        {% set is_item_mega = true %}
+      {% endif %}
+
+      {% set item_classes = ['dropdown', 'whites-mega-menu' in item.attributes.class ? 'mega-dropdown', 'whites-mega-menu' in item.attributes.class ? 'mega-tabs', menu_level != 0 and item.is_expanded ? 'dropdown-submenu' ] %}
+
+      {% if 'whites-mega-menu-child' in item.attributes.class %}
+        <div class="col">
+          <h5>{{ item.title }}</h5>
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, is_item_mega, true, middle, m_middle_logo, menu_style, menu__site_name) }}
+        </div>
+      {% else %}
+        
+        <li{{ item.attributes.addClass(item_classes) }}>
+          <a href="{{ item.url }}" class="menux{{ item.in_active_trail ? ' active' }}" data-toggle="dropdown">{{ item.title }}{% if menu_level == 0 and item.is_expanded %} <span class="caret"></span>{% endif %}</a>
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, is_item_mega, false, middle, m_middle_logo, menu_style, menu__site_name) }}
+          {% endif %}
+        </li>
+      {% endif %}
+      {# menu style middle #}
+      {% if menu_style == 'middle-logo' %}
+        {% if total == middle %}
+          <li class="logo-item"><a href="{{ path('<front>') }}"><img src="{{ m_middle_logo ? m_middle_logo|first : '' }}" alt="{{ menu__site_name ? menu__site_name : 'Middle logo' }}"></a></li>
+        {% endif %}
+      {% endif %}
+      {# end style menu #}
+    {% endfor %}
+
+    {% if menu_level == 0 %}
+      </ul>
+    {% else %}
+      {% if bl == 1 or bl == TRUE %}
+          </div>
+        </div>
+      </div>
+      {% else %}
+        </ul>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+
+

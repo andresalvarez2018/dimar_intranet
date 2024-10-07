@@ -1,0 +1,56 @@
+uuid: df229c6f-e3fd-4fbb-b696-8d347a3fdf09
+langcode: es
+status: true
+dependencies:
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - node
+    - ntv_block_background
+    - statistics
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: contenidopopular
+theme: whites
+region: section_content
+weight: -2
+provider: null
+plugin: statistics_popular_block
+settings:
+  id: statistics_popular_block
+  label: 'Contenido popular'
+  label_display: '0'
+  provider: statistics
+  top_day_num: 0
+  top_all_num: 0
+  top_last_num: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog_post: blog_post
+      normatividad: normatividad
+      noticias: noticias
+      page: page

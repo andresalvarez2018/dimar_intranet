@@ -1,0 +1,16 @@
+<div{{ attributes }}>
+    {{ title_suffix }}
+    <div class="container content">
+        <hr class="space" />
+        <h3 class="text-center">{{ label }}</h3>
+        <hr class="space xs" />
+        <p class="width-750 text-center">
+           {{ content.message|render|striptags }}
+        </p>
+        <hr class="space m" />
+        <div class="col-md-5 col-center whites-form-subscription">
+            {{ content ? content|without('message')|render|replace({'<form action': '<form class="form-box" action', 'class="form-email' : 'class="form-email form-control form-value', 'class="button js-form-submit form-submit"':'class="button btn js-form-submit form-submit"', 'class="js-form-required form-required"' : 'class="hidden js-form-required form-required"'})|t }}
+        </div>
+        <hr class="space" />
+    </div>
+</div>

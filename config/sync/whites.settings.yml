@@ -1,0 +1,91 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+theme_menu_style: default
+general_setting_tracking_code: ''
+custom_css: ''
+theme_page_title_style: base-4
+imagecount: '2'
+background_page_title_upload:
+  - '13'
+  - '14'
+theme_page_title_icon_class: ''
+theme_page_title_animation_layer: fog
+background_page_title_slide:
+  fids:
+    - '51'
+    - '52'
+    - '53'
+    - '54'
+  upload: ''
+  file_51:
+    selected: 0
+  file_52:
+    selected: 0
+  file_53:
+    selected: 0
+  file_54:
+    selected: 0
+theme_page_title_video_id: bKZf39YqcnM
+background_page_title_video_mp4:
+  - '88'
+background_page_title_image:
+  - '87'
+background_page_title_slides:
+  fids:
+    - '55'
+    - '56'
+    - '57'
+    - '58'
+  upload: ''
+  file_55:
+    selected: 0
+  file_56:
+    selected: 0
+  file_57:
+    selected: 0
+  file_58:
+    selected: 0
+greytheme_home_img:
+  fids:
+    - '62'
+  upload: ''
+background_page_title_images_slide:
+  - '63'
+  - '64'
+  - '65'
+  - '66'
+  - '67'
+  - '68'
+  - '69'
+  - '70'
+page_title_slides:
+  - '82'
+  - '83'
+  - '85'
+page_subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor '
+blog_page_subtitle: 'Blog listing'
+blog_page_title_style: base-default
+blog_page_title_icon_class: im-angel-smiley
+blog_page_title_animation_layer: cloud
+blog_background_page_title_image:
+  - '96'
+blog_page_title_slides:
+  - '97'
+  - '98'
+  - '99'
+blog_page_title_video_id: ''
+blog_background_page_title_video_mp4: {  }
+blog_listing_style: classic
+menu_middle_logo:
+  - '219'
+menu_big_logo:
+  - '220'
+menu_retina_logo:
+  - '221'

@@ -1,0 +1,25 @@
+uuid: ee0efe9c-3cac-40d3-924b-86727ace1d19
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - whites
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: whites_branding
+theme: whites
+region: disabled
+weight: -92
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

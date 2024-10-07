@@ -1,0 +1,6 @@
+uuid: cf07427c-855a-4995-8e2e-c73f9cb42900
+langcode: en
+status: true
+dependencies: {  }
+id: field_demo_collection
+label: field_demo_collection

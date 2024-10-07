@@ -1,0 +1,14 @@
+uuid: 00225764-ebd5-4f04-8f61-f3a352788f68
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.editor_foros
+  module:
+    - user
+id: user_remove_role_action.editor_foros
+label: 'Elimina el rol Editor Foros al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor_foros

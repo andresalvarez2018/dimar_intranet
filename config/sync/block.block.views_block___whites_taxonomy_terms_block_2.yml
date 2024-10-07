@@ -1,0 +1,52 @@
+uuid: 752ecb3f-7196-45d1-9ceb-bf34d5339722
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view._whites_taxonomy_terms
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+    - views
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___whites_taxonomy_terms_block_2
+theme: whites
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:_whites_taxonomy_terms-block_2'
+settings:
+  id: 'views_block:_whites_taxonomy_terms-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Talento-humano\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Maestría-de-armas\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Seguridad-física\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Seguridad-y-salud-en-el-trabajo\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Servicios-generales\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Seguridad-de-la-información\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Atención-al-ciudadano\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Instructivos-Roles\r\n\r\n\r\n/Herramientas-virtuales/Régimen-Interno-y-Disciplinario-Dimar---2017/Asuntos-disciplinarios\r\n"

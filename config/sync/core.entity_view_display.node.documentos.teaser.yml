@@ -1,0 +1,36 @@
+uuid: 60f2c4e5-bda8-46ff-ad87-0b3d30d80ebf
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.documentos.body
+    - field.field.node.documentos.field_archivo_adjunto
+    - node.type.documentos
+  module:
+    - text
+    - user
+id: node.documentos.teaser
+targetEntityType: node
+bundle: documentos
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_archivo_adjunto: true
+  langcode: true

@@ -1,0 +1,23 @@
+uuid: 23bfa1eb-5ba8-4471-b457-c3c875de5124
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_anio_norma
+    - node.type.normatividad
+id: node.normatividad.field_anio_norma
+field_name: field_anio_norma
+entity_type: node
+bundle: normatividad
+label: Año
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

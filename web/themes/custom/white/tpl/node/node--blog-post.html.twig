@@ -1,0 +1,258 @@
+{% if node.field_display_mode.value %}
+	{% set display_mode = node.field_display_mode.value %}
+{% else %}
+	{% set display_mode = 'basic' %}
+{% endif %}
+
+{% set comment_count = node.field_blog_comments.comment_count %}
+
+
+
+{% if page %}
+{% if display_mode == 'slides' %}
+
+		<div class="section-empty section-item">
+		    <div class=" content">
+                                <div class="flexslider slider outer-navs row-17">
+                                       <ul class="slides">
+						{% if node.field_pt_image_backgroun %}
+							{% for image in node.field_pt_image_backgroun %}
+								{% set image_uri = image.entity.uri.value %}
+								{% set image_alt = image.entity.alt.value %}
+								{% set image_url = file_url(image_uri) %}
+								<li>
+									<a class="img-box">
+										<img src="{{ image_url ? image_url }}" alt="{{ image_alt ? image_alt }}" />
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+						{% if node.field_image %}
+							{% for image in node.field_image %}
+								{% set image_uri = image.entity.uri.value %}
+								{% set image_alt = image.entity.alt.value %}
+								{% set image_url = file_url(image_uri) %}
+								<li>
+									<a class="img-box">
+										<img src="{{ image_url ? image_url }}" alt="{{ image_alt ? image_alt }}" />
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+					</ul>
+				</div>	
+
+		        <hr class="space m" />
+		        <div class="row">
+		            <div class="col-md-6">
+		                <div class="tag-row">
+                    <span><i class="fa fa-calendar"></i> <a href="#">{{ node.created.value|date('d / m / Y') }}</a></span>
+		    <span><i class="fa fa-bookmark"></i> {{ content.field_blog_category }}</span>
+		    <span class="content-voting"><i class="fa fa-stars"></i>{{ content.field_votos }}</span>
+		                    
+		                </div>
+		            </div>
+		            <div class="col-md-6 text-right text-center-sm">
+		                <div class="btn-group social-group social-colors">
+		                    <a target="_blank" href="#" data-social="share-facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook text-s circle"></i></a>
+		                    <a target="_blank" href="#" data-social="share-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter text-s circle"></i></a>
+		                </div>
+		            </div>
+		        </div>
+		        <hr class="space m" />
+		        <div class="row">
+			   <div class="col-md-12">     
+				{{ content.body }}
+				{{ content.field_audio_blog }}
+				{{ content.field_video }}
+				{{ content.field_pt_video_mp4 }}	
+		           </div>
+			</div>
+		    </div>
+		</div>
+		 {{ content.field_blog_comments }}
+
+
+{% elseif display_mode == 'sidebar' %}
+	
+	<h4>{{ node.title.value ? node.title.value }}</h4>
+		<hr class="space xs" />
+		<div class="tag-row">
+		    <span><i class="fa fa-calendar"></i> <a href="#">{{ node.created.value|date('d / m / Y') }}</a></span>
+		    <span><i class="fa fa-bookmark"></i> {{ content.field_blog_category }}</span>
+		    <span><i class="fa fa-pencil"></i>{{ author_full_name ? author_full_name : author_name }}</span>
+		    <span class="content-voting"><i class="fa fa-stars"></i>{{ content.field_votos }}</span>
+
+		</div>
+		<hr class="space m" />
+		{% if node.field_image|first.entity.uri.value %}
+			<a target="_blank" class="img-box" href="{{ file_url(node.field_image|first.entity.uri.value) }}">
+			    <img src="{{ file_url(node.field_image|first.entity.uri.value) }}" alt="{{ node.title.value }}">
+			</a>
+		{% endif %}
+		<hr class="space m" />
+		{{ content.body }}
+		<hr class="space m" />
+		<div class="text-center">
+		    <div class="btn-group social-group">
+		        <a target="_blank" href="#" data-social="share-facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook text-s circle"></i></a>
+		        <a target="_blank" href="#" data-social="share-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter text-s circle"></i></a>
+		        <a target="_blank" href="#" data-social="share-google" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus text-s circle"></i></a>
+		    </div>
+		</div>
+
+{% else %}
+<div class="section-empty section-item">
+		    <div class=" content">
+                                <div class="flexslider slider outer-navs row-17">
+                                       <ul class="slides">
+						{% if node.field_pt_image_backgroun %}
+							{% for image in node.field_pt_image_backgroun %}
+								{% set image_uri = image.entity.uri.value %}
+								{% set image_alt = image.entity.alt.value %}
+								{% set image_url = file_url(image_uri) %}
+								<li>
+									<a class="img-box">
+										<img src="{{ image_url ? image_url }}" alt="{{ image_alt ? image_alt }}" />
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+						{% if node.field_image %}
+							{% for image in node.field_image %}
+								{% set image_uri = image.entity.uri.value %}
+								{% set image_alt = image.entity.alt.value %}
+								{% set image_url = file_url(image_uri) %}
+								<li>
+									<a class="img-box">
+										<img src="{{ image_url ? image_url }}" alt="{{ image_alt ? image_alt }}" />
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+					</ul>
+				</div>	
+
+		        <hr class="space m" />
+		        <div class="row">
+		            <div class="col-md-6">
+		                <div class="tag-row">
+                    <span><i class="fa fa-calendar"></i> <a href="#">{{ node.created.value|date('d / m / Y') }}</a></span>
+		    <span><i class="fa fa-bookmark"></i> {{ content.field_blog_category }}</span>
+		    <span class="content-voting"><i class="fa fa-stars"></i>{{ content.field_votos }}</span>
+		                    
+		                </div>
+		            </div>
+		            <div class="col-md-6 text-right text-center-sm">
+		                <div class="btn-group social-group social-colors">
+		                    <a target="_blank" href="#" data-social="share-facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook text-s circle"></i></a>
+		                    <a target="_blank" href="#" data-social="share-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter text-s circle"></i></a>
+		                </div>
+		            </div>
+		        </div>
+		        <hr class="space m" />
+		        <div class="row">
+			   <div class="col-md-12">     
+				{{ content.body }}
+		           </div>
+			</div>
+		    </div>
+		</div>
+		 {{ content.field_blog_comments }}
+	{% endif %}
+{% else %}
+
+	{% if node.getRevisionAuthor().field_full_name.value %}
+		{% set _author_full_name = node.getRevisionAuthor().field_full_name.value %}
+	{% endif %}
+	{% if node.field_image|first.entity.uri.value %}
+		{% set img_url = getUrlByImageStyle(node.field_image|first.entity.uri.value, 'image_850x350') %}
+		{% set imgori_url = file_url(node.field_image|first.entity.uri.value) %}
+	{% endif %}
+
+	{# set variables #}
+
+	{% if blog_listing_style == 'grid' %}
+		<div class="grid-item col-md-6">
+		    <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse" data-anima="scale-rotate" data-trigger="hover">
+		        <div class="block-infos">
+		            <div class="block-data">
+		                <p class="bd-day">{{ node.created.value|date('d') }}</p>
+		                <p class="bd-month">{{ node.created.value|date('F Y') }}</p>
+		            </div>
+		            <a class="block-comment" href="{{ url }}#comments">{{ comment_count }} <i class="fa fa-comment-o"></i></a>
+		        </div>
+		        <a class="img-box" href="{{ url }}"><img class="anima" src="{{ img_url ? img_url }}" alt="{{ node.title.value }}" /></a>
+		        <div class="advs-box-content">
+		            <h2><a href="{{ url }}">{{ node.title.value }}</a></h2>
+		            <div class="tag-row">
+		                <span><i class="fa fa-bookmark"></i> {{ content.field_blog_category }}</span>
+		                <span><i class="fa fa-pencil"></i>{{ _author_full_name ? _author_full_name : author_name }}</span>
+		                <span class="content-voting"><i class="fa fa-stars"></i>{{ content.field_votos }}</span>
+
+		            </div>
+		            <p class="niche-box-content">
+			            {% if node.body.summary %}
+		            		{{ node.body.summary|length > 124 ? node.body.summary|slice(0,124) ~ '...' : node.body.summary }}
+		          		{% endif %}
+		            </p>
+		        </div>
+		    </div>
+		</div>
+	{% elseif blog_listing_style == 'minimal' %}
+		<div class="grid-item">
+		    <div class="advs-box advs-box-top-icon-img niche-box-post" data-anima="scale-rotate" data-trigger="hover">
+		        <a class="img-box" href="{{ url }}"><img class="anima" src="{{ img_url ? img_url }}" alt="{{ node.title.value }}" /></a>
+		        <div class="advs-box-content">
+		            <h2><a href="{{ url }}">{{ node.title.value }}</a></h2>
+		            <div class="tag-row">
+		                <span><i class="fa fa-bookmark"></i> {{ content.field_blog_category }}</span>
+		                <span><i class="fa fa-pencil"></i>{{ _author_full_name ? _author_full_name : author_name }}</span>
+						<span class="content-voting"><i class="fa fa-stars"></i>{{ content.field_votos }}</span>
+
+		            </div>
+		            <p class="niche-box-content">
+			            {% if node.body.summary %}
+		            		{{ node.body.summary|length > 342 ? node.body.summary|slice(0, 342) ~ '...' : node.body.summary }}
+		          		{% endif %}		            	
+		            </p>
+		        </div>
+		    </div>
+		    <hr class="space m" />
+		</div>
+{% else %}
+
+		<div class="grid-item col-md-12">
+			<div class="advs-box niche-box-blog">
+			    <div class="block-top">
+			        <div class="block-infos">
+			            <div class="block-data">
+			                <p class="bd-day">{{ node.created.value|date('d') }}</p>
+			                <p class="bd-month">{{ node.created.value|date('F') }}</p>
+			            </div>
+			            <a class="block-comment" href="{{ url }}#comments">{{ comment_count }} <i class="fa fa-comment-o"></i></a>
+			        </div>
+			        <div class="block-title">
+			            <h2><a href="{{ url }}">{{ node.title.value }}</a></h2>
+			            <div class="tag-row">
+			                <span><i class="fa fa-bookmark"></i> {{ content.field_blog_category }}</span>
+			                <span><i class="fa fa-pencil"></i>{{ _author_full_name ? _author_full_name : author_name }}</span>
+							<span class="content-voting"><i class="fa fa-stars"></i>{{ content.field_votos }}</span>
+			                
+			            </div>
+			        </div>
+			    </div>
+			    <a class="img-box" href="{{ url }}">
+			        <img src="{{ img_url ? img_url }}" alt="{{ node.title.value }}">
+			    </a>
+			    <p class="excerpt">
+			        {% if node.body.summary %}
+	            		{{ node.body.summary|length > 476 ? node.body.summary|slice(0,476) ~ '...' : node.body.summary }}
+	          		{% endif %}
+			    </p>
+			</div>
+			<hr class="space" />
+		</div>
+	{% endif %}
+{% endif %}
+

@@ -1,0 +1,39 @@
+uuid: 8aa7a309-3395-4150-9905-07eba574bc6d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.menu_servicio_y_participacion_ci.field_enlace
+    - taxonomy.vocabulary.menu_servicio_y_participacion_ci
+  module:
+    - link
+    - text
+id: taxonomy_term.menu_servicio_y_participacion_ci.default
+targetEntityType: taxonomy_term
+bundle: menu_servicio_y_participacion_ci
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_enlace:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

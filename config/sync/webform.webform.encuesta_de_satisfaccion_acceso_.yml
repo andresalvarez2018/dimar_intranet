@@ -1,0 +1,350 @@
+uuid: c75eff49-134b-4747-9718-816dddcd437c
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: false
+archive: false
+id: encuesta_de_satisfaccion_acceso_
+title: 'Encuesta de satisfacción acceso a la información pública'
+description: ''
+categories: {  }
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <p style="margin:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">Agradecemos su participación en el diligenciamiento de la siguiente encuesta relacionada con la satisfacción del acceso a la información pública de la Dirección General Marítima.</span></span></p>
+      
+    '#format': full_html
+  pregunta_1_por_favor_seleccione_la_fecha_registro_:
+    '#type': date
+    '#title': 'Pregunta 1: Por favor seleccione la fecha registro. '
+  pregunta_2_por_favor_digite_sus_nombres_y_apellidos:
+    '#type': textfield
+    '#title': 'Pregunta 2: Por favor digite sus nombres y apellidos'
+  pregunta_3_por_favor_digite_su_numero_de_cedula_o_documento_de_i:
+    '#type': number
+    '#title': 'Pregunta 3: Por favor digite su número de cédula o documento de identificación.'
+  processed_text_01:
+    '#type': processed_text
+    '#text': |
+      <p style="margin:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><b>Pregunta 4: A continuación, le invitamos a leer las siguientes definiciones que corresponden a la clasificación de la información de la entidad de acuerdo con la ley 1712 de 2014.</b></span></span></p>
+      
+      <p style="margin:0cm">&nbsp;</p>
+      
+      <p style="margin:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><b>Descripción:</b></span></span></p>
+      
+      <p style="margin:0cm">&nbsp;</p>
+      
+      <ol>
+      	<li style="margin: 0cm;"><span style="font-size:11pt"><span style="background:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Información. Se refiere a un conjunto organizado de datos contenido en cualquier documento que los sujetos obligados generen, obtengan, adquieran, transformen o controlen;</span></span></span></span></li>
+      	<li style="margin: 0cm;"><span style="font-size:11pt"><span style="background:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Información pública. Es toda información que un sujeto obligado genere, obtenga, adquiera, o controle en su calidad de tal;</span></span></span></span></li>
+      	<li style="margin: 0cm;"><span style="font-size:11pt"><span style="background:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Información pública clasificada. Es aquella información que estando en poder o custodia de un sujeto obligado en su calidad de tal, pertenece al ámbito propio, particular y privado o semiprivado de una persona natural o jurídica por lo que su acceso podrá ser negado o exceptuado, siempre que se trate de las circunstancias legítimas y necesarias y los derechos particulares o privados consagrados en el artículo 18 de esta ley;</span><b> </b><b><span style="color:black">(Ver Art. 2.1.1.4.2.1. Decreto 1081 de 2015) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b></span></span></span></li>
+      	<li style="margin: 0cm;"><span style="font-size:11pt"><span style="background:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Información pública reservada. Es aquella información que estando en poder o custodia de un sujeto obligado en su calidad de tal, es exceptuada de acceso a la ciudadanía por daño a intereses públicos y bajo cumplimiento de la totalidad de los requisitos consagrados en el artículo 19 de esta ley;</span></span></span></span></li>
+      </ol>
+      
+    '#format': full_html
+  he_leido_y_comprendo_la_informacion_:
+    '#type': checkbox
+    '#title': 'He leído y comprendo la información. '
+  otra_:
+    '#type': checkbox
+    '#title': Otra.
+  pregunta_5_le_invitamos_a_calificar_de_1_a_5_donde_1_muy_insatis:
+    '#type': webform_likert
+    '#title': 'Pregunta 5: Le invitamos a calificar de 1 a 5 donde, 1. Muy insatisfecho, 2. Insatisfecho, 3. Neutro, 4. Satisfecho y 5. Muy satisfecho sobre la experiencia al consultar la información pública de la Dirección General Marítima.'
+    '#questions':
+      "I.\t¿La información consultada es transparente, consecuente, real y veraz? ": "I.\t¿La información consultada es transparente, consecuente, real y veraz? "
+      "II.\t¿Le es fácil acceder a la información de la Entidad por medio de los distintos canales?": "II.\t¿Le es fácil acceder a la información de la Entidad por medio de los distintos canales?"
+      "III.\t¿Ha sentido algún tipo de discriminación al momento de solicitar información en la Entidad?": "III.\t¿Ha sentido algún tipo de discriminación al momento de solicitar información en la Entidad?"
+      "IV.\t¿Tuvo que realizar algún pago para poder acceder a la información pública de la Entidad?": "IV.\t¿Tuvo que realizar algún pago para poder acceder a la información pública de la Entidad?"
+      "V.\t¿La celeridad en el momento de solicitar información pública cumple con sus expectativas?": "V.\t¿La celeridad en el momento de solicitar información pública cumple con sus expectativas?"
+      "VI.\t¿De acuerdo con su necesidad, la información recibida cumple con la eficacia requerida?": "VI.\t¿De acuerdo con su necesidad, la información recibida cumple con la eficacia requerida?"
+      "VII.\t¿Considera la información que ha consultado a través de los distintos canales es proactiva, actualizada, accesible y comprensible?": "VII.\t¿Considera la información que ha consultado a través de los distintos canales es proactiva, actualizada, accesible y comprensible?"
+    '#answers':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+  pregunta_6_digite_por_favor_su_edad:
+    '#type': number
+    '#title': 'Pregunta 6: Digite por favor su edad'
+    '#min': 10
+    '#max': 100
+  pregunta_7_digite_por_favor_su_ciudad_de_residencia:
+    '#type': textfield
+    '#title': 'Pregunta 7: Digite por favor su Ciudad de residencia'
+  pregunta_8_seleccione_por_favor_tipo_de_persona_:
+    '#type': select
+    '#title': 'Pregunta 8: Seleccione por favor tipo de persona:'
+    '#options':
+      'Natural  ': 'Natural  '
+      Jurídica: Jurídica
+  pregunta_9_seleccione_por_favor_su_genero_:
+    '#type': select
+    '#title': 'Pregunta 9: Seleccione por favor su Género:'
+    '#options':
+      'Masculino ': 'Masculino  '
+      Femenino: Femenino
+      'No Binario': 'No Binario'
+  pregunta_10_seleccione_por_favor_su_nivel_de_escolaridad_:
+    '#type': select
+    '#title': 'Pregunta 10: Seleccione por favor su Nivel de Escolaridad:'
+    '#options':
+      'Primaria ': 'Primaria '
+      Secundaria: Secundaria
+      Técnico: Técnico
+      Tecnólogo: Tecnólogo
+      Universitaria: Universitaria
+      'Especialización o maestría.': 'Especialización o maestría.'
+  pregunta_11_indique_por_favor_cual_es_el_estrato_de_sus_servicio:
+    '#type': webform_select_other
+    '#title': 'Pregunta 11 Indique por favor ¿Cuál es el estrato de sus servicios públicos?'
+    '#options':
+      'Estrato 1': 'Estrato 1'
+      'Estrato 2': 'Estrato 2'
+      'Estrato 3': 'Estrato 3'
+      'Estrato 4': 'Estrato 4'
+      'Estrato 5': 'Estrato 5'
+      'Estrato 6': 'Estrato 6'
+  pregunta_12_tiene_alguna_condicion_de_discapacidad_por_favor_sel:
+    '#type': webform_select_other
+    '#title': 'Pregunta 12 ¿Tiene alguna condición de discapacidad? Por favor seleccione o digite la condición que presenta. Si no cumple con ninguna condición por favor seleccione la opción. Ninguna. '
+    '#options':
+      Ninguna: Ninguna
+      'Sí, física': 'Sí, física'
+      'Sí, auditiva': 'Sí, auditiva'
+      'Sí, visual': 'Sí, visual'
+      'Sí, intelectual': 'Sí, intelectual'
+      'Sí, psicosocial (mental)': 'Sí, psicosocial (mental)'
+      'Sí, múltiple': 'Sí, múltiple'
+  pregunta_13_pertenece_a_algun_grupo_etnico_por_favor_seleccione_:
+    '#type': webform_select_other
+    '#title': 'Pregunta 13 ¿Pertenece a algún grupo étnico? Por favor seleccione o digite el grupo al que pertenece. Si no pertenece a ningún grupo, por favor seleccione la opción. Ninguna.'
+    '#options':
+      Ninguna: Ninguna
+      'Sí, indígena': 'Sí, indígena'
+      'Sí, afrocolombiano': 'Sí, afrocolombiano'
+      'Sí, raizal': 'Sí, raizal'
+      'Sí, Palenquero': 'Sí, Palenquero'
+      'Sí, Gitano': 'Sí, Gitano'
+  pregunta_14_cuales_de_las_siguientes_redes_sociales_prefiere_con:
+    '#type': webform_select_other
+    '#title': 'Pregunta 14 ¿Cuáles de las siguientes redes sociales prefiere consultar?'
+    '#options':
+      Facebook: Facebook
+      Instagram: Instagram
+      Twitter: Twitter
+      YouTube: YouTube
+  pregunta_15_que_canal_de_atencion_prefiere_para_comunicarse_con_:
+    '#type': select
+    '#title': 'Pregunta 15 ¿Qué canal de atención prefiere para comunicarse con la Dirección General Marítima?'
+    '#options':
+      'Escrito chat': 'Escrito chat'
+      'Escrito correo certificado': 'Escrito correo certificado'
+      'Escrito email': 'Escrito email'
+      'Escrito Sede electrónica': 'Escrito Sede electrónica'
+      Presencial: Presencial
+      Telefónico: Telefónico
+    '#select2': true
+  pregunta_16_ha_visitado_el_portal_maritimo_colombiano_portal_web:
+    '#type': select
+    '#title': 'Pregunta 16 ¿Ha visitado el Portal Marítimo Colombiano? Portal web de la Dirección General Marítima.'
+    '#options':
+      Si: Si
+      'No': 'No'
+  pregunta_17_ha_visitado_la_seccion_de_transparencia_del_portal_m:
+    '#type': select
+    '#title': 'Pregunta 17 ¿Ha visitado la sección de transparencia del Portal Marítimo Colombiano, donde se carga la información pública de la entidad?'
+    '#options':
+      Si: Si
+      'No': 'No'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

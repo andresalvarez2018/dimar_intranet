@@ -1,0 +1,26 @@
+{
+  "name": "drupal/md_slider",
+  "type": "drupal-module",
+  "description": "This module provide easy solution for any slider.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/md_slider",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/md_slider",
+    "source": "https://git.drupalcode.org/project/md_slider"
+  },
+  "authors": [
+        {
+            "name": "Minh Hoang (@hoangd)",
+            "homepage": "https://www.drupal.org/u/hoangd",
+            "role": "Maintainer"
+        }
+    ],
+  "require": { 
+	"drupal/core": "^9.3 || ^10",
+	"drupal/imce": "^3.0",
+    "drupal/jquery_ui_sortable": "^2.0",
+	"drupal/jquery_ui_droppable": "^2.0",
+	"drupal/jquery_ui_draggable": "^2.0"
+  }
+}

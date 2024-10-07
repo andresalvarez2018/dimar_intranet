@@ -1,0 +1,17 @@
+uuid: d3b78590-0e81-424f-bc05-002f7dcedef5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: about_2_page
+label: 'About 3 page'
+logic: or
+conditions:
+  d61b5316-e904-4b41-ba89-941c3a6fb0e2:
+    id: request_path
+    negate: false
+    uuid: d61b5316-e904-4b41-ba89-941c3a6fb0e2
+    context_mapping: {  }
+    pages: /node/67
+allow_other_conditions: false

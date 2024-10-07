@@ -1,0 +1,94 @@
+
+{% set menu_style = theme_menu_style %}
+
+
+{% if v_name == 'blog_categories' or v_name == 'tags' %}
+	{% set current_page = 'blog' %}
+	{% set page_title_style = blog_page_title_style %}
+{% else %}
+	{% set page_title_style = theme_page_title_style %}
+{% endif %}
+
+{% include theme_path_no_base ~ '/tpl/header/header.html.twig' %}
+
+
+{% include theme_path_no_base ~ '/tpl/menu-tpl/whites-menu--' ~ menu_style ~ '.html.twig' %}
+
+
+
+{% if page_title_style and  page_title_style != 'none' %}
+    {% include theme_path_no_base ~ '/tpl/page-title-tpl/page-title-' ~ page_title_style ~ '.html.twig' %}
+{% endif %}
+<div class="whites-section-content section-empty section-item">
+	<div class="container content">
+		{{ page.highlighted }}
+	</div> 
+</div>
+{% if current_page == 'blog' %}
+	{# content #}
+	{% if blog_listing_style == 'grid' %}
+	    <div class="section-bg-color">
+	        <div class="container content">
+	            <div class="row">
+	                <div class="col-md-9 col-sm-12">
+	                    <div class="grid-list grid-layout grid-15">
+	                        {{ page.content }}
+	                        
+	                    </div>
+	                </div>
+	                <div class="col-md-3 col-sm-12 widget">
+	                   {{ page.sidebar }}
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	{% elseif blog_listing_style == 'minimal' %}
+	    <div class="section-bg-color">
+	        <div class="container content">
+	            <div class="row">
+	                <div class="col-md-8 col-sm-12 col-center">
+	                    <div class="grid-list one-row-list">
+
+	                        {{ page.content }}
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	{% else %}
+	    <div class="section-empty section-item">
+	        <div class="container content">
+	            <div class="row">
+	                <div class="col-md-9 col-sm-12">
+	                    <div class="grid-list one-row-list">
+	                        {{ page.content }}
+	                    </div>
+	                </div>
+	                <div class="col-md-3 col-sm-12 widget">
+	                   {{ page.sidebar }}
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	{% endif %}
+	{# content #}
+{% else %}
+<div class="section-empty section-item">
+                <div class="container content">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12">
+                            <div class="grid-list one-row-list">
+<div class="bread"> {{ page.breadcrumb }} </div>
+                              
+  {{ page.content }}
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 widget">
+                           {{ page.sidebar }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{ page.content }}
+{% endif %}
+

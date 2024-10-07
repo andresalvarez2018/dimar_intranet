@@ -1,0 +1,17 @@
+uuid: 389975f7-0e56-4717-8c58-d94e81656814
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_startup
+label: 'Homepage startup'
+logic: or
+conditions:
+  9ded9368-2ebb-4f97-881e-bf290233de1a:
+    id: request_path
+    negate: false
+    uuid: 9ded9368-2ebb-4f97-881e-bf290233de1a
+    context_mapping: {  }
+    pages: /node/55
+allow_other_conditions: false

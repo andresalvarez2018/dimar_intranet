@@ -1,0 +1,39 @@
+uuid: e209c420-2309-4b54-bc06-1b8f860fa416
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.identidad_institucional.field_enlace
+    - taxonomy.vocabulary.identidad_institucional
+  module:
+    - link
+    - text
+id: taxonomy_term.identidad_institucional.default
+targetEntityType: taxonomy_term
+bundle: identidad_institucional
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_enlace:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

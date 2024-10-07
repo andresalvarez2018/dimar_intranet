@@ -1,0 +1,38 @@
+uuid: b285c3da-7c1f-433a-9a14-2ee896cb5668
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.homepage.body
+    - field.field.node.homepage.field_layout
+    - field.field.node.homepage.field_menu_style
+    - node.type.homepage
+  module:
+    - text
+    - user
+id: node.homepage.teaser
+targetEntityType: node
+bundle: homepage
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_layout: true
+  field_menu_style: true
+  langcode: true

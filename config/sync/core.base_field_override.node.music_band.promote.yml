@@ -1,0 +1,24 @@
+uuid: e014d6b8-f4b0-44aa-a25b-ac9011fb3676
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.music_band
+_core:
+  default_config_hash: F27BNjU9EPogVZDpHHRn6EG7h97xF69DvZHDdZQMUaI
+id: node.music_band.promote
+field_name: promote
+entity_type: node
+bundle: music_band
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

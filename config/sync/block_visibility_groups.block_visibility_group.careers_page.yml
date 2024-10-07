@@ -1,0 +1,17 @@
+uuid: e735267a-8161-4d45-b35d-b25f1328ff61
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: careers_page
+label: 'Careers page'
+logic: or
+conditions:
+  9305343b-ab1d-4bd7-ba67-8e45c46b9de4:
+    id: request_path
+    negate: false
+    uuid: 9305343b-ab1d-4bd7-ba67-8e45c46b9de4
+    context_mapping: {  }
+    pages: /node/74
+allow_other_conditions: false

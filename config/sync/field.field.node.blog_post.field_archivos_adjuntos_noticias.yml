@@ -1,0 +1,27 @@
+uuid: 64d0b0cf-94d4-4fb6-a1f4-91d06ae7ace8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archivos_adjuntos_noticias
+    - node.type.blog_post
+  module:
+    - file
+id: node.blog_post.field_archivos_adjuntos_noticias
+field_name: field_archivos_adjuntos_noticias
+entity_type: node
+bundle: blog_post
+label: 'Archivos adjuntos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documentos
+  file_extensions: 'txt pdf xls xlsx doc ppt'
+  max_filesize: ''
+  description_field: false
+field_type: file

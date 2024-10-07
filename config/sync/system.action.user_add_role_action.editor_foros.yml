@@ -1,0 +1,14 @@
+uuid: b5c28253-f140-4fb8-b2e5-d3ed1db834dd
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.editor_foros
+  module:
+    - user
+id: user_add_role_action.editor_foros
+label: 'Añade el rol Editor Foros al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editor_foros

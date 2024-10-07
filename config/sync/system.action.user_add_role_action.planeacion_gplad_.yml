@@ -1,0 +1,14 @@
+uuid: d270bdef-bf30-4017-9f7a-5f8d80a8d831
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.planeacion_gplad_
+  module:
+    - user
+id: user_add_role_action.planeacion_gplad_
+label: 'Añade el rol Planeación (GPLAD) al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: planeacion_gplad_

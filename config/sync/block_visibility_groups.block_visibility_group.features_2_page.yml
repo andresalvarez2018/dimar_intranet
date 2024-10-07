@@ -1,0 +1,17 @@
+uuid: a54e3cc9-c7e0-43d4-9d43-be1dca45c8e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: features_2_page
+label: 'Features 2 page'
+logic: or
+conditions:
+  f4df2798-ae50-451b-8d07-7fbee3fbbdac:
+    id: request_path
+    negate: false
+    uuid: f4df2798-ae50-451b-8d07-7fbee3fbbdac
+    context_mapping: {  }
+    pages: /node/76
+allow_other_conditions: false

@@ -1,0 +1,35 @@
+<header class="fixed-top" data-menu-anima="fade-in">
+    <div class="navbar navbar-default navbar-fixed-top mega-menu-fullwidth" role="navigation">
+        <div class="navbar-mini scroll-hide">
+            <div class="container">
+                <div class="nav navbar-nav navbar-left">
+                    {{ page.top_bar_left }}
+                </div>
+                <div class="nav navbar-nav navbar-right">
+                    <div class="minisocial-group">
+                        {{ page.top_bar_right }}
+                    </div>
+                    {{ page.header_search|render|replace({'<form action':'<form class="navbar-form whites-default-menu" action','<input class="hidden button js-form-submit form-submit"':'<input class="btn btn-default button js-form-submit form-submit"','value="Search"':'value="GO"'})|t }}
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-main middle-box-menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    {{ page.header_logo }}
+                </div>
+                <div class="collapse navbar-collapse">
+                    {{ page.main_menu }}
+                </div>
+            </div>
+            <div class="container box-menu-inner">
+                <div class="row">
+                    {{ page.bottom_box_top_bar }}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

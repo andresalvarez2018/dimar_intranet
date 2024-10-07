@@ -1,0 +1,45 @@
+{% if node.field_menu_style.value  %}
+	{% set menu_style = node.field_menu_style.value %}
+{% else %}
+	{% set menu_style = theme_menu_style %}
+{% endif %}
+{# page title style #}
+{% if node.field_pt_style.value %}
+	{% set page_title_style = node.field_pt_style.value %}
+{% else %}
+	{% set page_title_style = theme_page_title_style %}
+{% endif %}
+
+{% include theme_path_no_base ~ '/tpl/header/header.html.twig' %}
+
+
+{% include theme_path_no_base ~ '/tpl/menu-tpl/whites-menu--' ~ menu_style ~ '.html.twig' %}
+
+
+{% if page_title_style and  page_title_style != 'none' %}
+	{% include theme_path_no_base ~ '/tpl/page-title-tpl/page-title-' ~ page_title_style ~ '.html.twig' %}
+{% endif %}
+<div class="whites-section-content section-empty section-item">
+    <div class="container content">
+        {{ page.highlighted }}
+                    <div class="bread">     {{ page.breadcrumb }} </div>
+
+    </div>
+</div>
+<div class="section-empty">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-8 col-center text-center">
+            	{{ page.section_content }}
+                <hr class="space m" />
+                <div class="whites-contact-form-2">
+                	{{ page.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include theme_path_no_base ~ '/tpl/footer/footer.html.twig' %}
+
+                        <div class="chat"> {{ page.chat }} </div>

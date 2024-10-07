@@ -1,0 +1,17 @@
+uuid: 56c78273-b0e7-4918-9c87-6e9ee9205d1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _whites_portfolio_3_gutted_full_width
+label: '[Whites] Portfolio 3 gutted full width'
+logic: or
+conditions:
+  f3c46a8e-fe9b-4dc3-aebc-5313f88c6566:
+    id: request_path
+    negate: false
+    uuid: f3c46a8e-fe9b-4dc3-aebc-5313f88c6566
+    context_mapping: {  }
+    pages: /node/13
+allow_other_conditions: false

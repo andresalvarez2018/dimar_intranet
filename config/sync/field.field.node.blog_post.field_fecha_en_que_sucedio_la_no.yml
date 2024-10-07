@@ -1,0 +1,24 @@
+uuid: 88411375-e26d-470c-89f4-becfc17aea02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_en_que_sucedio_la_no
+    - node.type.blog_post
+  module:
+    - datetime
+id: node.blog_post.field_fecha_en_que_sucedio_la_no
+field_name: field_fecha_en_que_sucedio_la_no
+entity_type: node
+bundle: blog_post
+label: 'Fecha en que sucedió la noticia'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,17 @@
+uuid: a74bd92e-8e54-41c2-86c6-7e4e92e14d47
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_video
+label: 'Homepage video'
+logic: or
+conditions:
+  05c2cf51-0f30-4db9-b2d3-05c56a3f5236:
+    id: request_path
+    negate: false
+    uuid: 05c2cf51-0f30-4db9-b2d3-05c56a3f5236
+    context_mapping: {  }
+    pages: /node/56
+allow_other_conditions: false

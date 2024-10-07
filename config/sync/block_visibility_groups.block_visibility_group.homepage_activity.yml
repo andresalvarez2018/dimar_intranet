@@ -1,0 +1,17 @@
+uuid: 6f875f41-92bb-4483-9fb1-b5440f8b417b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_activity
+label: 'Homepage activity'
+logic: or
+conditions:
+  5acb0de1-d6d6-491a-946d-e0ba6a469e22:
+    id: request_path
+    negate: false
+    uuid: 5acb0de1-d6d6-491a-946d-e0ba6a469e22
+    context_mapping: {  }
+    pages: /node/40
+allow_other_conditions: false

@@ -1,0 +1,134 @@
+uuid: e63cb011-a261-4d9f-a2a2-a9113e4ef323
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.normatividad.body
+    - field.field.node.normatividad.field_anio_norma
+    - field.field.node.normatividad.field_dependencia
+    - field.field.node.normatividad.field_epigrafe
+    - field.field.node.normatividad.field_estado_norma
+    - field.field.node.normatividad.field_fecha_de_la_norma
+    - field.field.node.normatividad.field_normas_internas
+    - field.field.node.normatividad.field_numero_de_norma
+    - field.field.node.normatividad.field_opciones_de_ruta_url_
+    - field.field.node.normatividad.field_tipo_norma_
+    - node.type.normatividad
+  module:
+    - datetime
+    - entity_print
+    - file
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  entity_print:
+    pdf_label: 'Versión PDF'
+id: node.normatividad.default
+targetEntityType: node
+bundle: normatividad
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  entity_print_view_pdf:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_anio_norma:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dependencia:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_epigrafe:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_estado_norma:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_fecha_de_la_norma:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_normas_internas:
+    type: file_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_numero_de_norma:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_opciones_de_ruta_url_:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_tipo_norma_:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_word_docx: true
+  langcode: true

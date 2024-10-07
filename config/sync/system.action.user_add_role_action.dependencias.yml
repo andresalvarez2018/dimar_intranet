@@ -1,0 +1,14 @@
+uuid: 09ec4f5e-cad5-4a09-b106-0926b52b519f
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.dependencias
+  module:
+    - user
+id: user_add_role_action.dependencias
+label: 'Añade el rol Dependencias al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: dependencias

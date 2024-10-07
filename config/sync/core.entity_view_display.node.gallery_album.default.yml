@@ -1,0 +1,41 @@
+uuid: 82bada34-7e4f-4e85-a3d8-6425da2d1a18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.gallery_album.field_image
+    - node.type.gallery_album
+  module:
+    - image
+    - user
+id: node.gallery_album.default
+targetEntityType: node
+bundle: gallery_album
+mode: default
+content:
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

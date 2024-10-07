@@ -1,0 +1,43 @@
+uuid: 7f5a8234-5b5f-43f9-922f-f07bf3295905
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.music_band.body
+    - field.field.node.music_band.field_albums
+    - node.type.music_band
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: N_hgUmVKhpPZ1roEnlht0rTd7EMKX8s2qiNIi0yF_iY
+id: node.music_band.default
+targetEntityType: node
+bundle: music_band
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_albums:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

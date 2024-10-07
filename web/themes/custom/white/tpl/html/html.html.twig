@@ -1,0 +1,92 @@
+{% if _node.field_menu_style.value  %}
+    {% set menu_style = _node.field_menu_style.value %}
+{% else %}
+    {% set menu_style = theme_menu_style %}
+{% endif %}
+
+{% if _node.field_layout.value %}
+    {% set layout = _node.field_layout.value %}
+{% else %}
+    {% set layout = theme_layout %}
+{% endif %}
+{%
+    set body_classes = [
+        logged_in ? 'user-logged-in',
+        not root_path ? 'path-frontpage home' : 'path-' ~ root_path|clean_class,
+        node_type ? 'page-node-type-' ~ node_type|clean_class,
+        db_offline ? 'db-offline',
+        menu_style == 'side' ? 'side-menu-container',
+        layout == 'boxed' ? 'boxed-layout',
+    ]
+%}
+
+<!DOCTYPE html>
+
+<html{{ html_attributes }}>
+<head>
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <!-- Mobile Specific
+        ================================================== -->
+    <meta name="description" content="{{ current_title ? current_title }}">
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+    {% if general_setting_tracking_code %}
+      {{ general_setting_tracking_code|t }}
+    {% endif %}
+    {% if custom_css %}
+      <style type="text/css" media="all">
+        {{ custom_css|t }}
+      </style>
+    {% endif %}
+
+
+
+    {% if high_contrast %}
+        <link rel="stylesheet" type="text/css" href="/themes/whites/css/high_contrast.css">
+    {% endif %}
+
+</head>
+
+<body{{ attributes.addClass(body_classes) }}>
+    <div id="preloader"></div>
+    <a href="#main-content" class="visually-hidden focusable">
+        {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+	{{ page }}
+	{{ page_bottom }}
+    <!-- JS Files
+        ================================================== -->
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            var complemento = "/intranet";
+            var url = window.location.origin + complemento;
+            jQuery("img").each(function(key, item){
+                if(jQuery(item).attr("src") != undefined){
+                    if(jQuery(item).attr("src").indexOf("/sites/") == 0){
+                        var imagen = jQuery(item).attr("src");
+                        jQuery(item).attr("src", url + imagen);
+                    }
+                }
+            });
+
+            jQuery("a").each(function(key, item){
+                if(jQuery(item).attr("href") != undefined){
+                    if(jQuery(item).attr("href").indexOf("/sites/") === 0){
+                        var a = jQuery(item).attr("href");
+                        jQuery(item).attr("href", url + a);
+                    }
+
+                    if(jQuery(item).attr("href").indexOf("//") === 0){
+                        var a = jQuery(item).attr("href");
+                        jQuery(item).attr("href", "http:" + a);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

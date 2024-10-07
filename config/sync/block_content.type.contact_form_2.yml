@@ -1,0 +1,8 @@
+uuid: 65fd04ea-96f2-43df-b779-fa8439038cc7
+langcode: en
+status: true
+dependencies: {  }
+id: contact_form_2
+label: 'Contact form 2'
+revision: 0
+description: ''

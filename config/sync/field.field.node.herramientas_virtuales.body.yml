@@ -1,0 +1,23 @@
+uuid: 5c22eb7d-075e-4f82-b17a-b78131b58145
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.herramientas_virtuales
+  module:
+    - text
+id: node.herramientas_virtuales.body
+field_name: body
+entity_type: node
+bundle: herramientas_virtuales
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

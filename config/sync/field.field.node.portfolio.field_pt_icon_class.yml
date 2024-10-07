@@ -1,0 +1,19 @@
+uuid: 4d707618-f3cb-42ca-8ddf-a000e3a9754c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_icon_class
+    - node.type.portfolio
+id: node.portfolio.field_pt_icon_class
+field_name: field_pt_icon_class
+entity_type: node
+bundle: portfolio
+label: 'Icon class'
+description: 'Eg: <em>im-angel-smiley, im-pizza-slice,...</em>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

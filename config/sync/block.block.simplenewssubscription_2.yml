@@ -1,0 +1,50 @@
+uuid: 90c9fa6b-1eaf-4b73-9ca5-8eff6a27d5b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_boxed
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: simplenewssubscription_2
+theme: whites
+region: section_content
+weight: -17
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Stay tuned and join us!'
+  label_display: visible
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: 'Better experience for your customers, fewer headaches for your team. You’ll be set up on the help desk in minutes.'
+  show_manage: true
+  unique_id: 3c969bcf-0de1-4f20-b151-fd80d4f99806
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_boxed

@@ -1,0 +1,44 @@
+uuid: d14a269e-c70a-4ba6-b43f-7f60ccc33281
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_corporate
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - md_slider
+    - ntv_block_background
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: slidercorporate
+theme: whites
+region: slider
+weight: -90
+provider: null
+plugin: 'md_slider_block:slider_corporate'
+settings:
+  id: 'md_slider_block:slider_corporate'
+  label: 'Slider corporate'
+  label_display: '0'
+  provider: md_slider
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_corporate

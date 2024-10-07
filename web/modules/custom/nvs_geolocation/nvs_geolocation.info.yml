@@ -1,0 +1,5 @@
+name: '[NVS] Googlemaps Configuration'
+type: module
+description: 'Configure your sites googlemaps'
+package: NaviSystem
+core_version_requirement: ^9 || ^10

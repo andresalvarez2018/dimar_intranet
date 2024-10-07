@@ -1,0 +1,17 @@
+uuid: c1e2f69d-e0a0-4328-83ad-d5bbd27d475e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_marketplace
+label: 'Homepage marketplace'
+logic: or
+conditions:
+  f94002de-f916-4bc6-a964-88df1cae0f5a:
+    id: request_path
+    negate: false
+    uuid: f94002de-f916-4bc6-a964-88df1cae0f5a
+    context_mapping: {  }
+    pages: /node/53
+allow_other_conditions: false

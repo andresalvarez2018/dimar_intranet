@@ -1,0 +1,20 @@
+uuid: 7265dfc2-c59c-4773-bc45-0f692238d560
+langcode: en
+status: true
+dependencies:
+  theme:
+    - whites
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: whites_local_actions
+theme: whites
+region: section_content
+weight: 43
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

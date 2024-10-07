@@ -1,0 +1,30 @@
+uuid: 500284a9-9ae5-4411-b17b-7e9dcc83a1f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.testimonials.field_avatar
+    - field.field.node.testimonials.field_content
+    - field.field.node.testimonials.field_jobs
+    - node.type.testimonials
+  module:
+    - user
+id: node.testimonials.teaser
+targetEntityType: node
+bundle: testimonials
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_avatar: true
+  field_content: true
+  field_jobs: true
+  langcode: true

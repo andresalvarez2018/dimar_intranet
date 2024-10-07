@@ -1,0 +1,704 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if id == 'blog' %}
+  {% if blog_listing_style == 'grid' %}
+    <div class="grid-box row">
+      {{ rows }}
+    </div>     
+    {{ pager }}
+  {% elseif blog_listing_style == 'minimal' %}
+    <div class="grid-box">
+      {{ rows }}
+    </div>
+    {{ pager }}
+  {% else %}
+    <div class="grid-box row">
+      {{ rows }}                   
+    </div>
+    {{ pager }}
+  {% endif %}
+{% elseif id == '_whites_taxonomy_terms' %}
+    {% if display_id == 'sidebar_blog_categories' %}
+      {{ rows }}
+    {% elseif display_id == 'sidebar_blog_tags' %}
+      <div class="tagbox">
+        {{ rows }}
+        <div class="clear"></div>
+      </div>
+    {% elseif display_id == 'block_portfolio_categories' %}
+      {{ header }}
+      {{ rows }}    
+    {% else %}
+      {{ header }}
+      <div id="filtro"> {{ exposed }}</div>
+      {{ rows }}
+      {{ attachment_after }}
+      {{ empty }}
+      {{ footer }}
+      {{ pager }}
+    {% endif %}
+
+{% elseif id == '_whites_section_content' %}
+  {% if display_id == 'testimonials_activity' %}
+    <div class="section-empty">
+      <div class="container content">
+        {{ header }}
+        <hr class="space m" />
+        <div class="row">
+          <div class="col-md-8 col-center">
+            <div class="flexslider slider" data-options="controlNav:true,directionNav:false">
+              <ul class="slides">
+                 {{ rows }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'partners_activity' %}
+    <div class="section-bg-color">
+        <div class="container content">
+            <div class="flexslider carousel outer-navs png-over text-center" data-options="numItems:5,minWidth:100,itemMargin:30,controlNav:false">
+                <ul class="slides">
+                  {{ rows }}
+                </ul>
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'blog_posts_app' %}
+    <div class="section-bg-color">
+      <div class="container content">
+        {{ header }}
+        <div class="flexslider carousel outer-navs" data-options="minWidth:200,itemMargin:15,numItems:2,controlNav:false,directionNav:true">
+          <ul class="slides">
+            {{ rows }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'blog_posts_business' %}
+    <div class="section-empty">
+      <div class="container content">
+        <div class="row text-center">
+          <div class="col-md-8 col-center">
+            {{ header }}
+          </div>
+        </div>
+        <hr class="space" />
+        <div class="flexslider outer-navs carousel" data-options="minWidth:250,itemMargin:15,numItems:3,controlNav:true,directionNav:true">
+          <ul class="slides">
+            {{ rows }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'team_event' %}
+    <div class="section-empty">
+      <div class="container content">
+        <div class="row">
+          {{ header }}
+        </div>
+        <hr class="space m" />
+        <div class="grid-list">
+          <div class="grid-box small-margins row">
+            {{ rows }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'testimonials_main' %}
+    <div class="container content">
+      <div class="row">
+          <div class="col-md-8 col-center text-center">
+              <div class="flexslider slider nav-inner-bottom-right" data-options="controlNav:true,directionNav:false">
+                  <ul class="slides">
+                      {{ rows }}
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'blog_posts_main' %}
+    <div class="section-empty">
+      <div class="container content">
+          <div class="flexslider carousel outer-navs" data-options="minWidth:250,itemMargin:30,numItems:3,controlNav:true,directionNav:true">
+              <ul class="slides">
+
+                 {{ rows }}
+              </ul>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'services_management' %}
+    <div class="container content text-center">
+      <hr class="space" />
+      {{ header }}
+      <div class="maso-list">
+         
+          <div class="maso-box row">
+              {{ rows }}
+              <div class="clear"></div>
+          </div>
+      </div>
+      <hr class="space l" />
+      {{ footer }}
+    </div>
+  {% elseif display_id == 'testimonials_management' %}
+    <div class="section-empty">
+      <div class="container content">
+          <div class="flexslider carousel outer-navs" data-options="numItems:3,itemMargin:15,controlNav:true,directionNav:true">
+              <ul class="slides">
+                  {{ rows }}
+              </ul>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'team_members_marketplace' %}
+    <div class="section-empty text-center">
+        <div class="container content">
+            {{ header }}
+            <hr class="space m" />
+            <div class="flexslider carousel outer-navs" data-options="minWidth:200,itemMargin:15,numItems:4,controlNav:true,directionNav:true">
+                <ul class="slides">
+
+                    {{ rows }}
+                </ul>
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'testimonials_side_menu' %}
+    <div class="section-bg-color">
+      <div class="container content">
+          <div class="flexslider slider outer-navs" data-options="minWidth:250,controlNav:false">
+              <ul class="slides">
+
+                  {{ rows }}
+              </ul>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'blog_posts_side_menu' %}
+    <div class="section-empty">
+      <div class="container content">
+          {{ header }}
+          <hr class="space m" />
+          <div class="flexslider carousel" data-options="numItems:3,minWidth:250,itemMargin:30,directionNav:false">
+              <ul class="slides">
+                  {{ rows }}
+              </ul>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'services_startup' %}
+    <div class="container content text-center">
+      <hr class="space" />
+      {{ header }}
+      <div class="maso-list">
+         
+          <div class="maso-box row">
+              {{ rows }}
+              <div class="clear"></div>
+          </div>
+      </div>
+      <hr class="space l" />
+    </div>
+  {% elseif display_id == 'testimonials_startup' %}
+    <div class="section-empty">
+      <div class="container content">
+          <div class="row">
+              <div class="col-md-3">
+                  {{ header }}
+              </div>
+              {{ rows }}
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'testimonials_video' %}
+    <div class="section-empty">
+      <div class="container content">
+          <div class="row">
+              <div class="col-md-9 col-sm-12 text-center-sm">
+                  <div class="flexslider slider nav-inner-bottom-right" data-options="controlNav:true,directionNav:false">
+                      <ul class="slides">
+                          {{ rows }}
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-12 text-center-sm">
+                  {{ footer }}
+              </div>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'blog_posts_video' %}
+    <div class="section-empty section-item no-paddings">
+        <div class="flexslider carousel visible-dir-nav white" data-options="minWidth:200,itemMargin:10,numItems:5,controlNav:false,directionNav:true">
+            <ul class="slides">
+              {{ rows }}
+            </ul>
+        </div>
+        <hr class="space m" />
+    </div>
+  {% elseif display_id == 'testimonials_web_service' %}
+    <div class="container content">
+      <div class="row">
+          <div class="col-md-8 col-center">
+              {{ header }}
+              <div class="flexslider slider outer-navs white" data-options="controlNav:true,directionNav:true">
+                  <ul class="slides">
+                      {{ rows }}
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'team_members_page' %}
+    <div class="content-parallax">
+        <div class="section-empty section-item text-center">
+            <div class="container content">
+                {{ header }}
+                <hr class="space m" />
+                <div class="row">
+                  {{ rows }}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'services_1' %}
+    <div class="section-empty section-item">
+        <div class="container content">
+            <div class="grid-list gallery list-sm-6">
+                <div class="grid-box row">
+                    {{ rows }}
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'services_2' %}
+    <div class="section-empty">
+      <div class="container content">
+          <div class="grid-list columns-list list-sm-6">
+              <div class="grid-box row">
+                {% if rows %}
+                  {% set k = 1 %}
+                  {% for i, row in rows.0['#rows'] %}
+                    {{ row }}
+                    {% if k == 3 %}
+                      <div class="clear"></div>
+                      {% set k = 0 %}
+                    {% endif %}
+                    {% set k = k + 1 %}
+                  {% endfor %}
+                {% endif %}
+                <div class="clear"></div>
+              </div>
+              {{ pager }}
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'gallery_album' %}
+    <div class="section-empty section-item">
+        <div class="container content">
+            <div class="album-main" data-album-anima="fade-bottom">
+                <div class="album-list row">
+                    {{ attachment_before }}
+                    <!-- INSERT OTHERS ALBUMS MENU ITEMS HERE -->
+                </div>
+                <div class="cont-album-box">
+                    <p class="album-title">
+                        <span>{{ '...'|t }}</span>
+                        <a class="button-list btn btn-default btn-sm">
+                            <i class="fa fa-arrow-left"></i> {{ 'Albums list'|t }}
+                        </a>
+                    </p>
+                    {{ rows}}
+                </div>
+            </div>
+        </div>
+    </div>
+  {% else %}
+    {{ header }}
+    <div id="filtro"> {{ exposed }}</div>
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
+  {% endif %}
+{% elseif id == '_whites_projects' %}
+  {% if display_id == 'block_1_gutted_boxed' %}
+    <div class="section-empty section-item">
+        <div class="container content">
+            <div class="maso-list list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'MENU'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav over ms-minimal inner maso-filters nav-center">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row" data-lightbox-anima="fade-top">
+
+                    {{ rows }}
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_1_gutted_full_width' %}
+    <div class="section-empty section-item">
+        <div class="content">
+            <div class="maso-list list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'MENU'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav over ms-minimal inner maso-filters nav-center">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row" data-lightbox-anima="fade-top">
+                    {{ rows }}
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_2_gutted_boxed' %}
+    <div class="section-empty section-item">
+        <div class="container content">
+            <div class="maso-list maso-15 list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'MENU'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav over inner ms-minimal maso-filters nav-center">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row">
+
+                    {{ rows }}
+                    <!-- INSERT OTHERS GALLERY ITEMS HERE -->
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_2_gutted_full_width' %}
+    <div class="section-empty section-item">
+        <div class="content">
+            <div class="maso-list maso-15 list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'MENU'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav over inner ms-minimal maso-filters nav-center">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row">
+
+                    {{ rows }}
+                    <!-- INSERT OTHERS GALLERY ITEMS HERE -->
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_3_gutted_boxed' %}
+    <div class="section-empty section-item">
+        <div class="container content">
+            <div class="maso-list list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav nav-center over ms-rounded inner maso-filters">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row" data-lightbox-anima="fade-top">
+                    {{ rows }}
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_3_gutted_full_width' %}
+    <div class="section-empty section-item">
+        <div class="content">
+            <div class="maso-list list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav nav-center over ms-rounded inner maso-filters">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row" data-lightbox-anima="fade-top">
+                    {{ rows }}
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_4_boxed' %}
+    <div class="section-empty section-item">
+      <div class="content container">
+        <div class="maso-list gallery list-sm-6">
+          <div class="navbar navbar-inner">
+            <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav nav-center over inner maso-filters">
+                {{ header }}
+                <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="maso-box row" data-lightbox-anima="fade-top">
+            {{ rows }}
+            <div class="clear"></div>
+          </div>
+          {{ pager }}
+        </div>
+        <hr class="space m" />
+      </div>
+    </div>
+  {% elseif display_id == 'block_4_full_width' %}
+    <div class="section-empty section-item">
+      <div class="content">
+        <div class="maso-list list-sm-6 m er">
+          <div class="navbar navbar-inner">
+            <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav nav-center over ms-rounded  inner maso-filters">
+                {{ header }}
+                <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="maso-box row" data-lightbox-anima="fade-top">
+            {{ rows }}
+            <div class="clear"></div>
+          </div>
+          {{ pager }}
+        </div>
+        <hr class="space m" />
+      </div>
+    </div>
+  {% elseif display_id == 'block_4_gutted_boxed' %}
+    <div class="section-empty section-item">
+        <div class="container content">
+            <div class="maso-list list-sm-6">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav nav-center over inner maso-filters">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row" data-lightbox-anima="fade-top">
+                    {{ rows }}
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'block_4_gutted_full_width' %}
+    <div class="section-empty section-item">
+        <div class="content">
+            <div class="maso-list list-sm-12">
+                <div class="navbar navbar-inner">
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav nav-center over inner maso-filters">
+                            {{ header }}
+                            <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="maso-box row" data-lightbox-anima="fade-top">
+                    {{ rows }}
+                    <div class="clear"></div>
+                </div>
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+  {% elseif display_id == 'portfolio_activity' %}
+    <div class="section-empty">
+      <div class="container content">
+          <div class="maso-list">
+              <div class="navbar navbar-inner">
+                  <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+                  <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav nav-center over inner maso-filters">
+                          {{ header }}
+                          <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="maso-box row" data-lightbox-anima="fade-top">
+                  {{ rows }}
+                  <div class="clear"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'portfolio_corporate' %}
+    <div class="section-empty">
+      <div class="container content">
+        {{ footer }}
+        <div class="maso-list menu-outer">
+          <div class="navbar navbar-inner">
+            <div class="navbar-toggle"><i class="fa fa-bars"></i><span>Menu</span><i class="fa fa-angle-down"></i></div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav nav-center over ms-rounded inner maso-filters">
+                  {{ header }}
+                  <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="maso-box row">
+            {{ rows }}
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'portfolio_event' %}
+    <div class="container content">
+      <div class="grid-list gallery">
+          <div class="grid-box row" data-lightbox-anima="fade-top">
+              {{ rows }}
+          </div>
+      </div>
+    </div>
+  {% elseif display_id == 'portfolio_freelancer' %}
+    <div class="section-empty">
+      <div class="container content">
+        <div class="maso-list">
+          <div class="navbar navbar-inner">
+            <div class="navbar-toggle"><i class="fa fa-bars"></i><span>Menu</span><i class="fa fa-angle-down"></i></div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav nav-center over ms-rounded inner maso-filters">
+                {{ header }}
+                <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="maso-box row" data-lightbox-anima="fade-top">
+            {{ rows}}
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'portfolio_management' %}
+    <div class="section-empty section-item">
+      <div class="container content">
+        <div class="row">
+          {{ rows }}
+        </div>
+        <hr class="space" />
+        <div class="row ">
+          {{ footer }}
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'portfolio_frontpage' %}
+    <div class="section-bg-color">
+      <div class="container content text-center">
+          <div class="row">
+              <div class="col-md-8 col-center">
+                {{ footer }}
+              </div>
+          </div>
+          <hr class="space m" />
+          <div class="maso-list gallery">
+              <div class="navbar navbar-inner">
+                  <div class="navbar-toggle"><i class="fa fa-bars"></i><span>{{ 'Menu'|t }}</span><i class="fa fa-angle-down"></i></div>
+                  <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav over ms-rounded inner maso-filters nav-center">
+                          {{ header }}
+                          <li><a class="maso-order" data-sort="asc"><i class="fa fa-arrow-down"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="maso-box row" data-lightbox-anima="fade-left">
+                  {{ rows }}
+                  <div class="clear"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+  {% else %}
+    {{ header }}
+    <div id="filtro"> {{ exposed }}</div>
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
+  {% endif %}
+{% else %}
+    {{ header }}
+    <div id="filtro"> {{ exposed }}</div>
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
+{% endif %}

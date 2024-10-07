@@ -1,0 +1,17 @@
+uuid: 38258d78-6416-4042-9de3-765096284ecf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: section_background_image
+label: 'Section background image'
+logic: and
+conditions:
+  d0f48eef-2c60-40f3-8919-fc189db03bf2:
+    id: request_path
+    negate: false
+    uuid: d0f48eef-2c60-40f3-8919-fc189db03bf2
+    context_mapping: {  }
+    pages: /node/92
+allow_other_conditions: null

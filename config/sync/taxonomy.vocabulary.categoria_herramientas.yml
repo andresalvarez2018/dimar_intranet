@@ -1,0 +1,8 @@
+uuid: 3955681c-eeb7-42e0-8bbb-0dfce8a57f6f
+langcode: es
+status: true
+dependencies: {  }
+name: 'Categoria herramientas'
+vid: categoria_herramientas
+description: ''
+weight: 0

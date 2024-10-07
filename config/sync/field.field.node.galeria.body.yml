@@ -1,0 +1,23 @@
+uuid: b7ab05d1-e0be-43d7-822e-b9a6baf4a5ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.galeria
+  module:
+    - text
+id: node.galeria.body
+field_name: body
+entity_type: node
+bundle: galeria
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,17 @@
+uuid: c7d0e2e8-7a6a-4a55-9882-b90a665313bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_corporate
+label: 'Homepage corporate'
+logic: or
+conditions:
+  3d1c40a5-714f-49f8-8de2-b75fc7f5f31a:
+    id: request_path
+    negate: false
+    uuid: 3d1c40a5-714f-49f8-8de2-b75fc7f5f31a
+    context_mapping: {  }
+    pages: /node/46
+allow_other_conditions: false

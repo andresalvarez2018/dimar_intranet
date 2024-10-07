@@ -1,0 +1,4 @@
+subscription:
+  confirm_combined_subject: 'Confirmation for [site:name]'
+  confirm_combined_body: "We have received a request for the following subscription changes for [simplenews-subscriber:mail] at [site:url]:\r\n\r\n[changes-list]\r\n\r\nTo confirm please use the link below.\r\n\r\n[simplenews-subscriber:combined-url]"
+  confirm_combined_body_unchanged: "We have received a request for the following subscription changes for [simplenews-subscriber:mail] at [site:url]:\r\n\r\n[changes-list]\r\n\r\nNo confirmation necessary because all requested changes equal the current state."

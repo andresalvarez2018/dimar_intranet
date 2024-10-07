@@ -1,0 +1,1033 @@
+uuid: 05dfd6de-1965-465c-b262-7c916cad8112
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: false
+archive: false
+id: servicio_al_ciudadano
+title: 'Servicio al ciudadano'
+description: ''
+categories: {  }
+elements: |-
+  nombre_:
+    '#type': textfield
+    '#title': Nombre
+    '#required': true
+  apellido:
+    '#type': textfield
+    '#title': Apellido
+    '#required': true
+  direccion:
+    '#type': textfield
+    '#title': Dirección
+    '#required': true
+  ciudad:
+    '#type': textfield
+    '#title': Ciudad
+    '#required': true
+  email:
+    '#type': email
+    '#title': Email
+    '#required': true
+  celular:
+    '#type': number
+    '#title': Celular
+    '#required': true
+  datos_personales:
+    '#type': webform_message
+    '#message_type': info
+    '#message_message': '<span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span lang="ES" style="color:red">Los datos personales suministrados en la presente encuenta, seran utilizados &uacute;nicamente para el proceso de caracterizaci&oacute;n de usuario que est&aacute; realizando la Entidad, con el fin de mejorar nuestros servicios y la comunicaci&oacute;n con usted.</span></span></span>'
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <h3>Caracterización</h3>
+      
+    '#format': basic_html
+  su_edad_se_encuentra_entre_:
+    '#type': select
+    '#title': 'C1. Su edad se encuentra entre:'
+    '#options':
+      'Menor de 18 años': 'Menor de 18 años'
+      'De 18 a 29 años': 'De 18 a 29 años'
+      'De 30 a 58 años': 'De 30 a 58 años'
+      'Mayor de 58 años': 'Mayor de 58 años'
+  genero:
+    '#type': select
+    '#title': 'C2. Género'
+    '#options':
+      Femenino: Femenino
+      Masculino: Masculino
+  _cual_es_su_nivel_de_estudios_:
+    '#type': select
+    '#title': 'C3. ¿Cuál es su nivel de estudios? '
+    '#options':
+      Ninguno: Ninguno
+      Primaria: Primaria
+      Secundaria: Secundaria
+      'Técnica / tecnológica': 'Técnica / tecnológica'
+      Universitaria: Universitaria
+      Posgrado: Posgrado
+  _cual_es_el_estrato_de_su_casa_:
+    '#type': select
+    '#title': 'C4. ¿Cuál es el estrato de su casa?'
+    '#options':
+      'Estrato 1': 'Estrato 1'
+      'Estrato 2': 'Estrato 2'
+      'Estrato 3': 'Estrato 3'
+      'Estrato 4': 'Estrato 4'
+      'Estrato 5': 'Estrato 5'
+      'Estrato 6': 'Estrato 6'
+  _tiene_acceso_a_internet_:
+    '#type': select
+    '#title': 'C5. ¿Tiene acceso a internet?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _que_tramite_y_o_requerimiento_realiza_ante_la_direccion:
+    '#type': tableselect
+    '#title': 'C6. ¿Qué trámite y/o requerimiento realiza ante la Dirección General Marítima Dimar?'
+    '#options':
+      'Licencia de Explotación comercial para empresas de servicios marítimos': 'Licencia de Explotación comercial para empresas de servicios marítimos'
+      'Aval de Planes, programas y centros de formación y capacitación marítima': 'Aval de Planes, programas y centros de formación y capacitación marítima'
+      'Título y/o licencias de Navegación para tripulantes y Oficiales': 'Título y/o licencias de Navegación para tripulantes y Oficiales'
+      'Permiso Especial de Practicaje': 'Permiso Especial de Practicaje'
+      'Documento de identificación del marino DIM': 'Documento de identificación del marino DIM'
+      'Licencia de peritos marítimos': 'Licencia de peritos marítimos'
+      'Solicitud de concesión y ampliación en playas marítimas y terrenos de bajamar (bienes de uso público).': 'Solicitud de concesión y ampliación en playas marítimas y terrenos de bajamar (bienes de uso público).'
+      'Expedición o prorroga de permiso de permanencia para embarcaciones extranjeras, en labor científica y/o técnica en aguas jurisdiccionales colombianas': 'Expedición o prorroga de permiso de permanencia para embarcaciones extranjeras, en labor científica y/o técnica en aguas jurisdiccionales colombianas'
+      'Autorización para instalar, modificar y/o ampliar las ayudas a la navegación.': 'Autorización para instalar, modificar y/o ampliar las ayudas a la navegación.'
+      'Expedición del certificado internacional de protección del buque y documento de cumplimiento de la instalación portuaria.': 'Expedición del certificado internacional de protección del buque y documento de cumplimiento de la instalación portuaria.'
+      'Reconocimiento de oficial de Protección ': 'Reconocimiento de oficial de Protección '
+      'Autorización para el Arribo de Naves Autorización de Zarpe de Naves': 'Autorización para el Arribo de Naves Autorización de Zarpe de Naves'
+      'Autorización de Zarpe de Naves': 'Autorización de Zarpe de Naves'
+      'Autorización de Construcción y alteración de naves y artefactos navales': 'Autorización de Construcción y alteración de naves y artefactos navales'
+      'Autorización de exención de una regla o norma marítima': 'Autorización de exención de una regla o norma marítima'
+      'Asignación número de identificación del casco': 'Asignación número de identificación del casco'
+      'Cancelación de matrícula para naves mayores y menores de bandera colombiana': 'Cancelación de matrícula para naves mayores y menores de bandera colombiana'
+      'Expedición certificado de tripulación mínima de seguridad (T.S.M)': 'Expedición certificado de tripulación mínima de seguridad (T.S.M)'
+      'Prórroga de permiso provisional de permanencia para embarcaciones de recreo o deportivas, de bandera extranjera, en aguas jurisdiccionales colombianas.': 'Prórroga de permiso provisional de permanencia para embarcaciones de recreo o deportivas, de bandera extranjera, en aguas jurisdiccionales colombianas.'
+      'Permiso de operación y permanencia de buques pesqueros extranjeros en aguas marítimas jurisdiccionales colombianas.': 'Permiso de operación y permanencia de buques pesqueros extranjeros en aguas marítimas jurisdiccionales colombianas.'
+      'Permiso de operación para remolcadores': 'Permiso de operación para remolcadores'
+      'Certificado de matrícula definitiva o provisional de naves y artefactos navales': 'Certificado de matrícula definitiva o provisional de naves y artefactos navales'
+      'Expedición del registro sinóptico continuo para buques': 'Expedición del registro sinóptico continuo para buques'
+      'Distintivos de llamada en las bandas atribuidas al servicio móvil marítimo': 'Distintivos de llamada en las bandas atribuidas al servicio móvil marítimo'
+      'Registro, adición o modificación de tarifas, recargos y demás componentes que alteren el valor final del transporte': 'Registro, adición o modificación de tarifas, recargos y demás componentes que alteren el valor final del transporte'
+      'Registro de conferencias marítimas y/o acuerdos de transporte': 'Registro de conferencias marítimas y/o acuerdos de transporte'
+      'Habilitación, modificación y adición permiso de operación y autorización especial para transporte marítimo': 'Habilitación, modificación y adición permiso de operación y autorización especial para transporte marítimo'
+      'Aprobación de Fletamento de Naves': 'Aprobación de Fletamento de Naves'
+      'Aprobación de registro de naves': 'Aprobación de registro de naves'
+      'Autorización de fletamentos del naves de bandera extranjera para prestar servicio de transporte marítimo de cabotaje': 'Autorización de fletamentos del naves de bandera extranjera para prestar servicio de transporte marítimo de cabotaje'
+      'Autorización para el arribo de naves ': 'Autorización para el arribo de naves '
+      'Autorización Zarpe de naves ': 'Autorización Zarpe de naves '
+  processed_text_01:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">C7. ¿Dónde llevó a cabo su último trámite? </span></strong></p>
+      
+    '#format': basic_html
+  capitanias_de_puerto_:
+    '#type': select
+    '#title': 'Capitanías de Puerto '
+    '#options':
+      'Bahía Solano': 'Bahía Solano'
+      Barranquilla: Barranquilla
+      Buenaventura: Buenaventura
+      Cartagena: Cartagena
+      Coveñas: Coveñas
+      Guapi: Guapi
+      Inirida: Inirida
+      'Leticia ': 'Leticia '
+      Providencia: Providencia
+      'Puerto Bolivar': 'Puerto Bolivar'
+      'Puerto Carreño': 'Puerto Carreño'
+      'Puerto Leguizamo': 'Puerto Leguizamo'
+      Riohacha: Riohacha
+      'San Andrés': 'San Andrés'
+      'Santa Marta': 'Santa Marta'
+      Tumaco: Tumaco
+      Turbo: Turbo
+  centros_y_o_senalizacion:
+    '#type': select
+    '#title': 'Centros y/o señalizacion'
+    '#options':
+      'Caribe SEMAC ': 'Caribe SEMAC '
+      'Pacífico SEMAP': 'Pacífico SEMAP'
+      'Magdalena SEMAP': 'Magdalena SEMAP'
+      'Centro de Investigaciones Oceanográficas e Hidrográficas': 'Centro de Investigaciones Oceanográficas e Hidrográficas'
+      'Caribe CIOH ': 'Caribe CIOH '
+      'Pacífico CIOH': 'Pacífico CIOH'
+  sede_central:
+    '#type': select
+    '#title': 'Sede central'
+    '#options':
+      'Sede central Bogotá': 'Sede central Bogotá'
+  medios_electronicos_:
+    '#type': select
+    '#title': 'Medios electrónicos '
+    '#options':
+      'Sitmar ': 'Sitmar '
+      'Sede Electrónica ': 'Sede Electrónica '
+  processed_text_02:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">C8. ¿Cuáles de los siguientes medios de atención ha utilizado para ponerse en contacto con la Dirección General Marítima - Dimar?</span></strong></p>
+      
+    '#format': basic_html
+  presencial1:
+    '#type': tableselect
+    '#title': Presencial
+    '#options':
+      'En Sede Central': 'En Sede Central'
+      'En capitanías de puerto': 'En capitanías de puerto'
+  telefonico1:
+    '#type': tableselect
+    '#title': Telefónico
+    '#options':
+      'Línea gratuita nacional de servicio al ciudadano': 'Línea gratuita nacional de servicio al ciudadano'
+      'Línea anticorrupción': 'Línea anticorrupción'
+      'Conmutador de Bogotá': 'Conmutador de Bogotá'
+      'Conmutador de las unidades (capitanías, centros de investigación, intendencias)': 'Conmutador de las unidades (capitanías, centros de investigación, intendencias)'
+  virtual1:
+    '#type': tableselect
+    '#title': Virtual
+    '#options':
+      'Chat ': 'Chat '
+      'Sistema de atención a peticiones Escríbale al Director PQRS': 'Sistema de atención a peticiones Escríbale al Director PQRS'
+      'Sede electrónica': 'Sede electrónica'
+      Sitmar: Sitmar
+  redes_sociales1:
+    '#type': tableselect
+    '#title': 'Redes sociales'
+    '#options':
+      Twitter: Twitter
+      Facebook: Facebook
+  escrito1:
+    '#type': tableselect
+    '#title': Escrito
+    '#options':
+      'Correo electrónico dimar@dimar.mil.co': 'Correo electrónico dimar@dimar.mil.co'
+      'Oficinas de resgistro y correspondencia': 'Oficinas de resgistro y correspondencia'
+  otro:
+    '#type': textfield
+    '#title': 'Otro - ¿Cuál?'
+  processed_text_03:
+    '#type': processed_text
+    '#text': |
+      <h3>Satisfacción canales de atención</h3>
+      
+    '#format': basic_html
+  processed_text_04:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">S1. ¿Qué tan satisfecho se siente con el servicio recibido en el medio usado para atender su tramite, servicio o requerimiento ante Dimar?</span></strong></p>
+      
+    '#format': basic_html
+  processed_text_05:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">Presencial:</span></strong></p>
+      
+    '#format': basic_html
+  en_sede_central:
+    '#type': select
+    '#title': 'En Sede Central'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  en_capitanias_de_puerto:
+    '#type': select
+    '#title': 'En capitanías de puerto'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  processed_text_06:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">Telefónico:</span></strong></p>
+      
+    '#format': basic_html
+  linea_gratuita_nacional_de_servicio_al_ciudadano:
+    '#type': select
+    '#title': 'Línea gratuita nacional de servicio al ciudadano'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  linea_anticorrupcion:
+    '#type': select
+    '#title': 'Línea anticorrupción'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  conmutador_de_bogota:
+    '#type': select
+    '#title': 'Conmutador de Bogotá'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  conmutador_de_las_unidades_capitanias_centros_de_investigacion_i:
+    '#type': select
+    '#title': 'Conmutador de las unidades (capitanías, centros de investigación, intendencias)'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  processed_text_07:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">Virtual:</span></strong></p>
+      
+    '#format': basic_html
+  chat_web:
+    '#type': select
+    '#title': 'Chat web'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  sistema_de_atencion_a_peticiones_escribale_al_director_pqrs:
+    '#type': select
+    '#title': 'Sistema de Atención a Peticiones PQRS'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  sede_electronica:
+    '#type': select
+    '#title': 'Sede electrónica'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  processed_text_08:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">Redes sociales:</span></strong></p>
+      
+    '#format': basic_html
+  twitter:
+    '#type': select
+    '#title': Twitter
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  facebook:
+    '#type': select
+    '#title': Facebook
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  processed_text_09:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">Escrito:</span></strong></p>
+      
+    '#format': basic_html
+  correo_electronico:
+    '#type': select
+    '#title': 'Correo electrónico'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  oficinas_de_resgistro_y_correspondencia:
+    '#type': select
+    '#title': 'Oficinas de resgistro y correspondencia'
+    '#options':
+      'Nada Satisfecho': 'Nada Satisfecho'
+      Satisfecho: Satisfecho
+      'Muy Satisfecho': 'Muy Satisfecho'
+  otro_cual_1:
+    '#type': textfield
+    '#title': 'Otro - ¿Cuál?'
+  processed_text_10:
+    '#type': processed_text
+    '#text': |
+      <h3>Atención presencial</h3>
+      
+    '#format': basic_html
+  _como_califica_la_atencion_recibida_de_manera_presencial_unica_r:
+    '#type': select
+    '#title': 'P1. ¿Cómo califica la atención recibida  de manera presencial?'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_11:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">P2. ¿Cómo califica los aspectos relacionados a continuación, con el servicio recibido de manera presencial?</span></strong></p>
+      
+    '#format': basic_html
+  claridad_de_la_informacion:
+    '#type': select
+    '#title': 'Claridad de la información'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+  rapidez_en_la_atencion:
+    '#type': select
+    '#title': 'Rapidez en la atención'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+  sencillez_de_los_procesos:
+    '#type': select
+    '#title': 'Sencillez de los procesos'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+  respeto_por_el_turno_de_atencion:
+    '#type': select
+    '#title': 'Respeto por el turno de atención'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+  cumplimiento_horarios_de_atencion:
+    '#type': select
+    '#title': 'Cumplimiento horarios de atención'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+  processed_text_12:
+    '#type': processed_text
+    '#text': |
+      <h3>Atención telefónica</h3>
+      
+    '#format': basic_html
+  _como_califica_la_atencion_recibida_de_telefonica_unica_respuest:
+    '#type': select
+    '#title': 'P3. ¿Cómo califica la atención recibida  de telefónica?'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_13:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">P4. ¿Cómo califica los aspectos mencionados a continuación con relación a la atención telefónica?</span></strong></p>
+      
+    '#format': basic_html
+  claridad_de_la_informacion1:
+    '#type': select
+    '#title': 'Claridad de la información'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  habilidad_de_solucion:
+    '#type': select
+    '#title': 'Habilidad de solución'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  lenguaje:
+    '#type': select
+    '#title': Lenguaje
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  amabilidad:
+    '#type': select
+    '#title': Amabilidad
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  actitud_de_servicio:
+    '#type': select
+    '#title': 'Actitud de servicio'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  tiempo_en_dar_respuesta_al_requerimiento:
+    '#type': select
+    '#title': 'Tiempo en dar respuesta al requerimiento'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  cumplimiento_horarios:
+    '#type': select
+    '#title': 'Cumplimiento horarios'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_14:
+    '#type': processed_text
+    '#text': |
+      <h3>Atención Chat</h3>
+      
+    '#format': basic_html
+  _como_califica_la_atencion_recibida_a_traves_del_chat_unica_resp:
+    '#type': select
+    '#title': 'P5. ¿Cómo califica la atención recibida a través del Chat?'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_15:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">P6. ¿Cómo califica los aspectos mencionados a continuación con relación a la atención Web – Chat?</span></strong></p>
+      
+    '#format': basic_html
+  claridad_de_la_informacion2:
+    '#type': select
+    '#title': 'Claridad de la información'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  habilidad_de_solucion2:
+    '#type': select
+    '#title': 'Habilidad de solución'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  lenguaje2:
+    '#type': select
+    '#title': Lenguaje
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  amabilidad2:
+    '#type': select
+    '#title': Amabilidad
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  actitud_de_servicio2:
+    '#type': select
+    '#title': 'Actitud de servicio'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  tiempo_en_dar_respuesta_al_requerimiento2:
+    '#type': select
+    '#title': 'Tiempo en dar respuesta al requerimiento'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  cumplimiento_horarios2:
+    '#type': select
+    '#title': 'Cumplimiento horarios'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_16:
+    '#type': processed_text
+    '#text': |
+      <h3>Sistema de atención a peticiones (PQRS)</h3>
+      
+    '#format': basic_html
+  _como_califica_la_atencion_recibida_a_traves_del_sistema_de_aten:
+    '#type': select
+    '#title': 'P7. ¿Cómo califica la atención recibida  a través del sistema de atención a peticiones?'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_17:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">P8 ¿Cómo califica cada uno de los siguientes aspectos del Sistema de atención a peticiones ( PQRS)?</span></strong></p>
+      
+    '#format': basic_html
+  claridad_de_la_informacion3:
+    '#type': select
+    '#title': 'Claridad de la información'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  accesibilidad_del_sistema:
+    '#type': select
+    '#title': 'Accesibilidad del sistema'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  cumplimiento_tiempos_de_respuesta_:
+    '#type': select
+    '#title': 'Cumplimiento tiempos de respuesta '
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  facilidad_de_uso:
+    '#type': select
+    '#title': 'Facilidad de uso'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_18:
+    '#type': processed_text
+    '#text': |
+      <h3>Sede Electrónica</h3>
+      
+    '#format': basic_html
+  processed_text_19:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">P9. ¿Cómo califica cada uno de los siguientes aspectos de la Sede Electrónica?</span></strong></p>
+      
+    '#format': basic_html
+  claridad_de_la_informacion4:
+    '#type': select
+    '#title': 'Claridad de la información'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  accesibilidad_del_sistema4:
+    '#type': select
+    '#title': 'Accesibilidad del sistema'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  sencillez_de_los_procesos4:
+    '#type': select
+    '#title': 'Sencillez de los procesos'
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Malo: Malo
+    '#unique': true
+  processed_text_20:
+    '#type': processed_text
+    '#text': |
+      <h3>Trámites</h3>
+      
+    '#format': basic_html
+  _que_tan_facil_o_dificil_es_llevar_a_cabo_un_tramite_o_servicio_:
+    '#type': select
+    '#title': 'P10. ¿Qué tan fácil o difícil es llevar a cabo un trámite o servicio ante Dimar?'
+    '#options':
+      Facil: Facil
+      Difícil: Difícil
+    '#unique': true
+  _porque_espontanea_profundice_:
+    '#type': textfield
+    '#title': '¿Porqué?'
+  _considera_que_el_tiempo_de_atencion_al_tramite_fue_el_adecuado_:
+    '#type': select
+    '#title': 'P11. ¿Considera que el tiempo de atención al trámite fue el adecuado?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  _porque_espontanea_profundice_1:
+    '#type': textfield
+    '#title': '¿Porqué?'
+  _usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so:
+    '#type': select
+    '#title': 'P12. ¿Usted tuvo que ir o contactar a la Entidad varias veces para solucionar un mismo requerimiento?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  _cuantas_veces_tuvo_que_ir_o_contactar_a_la_entidad_unica_respue:
+    '#type': select
+    '#title': 'P13. ¿Cuántas veces tuvo que ir o contactar a la Entidad?'
+    '#options':
+      '2 veces': '2 veces'
+      'De 3 a 4 veces': 'De 3 a 4 veces'
+      'Más de 4 veces': 'Más de 4 veces'
+    '#unique': true
+    '#states':
+      enabled:
+        ':input[name="_usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so"]':
+          value: Si
+      disabled:
+        ':input[name="_usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so"]':
+          value: Si
+  _considera_que_cada_visita_que_tuvo_que_hacer_a_la_entidad_tuvo_:
+    '#type': select
+    '#title': 'P14. ¿Considera que cada visita que tuvo que hacer a la Entidad tuvo justificación y agregó valor al proceso del trámite?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+    '#states':
+      enabled:
+        ':input[name="_usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so"]':
+          value: Si
+      disabled:
+        ':input[name="_usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_usted_tuvo_que_ir_o_contactar_a_la_entidad_varias_veces_para_so"]':
+          value: Si
+  _la_entidad_cumple_con_los_acuerdos_tiempos_o_compromisos_establ:
+    '#type': select
+    '#title': 'P15. ¿La Entidad cumple con los acuerdos, tiempos o compromisos establecidos?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  _por_que_no_cumplio_con_los_acuerdos_tiempos_o_compromisos_estab:
+    '#type': textfield
+    '#title': '¿Por qué NO cumplió con los acuerdos, tiempos o compromisos establecidos? '
+    '#states':
+      enabled:
+        ':input[name="_la_entidad_cumple_con_los_acuerdos_tiempos_o_compromisos_establ"]':
+          '!value': 'No'
+      disabled:
+        ':input[name="_la_entidad_cumple_con_los_acuerdos_tiempos_o_compromisos_establ"]':
+          value: Si
+      visible:
+        ':input[name="_la_entidad_cumple_con_los_acuerdos_tiempos_o_compromisos_establ"]':
+          '!value': 'No'
+  _usted_acudio_a_algun_tramitador_en_el_ultimo_ano_para_gestionar:
+    '#type': select
+    '#title': 'P16. ¿Usted acudió a algún tramitador en el último año para gestionar algún trámite o servicio de la entidad?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  _por_que_acudio_a_algun_tramitador_en_el_ultimo_ano_para_gestion:
+    '#type': textfield
+    '#title': '¿Por qué acudió a algún tramitador en el último año para gestionar algún trámite o servicio de la entidad?'
+    '#states':
+      enabled:
+        ':input[name="_usted_acudio_a_algun_tramitador_en_el_ultimo_ano_para_gestionar"]':
+          value: Si
+      disabled:
+        ':input[name="_usted_acudio_a_algun_tramitador_en_el_ultimo_ano_para_gestionar"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_usted_acudio_a_algun_tramitador_en_el_ultimo_ano_para_gestionar"]':
+          value: Si
+  processed_text_21:
+    '#type': processed_text
+    '#text': |
+      <h3>Satisfacción</h3>
+      
+    '#format': basic_html
+  processed_text_22:
+    '#type': processed_text
+    '#text': |
+      <p><strong><span lang="ES-MX">P17. ¿La Entidad cumple con los siguientes parametrós:</span></strong></p>
+      
+    '#format': basic_html
+  horarios:
+    '#type': select
+    '#title': Horarios
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  clarides_en_la_informacion:
+    '#type': select
+    '#title': 'Clarides en la Información'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  requisitos:
+    '#type': select
+    '#title': Requisitos
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  pasos_del_tramite:
+    '#type': select
+    '#title': 'Pasos del trámite'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+  en_general_el_servicio_recibido_por_parte_de_la_entidad_unica_re:
+    '#type': select
+    '#title': 'P18. En general, el servicio recibido por parte de la Entidad.'
+    '#options':
+      'Supera sus expectativas': 'Supera sus expectativas'
+      'Cumple sus expectativas': 'Cumple sus expectativas'
+      'No cumple sus expectativas': 'No cumple sus expectativas'
+    '#unique': true
+  _que_tan_satisfecho_se_encuentra_con_dimar_unica_respuesta_:
+    '#type': select
+    '#title': 'P19. ¿Qué tan satisfecho se encuentra con Dimar?'
+    '#options':
+      'Totalmente satisfecho': 'Totalmente satisfecho'
+      Satisfecho: Satisfecho
+      'No satisfecho': 'No satisfecho'
+    '#unique': true
+  en_su_opinion_que_aspecto_debe_mejorar_dimar_para_que_usted_se_s:
+    '#type': tableselect
+    '#title': 'En su opinión qué aspecto debe mejorar Dimar para que usted se sienta totalmente satisfecho?'
+    '#options':
+      'Asesoria en trámites y servicios': 'Asesoria en trámites y servicios'
+      'Los canales electrónicos': 'Los canales electrónicos'
+      'Divulgación de información sobre requisitos para trámies': 'Divulgación de información sobre requisitos para trámies'
+      'Tiempo de respuesta al trámite': 'Tiempo de respuesta al trámite'
+      'Canal telefónico': 'Canal telefónico'
+      'Tiempo de espera para turno': 'Tiempo de espera para turno'
+      'Tiempo entrega del trámite o del  proceso': 'Tiempo entrega del trámite o del  proceso'
+      'Instalaciones fisicas (exterior  e interior)': 'Instalaciones fisicas (exterior  e interior)'
+      'Medios de pago': 'Medios de pago'
+      'Atención presencial ': 'Atención presencial '
+  otra_cual_:
+    '#type': textfield
+    '#title': 'Otra ¿Cual?'
+  con_base_a_su_experiencia_que_tan_dispuesto_esta_usted_en_recome:
+    '#type': select
+    '#title': 'P20. Con base a su experiencia ¿Qué tan dispuesto está usted en recomedar a DIMAR para realizar un trámite o solicitar un servicio?'
+    '#options':
+      'No la recomendaría para nada': 'No la recomendaría para nada'
+      'La recomendaría totalmente': 'La recomendaria totalmente'
+    '#unique': true
+  processed_text_23:
+    '#type': processed_text
+    '#text': |
+      <p><span><span><strong><span lang="ES-MX"><span>Gracias por su participación. </span></span></strong></span></span></p>
+      
+      <p><span lang="ES-MX"><span>Los datos suministrados voluntariamente a través de esta encuesta serán tratados bajo la Política de Protección de Datos de la Entidad, la cual puede consultar a través del siguiente <a href="https://www.dimar.mil.co/sites/default/files/informes/17_09_14_pol_tra_datos_dimar.pdf">enlace</a></span></span></p>
+         
+      
+    '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': Enviar
+    '#submit__label': Enviar
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

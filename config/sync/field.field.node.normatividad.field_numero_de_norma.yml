@@ -1,0 +1,23 @@
+uuid: c81f4c07-83e3-48c1-aac0-fb15d4bfb823
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_de_norma
+    - node.type.normatividad
+id: node.normatividad.field_numero_de_norma
+field_name: field_numero_de_norma
+entity_type: node
+bundle: normatividad
+label: 'Número de norma'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

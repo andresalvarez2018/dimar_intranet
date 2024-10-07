@@ -1,0 +1,63 @@
+uuid: 7ac4b4c4-7598-478e-8d49-bdc89278df0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_dependencia
+field_name: field_dependencia
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: Dimar
+    -
+      value: '2'
+      label: Gradi
+    -
+      value: '3'
+      label: Grucog
+    -
+      value: '4'
+      label: Glemar
+    -
+      value: '5'
+      label: Grucoi
+    -
+      value: '6'
+      label: Gplad
+    -
+      value: '7'
+      label: Subdemar
+    -
+      value: '8'
+      label: Grudhu
+    -
+      value: '9'
+      label: Grasi
+    -
+      value: '10'
+      label: Subafin
+    -
+      value: '11'
+      label: Gruinco
+    -
+      value: '12'
+      label: Submerc
+    -
+      value: '13'
+      label: Asimpo
+    -
+      value: '14'
+      label: Acap
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

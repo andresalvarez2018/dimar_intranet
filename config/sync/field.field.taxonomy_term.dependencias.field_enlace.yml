@@ -1,0 +1,23 @@
+uuid: 497522d4-35ff-4be7-ad5d-821a83802759
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_enlace
+    - taxonomy.vocabulary.dependencias
+  module:
+    - link
+id: taxonomy_term.dependencias.field_enlace
+field_name: field_enlace
+entity_type: taxonomy_term
+bundle: dependencias
+label: enlace
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

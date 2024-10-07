@@ -1,0 +1,23 @@
+uuid: 7978d0ac-2a81-46be-8851-c0c4672c7339
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdisplay_mode
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_pdisplay_mode
+field_name: field_pdisplay_mode
+entity_type: node
+bundle: portfolio
+label: 'Display mode'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: type1
+default_value_callback: ''
+settings: {  }
+field_type: list_string

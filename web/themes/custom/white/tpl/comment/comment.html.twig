@@ -1,0 +1,9 @@
+
+<div class="item row">
+    <div class="col-md-10">
+        <p class="name">{{ author|render|striptags }} <span>{{ new_indicator_timestamp|date('d F, Y - H:i a') }}</span></p>
+        <p class="msg">{{ content.field_comment_body ? content.field_comment_body|render|striptags|trim|raw }}</p>
+        <div class="cm-links">{{ content.links }}</div>
+    </div>
+</div>
+                   

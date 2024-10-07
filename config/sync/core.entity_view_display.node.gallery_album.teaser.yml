@@ -1,0 +1,26 @@
+uuid: 7fb3052a-5120-4699-88cf-21cbf417857f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gallery_album.field_image
+    - node.type.gallery_album
+  module:
+    - user
+id: node.gallery_album.teaser
+targetEntityType: node
+bundle: gallery_album
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_image: true
+  langcode: true

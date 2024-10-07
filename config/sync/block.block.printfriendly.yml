@@ -1,0 +1,53 @@
+uuid: 8c821ec7-543a-43b9-ae19-d5b2b3f672d8
+langcode: es
+status: true
+dependencies:
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ctools
+    - ntv_block_background
+    - printfriendly
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: printfriendly
+theme: whites
+region: content
+weight: 0
+provider: null
+plugin: block_printfriendly
+settings:
+  id: block_printfriendly
+  label: printfriendly
+  label_display: '0'
+  provider: printfriendly
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog_post: blog_post
+      forum: forum
+      normatividad: normatividad
+      page: page

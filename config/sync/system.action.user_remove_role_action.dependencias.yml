@@ -1,0 +1,14 @@
+uuid: 4cdec6cf-332b-4ba9-87db-4e5c03990908
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.dependencias
+  module:
+    - user
+id: user_remove_role_action.dependencias
+label: 'Elimina el rol Dependencias al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: dependencias

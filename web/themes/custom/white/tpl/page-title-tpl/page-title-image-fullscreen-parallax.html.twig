@@ -1,0 +1,26 @@
+{% if field_pt_image_backgroun %}
+    {% set bg_imgs = field_pt_image_backgroun %}
+{% else %}
+    {% set bg_imgs = background_page_title_image %}
+{% endif %}
+{# subtitle #}
+{% if node.field_subtitle.value %}
+    {% set subtitle = node.field_subtitle.value %}
+{% elseif current_page == 'blog' %}
+    {% set subtitle = blog_page_subtitle %}
+     {% set bg_imgs = blog_background_page_title_image %}
+{% else %}
+    {% set subtitle = page_subtitle %}
+{% endif %}
+<div class="header-title full-screen-title white" data-parallax="scroll" data-position="top" data-natural-height="650" data-natural-width="1920" data-image-src="{{ bg_imgs ? bg_imgs|first }}">
+    <div class="overlaybox">
+        <div class="container">
+            <div class="title-base">
+                <hr class="anima" />
+                <h1>{{ current_title }}</h1>
+   {% if "Lorem ipsum dolor sit ame" not in subtitle %}
+                <p>{{ subtitle ? subtitle }}</p> 
+            {% endif %}            </div>
+        </div>
+    </div>
+</div>

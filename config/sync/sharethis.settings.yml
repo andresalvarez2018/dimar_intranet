@@ -1,0 +1,313 @@
+_core:
+  default_config_hash: OUePCWmQ_tUOCD4VF7-AP0maPJi2Y18f0JvNTgThhRQ
+langcode: es
+button_option: stbc_button
+comments: 0
+late_load: 0
+location: content
+callesi: '0'
+node_types:
+  album: null
+  article: null
+  blog_post: null
+  documentos: null
+  forum: null
+  galeria: null
+  gallery_album: null
+  herramientas_virtuales: null
+  homepage: null
+  imagen: null
+  logo: null
+  music_band: null
+  normatividad: null
+  noticias: null
+  page: null
+  partners: null
+  portfolio: null
+  services: null
+  simplenews_issue: null
+  team_members: null
+  testimonials: null
+  webform: null
+option_extras:
+  'Google Plus One:plusone': '0'
+  'Facebook Like:fblike': '0'
+option_neworzero: 0
+option_onhover: 1
+option_shorten: 1
+publisherID: dr-5517e4d5-24c3-bbc7-cc5c-e61ba4af0d4
+service_option: '"Email:email"'
+twitter_handle: ''
+twitter_recommends: ''
+twitter_suffix: ''
+webform_options: ''
+weight: 10
+widget_option: st_multi
+cns:
+  donotcopy: null
+  hashaddress: null
+sharethisnodes:
+  article:
+    full: full
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  page:
+    full: full
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  album:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  blog_post:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  documentos:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  forum:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  galeria:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  gallery_album:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  herramientas_virtuales:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  homepage:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  imagen:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  logo:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  music_band:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  normatividad:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  noticias:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  partners:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  portfolio:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  services:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  simplenews_issue:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  team_members:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  testimonials:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  webform:
+    email_html: '0'
+    email_plain: '0'
+    email_textalt: '0'
+    full: '0'
+    pdf: '0'
+    printable: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'

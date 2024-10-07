@@ -1,0 +1,14 @@
+uuid: 1e629caf-ab45-4c47-98dd-8def379df284
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.super_administrador
+  module:
+    - user
+id: user_remove_role_action.super_administrador
+label: 'Elimina el rol Super Administrador al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: super_administrador

@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: I6Mt6zdeUwSPNjbCG5sKbQZkZ17zbcEfM6pihM2mxzM
+langcode: es
+temporary_uri: 'temporary://'
+library_path: libraries/plupload

@@ -1,0 +1,51 @@
+uuid: 5f6b7cbb-da45-4122-95da-e92189cccc26
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_main
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 179
+    bg_image_type: fixed
+    bg_repeat: 'no'
+    bg_image_position: 'center center'
+    bg_image_size: cover
+    background_overlay: ''
+id: simplenewssubscription
+theme: whites
+region: section_content
+weight: -8
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Join our newsletter'
+  label_display: visible
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: 'Augue augue nunc elit dolor luctus placerat scelerisque euismod iaculis eu lacus nunc mi elit vehicula ut laoreet acliquam sit amet justo nunc tempormetus velo.                 Amelius integer eu augue augue nunc elit dolorluctuso placerat scelerisque edd'
+  show_manage: true
+  unique_id: 0d7263b5-2a44-4364-88f3-e1ddcfddace1
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_main

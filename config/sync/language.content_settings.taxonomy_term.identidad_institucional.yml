@@ -1,0 +1,11 @@
+uuid: 84e39a5e-2037-4e4a-bf35-a2d5783028a2
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.identidad_institucional
+id: taxonomy_term.identidad_institucional
+target_entity_type_id: taxonomy_term
+target_bundle: identidad_institucional
+default_langcode: site_default
+language_alterable: false

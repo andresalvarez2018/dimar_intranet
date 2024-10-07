@@ -1,0 +1,17 @@
+uuid: d03ca9f2-d367-44ea-a2ae-95a392a64d99
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_boxed
+label: 'Homepage boxed'
+logic: or
+conditions:
+  128e9961-862c-47f0-84c3-ca57255a217f:
+    id: request_path
+    negate: false
+    uuid: 128e9961-862c-47f0-84c3-ca57255a217f
+    context_mapping: {  }
+    pages: /node/43
+allow_other_conditions: false

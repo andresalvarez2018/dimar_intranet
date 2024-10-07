@@ -1,0 +1,32 @@
+<header class="fixed-top scroll-change" data-menu-anima="fade-in">
+    <div class="navbar navbar-default mega-menu-fullwidth navbar-fixed-top" role="navigation">
+        <div class="navbar navbar-main">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('<front>') }}">
+                        {{ page.header_logo ? page.header_logo|render|striptags('<img>')|replace({'<img src':'<img class="logo-default" src'})|t }}
+                        <img class="logo-retina" src="{{ menu_retina_logo ? menu_retina_logo|first : '' }}" alt="{{ site_name }}" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    {{ page.main_menu }}
+                    <div class="nav navbar-nav navbar-right">
+                        <div class="search-box-menu">
+                            <div class="search-box scrolldown">
+                                {{ page.header_search }}
+                            </div>
+
+                            <button type="button" class="btn btn-default btn-search">
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

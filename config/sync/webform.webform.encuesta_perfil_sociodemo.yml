@@ -1,0 +1,836 @@
+uuid: 04d741bf-722a-4362-bea1-d5d01c756493
+langcode: es
+status: closed
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: false
+archive: false
+id: encuesta_perfil_sociodemo
+title: 'Encuesta perfil sociodemográfico y condiciones de salud 2019'
+description: ''
+categories: {  }
+elements: |-
+  datos_personales:
+    '#type': item
+    '#title': 'DATOS PERSONALES'
+  fecha:
+    '#type': date
+    '#title': Fecha
+  ciudad_:
+    '#type': textfield
+    '#title': 'Ciudad:'
+  unidad1:
+    '#type': select
+    '#title': 'Unidad:'
+    '#options':
+      DIMAR: DIMAR
+      ' GRUCOG': ' GRUCOG'
+      SUBMERC: SUBMERC
+      ASIMPO: ASIMPO
+      SUBDEMAR: SUBDEMAR
+      SUBAFIN: SUBAFIN
+      GRUCOI: GRUCOI
+      GPLAD: GPLAD
+      GRUINCO: GRUINCO
+      GLEMAR: GLEMAR
+      GRASI: GRASI
+      GINSEM: GINSEM
+      GRUDHU: GRUDHU
+      CIOH: CIOH
+      CCCP: CCCP
+      CP01: CP01
+      CP02: CP02
+      CP03: CP03
+      CP04: CP04
+      CP05: CP05
+      CP06: CP06
+      CP07: CP07
+      CP08: CP08
+      CP09: CP09
+      CP10: CP10
+      CP11: CP11
+      CP12: CP12
+      CP14: CP14
+      CP15: CP15
+      CP16: CP16
+      CP17: CP17
+      CP19: CP19
+      CP20: CP20
+      5KTG: 5KTG
+      5KLA: 5KLA
+      5KGC: 5KGC
+      5KFY: 5KFY
+      5KFW: 5KFW
+      5KFS: 5KFS
+      5KFZ: 5KFZ
+      5KTK: 5KTK
+      5KLP: 5KLP
+      5KLO: 5KLO
+      5KMZ: 5KMZ
+      5KFL: 5KFL
+      SEMAC: SEMAC
+      SEMAB: SEMAB
+      SEMAP: SEMAP
+      'INRED 1': 'INRED 1'
+      'INRED 2': 'INRED 2'
+      'INRED 3': 'INRED 3'
+  dependencia_:
+    '#type': textfield
+    '#title': 'Dependencia:'
+  _usted_es_:
+    '#type': select
+    '#title': '¿Usted es?'
+    '#options':
+      Oficial: Oficial
+      ' Suboficial': ' Suboficial'
+      'Infante de Marina Profesional': 'Infante de Marina Profesional'
+      Civil: Civil
+      'Servicio Técnico /Contrato por prestación de servicios': 'Servicio Técnico /Contrato por prestación de servicios'
+      Pasante: Pasante
+  identificacion:
+    '#type': number
+    '#title': Identificación
+    '#required': true
+  nombre_y_apellido_completo:
+    '#type': textfield
+    '#title': 'Nombre  y apellido completo'
+    '#required': true
+  genero:
+    '#type': select
+    '#title': Genero
+    '#options':
+      Femenino: Femenino
+      Masculino: Masculino
+  edad:
+    '#type': select
+    '#title': Edad
+    '#options':
+      '18 – 25 años': '18 – 25 años'
+      '26 – 35 años': '26 – 35 años'
+      '36 – 45 años': '36 – 45 años'
+      '46 – 55 años': '46 – 55 años'
+      'Mayor de 55 años': 'Mayor de 55 años'
+  de_acuerdo_con_su_cultura_pueblo_o_rasgos_fisicos_es_o_se_recono:
+    '#type': select
+    '#title': 'De acuerdo con su cultura, pueblo o rasgos físicos es o se reconoce como:'
+    '#options':
+      Indígena: Indígena
+      'Raizal del archipiélago de San Andrés, Providencia y Santa Catalina ': 'Raizal del archipiélago de San Andrés, Providencia y Santa Catalina '
+      'Palenquero de San Basilio': 'Palenquero de San Basilio'
+      'Negro (a)': 'Negro (a)'
+      'Mulato (a) ': 'Mulato (a) '
+      'Afrodescendiente/afrocolombiano (a)': 'Afrodescendiente/afrocolombiano (a)'
+  eps_entidad_promotora_de_salud_:
+    '#type': textfield
+    '#title': 'EPS Entidad Promotora de Salud '
+    '#required': true
+  afp_administradora_de_fondo_de_pensiones_:
+    '#type': textfield
+    '#title': 'AFP Administradora de Fondo  de Pensiones '
+    '#required': true
+  estado_civil:
+    '#type': select
+    '#title': 'Estado civil'
+    '#options':
+      Soltero: Soltero
+      Casado: Casado
+      'Unión Libre': 'Unión Libre'
+      Separado/divorciado: Separado/divorciado
+      Viudo: Viudo
+  nivel_de_escolaridad_:
+    '#type': select
+    '#title': 'Nivel de escolaridad '
+    '#options':
+      Primaria: Primaria
+      Secundaria: Secundaria
+      Técnico/Tecnólogo: Técnico/Tecnólogo
+      Universitario: Universitario
+      Posgrado: Posgrado
+      Ninguno: Ninguno
+  numero_de_personas_a_cargo:
+    '#type': select
+    '#title': 'Número de personas a cargo'
+    '#options':
+      Ninguno: Ninguno
+      '1 - 2': '1 - 2'
+      '3 - 4': '3 - 4'
+      '5 – 6': '5 – 6'
+      'Más de 6 personas': 'Más de 6 personas'
+  es_cabeza_de_hogar:
+    '#type': select
+    '#title': 'Es cabeza de hogar'
+    '#options':
+      Si: Si
+      'No': 'No'
+  su_vivienda_es:
+    '#type': select
+    '#title': 'Su vivienda es'
+    '#options':
+      Propia: Propia
+      Arrendada: Arrendada
+      Familiar: Familiar
+      Compartida: Compartida
+    '#required': true
+  su_casa_cuenta_con_los_siguientes_servicios_puede_marcar_mas_de_:
+    '#type': tableselect
+    '#title': 'Su casa cuenta con los siguientes servicios: (Puede marcar más de uno)'
+    '#options':
+      'Agua potable': 'Agua potable'
+      Electricidad: Electricidad
+      'Gas natural': 'Gas natural'
+      Alcantarillado: Alcantarillado
+      Telefonía: Telefonía
+  su_estrato_socioeconomico_es:
+    '#type': select
+    '#title': 'Su estrato socioeconómico es'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+    '#required': true
+  su_promedio_de_ingreso_salarial_mensual_es:
+    '#type': select
+    '#title': 'Su promedio de ingreso salarial mensual es'
+    '#options':
+      '1 SMMLV': '1 SMMLV'
+      '2 a 3 SMMLV': '2 a 3 SMMLV'
+      '4 a 6 SMMLV': '4 a 6 SMMLV'
+      'Mayor a 6 SMMLV': 'Mayor a 6 SMMLV'
+    '#required': true
+  su_antiguedad_en_dimar_es:
+    '#type': select
+    '#title': 'Su antigüedad en DIMAR  es'
+    '#options':
+      'Menor a 1 año': 'Menor a 1 año'
+      'De 1 a 5 años': 'De 1 a 5 años'
+      'De 6 a 10 años': 'De 6 a 10 años'
+      'De 11 a 15 años': 'De 11 a 15 años'
+      'De 16 a 20 años': 'De 16 a 20 años'
+      'Más de 20 años': 'Más de 20 años'
+    '#required': true
+  su_antiguedad_en_el_cargo_actual_es:
+    '#type': select
+    '#title': 'Su antigüedad en el cargo actual es'
+    '#options':
+      'Menor a 1 año': 'Menor a 1 año'
+      'De 1 a 5 años': 'De 1 a 5 años'
+      'De 6 a 10 años': 'De 6 a 10 años'
+      'De 11 a 15 años': 'De 11 a 15 años'
+      'Mayor a 15 años': 'Mayor a 15 años'
+  datos_medicos:
+    '#type': item
+    '#title': 'DATOS MÉDICOS'
+  peso_kg_:
+    '#type': range
+    '#title': 'Peso (Kg)'
+    '#min': 20
+    '#max': 200
+    '#output': below
+    '#output__field_suffix': Kg
+  talla_altura_:
+    '#type': number
+    '#title': 'Talla (Altura) '
+    '#description': '<span style="font-size:10.0pt"><span style="line-height:115%"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><span style="color:#444444">Ejemplo: 1,75</span></span></span></span>'
+  su_dominancia_es:
+    '#type': select
+    '#title': 'Su dominancia es'
+    '#options':
+      Derecha: Derecha
+      Izquierda: Izquierda
+      Ambos: Ambos
+  _cuando_fue_la_ultima_vez_que_asistio_a_cita_medica_:
+    '#type': select
+    '#title': '¿Cuándo fue la última vez que asistió a cita médica?'
+    '#options':
+      'Menos de 1 mes': 'Menos de 1 mes'
+      'Entre 1 a 6 meses': 'Entre 1 a 6 meses'
+      'Entre 6 a 12 meses': 'Entre 6 a 12 meses'
+      'Más de 12 meses': 'Más de 12 meses'
+  _cuando_fue_la_ultima_vez_que_asistio_cita_odontologica_:
+    '#type': select
+    '#title': '¿Cuándo fue la última vez que asistió cita odontológica?'
+    '#options':
+      'Menos de 1 mes': 'Menos de 1 mes'
+      'Entre 1 a 6 meses': 'Entre 1 a 6 meses'
+      'Entre 6 a 12 meses': 'Entre 6 a 12 meses'
+      'Más de 12 meses': 'Más de 12 meses'
+  _fuma_:
+    '#type': select
+    '#title': '¿Fuma? '
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cuantos_cigarrillos_al_dia_:
+    '#type': select
+    '#title': '¿Cuántos cigarrillos al día?'
+    '#options':
+      '1 a 5': '1 a 5'
+      '6 a 10': '6 a 10'
+      '11 a 15': '11 a 15'
+      'Más de 16 ': 'Más de 16 '
+    '#states':
+      enabled:
+        ':input[name="_fuma_"]':
+          value: Si
+      disabled:
+        ':input[name="_fuma_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_fuma_"]':
+          value: Si
+  _hace_cuanto_tiempo_fuma_anos_:
+    '#type': select
+    '#title': '¿Hace cuánto tiempo fuma? (años)'
+    '#options':
+      '1 a 5 años': '1 a 5 años'
+      '6 a 10 años': '6 a 10 años'
+      '11 a 15 años': '11 a 15 años'
+      'Más de 16  años': 'Más de 16  años'
+    '#states':
+      enabled:
+        ':input[name="_fuma_"]':
+          value: Si
+      disabled:
+        ':input[name="_fuma_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_fuma_"]':
+          value: Si
+  _consume_bebidas_alcoholicas_:
+    '#type': select
+    '#title': '¿Consume bebidas alcohólicas?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _con_que_frecuencia_consume_bebidas_alcoholicas_:
+    '#type': select
+    '#title': '¿Con qué frecuencia consume bebidas alcohólicas?'
+    '#options':
+      Ocasional: Ocasional
+      Diario: Diario
+      Semanal: Semanal
+    '#states':
+      enabled:
+        ':input[name="_consume_bebidas_alcoholicas_"]':
+          value: Si
+      disabled:
+        ':input[name="_consume_bebidas_alcoholicas_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_consume_bebidas_alcoholicas_"]':
+          value: Si
+  _realiza_actividad_fisica_:
+    '#type': select
+    '#title': '¿Realiza actividad física?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cual_:
+    '#type': tableselect
+    '#title': '¿Cuál?'
+    '#options':
+      Futbol: Futbol
+      Baloncesto: Baloncesto
+      Ciclismo: Ciclismo
+      Tenis: Tenis
+      Voleibol: Voleibol
+      Caminata: Caminata
+      Trote: Trote
+      Natación: Natación
+      Gimnasio: Gimnasio
+      'Ejercicio cardiovascular': 'Ejercicio cardiovascular'
+      Squash: Squash
+    '#states':
+      enabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+      disabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+  otra:
+    '#type': textfield
+    '#title': Otra
+    '#states':
+      enabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+      disabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+  _con_que_frecuencia_realiza_actividad_fisica_:
+    '#type': select
+    '#title': '¿Con que frecuencia realiza actividad física?'
+    '#options':
+      Diaria: Diaria
+      '1 vez a la semana': '1 vez a la semana'
+      '2 veces a la semana': '2 veces a la semana'
+      '3 veces a la semana': '3 veces a la semana'
+      'Fines de semana': 'Fines de semana'
+    '#states':
+      enabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+      disabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+  _por_cuanto_tiempo_realiza_actividad_fisica_:
+    '#type': select
+    '#title': '¿Por cuánto tiempo realiza actividad física?'
+    '#options':
+      '15 minutos': '15 minutos'
+      '30 minutos': '30 minutos'
+      '1 hora': '1 hora'
+      'Más de 1 hora': 'Más de 1 hora'
+    '#states':
+      enabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+      disabled:
+        ':input[name="_realiza_actividad_fisica_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_realiza_actividad_fisica_"]':
+          value: Si
+  _presenta_algun_tipo_de_discapacidad_:
+    '#type': select
+    '#title': '¿Presenta algún tipo de discapacidad?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cual_1:
+    '#type': textfield
+    '#title': '¿Cuál?'
+  _ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_:
+    '#type': select
+    '#title': '¿Ha tenido algún accidente de trabajo en el último año? '
+    '#options':
+      Si: Si
+      'No': 'No'
+  _reporto_el_accidente_de_trabajo_:
+    '#type': select
+    '#title': '¿Reportó el accidente de trabajo?'
+    '#options':
+      Si: Si
+      'No': 'No'
+      'No aplica': 'No aplica'
+    '#states':
+      enabled:
+        ':input[name="_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_"]':
+          value: Si
+      disabled:
+        ':input[name="_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_"]':
+          value: Si
+  _le_genero_incapacidad_medica_el_accidente_de_trabajo_:
+    '#type': select
+    '#title': '¿Le generó incapacidad médica el accidente de trabajo? '
+    '#options':
+      Si: Si
+      'No': 'No'
+      'No aplica': 'No aplica'
+    '#required': true
+    '#states':
+      enabled:
+        ':input[name="_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_"]':
+          value: Si
+      disabled:
+        ':input[name="_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_"]':
+          value: Si
+  _esta_usted_en_algun_proceso_medico_laboral_actualmente_:
+    '#type': select
+    '#title': '¿Está usted en algún proceso médico laboral actualmente? (Ej. Valoración con medicina general o especialista, exámenes, terapias...)'
+    '#options':
+      Si: Si
+      'No': 'No'
+      'No aplica': 'No aplica'
+  le_han_diagnosticado_alguna_de_estas_enfermedades:
+    '#type': tableselect
+    '#title': 'Le han diagnosticado alguna de estas enfermedades'
+    '#options':
+      Hipertensión: Hipertensión
+      Diabetes: Diabetes
+      Obesidad: Obesidad
+      'Colesterol alto': 'Colesterol alto'
+      'Enfermedades cardiacas': 'Enfermedades cardiacas'
+      Ninguna: Ninguna
+  _presenta_alguna_enfermedad_calificada_como_de_origen_laboral_:
+    '#type': select
+    '#title': '¿Presenta alguna enfermedad CALIFICADA como de origen laboral?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cual_2:
+    '#type': textfield
+    '#title': '¿Cuál?'
+    '#states':
+      enabled:
+        ':input[name="_presenta_alguna_enfermedad_calificada_como_de_origen_laboral_"]':
+          value: Si
+      disabled:
+        ':input[name="_presenta_alguna_enfermedad_calificada_como_de_origen_laboral_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_presenta_alguna_enfermedad_calificada_como_de_origen_laboral_"]':
+          value: Si
+  fecha_de_diagnostico:
+    '#type': date
+    '#title': 'Fecha de diagnostico'
+    '#states':
+      enabled:
+        ':input[name="_presenta_alguna_enfermedad_calificada_como_de_origen_laboral_"]':
+          value: Si
+      disabled:
+        ':input[name="_presenta_alguna_enfermedad_calificada_como_de_origen_laboral_"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_presenta_alguna_enfermedad_calificada_como_de_origen_laboral_"]':
+          value: Si
+  _actualmente_presenta_sintomatologia_osteomuscular_ej_molestia_o:
+    '#type': select
+    '#title': '¿Actualmente presenta sintomatología osteomuscular? (Ej. Molestia o dolor a nivel de músculos, tendones, ligamentos, articulaciones)'
+    '#options':
+      Si: Si
+      'No': 'No'
+  sintomatologia_osteomuscular:
+    '#type': tableselect
+    '#title': 'Generalmente se presenta como:'
+    '#options':
+      Dolor: Dolor
+      Hormigueo: Hormigueo
+      Adormecimiento: Adormecimiento
+      'Pérdida de fuerza': 'Pérdida de fuerza'
+      'Todas las anteriores': 'Todas las anteriores'
+    '#states':
+      enabled:
+        ':input[name="_actualmente_presenta_sintomatologia_osteomuscular_ej_molestia_o"]':
+          value: Si
+      disabled:
+        ':input[name="_actualmente_presenta_sintomatologia_osteomuscular_ej_molestia_o"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_actualmente_presenta_sintomatologia_osteomuscular_ej_molestia_o"]':
+          value: Si
+  _indique_el_segmento_del_cuerpo_que_presenta_mayor_sintomatologi:
+    '#type': tableselect
+    '#title': '¿Indique el segmento del cuerpo que presenta mayor sintomatología? '
+    '#options':
+      'No aplica': 'No aplica'
+      Cuello: Cuello
+      'Espalda alta': 'Espalda alta'
+      'Espalda baja': 'Espalda baja'
+      'Miembros superiores': 'Miembros superiores'
+      'Miembros inferiores': 'Miembros inferiores'
+    '#required': true
+  califique_de_1_a_10_la_intensidad_del_dolor_que_presenta_solo_si:
+    '#type': select
+    '#title': 'Califique de 1 a 10 la intensidad del dolor que presenta (Solo si presenta dolor) '
+    '#options':
+      'No aplica': 'No aplica'
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: '10'
+    '#required': true
+  _cuando_se_presentan_los_sintomas_:
+    '#type': select
+    '#title': '¿Cuándo se presentan los síntomas?'
+    '#options':
+      Ocasional: Ocasional
+      'Al realizar el trabajo': 'Al realizar el trabajo'
+      'Al final del día': 'Al final del día'
+      'Al final de la semana': 'Al final de la semana'
+      'Todo el tiempo': 'Todo el tiempo'
+      'En mi casa': 'En mi casa'
+      'Al realizar actividad física': 'Al realizar actividad física'
+  otro_5:
+    '#type': textfield
+    '#title': Otro
+  _desde_hace_cuanto_tiempo_presenta_los_sintomas_:
+    '#type': select
+    '#title': '¿Desde hace cuánto tiempo presenta los síntomas?  '
+    '#options':
+      '1 semana': '1 semana'
+      '1 mes': '1 mes'
+      '3 meses': '3 meses'
+      '6 meses': '6 meses'
+      '12 meses': '12 meses'
+      'Más de 12 meses': 'Más de 12 meses'
+  _por_cuanto_tiempo_se_presentan_y_permanecen_estos_sintomas_:
+    '#type': select
+    '#title': '¿Por cuánto tiempo se presentan y permanecen estos síntomas? '
+    '#options':
+      'Menos de 24 horas': 'Menos de 24 horas'
+      'De 1 a 7 días': 'De 1 a 7 días'
+      'De 8 a 30 días': 'De 8 a 30 días'
+      'De manera permanente': 'De manera permanente'
+  _que_tan_incomoda_es_la_molestia_:
+    '#type': select
+    '#title': '¿Qué tan incómoda es la molestia?  '
+    '#options':
+      Nada: Nada
+      'Un poco incomodo': 'Un poco incomodo'
+      'Moderadamente incomodo': 'Moderadamente incomodo'
+      'Muy incomodo': 'Muy incomodo'
+  _cuanto_interfiere_con_su_habilidad_para_trabajar_:
+    '#type': select
+    '#title': '¿Cuánto interfiere con su habilidad para trabajar?  '
+    '#options':
+      'No, en absoluto': 'No, en absoluto'
+      'Poca interferencia': 'Poca interferencia'
+      'Interfiere  sustancialmente': 'Interfiere  sustancialmente'
+      'Muy incomodo': 'Muy incomodo'
+  _actualmente_presenta_alguna_enfermedad_osteomuscular_diagnostic:
+    '#type': select
+    '#title': '¿Actualmente presenta alguna enfermedad osteomuscular diagnosticada? (Ej., Síndrome del túnel carpiano, epidondilitis, tendinitis, cervicalgia, lumbalgia…)'
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cual_enfermedad_osteomuscular_:
+    '#type': textfield
+    '#title': '¿Cuál enfermedad osteomuscular? '
+    '#states':
+      enabled:
+        ':input[name="_actualmente_presenta_alguna_enfermedad_osteomuscular_diagnostic"]':
+          value: Si
+      disabled:
+        ':input[name="_actualmente_presenta_alguna_enfermedad_osteomuscular_diagnostic"]':
+          '!value': 'No'
+      visible:
+        ':input[name="_actualmente_presenta_alguna_enfermedad_osteomuscular_diagnostic"]':
+          value: Si
+  habitos_de_vida_saludable:
+    '#type': item
+    '#title': 'HABITOS DE VIDA SALUDABLE'
+  _realiza_usted_pausas_activas_durante_su_jornada_laboral_:
+    '#type': select
+    '#title': '¿Realiza usted pausas activas durante su jornada laboral? '
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cuantas_porciones_de_fruta_consume_diariamente_:
+    '#type': select
+    '#title': '¿Cuantas porciones de fruta consume diariamente?'
+    '#options':
+      - '0'
+      - '1'
+      - '2'
+    '#required': true
+  _cuantas_porciones_de_verdura_consume_diariamente_:
+    '#type': select
+    '#title': '¿Cuantas porciones de verdura consume diariamente? '
+    '#options':
+      - '0'
+      - '1'
+      - '2'
+    '#required': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

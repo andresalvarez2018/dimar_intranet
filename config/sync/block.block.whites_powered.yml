@@ -1,0 +1,22 @@
+uuid: 8889061b-8f2f-43fc-abd8-ff90f0726906
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - whites
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: whites_powered
+theme: whites
+region: disabled
+weight: -95
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

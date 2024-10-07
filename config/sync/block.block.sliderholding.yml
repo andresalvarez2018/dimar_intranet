@@ -1,0 +1,44 @@
+uuid: 9f289d2b-b061-4a88-b89d-b43fa0d2c330
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_holding
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - md_slider
+    - ntv_block_background
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: sliderholding
+theme: whites
+region: slider
+weight: -89
+provider: null
+plugin: 'md_slider_block:slider_holding'
+settings:
+  id: 'md_slider_block:slider_holding'
+  label: 'Slider holding'
+  label_display: '0'
+  provider: md_slider
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_holding

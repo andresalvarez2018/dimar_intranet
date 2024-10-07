@@ -1,0 +1,38 @@
+uuid: 2a26ee3f-ccb0-4f7f-8b8b-32a826330e02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_image_backgroun
+    - node.type.blog_post
+  module:
+    - image
+id: node.blog_post.field_pt_image_backgroun
+field_name: field_pt_image_backgroun
+entity_type: node
+bundle: blog_post
+label: 'Image Slide'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 2018-03
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 61154d59-2d8b-4106-b79e-c3a8fdecbba7
+    alt: default
+    title: ''
+    width: 1902
+    height: 553
+field_type: image

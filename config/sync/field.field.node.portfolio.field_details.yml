@@ -1,0 +1,50 @@
+uuid: 08455316-728d-4fe7-ab44-861189cf42af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_details
+    - node.type.portfolio
+  module:
+    - tablefield
+id: node.portfolio.field_details
+field_name: field_details
+entity_type: node
+bundle: portfolio
+label: Details
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    rebuild:
+      cols: '2'
+      rows: '5'
+    value:
+      -
+        - ''
+        - ''
+      -
+        - ''
+        - ''
+      -
+        - ''
+        - ''
+      -
+        - ''
+        - ''
+      -
+        - ''
+        - ''
+    format: null
+default_value_callback: ''
+settings:
+  export: false
+  restrict_rebuild: true
+  restrict_import: true
+  lock_values: false
+  cell_processing: 0
+  empty_rules:
+    ignore_table_structure: false
+    ignore_table_header: true
+field_type: tablefield

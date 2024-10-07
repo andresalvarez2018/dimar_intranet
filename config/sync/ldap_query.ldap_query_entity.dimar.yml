@@ -1,0 +1,14 @@
+uuid: bbd217e9-fa99-4a3c-9685-03a47be8a2e9
+langcode: es
+status: false
+dependencies: {  }
+id: dimar
+label: dimar
+server_id: dimarmilco
+base_dn: 'DC=dimar,DC=mil,DC=co'
+filter: '(&(|(objectclass=computer)(objectclass=person)(objectclass=user))(|(|(memberof=CN=Usuarios del dominio,CN=Users,DC=dimar,DC=mil,DC=co)(primaryGroupID=513))))'
+attributes: ''
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: sub

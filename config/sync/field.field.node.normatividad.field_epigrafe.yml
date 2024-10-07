@@ -1,0 +1,19 @@
+uuid: 41d31cfa-a8bf-4d41-abc5-7ad0f5b9100f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_epigrafe
+    - node.type.normatividad
+id: node.normatividad.field_epigrafe
+field_name: field_epigrafe
+entity_type: node
+bundle: normatividad
+label: "Asunto de la norma\t"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

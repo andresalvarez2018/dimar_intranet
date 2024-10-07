@@ -1,0 +1,29 @@
+uuid: 061f98e1-6dce-4928-8dad-9075652b4daa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_norma_
+    - node.type.normatividad
+    - taxonomy.vocabulary.tipo_de_norma
+id: node.normatividad.field_tipo_norma_
+field_name: field_tipo_norma_
+entity_type: node
+bundle: normatividad
+label: "Tipo Norma\t"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipo_de_norma: tipo_de_norma
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

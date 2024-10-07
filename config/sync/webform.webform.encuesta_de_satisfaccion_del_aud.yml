@@ -1,0 +1,340 @@
+uuid: 0ca95f92-ddea-43db-b956-1e45bbf9f200
+langcode: es
+status: closed
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: true
+archive: false
+id: encuesta_de_satisfaccion_del_aud
+title: 'Encuesta de satisfacción del auditado'
+description: ''
+categories: {  }
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <p><strong>INFORMACIÓN GENERAL&nbsp;</strong></p>
+      
+      <p>&nbsp;</p>
+      
+    '#format': full_html
+  fecha_diligenciamiento_:
+    '#type': date
+    '#title': 'Fecha diligenciamiento:'
+  dependencia_:
+    '#type': select
+    '#title': 'Dependencia:'
+    '#options':
+      Dirección: Dirección
+      GRUCOG: GRUCOG
+      SUBMERC: SUBMERC
+      SUBAFIN: SUBAFIN
+      GPLAD: GPLAD
+      GRASI: GRASI
+      GRUCOI: GRUCOI
+      GLEMAR: GLEMAR
+      GRUDHU: GRUDHU
+      GRUINCO: GRUINCO
+      GINSEM: GINSEM
+      'ACOES ': 'ACOES '
+      AMAT: AMAT
+      ASIMPO: ASIMPO
+      ASEPAC: ASEPAC
+      CP1: CP1
+      CP2: CP2
+      CP3: CP3
+      CP4: CP4
+      CP5: CP5
+      CP6: CP6
+      CP7: CP7
+      CP8: CP8
+      CP9: CP9
+      CP10: CP10
+      CP11: CP11
+      CP12: CP12
+      CP14: CP14
+      CP15: CP15
+      CP16: CP16
+      CP17: CP17
+      CP19: CP19
+      CIOH: CIOH
+      CCCP: CCCP
+      5KLO: 5KLO
+      5KLP: 5KLP
+      5KMZ: 5KMZ
+      5KMQ: 5KMQ
+      5KLA: 5KLA
+      5KTG: 5KTG
+      5KFS: 5KFS
+      5KFL: 5KFL
+      5KZH: 5KZH
+      5KTK: 5KTK
+      5KFY: 5KFY
+      5KFZ: 5KFZ
+      5KFW: 5KFW
+      5KGC: 5KGC
+      SEMAC: SEMAC
+      SEMAB: SEMAB
+      SEMAP: SEMAP
+      INRED1: INRED1
+      INRED3: INRED3
+      INRED4: INRED4
+  nombre_del_auditor_evaluado_:
+    '#type': textfield
+    '#title': 'Nombre del auditor evaluado:'
+  processed_text_01:
+    '#type': processed_text
+    '#text': |
+      <p>&nbsp;</p>
+      
+      <p>Señor auditado, con el objeto de mejorar continuamente el procedimiento de auditorías internas y de conocer su percepción respecto de éstas, el proceso de Evaluación desea conocer su opinión a través del diligenciamiento de la siguiente encuesta. Se agradece de antemano su objetividad en las respuestas y el tiempo dedicado para tal fin.</p>
+      
+      <p>A continuación encontrará una serie de afirmaciones, requiriendo su opinión señalándola con una “X” según considere fue el desempeño de la auditoría y del auditor respectivamente:</p>
+      
+      <p>&nbsp;</p>
+      
+    '#format': full_html
+  aspectos_a_evaluar_del_ejercicio_de_auditoria:
+    '#type': webform_mapping
+    '#title': 'PARÁMETROS DE EVALUACIÓN'
+    '#arrow': ''
+    '#source__title': 'ASPECTOS A EVALUAR DEL EJERCICIO DE AUDITORÍA'
+    '#source':
+      'El objetivo, alcance y criterios de la auditoría fueron claros': 'El objetivo, alcance y criterios de la auditoría fueron claros'
+      'Se cumplió el objetivo establecido en el Plan de Auditoría': 'Se cumplió el objetivo establecido en el Plan de Auditoría'
+      'Se evidenció un manejo adecuado de canales de comunicación durante la auditoría': 'Se evidenció un manejo adecuado de canales de comunicación durante la auditoría'
+      'Los resultados de la auditoría se caracterizan por su objetividad, valor agregado y asesoría': 'Los resultados de la auditoría se caracterizan por su objetividad, valor agregado y asesoría'
+      'Existe coherencia entre la metodología definida para el proceso auditor y el alcance planteado': 'Existe coherencia entre la metodología definida para el proceso auditor y el alcance planteado'
+      'El desarrollo del proceso de auditoría en términos generales es adecuada': 'El desarrollo del proceso de auditoría en términos generales es adecuada'
+    '#destination__title': CALIFICACIÓN
+    '#destination':
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Parcialmente de acuerdo': 'Parcialmente de acuerdo'
+      'En desacuerdo': 'En desacuerdo'
+    '#required': true
+  parametros_de_evaluacion_del_auditor:
+    '#type': webform_mapping
+    '#title': 'PARÁMETROS DE EVALUACIÓN DEL AUDITOR'
+    '#required': true
+    '#arrow': ''
+    '#source__title': 'ASPECTOS A EVALUAR DEL DESEMPEÑO DEL AUDITOR'
+    '#source':
+      'El auditor presentó oportunamente el plan de auditoría, especificando el objetivo, alcance y criterios ': 'El auditor presentó oportunamente el plan de auditoría, especificando el objetivo, alcance y criterios '
+      'El auditor evidenció preparación previa de la auditoría, demostrando conocimiento del proceso auditado (actividades, documentación y funcionamiento del proceso)': 'El auditor evidenció preparación previa de la auditoría, demostrando conocimiento del proceso auditado (actividades, documentación y funcionamiento del proceso)'
+      'Se cumplieron los tiempos programados en el Plan de Auditoría': 'Se cumplieron los tiempos programados en el Plan de Auditoría'
+      'Las novedades reportadas por el auditor fueron evidenciadas objetivamente': 'Las novedades reportadas por el auditor fueron evidenciadas objetivamente'
+      'Durante la auditoría las preguntas realizadas fueron claras y precisas': 'Durante la auditoría las preguntas realizadas fueron claras y precisas'
+      'El auditor trató con respeto y ecuanimidad a los auditados': 'El auditor trató con respeto y ecuanimidad a los auditados'
+      'El auditor brindó espacios de comunicación para que el auditado expresara su opinión': 'El auditor brindó espacios de comunicación para que el auditado expresara su opinión'
+      'Los hallazgos y conclusiones de la auditoría fueron explicados claramente': 'Los hallazgos y conclusiones de la auditoría fueron explicados claramente'
+    '#destination__title': CALIFICACIÓN
+    '#destination':
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Parcialmente de acuerdo': 'Parcialmente de acuerdo'
+      'En desacuerdo': 'En desacuerdo'
+  processed_text_02:
+    '#type': processed_text
+    '#text': |
+      <p>&nbsp;</p>
+      
+      <p><strong>FELICITACIONES, OBSERVACIONES, SUGERENCIAS Y/O RECOMENDACIONES&nbsp;</strong></p>
+      
+      <p>&nbsp;</p>
+      
+    '#format': full_html
+  del_ejercicio_de_auditoria:
+    '#type': textarea
+    '#title': 'DEL EJERCICIO DE AUDITORÍA'
+  del_desempeno_del_auditor:
+    '#type': textarea
+    '#title': 'DEL DESEMPEÑO DEL AUDITOR'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

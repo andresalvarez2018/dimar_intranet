@@ -1,0 +1,8 @@
+uuid: faed27d8-103b-4d62-8a07-d281ea6e1e86
+langcode: es
+status: true
+dependencies: {  }
+name: 'Identidad Institucional'
+vid: identidad_institucional
+description: ''
+weight: 0

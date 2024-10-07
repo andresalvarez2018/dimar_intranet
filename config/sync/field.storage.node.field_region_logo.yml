@@ -1,0 +1,30 @@
+uuid: 7a792174-dc61-40a8-bb7e-6d637fc6b3c3
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_region_logo
+field_name: field_region_logo
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: dimar
+      label: Dimar
+    -
+      value: presidencia
+      label: Presidencia
+    -
+      value: mindefensa
+      label: MIndefensa
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

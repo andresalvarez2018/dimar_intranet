@@ -1,0 +1,21 @@
+<header class="side-menu-header side-menu-lateral" data-menu-anima="default">
+    <div class="navbar-header">
+        <a class="hamburger-button" data-menu-anima="fade-left">
+            <i class="fa fa-bars"></i>
+        </a>
+        {{ page.header_logo }}
+    </div>
+    <div class="side-menu-fixed">
+        <div class="top-area">
+            {{ page.header_logo ? page.header_logo|render|replace({'navbar-brand':'brand'})|t }}
+            {{ page.header_search|render|replace({'<form ':'<form class="navbar-form whites-side-left" ','hidden button js-form-submit form-submit':'btn btn-default button js-form-submit form-submit','value="Search"':'value="Go"'})|t }}
+        </div>
+        <aside class="sidebar mi-menu">
+            {{ page.side_menu }}
+        </aside>
+        <div class="bottom-area">
+            <hr class="space xs" />
+            {{ page.side_content }}
+        </div>
+    </div>
+</header>

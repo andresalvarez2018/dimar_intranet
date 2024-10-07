@@ -1,0 +1,14 @@
+uuid: 254ef070-ca5e-405e-a90f-07047da12d00
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.normatividad_interna
+  module:
+    - user
+id: user_remove_role_action.normatividad_interna
+label: 'Elimina el rol Normatividad interna al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: normatividad_interna

@@ -1,0 +1,17 @@
+uuid: ad2c7856-f024-44e4-9c0d-8c4cb73b5fe0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: gallery_album_page
+label: 'Gallery album page'
+logic: or
+conditions:
+  4a2e57a5-09f5-4f0f-b311-f31f4c5526fd:
+    id: request_path
+    negate: false
+    uuid: 4a2e57a5-09f5-4f0f-b311-f31f4c5526fd
+    context_mapping: {  }
+    pages: /node/83
+allow_other_conditions: false

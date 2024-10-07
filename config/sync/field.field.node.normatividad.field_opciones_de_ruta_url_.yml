@@ -1,0 +1,23 @@
+uuid: 9f6f17ca-1d04-4098-9943-ade665060f58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_opciones_de_ruta_url_
+    - node.type.normatividad
+  module:
+    - link
+id: node.normatividad.field_opciones_de_ruta_url_
+field_name: field_opciones_de_ruta_url_
+entity_type: node
+bundle: normatividad
+label: "Opciones de ruta URL\t"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,17 @@
+uuid: 08c96bd5-5112-470b-abcd-e8ab990887b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: section_background_video
+label: 'Section background video'
+logic: or
+conditions:
+  8ec8a7b3-e7c4-47f0-88d8-5fdc730608b7:
+    id: request_path
+    negate: false
+    uuid: 8ec8a7b3-e7c4-47f0-88d8-5fdc730608b7
+    context_mapping: {  }
+    pages: /node/94
+allow_other_conditions: false

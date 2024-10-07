@@ -1,0 +1,46 @@
+uuid: 289c8ee2-5a45-4f3f-9547-a941559dc7f6
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.logos
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block__logos_block_1
+theme: whites
+region: encabezado_3
+weight: 0
+provider: null
+plugin: 'views_block:logos-block_1'
+settings:
+  id: 'views_block:logos-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

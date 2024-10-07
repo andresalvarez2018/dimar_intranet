@@ -1,0 +1,54 @@
+uuid: 1212ac32-296b-4186-b9af-9cbb14ad812d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.menu_regimen_interno_disciplinar.field_enlace
+    - taxonomy.vocabulary.menu_regimen_interno_disciplinar
+  module:
+    - link
+    - path
+    - text
+id: taxonomy_term.menu_regimen_interno_disciplinar.default
+targetEntityType: taxonomy_term
+bundle: menu_regimen_interno_disciplinar
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_enlace:
+    type: link_default
+    weight: 31
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

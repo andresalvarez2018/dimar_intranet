@@ -1,0 +1,39 @@
+printfriendly_image: button-print-blu20.png
+db_version: 1
+printfriendly_types:
+  blog_post: blog_post
+  forum: forum
+  normatividad: normatividad
+  page: page
+  simplenews_issue: simplenews_issue
+  album: 0
+  article: 0
+  documentos: 0
+  galeria: 0
+  gallery_album: 0
+  herramientas_virtuales: 0
+  homepage: 0
+  imagen: 0
+  logo: 0
+  music_band: 0
+  noticias: 0
+  partners: 0
+  portfolio: 0
+  services: 0
+  team_members: 0
+  testimonials: 0
+  webform: 0
+printfriendly_display:
+  teaser: 0
+  full: 0
+printfriendly_page_header: default_logo
+printfriendly_page_custom_header: ''
+printfriendly_tagline: ''
+printfriendly_click_delete: '1'
+printfriendly_images: '0'
+printfriendly_image_style: right
+printfriendly_email: '0'
+printfriendly_pdf: '1'
+printfriendly_print: '1'
+printfriendly_custom_css: ''
+custom_button_img_url: ''

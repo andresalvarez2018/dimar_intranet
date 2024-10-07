@@ -1,0 +1,5 @@
+name: 'kint'
+type: module
+description: 'kint'
+package: NaviSystem
+core_version_requirement: ^9 || ^10

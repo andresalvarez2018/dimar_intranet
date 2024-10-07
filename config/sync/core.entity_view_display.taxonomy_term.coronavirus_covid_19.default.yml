@@ -1,0 +1,39 @@
+uuid: d0707a0f-7bca-4fc3-9892-0ca7ae124561
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.coronavirus_covid_19.field_enlace
+    - taxonomy.vocabulary.coronavirus_covid_19
+  module:
+    - link
+    - text
+id: taxonomy_term.coronavirus_covid_19.default
+targetEntityType: taxonomy_term
+bundle: coronavirus_covid_19
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_enlace:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

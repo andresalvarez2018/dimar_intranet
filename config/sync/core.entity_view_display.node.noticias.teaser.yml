@@ -1,0 +1,34 @@
+uuid: d61c49be-b049-4086-a78d-cc57e955c4ac
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.noticias.body
+    - node.type.noticias
+  module:
+    - text
+    - user
+id: node.noticias.teaser
+targetEntityType: node
+bundle: noticias
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

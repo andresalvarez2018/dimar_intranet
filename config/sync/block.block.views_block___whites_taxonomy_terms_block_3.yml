@@ -1,0 +1,52 @@
+uuid: 7028417a-13d3-4fcb-990f-d00e9c52d9f4
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view._whites_taxonomy_terms
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+    - views
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___whites_taxonomy_terms_block_3
+theme: whites
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:_whites_taxonomy_terms-block_3'
+settings:
+  id: 'views_block:_whites_taxonomy_terms-block_3'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/Servicio-y-participación-ciudadana/Direccionamiento-para-la-atención\r\n\r\n/Servicio-y-participación-ciudadana/Direccionamiento-para-la-Participación-Ciudadana\r\n\r\n/Servicio-y-participación-ciudadana/novedades-de-servicio\r\n\r\n/Servicio-y-participación-ciudadana/Estructura-de-Asepac\r\n\r\n/Servicio-y-participación-ciudadana/Comunicados-oficiales\r\n/lenguaje-claro"

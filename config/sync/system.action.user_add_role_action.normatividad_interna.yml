@@ -1,0 +1,14 @@
+uuid: ad1f17ad-f2f2-4e9f-947f-71d3c3c139cc
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.normatividad_interna
+  module:
+    - user
+id: user_add_role_action.normatividad_interna
+label: 'Añade el rol Normatividad interna al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: normatividad_interna

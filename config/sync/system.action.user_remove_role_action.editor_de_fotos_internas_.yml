@@ -1,0 +1,14 @@
+uuid: f5c18370-787c-40da-889c-eaea4bde5ca5
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.editor_de_fotos_internas_
+  module:
+    - user
+id: user_remove_role_action.editor_de_fotos_internas_
+label: 'Elimina el rol Editor de fotos internas al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editor_de_fotos_internas_

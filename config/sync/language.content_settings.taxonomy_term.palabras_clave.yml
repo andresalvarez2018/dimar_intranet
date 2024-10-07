@@ -1,0 +1,11 @@
+uuid: fa646a6f-8ded-4da0-8f59-ea62256fcd47
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.palabras_clave
+id: taxonomy_term.palabras_clave
+target_entity_type_id: taxonomy_term
+target_bundle: palabras_clave
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,39 @@
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Aplicar
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+          tags:
+            previous: '‹ Anterior'
+            next: 'Siguiente >'
+            first: '« Primero'
+            last: 'Último »'
+      fields:
+        title:
+          separator: ', '
+  blog_block:
+    display_title: Bloque
+  blog_user_all:
+    display_options:
+      arguments:
+        uid:
+          exception:
+            title: Todo(s)
+  feed_2:
+    display_options:
+      arguments:
+        uid:
+          exception:
+            title: Todo(s)

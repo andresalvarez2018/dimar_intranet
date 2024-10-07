@@ -1,0 +1,24 @@
+_core:
+  default_config_hash: hSFOSjTAPcCBordJmChil6mui8q7uLwYfc5STlXL0yY
+langcode: es
+sids:
+  dimarmilco: dimarmilco
+authenticationMode: exclusive
+loginUIUsernameTxt: ''
+loginUIPasswordTxt: ''
+ldapUserHelpLinkUrl: ''
+ldapUserHelpLinkText: ''
+emailOption: disable
+emailUpdate: update_notify
+emailTemplateHandling: none
+emailTemplate: '@username@example.com'
+emailTemplateUsageResolveConflict: false
+emailTemplateUsageNeverUpdate: false
+emailTemplateUsagePromptUser: false
+emailTemplateUsageRedirectOnLogin: false
+emailTemplateUsagePromptRegex: '.*@example\.com'
+passwordOption: disable
+allowOnlyIfTextInDn: {  }
+excludeIfTextInDn: {  }
+excludeIfNoAuthorizations: false
+skipAdministrators: false

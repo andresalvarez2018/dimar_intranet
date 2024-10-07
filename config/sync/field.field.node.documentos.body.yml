@@ -1,0 +1,23 @@
+uuid: f0449483-7961-45a2-bb27-3fadcb140888
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.documentos
+  module:
+    - text
+id: node.documentos.body
+field_name: body
+entity_type: node
+bundle: documentos
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,23 @@
+uuid: 4aeb0d89-69ef-41f5-858e-95af42b653b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_style
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_pt_style
+field_name: field_pt_style
+entity_type: node
+bundle: portfolio
+label: 'Page title style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: base-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

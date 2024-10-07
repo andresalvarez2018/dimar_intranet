@@ -1,0 +1,20 @@
+uuid: ed2553fe-99cf-4a15-a427-b849d9d96b3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_anio_norma
+field_name: field_anio_norma
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

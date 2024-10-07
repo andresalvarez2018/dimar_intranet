@@ -1,0 +1,51 @@
+uuid: 50d8145b-2ea7-475d-9d79-d7eeb1b20a56
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_activity
+  content:
+    - 'block_content:basic:96957be4-8b80-43d0-b571-359e86ace062'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: 'section-bg-image row-20'
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    thumbnail_preview: ''
+    bg_image:
+      - '148'
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: whitesblocksliderhomepageactivity
+theme: whites
+region: slider
+weight: -97
+provider: null
+plugin: 'block_content:96957be4-8b80-43d0-b571-359e86ace062'
+settings:
+  id: 'block_content:96957be4-8b80-43d0-b571-359e86ace062'
+  label: '[Whites] Block slider - Homepage activity '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_activity

@@ -1,0 +1,11 @@
+uuid: 7560dc6f-bd7f-484d-8fbf-70b285784316
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.documentos
+id: node.documentos
+target_entity_type_id: node
+target_bundle: documentos
+default_langcode: site_default
+language_alterable: false

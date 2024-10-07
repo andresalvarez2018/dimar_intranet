@@ -1,0 +1,17 @@
+uuid: 407e3aa6-4df0-4e81-aa64-de0fea46a041
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_side_menu
+label: 'Homepage side menu'
+logic: or
+conditions:
+  0b2ac8ee-5213-4adf-b457-ea47c14fd7d7:
+    id: request_path
+    negate: false
+    uuid: 0b2ac8ee-5213-4adf-b457-ea47c14fd7d7
+    context_mapping: {  }
+    pages: /node/54
+allow_other_conditions: false

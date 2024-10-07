@@ -1,0 +1,27 @@
+uuid: fa6768fa-f9b5-4d54-9fca-1ca4352db599
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pt_animation_layer
+field_name: field_pt_animation_layer
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: cloud
+      label: Cloud
+    -
+      value: fog
+      label: Fog
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

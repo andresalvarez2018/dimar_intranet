@@ -1,0 +1,38 @@
+uuid: e663fe8f-53fc-4789-8664-ae803b60532c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.music_band.body
+    - field.field.node.music_band.field_albums
+    - node.type.music_band
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 2p86efqP36IkSdWfOaxPfvUu8VDg47TarWt5my-cjbY
+id: node.music_band.teaser
+targetEntityType: node
+bundle: music_band
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_albums: true
+  langcode: true

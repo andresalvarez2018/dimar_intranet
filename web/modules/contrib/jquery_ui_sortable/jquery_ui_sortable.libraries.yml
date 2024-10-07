@@ -1,0 +1,4 @@
+# This empty library definition will be filled in by the jquery_ui module.
+sortable:
+  js: {}
+

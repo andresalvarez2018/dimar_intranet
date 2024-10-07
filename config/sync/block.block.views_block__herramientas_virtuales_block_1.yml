@@ -1,0 +1,47 @@
+uuid: 8ce7c024-04c6-41e9-acdb-735fba3af2df
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.frontpage
+    - views.view.herramientas_virtuales
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block__herramientas_virtuales_block_1
+theme: whites
+region: highlighted
+weight: 0
+provider: null
+plugin: 'views_block:herramientas_virtuales-block_1'
+settings:
+  id: 'views_block:herramientas_virtuales-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: frontpage

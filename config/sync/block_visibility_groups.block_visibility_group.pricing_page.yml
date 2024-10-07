@@ -1,0 +1,17 @@
+uuid: 1abd567a-ddab-4427-9119-cffab39a401c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: pricing_page
+label: 'Pricing page'
+logic: or
+conditions:
+  bc6439a6-b983-4ca3-aaae-e10b93f3974f:
+    id: request_path
+    negate: false
+    uuid: bc6439a6-b983-4ca3-aaae-e10b93f3974f
+    context_mapping: {  }
+    pages: /node/64
+allow_other_conditions: false

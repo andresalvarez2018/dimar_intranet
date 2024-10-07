@@ -1,0 +1,23 @@
+uuid: 5ce68bbc-2053-464e-a331-5e1de60c6665
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_animation_layer
+    - node.type.blog_post
+  module:
+    - options
+id: node.blog_post.field_pt_animation_layer
+field_name: field_pt_animation_layer
+entity_type: node
+bundle: blog_post
+label: 'Animation layer'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: cloud
+default_value_callback: ''
+settings: {  }
+field_type: list_string

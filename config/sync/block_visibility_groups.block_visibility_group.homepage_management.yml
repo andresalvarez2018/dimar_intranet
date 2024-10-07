@@ -1,0 +1,17 @@
+uuid: fada3132-1859-4c21-a567-1b6d8537cbe5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_management
+label: 'Homepage management'
+logic: or
+conditions:
+  f62ba3b6-6bc5-4504-b48b-a8a3aa752eb2:
+    id: request_path
+    negate: false
+    uuid: f62ba3b6-6bc5-4504-b48b-a8a3aa752eb2
+    context_mapping: {  }
+    pages: /node/52
+allow_other_conditions: false

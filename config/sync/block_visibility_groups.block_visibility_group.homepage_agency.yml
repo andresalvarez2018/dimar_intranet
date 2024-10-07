@@ -1,0 +1,17 @@
+uuid: 6849ebe6-9a84-4c34-a711-68da8699fc01
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_agency
+label: 'Homepage agency'
+logic: or
+conditions:
+  ff7ba727-fa37-441c-9ca7-8ab91fe6a23d:
+    id: request_path
+    negate: false
+    uuid: ff7ba727-fa37-441c-9ca7-8ab91fe6a23d
+    context_mapping: {  }
+    pages: /node/41
+allow_other_conditions: false

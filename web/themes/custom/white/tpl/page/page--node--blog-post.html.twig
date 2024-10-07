@@ -1,0 +1,44 @@
+{% if node.field_menu_style.value  %}
+	{% set menu_style = node.field_menu_style.value %}
+{% else %}
+	{% set menu_style = theme_menu_style %}
+{% endif %}
+
+{% if node.field_pt_style.value %}
+    {% set page_title_style = node.field_pt_style.value %}
+{% else %}
+    {% set page_title_style = theme_page_title_style %}
+{% endif %}
+{# display mode #}
+{% if node.field_display_mode.value %}
+	{% set display_mode = node.field_display_mode.value %}
+{% else %}
+	{% set display_mode = 'basic' %}
+{% endif %}
+{# display mode #}
+
+{% include theme_path_no_base ~ '/tpl/header/header.html.twig' %}
+
+{% include theme_path_no_base ~ '/tpl/menu-tpl/whites-menu--' ~ menu_style ~ '.html.twig' %}
+
+{% if page_title_style and  page_title_style != 'none' %}
+    {% include theme_path_no_base ~ '/tpl/page-title-tpl/page-title-' ~ page_title_style ~ '.html.twig' %}
+{% endif %}
+
+{# content #}
+
+<div class="section-empty section-item">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+            	<div class="bread"> 	{{ page.breadcrumb }} </div>
+            	<div class="grid-list whites-grid-list one-row-list">
+                {{ page.highlighted }}
+                {{ page.content }}
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+{# content #}
+

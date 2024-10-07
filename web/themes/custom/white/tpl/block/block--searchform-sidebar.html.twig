@@ -1,0 +1,9 @@
+
+<div{{ attributes }}>
+	{{ title_suffix }}
+
+	{% if content %}
+	  {{ content|render|replace({'class="hidden button js-form-submit form-submit"' : 'class="btn btn-default button js-form-submit form-submit"', 'value="Buscar"' : 'value="Buscar"', '<form action=' : '<form class="input-group search-blog list-blog" action=', 'class="form-actions"' : 'class="form-actions input-group-btn"'})|t }}
+	{% endif %}
+</div>
+<hr class="space s">

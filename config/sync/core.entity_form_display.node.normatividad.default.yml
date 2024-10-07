@@ -1,0 +1,157 @@
+uuid: 68f7ead0-7c2b-4d38-a532-bbc34989afc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.normatividad.body
+    - field.field.node.normatividad.field_anio_norma
+    - field.field.node.normatividad.field_dependencia
+    - field.field.node.normatividad.field_epigrafe
+    - field.field.node.normatividad.field_estado_norma
+    - field.field.node.normatividad.field_fecha_de_la_norma
+    - field.field.node.normatividad.field_normas_internas
+    - field.field.node.normatividad.field_numero_de_norma
+    - field.field.node.normatividad.field_opciones_de_ruta_url_
+    - field.field.node.normatividad.field_tipo_norma_
+    - node.type.normatividad
+  module:
+    - datetime
+    - file
+    - link
+    - path
+    - text
+id: node.normatividad.default
+targetEntityType: node
+bundle: normatividad
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 16
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_anio_norma:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_dependencia:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_epigrafe:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_estado_norma:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_de_la_norma:
+    type: datetime_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_normas_internas:
+    type: file_generic
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_numero_de_norma:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_opciones_de_ruta_url_:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_tipo_norma_:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

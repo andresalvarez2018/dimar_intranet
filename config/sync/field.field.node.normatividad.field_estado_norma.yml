@@ -1,0 +1,29 @@
+uuid: a08b1b8e-79d5-4f18-be9a-51b88aa843aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estado_norma
+    - node.type.normatividad
+    - taxonomy.vocabulary.estados_de_norma
+id: node.normatividad.field_estado_norma
+field_name: field_estado_norma
+entity_type: node
+bundle: normatividad
+label: Estado
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      estados_de_norma: estados_de_norma
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

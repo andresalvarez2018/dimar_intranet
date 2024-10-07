@@ -1,0 +1,21 @@
+uuid: 0ea58389-94ca-4836-995d-8c2a59ab7d84
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_region_logo
+    - node.type.logo
+  module:
+    - options
+id: node.logo.field_region_logo
+field_name: field_region_logo
+entity_type: node
+bundle: logo
+label: region
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,17 @@
+uuid: 60d26890-0967-4fc8-90d4-ae4a655724c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: section_animation_page
+label: 'Section animation page'
+logic: or
+conditions:
+  a1504e60-6f38-4e59-9341-2ec2bd828c18:
+    id: request_path
+    negate: false
+    uuid: a1504e60-6f38-4e59-9341-2ec2bd828c18
+    context_mapping: {  }
+    pages: /node/88
+allow_other_conditions: false

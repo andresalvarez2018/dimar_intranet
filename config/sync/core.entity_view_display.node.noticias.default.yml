@@ -1,0 +1,32 @@
+uuid: 7de0d03f-16b5-4fe4-9dc3-cefec40d3817
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.noticias.body
+    - node.type.noticias
+  module:
+    - text
+    - user
+id: node.noticias.default
+targetEntityType: node
+bundle: noticias
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

@@ -1,0 +1,30 @@
+uuid: 320c215b-579f-4a94-b740-8138145c0b3e
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.logo.field_enlace_logo
+    - field.field.node.logo.field_imagen_logo
+    - field.field.node.logo.field_region_logo
+    - node.type.logo
+  module:
+    - user
+id: node.logo.teaser
+targetEntityType: node
+bundle: logo
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_enlace_logo: true
+  field_imagen_logo: true
+  field_region_logo: true
+  langcode: true

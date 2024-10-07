@@ -1,0 +1,673 @@
+uuid: 50f9e842-eda4-4a62-8b60-27093b7106c6
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: encuesta_perfil_sociodemografico
+title: 'Encuesta perfil sociodemográfico'
+description: ''
+categories: {  }
+elements: |-
+  datos_generales:
+    '#type': webform_message
+    '#message_message': |
+      <table id="webform-components">
+      	<tbody>
+      		<tr>
+      			<td>DATOS GENERALES</td>
+      		</tr>
+      	</tbody>
+      </table>
+      
+  ciudad_de_diligenciamiento_:
+    '#type': textfield
+    '#title': "Ciudad de diligenciamiento\t"
+  fecha:
+    '#type': date
+    '#title': Fecha
+  unidad:
+    '#type': textfield
+    '#title': Unidad
+  dependencia:
+    '#type': textfield
+    '#title': Dependencia
+  cargo:
+    '#type': textfield
+    '#title': Cargo
+  apellidos_y_nombres_:
+    '#type': textfield
+    '#title': "Apellidos y Nombres\t"
+  cc:
+    '#type': number
+    '#title': CC
+    '#help_title': 'Solo números'
+    '#help': 'Solo n&uacute;meros'
+  eps:
+    '#type': textfield
+    '#title': EPS
+  afp:
+    '#type': textfield
+    '#title': AFP
+  peso:
+    '#type': textfield
+    '#title': PESO
+  talla:
+    '#type': textfield
+    '#title': TALLA
+  perfil_sociodemografico:
+    '#type': webform_message
+    '#message_message': |
+      <table id="webform-components">
+      	<tbody>
+      		<tr>
+      			<td>PERFIL SOCIODEMOGR&Aacute;FICO</td>
+      		</tr>
+      	</tbody>
+      </table>
+      
+  1_usted_es_:
+    '#type': select
+    '#title': '1. Usted es:'
+    '#options':
+      Oficial: Oficial
+      Suboficial: Suboficial
+      IMP: IMP
+      Civil: Civil
+      S/Técnico: S/Técnico
+      Pasante: Pasante
+      Grado: Grado
+  2_genero_:
+    '#type': select
+    '#title': "2. Género:\t"
+    '#options':
+      Femenino: Femenino
+      Masculino: Masculino
+  3_estado_civil_:
+    '#type': select
+    '#title': "3. Estado civil:\t"
+    '#options':
+      Soltero: Soltero
+      Casado: Casado
+      'Unión libre ': 'Unión libre '
+      Separado/divorciado: Separado/divorciado
+      Viudo: Viudo
+  4_cuantos_anos_de_edad_tiene_:
+    '#type': select
+    '#title': '4. ¿Cuántos años de edad tiene?:'
+    '#options':
+      '18-25 ': '18-25 '
+      '26-35 ': '26-35 '
+      '36-45 ': '36-45 '
+      '46-55 ': '46-55 '
+      'Mayor de 55 ': 'Mayor de 55 '
+  5_nivel_de_escolaridad_:
+    '#type': select
+    '#title': "5. Nivel de escolaridad:\t"
+    '#options':
+      Primaria: Primaria
+      Secundaria: Secundaria
+      'Técnico/Tecnólogo ': 'Técnico/Tecnólogo '
+      Universitario: Universitario
+      Posgrado: Posgrado
+      Ninguno: Ninguno
+  6_numero_de_personas_a_cargo_:
+    '#type': select
+    '#title': "6. Número de personas a cargo:\t"
+    '#options':
+      Ninguno: Ninguno
+      '1-2 ': '1-2 '
+      3-4: 3-4
+      '5-6 ': '5-6 '
+      'Más de 6 personas': 'Más de 6 personas'
+  7_es_cabeza_de_hogar_:
+    '#type': select
+    '#title': "7. Es cabeza de hogar:\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  8_su_vivienda_es_:
+    '#type': select
+    '#title': "8. Su vivienda es:\t"
+    '#options':
+      Propia: Propia
+      Arrendada: Arrendada
+      Familiar: Familiar
+      Compartida: Compartida
+  9_su_casa_cuenta_con_los_siguientes_servicios_puede_marcar_mas_d:
+    '#type': select
+    '#title': "9. Su casa cuenta con los siguientes servicios: (Puede marcar más de uno):\t"
+    '#multiple': true
+    '#options':
+      'Agua potable ': 'Agua potable '
+      Electricidad: Electricidad
+      'Gas natural': 'Gas natural'
+      Alcantarillado: Alcantarillado
+      Telefonía: Telefonía
+      Internet: Internet
+  10_su_estrato_socioeconomico_es_:
+    '#type': select
+    '#title': "10. Su estrato socioeconómico es:\t"
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+  11_su_promedio_de_ingreso_salarial_mensual_es_:
+    '#type': select
+    '#title': "11. Su promedio de ingreso salarial mensual es:\t"
+    '#options':
+      '1 SMMLV ': '1 SMMLV '
+      '2 a 3 SMMLV': '2 a 3 SMMLV'
+      '4 a 6 SMMLV': '4 a 6 SMMLV'
+      'Mayor a 6 SMMLV': 'Mayor a 6 SMMLV'
+  12_su_antiguedad_en_dimar_es_:
+    '#type': select
+    '#title': '12. Su antigüedad en Dimar es:'
+    '#options':
+      'Menor a 1 año ': 'Menor a 1 año '
+      'De 1 a 5': 'De 1 a 5'
+      'De 6 a 10': 'De 6 a 10'
+      'De 11 a 15': 'De 11 a 15'
+      'De 16 a 20': 'De 16 a 20'
+      'Más de 20 años': 'Más de 20 años'
+  13_su_antiguedad_en_el_cargo_actual_es_:
+    '#type': select
+    '#title': "13. Su antigüedad en el cargo actual es:\t"
+    '#options':
+      'Menor a 1 año ': 'Menor a 1 año '
+      'De 1 a 5 años ': 'De 1 a 5 años '
+      'De 6 a 10 años': 'De 6 a 10 años'
+      'De 11 a 15 años ': 'De 11 a 15 años '
+      'Mayor de 15 años ': 'Mayor de 15 años '
+  14_en_que_utiliza_el_tiempo_libre_:
+    '#type': select
+    '#title': "14. En que utiliza el tiempo libre:\t"
+    '#options':
+      'Otro trabajo ': 'Otro trabajo '
+      Deporte: Deporte
+      Estudio: Estudio
+      'otras labores ': 'otras labores '
+  15_cual_es_la_percepcion_de_su_salud_en_los_ultimos_seis_meses_:
+    '#type': select
+    '#title': "15. Cuál es la percepción de su salud en los últimos seis meses:\t"
+    '#options':
+      Excelente: Excelente
+      Bueno: Bueno
+      Regular: Regular
+  16_cuando_fue_la_ultima_vez_que_fue_a_cita_medica_:
+    '#type': select
+    '#title': "16. Cuándo fue la última vez que fue a cita médica:\t"
+    '#options':
+      'Menos de 1 mes': 'Menos de 1 mes'
+      'Entre 1 a 6 meses': 'Entre 1 a 6 meses'
+      'Entre 6 a 12 meses ': 'Entre 6 a 12 meses '
+      'Más de 12 meses ': 'Más de 12 meses '
+  17_cuando_fue_la_ultima_vez_que_fue_a_cita_odontologica_:
+    '#type': select
+    '#title': "17. Cuándo fue la última vez que fue a cita odontológica:\t"
+    '#options':
+      'Menos de 1 mes ': 'Menos de 1 mes '
+      'Entre 1 a 6 meses ': 'Entre 1 a 6 meses '
+      'Entre 6 12 meses ': 'Entre 6 12 meses '
+      'Más de meses ': 'Más de meses '
+  18_fuma_:
+    '#type': select
+    '#title': "18. ¿Fuma?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  19_con_que_frecuencia_fuma_:
+    '#type': select
+    '#title': "19. ¿Con que frecuencia fuma?\t"
+    '#options':
+      Diario: Diario
+      Semanal: Semanal
+      'No aplica': 'No aplica'
+  20_consume_bebidas_alcoholicas_:
+    '#type': select
+    '#title': "20. ¿Consume bebidas alcohólicas?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  21_con_que_frecuencia_consume_bebidas_alcoholicas_:
+    '#type': select
+    '#title': "21. ¿Con que frecuencia consume bebidas alcohólicas?\t"
+    '#options':
+      Diario: Diario
+      Semanal: Semanal
+      Ocasional: Ocasional
+      'No aplica ': 'No aplica '
+  22_realiza_actividad_fisica_:
+    '#type': select
+    '#title': "22. ¿Realiza actividad física?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  23_la_institucion_le_permite_realizar_actividad_fisica_dentro_de:
+    '#type': select
+    '#title': "23. ¿La Institución le permite realizar actividad física dentro de su horario laboral?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  24_con_que_frecuencia_realiza_actividad_fisica_:
+    '#type': select
+    '#title': "24. ¿Con que frecuencia realiza actividad física?\t"
+    '#options':
+      Diario: Diario
+      Semanal: Semanal
+      Ocasional: Ocasional
+      'No Aplica': 'No Aplica'
+  25_ha_tenido_algun_accidente_de_trabajo_en_el_ultimo_ano_:
+    '#type': select
+    '#title': "25. ¿Ha tenido algún accidente de trabajo en el último año?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  26_reporto_el_accidente_de_trabajo_:
+    '#type': select
+    '#title': "26. ¿Reportó el accidente de trabajo?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+      'No aplica': 'No aplica'
+  27_le_genero_incapacidad_medica_el_accidente_de_trabajo_:
+    '#type': select
+    '#title': "27. ¿Le generó incapacidad médica el accidente de trabajo?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  28_esta_en_algun_proceso_medico_laboral_actualmente_:
+    '#type': select
+    '#title': "28. ¿Está en algún proceso médico laboral actualmente:\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  29_sufre_de_alguna_enfermedad_calificada_como_de_origen_laboral_:
+    '#type': select
+    '#title': "29. ¿Sufre de alguna enfermedad calificada como de origen laboral?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  30_sufre_de_alguna_enfermedad_:
+    '#type': select
+    '#title': "30. ¿Sufre de alguna enfermedad?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  _cual_:
+    '#type': textfield
+    '#title': "¿Cuál?\t"
+  31_cual_de_las_siguientes_molestias_ha_sentido_durante_los_ultim:
+    '#type': select
+    '#title': "31. ¿Cuál de las siguientes molestias ha sentido durante los últimos seis meses? (Puede marcar más de una):\t"
+    '#multiple': true
+    '#options':
+      'Dolor de cabeza': 'Dolor de cabeza'
+      Nerviosismo: Nerviosismo
+      'Gastritis, úlcera': 'Gastritis, úlcera'
+      'Alteración del sueño': 'Alteración del sueño'
+      'Cansancio, fatiga visual': 'Cansancio, fatiga visual'
+      'Alteración frecuente de ánimo': 'Alteración frecuente de ánimo'
+      'Dolores musculares': 'Dolores musculares'
+      'Dificultad respiratoria': 'Dificultad respiratoria'
+      'Dolor en el pecho': 'Dolor en el pecho'
+      'Cansancio mental': 'Cansancio mental'
+      'Dificulta para oír': 'Dificulta para oír'
+      'Tos frecuente': 'Tos frecuente'
+      'Dolor de cuello, espalda': 'Dolor de cuello, espalda'
+      'Dificultad para concentrarse': 'Dificultad para concentrarse'
+      'Dolor de huesos': 'Dolor de huesos'
+      'Pitos, en los oídos': 'Pitos, en los oídos'
+      'Alteración del ánimo': 'Alteración del ánimo'
+      'Dificultad visual': 'Dificultad visual'
+  autoreporte_de_las_condiciones_de_trabajo:
+    '#type': webform_message
+    '#message_message': |
+      <table id="webform-components">
+      	<tbody>
+      		<tr>
+      			<td>AUTOREPORTE DE LAS CONDICIONES DE TRABAJO</td>
+      		</tr>
+      	</tbody>
+      </table>
+      
+  32_conoce_los_riesgos_a_los_que_esta_expuesto_en_su_trabajo_:
+    '#type': select
+    '#title': "32. ¿Conoce los riesgos a los que está expuesto en su trabajo?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  33_ha_recibido_capacitacion_sobre_los_riesgos_a_los_que_esta_exp:
+    '#type': select
+    '#title': "33. ¿Ha recibido capacitación sobre los riesgos a los que está expuesto en su trabajo?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  34_considera_que_la_iluminacion_en_su_puesto_de_trabajo_es_adecu:
+    '#type': select
+    '#title': "34. ¿Considera que la iluminación en su puesto de trabajo es adecuada?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  35_la_temperatura_de_su_sitio_de_trabajo_le_ocasiona_molestias_:
+    '#type': select
+    '#title': "35. ¿La temperatura de su sitio de trabajo le ocasiona molestias?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  36_en_su_sitio_de_trabajo_hay_presencia_de_polvo_en_el_ambiente_:
+    '#type': select
+    '#title': "36. ¿En su sitio de trabajo hay presencia de polvo en el ambiente?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  37_considera_que_los_pisos_techos_paredes_escaleras_presentan_ri:
+    '#type': select
+    '#title': "37. ¿Considera que los pisos, techos, paredes, escaleras, presentan riesgo para su salud?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  38_existen_cables_si_entubar_empalmes_defectuosos_toma_electrica:
+    '#type': select
+    '#title': "38. ¿Existen cables si entubar, empalmes defectuosos, toma eléctrica sobrecargada, transformadores defectuosos?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  39_los_sitios_destinados_para_el_almacenamiento_son_suficientes_:
+    '#type': select
+    '#title': '39. ¿Los sitios destinados para el almacenamiento son suficientes, poseen espacio adecuado y              los  insumos y productos se encuentran bien apilados?  '
+    '#options':
+      Si: Si
+      'No': 'No'
+  40_tiene_espacio_suficiente_para_variar_la_posicion_de_las_piern:
+    '#type': select
+    '#title': '40. ¿Tiene espacio suficiente para variar la posición de las piernas y rodillas?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  41_la_silla_es_comoda_y_permite_ajustarla_a_su_medida_:
+    '#type': select
+    '#title': '41. ¿La silla es cómoda y permite ajustarla a su medida?  '
+    '#options':
+      Si: Si
+      'No': 'No'
+  42_en_general_dispone_de_espacio_suficiente_para_realizar_el_tra:
+    '#type': select
+    '#title': '42. ¿En general dispone de espacio suficiente para realizar el trabajo con holgura?'
+    '#options':
+      Si: Si
+      'No': 'No'
+  43_la_unidad_cuenta_con_agua_potable_:
+    '#type': select
+    '#title': '43. ¿La Unidad cuenta con agua potable?  '
+    '#options':
+      Si: Si
+      'No': 'No'
+  44_existe_un_buen_manejo_de_basuras_y_desechos_:
+    '#type': select
+    '#title': "44. ¿Existe un buen manejo de basuras y desechos?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  45_el_ruido_ambiental_le_permite_mantener_una_conversacion_sin_l:
+    '#type': select
+    '#title': "45. ¿El ruido ambiental le permite mantener una conversación sin levantar el tono de voz?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  46_las_maquinas_y_herramientas_que_utiliza_en_el_desempeno_de_su:
+    '#type': select
+    '#title': "46. ¿Las máquinas y herramientas que utiliza en el desempeño de su labor producen vibración?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  47_su_trabajo_lo_realiza_al_aire_libre_o_a_la_intemperie_:
+    '#type': select
+    '#title': "47. ¿Su trabajo lo realiza al aire libre o a la intemperie?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  48_en_su_sitio_de_trabajo_esta_en_contacto_con_productos_quimico:
+    '#type': select
+    '#title': "48. ¿En su sitio de trabajo está en contacto con productos químicos?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  49_existe_en_su_sitio_de_trabajo_riesgo_de_incendio_o_explosion_:
+    '#type': select
+    '#title': "49. ¿Existe en su sitio de trabajo riesgo de incendio o explosión?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  50_su_labor_genera_riesgos_mecanicos_proyeccion_de_particulas_at:
+    '#type': select
+    '#title': "50. ¿Su labor genera riesgos mecánicos (proyección de partículas, atrapamiento, manejo de elementos contaminantes, punzantes, calientes abrasivas?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  51_su_labor_le_exige_levantar_y_transportar_cargas_:
+    '#type': select
+    '#title': "51. ¿Su labor le exige levantar y transportar cargas?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  52_las_tareas_que_realiza_le_producen_sensacion_de_peligrosidad_:
+    '#type': select
+    '#title': "52. ¿Las tareas que realiza le producen sensación de peligrosidad?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  53_en_su_puesto_de_trabajo_necesita_utilizar_elementos_de_protec:
+    '#type': select
+    '#title': "53. ¿En su puesto de trabajo necesita utilizar elementos de protección individual?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  54_utiliza_elementos_de_proteccion_individual_:
+    '#type': select
+    '#title': "54. ¿Utiliza elementos de protección individual?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  55_la_institucion_le_suministra_los_elementos_de_proteccion_indi:
+    '#type': select
+    '#title': "55. ¿La Institución le suministra los elementos de protección individual?\t"
+    '#options':
+      Si: Si
+      'No': 'No'
+  actions:
+    '#type': webform_actions
+    '#title': Enviar
+    '#submit__label': Enviar
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

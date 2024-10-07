@@ -1,0 +1,17 @@
+<div{{ attributes.addClass('section-bg-color') }}>
+    {{ title_suffix }}
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 col-center text-center">
+                {% if label %}
+                    <h4>{{ label }}</h4>
+                {% endif %}
+
+                {{ content.message ? content.message }}
+
+                <hr class="space m">
+                {{ content ? content|without('message')|render|replace({'<form action':'<form class="form-box form-inline" action', 'class="form-email' : 'class="form-email form-control form-value', 'class="button js-form-submit form-submit"':'class="button btn js-form-submit form-submit"', 'class="js-form-required form-required"' : 'class="hidden js-form-required form-required"'})|t }}
+            </div>
+        </div>
+    </div>
+</div>

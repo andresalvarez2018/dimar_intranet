@@ -1,0 +1,24 @@
+{# subtitle #}
+{% if node.field_subtitle.value %}
+    {% set subtitle = node.field_subtitle.value %}
+{% elseif current_page == 'blog' %}
+    {% set subtitle = blog_page_subtitle %}
+{% else %}
+    {% set subtitle = page_subtitle %}
+{% endif %}
+
+<div class="header-base white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="title-base text-left">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <ol class="breadcrumb b white">
+                    {{ page.breadcrumb }}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

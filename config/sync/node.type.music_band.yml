@@ -1,0 +1,20 @@
+uuid: 3819e569-1d2c-4523-872b-03f69e3040f9
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: HgCkjY8heJpHtmm3r_f0iLrUP0HITdO2-Tp9fzVBXFQ
+name: 'Music band'
+type: music_band
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,130 @@
+
+{% if node.field_pdisplay_mode.value %}
+  {% set display_mode = node.field_pdisplay_mode.value %}
+{% else %}
+  {% set display_mode = 'type1' %}
+{% endif %}
+
+{% if display_mode == 'type2' %}
+  <div class="section-empty section-item">
+      <div class="container content">
+          <div class="row">
+              <div class="col-md-9">
+                  {{ content.body }}
+                  <hr class="space m" />
+                  
+              </div>
+              <div class="col-md-3">
+                  <ul class="list-texts">
+                      {% set ftitle = [] %}
+                      {% set fcontent = [] %}
+                      {% for item in content.field_details['#items'].value %}
+                          {% for i, row in item %}
+                              {% if (i + 1) % 2 != 0 %}
+                                  {% set ftitle = ftitle|merge([row]) %}
+                              {% else %}
+                                  {% set fcontent = fcontent|merge([row]) %}
+                              {% endif %}
+                          {% endfor %}
+                      {% endfor %}
+
+                      {#############################}
+                      
+                      {% if ftitle %}
+                          {% for i, title in ftitle %}
+                              <li><b>{{ title }}.</b>&nbsp;&nbsp;&nbsp;{{ fcontent[i] ? fcontent[i] }}</li>
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
+                  <hr class="space s" />
+                  <div class="p-display-2-link">
+                    {{ content.field_link }}
+                  </div>
+                  
+              </div>
+          </div>
+          <hr class="space" />
+          {% if node.field_image %}
+              <div class="flexslider carousel nav-inner visible-dir-nav nav-middle-mobile" data-options="numItems:4">
+                  <ul class="slides">
+
+                      {% for image in node.field_image %}
+                          {% set image_uri = image.entity.uri.value %}
+                          {% set image_alt = image.entity.alt.value %}
+                          {% set image_url = file_url(image_uri) %}
+                          {% set image_style_url = getUrlByImageStyle(image_uri, 'image_800x450') %}
+                          <li>
+                              <a class="img-box lightbox" href="{{ image_url ? image_url }}" data-lightbox-anima="show-scale">
+                                  <img src="{{ image_style_url ? image_style_url }}" alt="{{ image_alt ? image_alt }}">
+                              </a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+      </div>
+  </div>
+{% else %}
+  <div class="section-empty">
+      <div class="container content">
+          {% if node.field_image %}
+              <div class="flexslider carousel outer-navs row-15" data-options="numItems:4,itemMargin:10">
+                  <ul class="slides">
+
+                      {% for image in node.field_image %}
+                          {% set image_uri = image.entity.uri.value %}
+                          {% set image_alt = image.entity.alt.value %}
+                          {% set image_url = file_url(image_uri) %}
+                          {% set image_style_url = getUrlByImageStyle(image_uri, 'image_800x450') %}
+                          <li>
+                              <a class="img-box lightbox i-center" href="{{ image_url ? image_url }}" data-lightbox-anima="show-scale">
+                                  <i class="im-old-camera"></i>
+                                  <img src="{{ image_style_url ? image_style_url }}" alt="{{ image_alt ? image_alt }}">
+                              </a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          {% endif %}
+          <hr class="space" />
+          <div class="row">
+              <div class="col-md-8">
+                  <h4>{{ 'Description'|t }}</h4>
+                  {{ content.body }}
+                  <hr class="space s" />
+                 
+              </div>
+              <div class="col-md-4">
+                  <h4>{{ 'Details'|t }}</h4>
+                  <ul class="list-texts list-texts-justified">
+                      
+                      {% set ftitle = [] %}
+                      {% set fcontent = [] %}
+                      {% for item in content.field_details['#items'].value %}
+                          {% for i, row in item %}
+                              {% if (i + 1) % 2 != 0 %}
+                                  {% set ftitle = ftitle|merge([row]) %}
+                              {% else %}
+                                  {% set fcontent = fcontent|merge([row]) %}
+                              {% endif %}
+                          {% endfor %}
+                      {% endfor %}
+
+                      {#############################}
+                      
+                      {% if ftitle %}
+                          {% for i, title in ftitle %}
+                              <li><b>{{ title }}:</b> <span>{{ fcontent[i] ? fcontent[i] }}</span></li>
+                          {% endfor %}
+                      {% endif %}
+                   
+                  </ul>
+                  <hr class="space s" />
+                  <div class="p-display-1-link">
+                    {{ content.field_link }}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endif %}

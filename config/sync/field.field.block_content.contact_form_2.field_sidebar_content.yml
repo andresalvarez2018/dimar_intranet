@@ -1,0 +1,25 @@
+uuid: f2235802-3171-4e9e-8c7d-5d0327adad32
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_form_2
+    - field.storage.block_content.field_sidebar_content
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: block_content.contact_form_2.field_sidebar_content
+field_name: field_sidebar_content
+entity_type: block_content
+bundle: contact_form_2
+label: 'Sidebar content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

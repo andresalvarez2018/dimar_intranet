@@ -1,0 +1,26 @@
+uuid: 9239a7fb-d380-4557-9829-b28ea3b7447d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - social_simple
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  social_simple:
+    share: 1
+    title: ''
+    networks:
+      twitter: twitter
+      facebook: facebook
+    hashtags: '0'
+name: Normatividad
+type: normatividad
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,41 @@
+uuid: a43ca914-1b22-41aa-bc08-fe70c8df7c8a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.documentos.body
+    - field.field.node.documentos.field_archivo_adjunto
+    - node.type.documentos
+  module:
+    - file
+    - text
+    - user
+id: node.documentos.default
+targetEntityType: node
+bundle: documentos
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_archivo_adjunto:
+    type: file_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

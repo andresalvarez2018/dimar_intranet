@@ -1,0 +1,59 @@
+uuid: fa6357b9-6856-472a-9867-4f7cc3dd94b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.partners.body
+    - field.field.node.partners.field_logo
+    - field.field.node.partners.field_website
+    - node.type.partners
+  module:
+    - image
+    - text
+    - user
+id: node.partners.default
+targetEntityType: node
+bundle: partners
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_website:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

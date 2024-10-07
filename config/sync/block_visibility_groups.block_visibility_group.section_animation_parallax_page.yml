@@ -1,0 +1,17 @@
+uuid: b888cf16-fbdf-49e9-ad3f-beafc4231c77
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: section_animation_parallax_page
+label: 'Section animation parallax page'
+logic: or
+conditions:
+  07623014-feb5-4b3b-a9ef-70bf2de9359a:
+    id: request_path
+    negate: false
+    uuid: 07623014-feb5-4b3b-a9ef-70bf2de9359a
+    context_mapping: {  }
+    pages: /node/89
+allow_other_conditions: false

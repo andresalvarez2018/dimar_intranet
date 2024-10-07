@@ -1,0 +1,47 @@
+uuid: 8b2b2182-6595-4a79-8c82-6dbd48f7bccc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-side
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: menuside
+theme: whites
+region: side_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-side'
+settings:
+  id: 'system_menu_block:menu-side'
+  label: 'Menu side'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

@@ -1,0 +1,8 @@
+uuid: b84c1215-0075-4c82-80c3-50d37262dd59
+langcode: en
+status: true
+dependencies: {  }
+name: 'Estados de norma'
+vid: estados_de_norma
+description: ''
+weight: 0

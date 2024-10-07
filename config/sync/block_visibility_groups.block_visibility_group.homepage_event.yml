@@ -1,0 +1,17 @@
+uuid: e456600d-a000-4963-9a49-0d832903b869
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_event
+label: 'Homepage event'
+logic: or
+conditions:
+  ff335f19-3ebe-42e8-83c6-b1ce3fdf3140:
+    id: request_path
+    negate: false
+    uuid: ff335f19-3ebe-42e8-83c6-b1ce3fdf3140
+    context_mapping: {  }
+    pages: /node/47
+allow_other_conditions: false

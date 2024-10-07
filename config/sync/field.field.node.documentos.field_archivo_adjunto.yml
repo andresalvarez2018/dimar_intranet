@@ -1,0 +1,27 @@
+uuid: d5288112-6728-4bb2-98d5-882322208d40
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archivo_adjunto
+    - node.type.documentos
+  module:
+    - file
+id: node.documentos.field_archivo_adjunto
+field_name: field_archivo_adjunto
+entity_type: node
+bundle: documentos
+label: 'Archivo adjunto'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documentos
+  file_extensions: 'txt pdf word xlsx xls docx doc ppt pptx png mp4'
+  max_filesize: ''
+  description_field: false
+field_type: file

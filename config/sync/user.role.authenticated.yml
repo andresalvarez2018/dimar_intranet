@@ -1,0 +1,38 @@
+uuid: b12e1bb6-7524-4d13-8eed-1237738f50c1
+langcode: es
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.webform_default
+  module:
+    - comment
+    - contact
+    - entity_print
+    - entity_print_views
+    - filter
+    - search
+    - shortcut
+    - simplenews
+    - statistics
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Usuario autenticado'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'entity print access bundle normatividad'
+  - 'entity print access bundle page'
+  - 'entity print access bundle webform'
+  - 'entity print views access'
+  - 'search content'
+  - 'subscribe to newsletters'
+  - 'use text format basic_html'
+  - 'use text format webform_default'
+  - 'view post access counter'

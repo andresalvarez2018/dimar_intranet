@@ -1,0 +1,54 @@
+uuid: dc1719d3-ca99-40c9-b007-24885dc72db3
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_archivos_adjuntos
+    - field.field.node.page.field_comentarios_page_basic
+    - field.field.node.page.field_pt_animation_layer
+    - field.field.node.page.field_pt_icon_class
+    - field.field.node.page.field_pt_image_backgroun
+    - field.field.node.page.field_pt_style
+    - field.field.node.page.field_pt_video_id_youtube
+    - field.field.node.page.field_pt_video_mp4
+    - field.field.node.page.field_subtitle
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: cSv5lDnbIgDug475Hdz3woED2XMqYv3awI-J9u1JLbY
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_archivos_adjuntos: true
+  field_comentarios_page_basic: true
+  field_pt_animation_layer: true
+  field_pt_icon_class: true
+  field_pt_image_backgroun: true
+  field_pt_style: true
+  field_pt_video_id_youtube: true
+  field_pt_video_mp4: true
+  field_subtitle: true
+  langcode: true

@@ -1,0 +1,15 @@
+uuid: e2bd9930-e7ef-41f2-89c2-834722d833ff
+langcode: en
+status: true
+dependencies: {  }
+name: image_360x205
+label: 'image 360x205'
+effects:
+  728e25cf-ddef-48d1-ac80-e2bb59b76a7f:
+    uuid: 728e25cf-ddef-48d1-ac80-e2bb59b76a7f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 205
+      anchor: center-center

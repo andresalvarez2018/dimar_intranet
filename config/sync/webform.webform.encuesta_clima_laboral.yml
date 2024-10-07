@@ -1,0 +1,1031 @@
+uuid: da2d5fff-1585-45cc-86e1-b479fa693cda
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: false
+archive: false
+id: encuesta_clima_laboral
+title: 'Encuesta Medición de Clima Organizacional 2019'
+description: ''
+categories: {  }
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <p>Instrucciones:</p>
+      
+      <p>Para DIMAR es muy importante su opinión, esta nos permite seguir construyendo un gran lugar para trabajar. La medición de Clima Organizacional 2019 &nbsp;permitirá conocer como nos sentimos al interior de la entidad y aportamos al fortalecimiento de la misma para así poder diseñar y generar acciones orientadas a seguir mejorando como Entidad. Tenga en cuenta que la encuesta es anonima y los resultados son confidenciales. Gracias por dedicar un momento a diligenciar la encuesta.</p>
+      
+    '#format': full_html
+  processed_text_01:
+    '#type': processed_text
+    '#text': |
+      <p>&nbsp;</p>
+      
+      <p><strong>Demográfico</strong></p>
+      
+      <p>&nbsp;</p>
+      
+    '#format': full_html
+  genero:
+    '#type': select
+    '#title': Genero
+    '#options':
+      Femenino: Femenino
+      Masculino: Masculino
+  edad:
+    '#type': select
+    '#title': Edad
+    '#options':
+      '18 a 22 Años': '18 a 22 Años'
+      '23 a 26 Años': '23 a 26 Años'
+      '27 a 30 Años': '27 a 30 Años'
+      '31 a 35 Años': '31 a 35 Años'
+      '36 a 40 Años': '36 a 40 Años'
+      '41 a 50 Años': '41 a 50 Años'
+      'Mayor a 51 años': 'Mayor a 51 años'
+  unidad_y_o_dependencia:
+    '#type': select
+    '#title': 'Unidad y/o Dependencia'
+    '#options':
+      'ARC- Abadía Mendéz': 'ARC- Abadía Mendéz'
+      'ARC- Barú': 'ARC- Barú'
+      'ARC- Ciénaga de Mallorquín': 'ARC- Ciénaga de Mallorquín'
+      'ARC- Gorgonilla': 'ARC- Gorgonilla'
+      'ARC- Isla Palma': 'ARC- Isla Palma'
+      'ARC- Isla Tesoro': 'ARC- Isla Tesoro'
+      'ARC- Malpelo': 'ARC- Malpelo'
+      'ARC- Providencia': 'ARC- Providencia'
+      'ARC Pelicano': 'ARC Pelicano'
+      'Área Apoyo CCCP': 'Área Apoyo CCCP'
+      'Área Apoyo CIOH': 'Área Apoyo CIOH'
+      'ARC Isla Fuerte': 'ARC Isla Fuerte'
+      'ARC Caribe': 'ARC Caribe'
+      'ARC Isla Serrana': 'ARC Isla Serrana'
+      'ARC Cascajal': 'ARC Cascajal'
+      'ARC Roncador': 'ARC Roncador'
+      'ARC Isla del Morro': 'ARC Isla del Morro'
+      'Área de Apoyo SUBMERC': 'Área de Apoyo SUBMERC'
+      'Área de Comunicaciones Estratégicas': 'Área de Comunicaciones Estratégicas'
+      'Área de Empresas de Servicios Marítimos': 'Área de Empresas de Servicios Marítimos'
+      'Área de Gente de Mar': 'Área de Gente de Mar'
+      'Área de Gestión Documental': 'Área de Gestión Documental'
+      'ARC Isla Arena': 'ARC Isla Arena'
+      'Área de Gestión y Control': 'Área de Gestión y Control'
+      'Área de Inspecciones Marítimas': 'Área de Inspecciones Marítimas'
+      'Área de Materiales': 'Área de Materiales'
+      'Área de Naves': 'Área de Naves'
+      'Área de Reglamentación Marítima': 'Área de Reglamentación Marítima'
+      'Área de Seguridad Física DIMAR': 'Área de Seguridad Física DIMAR'
+      'Área de Seguridad Integral Marítima y Portuaria': 'Área de Seguridad Integral Marítima y Portuaria'
+      'Área de Servicio de atención y Participación Ciudadana': 'Área de Servicio de atención y Participación Ciudadana'
+      'Área de Transporte Marítimo': 'Área de Transporte Marítimo'
+      'Área Técnica CCCP': 'Área Técnica CCCP'
+      'Área Técnica CIOH': 'Área Técnica CIOH'
+      'Capitanía de Puerto de Arauca': 'Capitania de Puerto de Arauca'
+      'Capitanía de Puerto de Bahía Solano': 'Capitanía de Puerto de Bahía Solano'
+      'Capitanía de Puerto de Barranquilla': 'Capitanía de Puerto de Barranquilla'
+      'Capitanía de Puerto de Buenaventura': 'Capitanía de Puerto de Buenaventura'
+      'Capitanía de Puerto de Cartagena': 'Capitanía de Puerto de Cartagena'
+      'Capitanía de Puerto de Coveñas': 'Capitanía de Puerto de Coveñas'
+      'Capitanía de Puerto de Guapi': 'Capitanía de Puerto de Guapi'
+      'Capitanía de Puerto de Leticia': 'Capitanía de Puerto de Leticia'
+      'Capitanía de Puerto de Providencia': 'Capitanía de Puerto de Providencia'
+      'Capitanía de Puerto de Puerto Bolivar': 'Capitanía de Puerto de Puerto Bolivar'
+      'Capitanía de Puerto de Puerto Carreño': 'Capitanía de Puerto de Puerto Carreño'
+      'Capitanía de Puerto de Puerto Inírida': 'Capitanía de Puerto de Puerto Inírida'
+      'Capitanía de Puerto de Puerto Leguízamo': 'Capitanía de Puerto de Puerto Leguízamo'
+      'Capitanía de Puerto de Riohacha': 'Capitanía de Puerto de Riohacha'
+      'Capitanía de Puerto de San Andrés': 'Capitanía de Puerto de San Andrés'
+      'Capitanía de Puerto de Santa Marta': 'Capitanía de Puerto de Santa Marta'
+      'Capitanía de Puerto de Tumaco': 'Capitanía de Puerto de Tumaco'
+      'Capitanía de Puerto de Turbo': 'Capitanía de Puerto de Turbo'
+      CCCP: CCCP
+      'Centro Nacional de Alerta por Tsunami': 'Centro Nacional de Alerta por Tsunami'
+      CIOH: CIOH
+      'Control Tráfico Marítimo': 'Control Tráfico Marítimo'
+      'Coordinación Capitanías de Puerto': 'Coordinación Capitanías de Puerto'
+      Dirección: Dirección
+      'Grupo de Asuntos Internacionales': 'Grupo de Asuntos Internacionales'
+      'Grupo de Control Interno': 'Grupo de Control Interno'
+      'Grupo de Coordinación General': 'Grupo de Coordinación General'
+      'Grupo de Desarrollo Humano': 'Grupo de Desarrollo Humano'
+      'Grupo de Informática y Comunicación': 'Grupo de Informática y Comunicación'
+      'Grupo de Intendencia Regional de Barranquilla': 'Grupo de Intendencia Regional de Barranquilla'
+      'Grupo de Intendencia Regional de Buenaventura': 'Grupo de Intendencia Regional de Buenaventura'
+      'Grupo de Intendencia Regional de Cartagena': 'Grupo de Intendencia Regional de Cartagena'
+      'Grupo de Investigación Científica y Señalización': 'Grupo de Investigación Científica y Señalización'
+      'Grupo de Investigación y Señalización Marítima': 'Grupo de Investigación y Señalización Marítima'
+      'Grupo de Litorales': 'Grupo de Litorales'
+      'Grupo de Planeación': 'Grupo de Planeación'
+      'Grupo de Servicio Hidrográfico Nacional CIOH': 'Grupo de Servicio Hidrográfico Nacional CIOH'
+      'Grupo Legal Marítimo': 'Grupo Legal Marítimo'
+      'Hidrografía CIOH': 'Hidrografía CIOH'
+      'Oceanografía CCCP': 'Oceanografía CCCP'
+      'Oceanografía CIOH': 'Oceanografía CIOH'
+      Presupuesto: Presupuesto
+      'Protección Marítima': 'Protección Marítima'
+      'Protección Medio Marino': 'Protección Medio Marino'
+      'Protección Medio Marino CCCP': 'Protección Medio Marino CCCP'
+      'Protección Medio Marino CIOH': 'Protección Medio Marino CIOH'
+      'Proyección Institucional': 'Proyección Institucional'
+      Proyectos: Proyectos
+      'Seguridad Náutica y Portuaria': 'Seguridad Náutica y Portuaria'
+      'Señalización del Río Magdalena de Barranquilla': 'Señalización del Río Magdalena de Barranquilla'
+      'Señalización Marítima del Caribe': 'Señalización Marítima del Caribe'
+      'Señalización Marítima del Pacífico': 'Señalización Marítima del Pacífico'
+      'Sistema de Gestión Institucional': 'Sistema de Gestión Institucional'
+      'Subdirección Administrativa y Financiera': 'Subdirección Administrativa y Financiera'
+      'Subdirección de Desarrollo Marítimo': 'Subdirección de Desarrollo Marítimo'
+      'Subdirección de Marina Mercante': 'Subdirección de Marina Mercante'
+      'Zona Costera CCCP': 'Zona Costera CCCP'
+      'Zona Costera CIOH': 'Zona Costera CIOH'
+  antiguedad_en_dimar:
+    '#type': select
+    '#title': 'Antigüedad en DIMAR'
+    '#options':
+      '0 a 6 Meses': '0 a 6 Meses'
+      '6 Meses a 3 Años': '6 Meses a 3 Años'
+      '3 Años  a 7 Años': '3 Años  a 7 Años'
+      '7 Años a  12 Años': '7 Años a  12 Años'
+      'Mayor a 12 Años': 'Mayor a 12 Años'
+  escolaridad:
+    '#type': select
+    '#title': Escolaridad
+    '#options':
+      Primaria: Primaria
+      Secundaria: Secundaria
+      'Estudiante Técnico o Tecnólogo': 'Estudiante Técnico o Tecnólogo'
+      'Técnico o Tecnólogo': 'Técnico o Tecnólogo'
+      'Estudiante Universitario': 'Estudiante Universitario'
+      Profesional: Profesional
+      Especialista: Especialista
+      Maestría: Maestría
+  _que_tipo_de_vinculacion_tiene_:
+    '#type': select
+    '#title': '¿Qué tipo de vinculación tiene?'
+    '#options':
+      'Civil DIMAR': 'Civil DIMAR'
+      'Civil Armada': 'Civil Armada'
+      'Militar Armada': 'Militar Armada'
+      'Contratista Prestación de Servicios': 'Contratista Prestación de Servicios'
+  processed_text_02:
+    '#type': processed_text
+    '#text': |
+      <p>&nbsp;</p>
+      
+      <p><strong>Por favor lea detenidamente el enunciado y elija un número según su grado de acuerdo de la siguiente manera:</strong></p>
+      
+      <table align="center" style="border-collapse:collapse; width:371pt; border:none" width="494">
+      	<colgroup>
+      		<col style="width:92pt" width="122" />
+      		<col style="width:67pt" width="89" />
+      		<col style="width:77pt" width="103" />
+      		<col style="width:67pt" width="89" />
+      		<col style="width:68pt" width="91" />
+      	</colgroup>
+      	<tbody>
+      		<tr height="62" style="height:46.5pt">
+      			<td class="xl64" height="62" style="border-image: initial; background: rgb(217, 217, 217); height: 46.5pt; width: 107px; text-align: center; vertical-align: middle; border-width: 1pt 0.5pt 1pt 1pt; border-style: solid; border-color: windowtext; white-space: normal; padding: 0px;" width="122"><span style="font-size:10pt"><span style="font-family:Tahoma,sans-serif"><span style="color:black"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Totalmente en desacuerdo</span></span></span></span></span></span></td>
+      			<td class="xl65" style="border-image: initial; background: rgb(217, 217, 217); width: 98px; text-align: center; vertical-align: middle; border-width: 1pt 0.5pt; border-style: solid; border-color: windowtext; white-space: normal; padding: 0px;" width="89"><span style="font-size:10pt"><span style="font-family:Tahoma,sans-serif"><span style="color:black"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">En desacuerdo</span></span></span></span></span></span></td>
+      			<td class="xl65" style="border-image: initial; background: rgb(217, 217, 217); width: 108px; text-align: center; vertical-align: middle; border-width: 1pt 0.5pt; border-style: solid; border-color: windowtext; white-space: normal; padding: 0px;" width="103"><span style="font-size:10pt"><span style="font-family:Tahoma,sans-serif"><span style="color:black"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Ni de acuerdo, ni en desacuerdo</span></span></span></span></span></span></td>
+      			<td class="xl66" style="border-image: initial; background: rgb(217, 217, 217); width: 82px; vertical-align: middle; border-width: 1pt 0.5pt; border-style: solid; border-color: windowtext; padding: 0px; white-space: nowrap;" width="89"><span style="font-size:10pt"><span style="font-family:Tahoma,sans-serif"><span style="color:black"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp; De Acuerdo</span></span></span></span></span></span></td>
+      			<td class="xl67" style="border:none; background:#d9d9d9; border-left:none; width:68pt; text-align:center; vertical-align:middle; border-width:1pt 1pt 1pt 0.5pt; border-style:solid; border-color:windowtext; white-space:normal; padding:0px" width="91"><span style="font-size:10pt"><span style="font-family:Tahoma,sans-serif"><span style="color:black"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Totalmente de Acuerdo</span></span></span></span></span></span></td>
+      		</tr>
+      	</tbody>
+      </table>
+      
+      <p>&nbsp;</p>
+      
+    '#format': full_html
+  1_en_dimar_se_realizan_actividades_que_contribuyen_a_mi_bienesta:
+    '#type': select
+    '#title': "1. En DIMAR se realizan actividades que contribuyen a mi bienestar y al de mi familia\t"
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  2_en_dimar_se_hacen_reconocimientos_y_o_estimulos_no_economicos_:
+    '#type': select
+    '#title': '2. En DIMAR se hacen reconocimientos y/o estímulos no económicos para incentivar el trabajo bien hecho'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  3_dimar_se_interesa_por_incentivar_mi_participacion_en_actividad:
+    '#type': select
+    '#title': '3. DIMAR se interesa por incentivar mi participación en actividades Culturales y/o Deportivas'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  4_la_relacion_que_existe_entre_los_funcionarios_es_cordial_y_coo:
+    '#type': select
+    '#title': '4. La relación que existe entre los funcionarios es cordial y cooperativa'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  5_me_siento_satisfecho_con_el_ambiente_de_trabajo_que_se_vive_de:
+    '#type': select
+    '#title': '5. Me siento satisfecho con el ambiente de trabajo que se vive dentro de DIMAR '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  7_los_empleados_de_la_entidad_ponen_en_practica_los_valores_inst:
+    '#type': select
+    '#title': '6. Los empleados de la entidad ponen en práctica los valores institucionales'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  8_tengo_las_habilidades_requeridas_para_realizar_mi_trabajo:
+    '#type': select
+    '#title': '7. Tengo las habilidades requeridas para realizar mi trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  9_en_mi_trabajo_hago_una_buena_utilizacion_de_mis_conocimientos:
+    '#type': select
+    '#title': '8. En mi trabajo hago una buena utilización de mis conocimientos'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  10_dimar_genera_acciones_que_incentivan_la_formacion_capacitacio:
+    '#type': select
+    '#title': '9. DIMAR genera acciones que incentivan la formación, capacitación y desarrollo profesional'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  11_las_personas_que_se_vinculan_o_cambian_de_cargo_reciben_el_en:
+    '#type': select
+    '#title': '10. Las personas que se vinculan o cambian de cargo reciben el entrenamiento necesario para realizar su trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  12_recibo_retroalimentacion_oportuna_con_respecto_a_mi_gestion:
+    '#type': select
+    '#title': '11. Recibo retroalimentación oportuna con respecto a mi gestión'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  13_puedo_manejar_adecuadamente_mi_carga_de_trabajo:
+    '#type': select
+    '#title': '12. Puedo manejar adecuadamente mi carga de trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  14_considero_que_mis_funciones_estan_claramente_determinadas:
+    '#type': select
+    '#title': '13. Considero que mis funciones están claramente determinadas'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  15_dimar_posee_mecanismos_de_comunicacion_hacia_adentro_y_hacia_:
+    '#type': select
+    '#title': '14. DIMAR posee mecanismos de comunicación hacia adentro y hacia fuera de la organización, para mostrar los resultados financieros, económicos y sociales de su operación'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  16_en_mi_area_se_asigna_el_tabajo_dando_claridad_sobre_el_result:
+    '#type': select
+    '#title': '15. En mi área se asigna el tabajo dando claridad sobre el resultado que espera'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  17_mi_jefe_trabaja_con_nosotros_en_el_logro_de_los_resultados:
+    '#type': select
+    '#title': '16. Mi jefe trabaja con nosotros en el logro de los resultados'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  18_en_mi_area_se_asigna_el_trabajo_de_acuerdo_a_los_roles_y_capa:
+    '#type': select
+    '#title': '17. En mi área se asigna el trabajo de acuerdo a los roles y capacidades de los miembros del equipo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  19_dimar_brinda_las_herramientas_necesarias_para_el_cumplimiento:
+    '#type': select
+    '#title': '18. DIMAR brinda las herramientas necesarias para el cumplimiento de mis funciones'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  20_sirvo_efectivamente_al_usuario_externo_o_interno:
+    '#type': select
+    '#title': '19. Sirvo efectivamente al usuario externo o interno'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  21_busco_el_desarrollo_de_los_intereses_de_mi_proceso_y_de_dimar:
+    '#type': select
+    '#title': '20. Busco el desarrollo de los intereses de mi proceso y de DIMAR '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  22_trato_a_los_funcionarios_de_dimar_con_dignidad_y_respeto:
+    '#type': select
+    '#title': '21. Trato a los funcionarios de DIMAR con dignidad y respeto'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  23_ayudo_a_mi_equipo_de_trabajo_a_desarrollar_sus_fortalezas_:
+    '#type': select
+    '#title': '22. Ayudo a mi equipo de trabajo a desarrollar sus fortalezas '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  24_sugiero_nuevas_formas_de_completar_las_tareas_:
+    '#type': select
+    '#title': '23. Sugiero nuevas formas de completar las tareas '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  25_hago_seguimiento_a_las_tareas_y_estimulo_a_mi_equipo_de_traba:
+    '#type': select
+    '#title': '24. Hago seguimiento a las tareas y estimulo a mi equipo de trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  26_promuevo_el_trabajo_en_equipo_para_alcanzar_los_objetivos_de_:
+    '#type': select
+    '#title': '25. Promuevo el trabajo en equipo para alcanzar los objetivos de mi proceso y de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  27_tomo_acciones_audaces_para_alcanzar_los_objetivos_de_mi_proce:
+    '#type': select
+    '#title': '26. Tomo acciones audaces para alcanzar los objetivos de mi proceso y de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  28_cumplo_las_tareas_que_me_comprometo_a_realizar:
+    '#type': select
+    '#title': '27. Cumplo las tareas que me comprometo a realizar'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  29_soy_accesible_a_los_requerimientos_de_las_demas_personas_:
+    '#type': select
+    '#title': '28. Soy accesible a los requerimientos de las demás personas '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  30_me_comporto_de_tal_manera_que_fortalezco_el_respeto_entre_mi_:
+    '#type': select
+    '#title': '29. Me comporto de tal manera que fortalezco el respeto entre mi grupo de trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  31_los_miembros_de_mi_area_estan_orgullosos_de_trabajar_conmigo:
+    '#type': select
+    '#title': '30. Los miembros de mi área están orgullosos de trabajar conmigo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  32_desarrollo_mis_tareas_basado_en_procedimientos_guias_politica:
+    '#type': select
+    '#title': '31. Desarrollo mis tareas basado en procedimientos/ guías/ políticas/ metodologías reconocidas por su confiabilidad y validez dentro de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  33_evaluo_cualitativamente_el_resultado_de_mis_tareas_:
+    '#type': select
+    '#title': '32. Evalúo la calidad del resultado de mis tareas'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  34_evaluo_cuantitativamente_el_resultado_de_mis_tareas_:
+    '#type': select
+    '#title': '33. Evalúo el cumplimiento de mis tareas en forma numérica'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  35_a_la_hora_de_tomar_decisiones_coloco_por_encima_el_criterio_t:
+    '#type': select
+    '#title': '34. A la hora de tomar decisiones coloco por encima el criterio técnico sobre mis percepciones personales'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  36_en_mi_equipo_de_trabajo_me_permiten_sugerir_alternativas_y_ap:
+    '#type': select
+    '#title': '35. En mi equipo de trabajo me permiten sugerir alternativas y aportar a la toma de decisiones para solucionar los problemas que se presenten en mi equipo de trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  37_mi_area_se_adapta_con_facilidad_a_las_nuevas_estrategias_de_d:
+    '#type': select
+    '#title': '36. Mi área se adapta con facilidad a las nuevas estrategias de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  38_en_mi_equipo_todos_tenemos_claras_nuestras_responsabilidades:
+    '#type': select
+    '#title': '37. En mi equipo todos tenemos claras nuestras responsabilidades'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  39_pienso_que_existe_una_relacion_de_companerismo_y_apoyo_en_mi_:
+    '#type': select
+    '#title': '38. Pienso que existe una relación de compañerismo y apoyo en mi grupo de trabajo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  40_mi_rol_agrega_valor_al_logro_de_los_objetivos_del_equipo:
+    '#type': select
+    '#title': '39. Mi rol agrega valor al logro de los objetivos del equipo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  41_en_nuestro_equipo_nos_comunicamos_de_forma_clara_y_honesta:
+    '#type': select
+    '#title': '40. En nuestro equipo, nos comunicamos de forma clara y honesta'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  42_la_informacion_clave_para_hacer_nuestro_trabajo_es_difundida_:
+    '#type': select
+    '#title': '41. La información clave para hacer nuestro trabajo es difundida de manera oportuna en el equipo'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  43_existe_un_ambiente_de_cooperacion_entre_mis_companeros_de_otr:
+    '#type': select
+    '#title': '42. Existe un ambiente de cooperación entre mis compañeros de otras áreas '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  44_he_aprendido_a_no_decir_mentiras_para_salir_de_aprietos:
+    '#type': select
+    '#title': '43. He aprendido a no decir mentiras para salir de aprietos'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  45_tomo_decisiones_basadas_en_informacion_clara_precisa_y_transp:
+    '#type': select
+    '#title': '44. Tomo decisiones basadas en información clara, precisa y transparente'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  46_realizo_las_labores_a_mi_cargo_sin_ceder_ante_presiones_e_int:
+    '#type': select
+    '#title': '45. Realizo las labores a mi cargo sin ceder ante presiones e intereses externos '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  47_he_aprendido_a_no_discriminar_a_mis_companeros_por_sus_postur:
+    '#type': select
+    '#title': '46. He aprendido a no discriminar a mis compañeros por sus posturas y condición con respecto a temas de política, religión, sexualidad, edad, clase social, etc. '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  48_he_aprendido_a_hablar_abiertamente_trabajar_en_equipo_y_respe:
+    '#type': select
+    '#title': '47. He aprendido a hablar abiertamente, trabajar en equipo y respetar el punto de vista de los demás. Por lo cual no me incomoda que alguno de mis compañeros corrija mi trabajo '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  49_doy_un_trato_igualitario_a_todos_mis_companeros_a_diario:
+    '#type': select
+    '#title': '48. Doy un trato igualitario a todos mis compañeros a diario'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  50_me_motiva_servir_a_la_sociedad_y_a_mi_pais_tengo_claro_que_mi:
+    '#type': select
+    '#title': '49. Me motiva servir a la sociedad y a mi país, tengo claro que mi trabajo es una vocación y no una forma rápida de resolver mis problemas económicos '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  51_estoy_dispuesto_a_hacer_un_esfuerzo_extra_cuando_sea_necesari:
+    '#type': select
+    '#title': '50. Estoy dispuesto a hacer un esfuerzo extra cuando sea necesario por el bien de la entidad'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  52_cuando_presento_falencias_en_mi_trabajo_las_asumo_con_respons:
+    '#type': select
+    '#title': '51. Cuando presento falencias en mi trabajo, las asumo con responsabilidad. '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  53_como_servidor_publico_he_aprendido_que_mi_desempeno_diario_es:
+    '#type': select
+    '#title': '52. Como servidor público he aprendido que mi desempeño diario es la clave para construir la confianza que la sociedad necesita'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  54_tengo_claro_que_soy_referente_de_comportamiento_frente_a_cual:
+    '#type': select
+    '#title': '53. Tengo claro que soy referente de comportamiento frente a cualquier ciudadano, por lo cual debo esforzarme por resolver todos los problemas personales o profesionales de forma transparente '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  55_soy_ordenado_llevo_un_cronograma_de_actividades_para_mejorar_:
+    '#type': select
+    '#title': '54. Soy ordenado. Llevo un cronograma de actividades para mejorar mi eficiencia y no olvidar mis obligaciones '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  56_soy_consciente_de_que_utilizar_mi_trabajo_para_traer_benefici:
+    '#type': select
+    '#title': '55. Soy consciente de que utilizar mi trabajo para traer beneficios a terceros trae consecuencias negativas para la entidad y la sociedad '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  57_conozco_que_los_cargos_se_adjudican_por_meritocracia_por_lo_t:
+    '#type': select
+    '#title': '56. Conozco que los cargos se adjudican por meritocracia; por lo tanto, no intervengo en procesos de selección para beneficiar a ninguna persona conocida. '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  58_soy_promotor_de_la_igualdad_en_mi_vida_diaria_brindo_las_mism:
+    '#type': select
+    '#title': '57. Soy promotor de la igualdad en mi vida diaria; brindo las mismas oportunidades a todas las personas'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  59_conozco_la_mision_vision_de_dimar:
+    '#type': select
+    '#title': '58. Conozco la Misión, Visión de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  60_conozco_los_objetivos_estrategicos_de_dimar:
+    '#type': select
+    '#title': '59. Conozco los objetivos estrategicos de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  61_conozco_y_entiendo_el_mapa_de_procesos_de_dimar:
+    '#type': select
+    '#title': '60. Conozco y entiendo el Mapa de Procesos de DIMAR'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  62_conozco_los_indicadores_a_los_cuales_aporto_con_mi_gestion:
+    '#type': select
+    '#title': '61. Conozco los indicadores a los cuales aporto con mi gestión'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  63_los_mecanismos_utilizados_por_dimar_para_informarme_acerca_de:
+    '#type': select
+    '#title': '62. Los mecanismos utilizados por DIMAR para informarme acerca del sistema de Gestión Institucional son efectivos'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  64_en_dimar_se_hace_seguimiento_al_cumplimiento_de_los_objetivos:
+    '#type': select
+    '#title': '63. En DIMAR se hace seguimiento al cumplimiento de los objetivos de mi proceso/área'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  65_los_procedimientos_de_mi_area_de_trabajo_garantizan_la_efecti:
+    '#type': select
+    '#title': '64. Los procedimientos de mi área de trabajo garantizan la efectividad de las acciones que se realizan  '
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  66_en_mi_area_de_trabajo_no_hay_contaminacion_auditiva_ruido_:
+    '#type': select
+    '#title': '65. En mi área de trabajo no hay contaminación auditiva (ruido)'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  67_en_mi_area_de_trabajo_la_iluminacion_es_la_adecuada:
+    '#type': select
+    '#title': '66. En mi área de trabajo la iluminación es la adecuada'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  68_mi_area_de_trabajo_tiene_suficiente_ventilacion:
+    '#type': select
+    '#title': '67. Mi área de trabajo tiene suficiente ventilación'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  69_mi_area_de_trabajo_permanece_ordenada_y_limpia:
+    '#type': select
+    '#title': '68. Mi área de trabajo permanece ordenada y limpia'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  70_conozco_los_programas_que_dimar_implementa_a_nivel_externo_pa:
+    '#type': select
+    '#title': '69. Conozco los programas que DIMAR implementa a nivel externo para reducir o minimizar la contaminación directa e indirecta que tiene sobre el medio ambiente'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  71_conozco_las_campanas_que_dimar_implementa_a_nivel_interno_par:
+    '#type': select
+    '#title': '70. Conozco las campañas que DIMAR implementa a nivel interno para la reducción en el uso de energía y agua, así comomanejo de residuos sólidos (reciclaje)'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  72_en_dimar_se_difunden_los_temas_de_salud_y_seguridad_en_el_tra:
+    '#type': select
+    '#title': '71. En DIMAR se difunden los temas de Salud y Seguridad en el Trabajo (Medicina Preventiva y Seguridad Industrial)'
+    '#options':
+      'Totalmente en desacuerdo ': 'Totalmente en desacuerdo '
+      'En desacuerdo': 'En desacuerdo'
+      'Ni de acuerdo, ni en desacuerdo': 'Ni de acuerdo, ni en desacuerdo'
+      'De acuerdo': 'De acuerdo'
+      'Totalmente de acuerdo': 'Totalmente de acuerdo'
+  recomendaciones_y_o_sugerencias:
+    '#type': textarea
+    '#title': 'Recomendaciones y/o sugerencias'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

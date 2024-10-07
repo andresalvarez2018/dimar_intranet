@@ -1,0 +1,14 @@
+uuid: d6131045-6c7d-4d6b-9606-246ab041cc00
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.editor_de_fotos_internas_
+  module:
+    - user
+id: user_add_role_action.editor_de_fotos_internas_
+label: 'Añade el rol Editor de fotos internas al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editor_de_fotos_internas_

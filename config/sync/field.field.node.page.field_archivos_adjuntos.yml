@@ -1,0 +1,27 @@
+uuid: db9d8105-c891-4e65-8453-81c174bd14c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archivos_adjuntos
+    - node.type.page
+  module:
+    - file
+id: node.page.field_archivos_adjuntos
+field_name: field_archivos_adjuntos
+entity_type: node
+bundle: page
+label: 'Archivos Adjuntos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documentos
+  file_extensions: 'txt pdf docx xlsx xls doc mp4'
+  max_filesize: ''
+  description_field: true
+field_type: file

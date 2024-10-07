@@ -1,0 +1,28 @@
+
+{# subtitle #}
+{% if node.field_subtitle.value %}
+    {% set subtitle = node.field_subtitle.value %}
+{% elseif current_page == 'blog' %}
+    {% set subtitle = blog_page_subtitle %}
+{% else %}
+    {% set subtitle = page_subtitle %}
+{% endif %}
+
+<div class="header-base">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="title-base text-left">
+                    <h1>{{ current_title }}</h1>
+   {% if "Lorem ipsum dolor sit ame" not in subtitle %}
+                <p>{{ subtitle ? subtitle }}</p> 
+            {% endif %}                </div>
+            </div>
+            <div class="col-md-3">
+                <ol class="breadcrumb b">
+                    {{ page.breadcrumb }}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

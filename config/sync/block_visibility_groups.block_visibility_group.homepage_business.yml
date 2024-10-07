@@ -1,0 +1,17 @@
+uuid: 8a842953-6d89-4428-956a-b739e1c80d44
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_business
+label: 'Homepage business'
+logic: or
+conditions:
+  a22ca001-ff45-4bd6-b78a-6d034705e59e:
+    id: request_path
+    negate: false
+    uuid: a22ca001-ff45-4bd6-b78a-6d034705e59e
+    context_mapping: {  }
+    pages: /node/44
+allow_other_conditions: false

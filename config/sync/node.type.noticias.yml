@@ -1,0 +1,24 @@
+uuid: e9efd05c-264e-4002-9a4f-c7acf43b420f
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - social_simple
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  social_simple:
+    share: 0
+    title: ''
+    networks: {  }
+    hashtags: '0'
+name: o
+type: noticias
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

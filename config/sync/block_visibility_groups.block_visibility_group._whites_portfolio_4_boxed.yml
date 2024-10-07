@@ -1,0 +1,17 @@
+uuid: e976c4e2-ef21-4e7b-be1c-4ca72894b54d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _whites_portfolio_4_boxed
+label: '[Whites] Portfolio 4 boxed'
+logic: or
+conditions:
+  0fd38898-516e-4372-82fd-1f29e0453028:
+    id: request_path
+    negate: false
+    uuid: 0fd38898-516e-4372-82fd-1f29e0453028
+    context_mapping: {  }
+    pages: /node/14
+allow_other_conditions: false

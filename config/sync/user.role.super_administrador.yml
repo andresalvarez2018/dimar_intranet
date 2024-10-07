@@ -1,0 +1,37 @@
+uuid: 1d6522d4-5a87-4189-b65c-ba59ab464149
+langcode: es
+status: true
+dependencies:
+  module:
+    - entity_clone
+    - views_ui
+id: super_administrador
+label: 'Super Administrador'
+weight: 10
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer permissions'
+  - 'administer users'
+  - 'administer views'
+  - 'cancel account'
+  - 'change own username'
+  - 'clone action entity'
+  - 'clone authorization_profile entity'
+  - 'clone base_field_override entity'
+  - 'clone block entity'
+  - 'clone block_content entity'
+  - 'clone block_content_type entity'
+  - 'clone block_visibility_group entity'
+  - 'clone comment entity'
+  - 'clone comment_type entity'
+  - 'clone contact_form entity'
+  - 'clone contact_message entity'
+  - 'clone date_format entity'
+  - 'clone entity_form_display entity'
+  - 'clone language_content_settings entity'
+  - 'clone menu_link_content entity'
+  - 'clone node entity'
+  - 'clone node_type entity'
+  - 'select account cancellation method'

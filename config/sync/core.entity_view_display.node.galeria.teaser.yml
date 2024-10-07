@@ -1,0 +1,44 @@
+uuid: f11ed283-b4f2-4a47-b870-9ded5dc6e1db
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.galeria.body
+    - field.field.node.galeria.field_enlace_galeria
+    - field.field.node.galeria.field_imagen_galeria
+    - field.field.node.galeria.field_lugar_galeria_
+    - field.field.node.galeria.field_tipo_galeria_
+    - field.field.node.galeria.field_titulo_galeria
+    - node.type.galeria
+  module:
+    - text
+    - user
+id: node.galeria.teaser
+targetEntityType: node
+bundle: galeria
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_enlace_galeria: true
+  field_imagen_galeria: true
+  field_lugar_galeria_: true
+  field_tipo_galeria_: true
+  field_titulo_galeria: true
+  langcode: true

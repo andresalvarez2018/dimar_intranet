@@ -1,0 +1,51 @@
+whites-lib:
+  version: VERSION
+  css:
+    theme:
+      scripts/bootstrap/css/bootstrap.css: {}
+      css/style.css: {}
+      scripts/flexslider/flexslider.css: {}
+      css/image-box.css: {}
+      css/content-box.css: {}
+      css/components.css: {}
+      css/animations.css: {}
+      scripts/magnific-popup.css: {}
+      css/skin.css: {}
+      scripts/iconsmind/line-icons.min.css: {}
+      scripts/jquery.flipster.min.css: {}
+      scripts/jquery.bootgrid.css: {}
+      css/update.css: {}
+  js:
+    scripts/pre-whites.js: {}
+    scripts/script.js: {}
+    scripts/bootstrap/js/bootstrap.min.js: { attributes: { async: true } }
+    scripts/imagesloaded.min.js: {}
+    scripts/isotope.min.js: {}
+    scripts/jquery.twbsPagination.min.js: {}
+    scripts/jquery.magnific-popup.min.js: {}
+    scripts/parallax.min.js: {}
+    scripts/jquery.progress-counter.js: {}
+    scripts/jquery.tab-accordion.js: {}
+    scripts/smooth.scroll.min.js: {}
+    scripts/flexslider/jquery.flexslider-min.js: {}
+    scripts/jquery.flipster.min.js: {}
+    scripts/jquery.spritely.min.js: {}
+    scripts/jquery.slimscroll.min.js: {}
+    scripts/jquery.bootgrid.min.js: {}
+    scripts/google.maps.min.js: {}
+
+    scripts/update.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/oncee
+
+whites-admin-lib:
+  version: VERSION
+  js:
+    scripts/admin-settings/js/admin.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/oncee

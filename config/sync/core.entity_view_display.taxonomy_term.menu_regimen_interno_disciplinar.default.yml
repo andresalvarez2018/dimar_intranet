@@ -1,0 +1,39 @@
+uuid: c23e4433-9b7e-426a-a325-2c7c4eb64399
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.menu_regimen_interno_disciplinar.field_enlace
+    - taxonomy.vocabulary.menu_regimen_interno_disciplinar
+  module:
+    - link
+    - text
+id: taxonomy_term.menu_regimen_interno_disciplinar.default
+targetEntityType: taxonomy_term
+bundle: menu_regimen_interno_disciplinar
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_enlace:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

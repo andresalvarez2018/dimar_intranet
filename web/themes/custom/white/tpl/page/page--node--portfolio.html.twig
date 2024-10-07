@@ -1,0 +1,43 @@
+
+{% set menu_style = theme_menu_style %}
+
+{% if node.field_pt_style.value %}
+	{% set page_title_style = node.field_pt_style.value %}
+{% else %}
+	{% set page_title_style = theme_page_title_style %}
+{% endif %}
+
+{% include theme_path_no_base ~ '/tpl/header/header.html.twig' %}
+
+
+{% include theme_path_no_base ~ '/tpl/menu-tpl/whites-menu--' ~ menu_style ~ '.html.twig' %}
+
+
+
+{% if page_title_style and  page_title_style != 'none' %}
+    {% include theme_path_no_base ~ '/tpl/page-title-tpl/page-title-' ~ page_title_style ~ '.html.twig' %}
+{% endif %}
+
+<div class="whites-section-content section-empty section-item">
+	<div class="container content">
+		{{ page.highlighted }}
+           			<div class="bread"> 	{{ page.breadcrumb }} </div>
+
+	</div>
+</div>
+{# content #}
+{{ page.content }}
+<div class="section-bg-color bg-color-2">
+  	<div class="container content">
+	    <div class="row porfolio-bar">
+	      	{{ previous_project ? previous_project|t : '' }}
+	      	<div class="col-md-8 text-center">
+	        	{{ page.bottom_project }}
+	      	</div>
+	      	{{ next_project ? next_project|t : '' }}
+	    </div>
+  	</div>
+</div>
+{# content #}
+{% include theme_path_no_base ~ '/tpl/footer/footer.html.twig' %}
+<div class="chat"> {{ page.chat }} </div>

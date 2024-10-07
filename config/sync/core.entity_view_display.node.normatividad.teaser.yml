@@ -1,0 +1,52 @@
+uuid: cd8268e5-f88b-47dc-9bc0-1e4361fa6a67
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.normatividad.body
+    - field.field.node.normatividad.field_anio_norma
+    - field.field.node.normatividad.field_dependencia
+    - field.field.node.normatividad.field_epigrafe
+    - field.field.node.normatividad.field_estado_norma
+    - field.field.node.normatividad.field_fecha_de_la_norma
+    - field.field.node.normatividad.field_normas_internas
+    - field.field.node.normatividad.field_numero_de_norma
+    - field.field.node.normatividad.field_opciones_de_ruta_url_
+    - field.field.node.normatividad.field_tipo_norma_
+    - node.type.normatividad
+  module:
+    - text
+    - user
+id: node.normatividad.teaser
+targetEntityType: node
+bundle: normatividad
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_anio_norma: true
+  field_dependencia: true
+  field_epigrafe: true
+  field_estado_norma: true
+  field_fecha_de_la_norma: true
+  field_normas_internas: true
+  field_numero_de_norma: true
+  field_opciones_de_ruta_url_: true
+  field_tipo_norma_: true
+  langcode: true

@@ -1,0 +1,43 @@
+  
+
+    <i class="scroll-top scroll-top-mobile fa fa-sort-asc"></i>
+    <header class="header-base">
+        <div class="content">
+s="container mobile-gobierno">
+                <div class="row">
+                    
+                    
+                    <div class="col-sm-6 col-md-4 header-left text-left">
+                        {{ page.header_1 }}
+
+                    </div>
+                    <div class="col-sm-6 col-md-6 header-center text-left">
+                        {{ page.header_2 }}
+
+                    </div>
+                    <div class="col-sm-12 col-md-2 header-right text-left">
+                        {{ page.header_3 }}
+                    </div>
+                </div>
+            </div>
+            <div class="row copy-row">
+               
+
+
+                <div class="col-md-12 copy-text">
+                <div class="col-md-4 copy-text">
+                {{ page.encabezado_1 }}
+                </div>
+                <div class="col-md-4 copy-text">
+                                {{ page.encabezado_2 }}
+                </div>
+                <div class="col-md-4 copy-text">
+                                {{ page.encabezado_3 }}
+
+                </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>

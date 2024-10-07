@@ -1,0 +1,17 @@
+uuid: 01a7ea16-fc8c-4391-a264-618d442d2e0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _whites_portfolio_4_full_width
+label: '[Whites] Portfolio 4 full width'
+logic: or
+conditions:
+  9d9038d6-189a-450b-b505-3cca2b1409c2:
+    id: request_path
+    negate: false
+    uuid: 9d9038d6-189a-450b-b505-3cca2b1409c2
+    context_mapping: {  }
+    pages: /node/15
+allow_other_conditions: false

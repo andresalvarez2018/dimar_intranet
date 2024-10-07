@@ -1,0 +1,5 @@
+name: 'ldap_help '
+type: module
+description: 'ldap_help '
+package: NaviSystem
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,17 @@
+uuid: b0b6e000-0b50-472e-87f4-af851963f43c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _whites_portfolio_4_gutted_boxed
+label: '[Whites] Portfolio 4 gutted boxed'
+logic: or
+conditions:
+  b6a5ae98-5c1d-40e6-8812-c6a5164dc483:
+    id: request_path
+    negate: false
+    uuid: b6a5ae98-5c1d-40e6-8812-c6a5164dc483
+    context_mapping: {  }
+    pages: /node/16
+allow_other_conditions: false

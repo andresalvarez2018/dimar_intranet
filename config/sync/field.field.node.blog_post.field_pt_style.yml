@@ -1,0 +1,23 @@
+uuid: ef8d3d3e-1acb-4a75-8675-922b2ca05466
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_style
+    - node.type.blog_post
+  module:
+    - options
+id: node.blog_post.field_pt_style
+field_name: field_pt_style
+entity_type: node
+bundle: blog_post
+label: 'Page title style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: base-3
+default_value_callback: ''
+settings: {  }
+field_type: list_string

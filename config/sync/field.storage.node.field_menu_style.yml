@@ -1,0 +1,45 @@
+uuid: dc35bd79-8751-4fa4-890d-68138d32534f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_menu_style
+field_name: field_menu_style
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: big-logo
+      label: 'Big logo'
+    -
+      value: classic
+      label: Classic
+    -
+      value: classic-transparent
+      label: 'Classic transparent'
+    -
+      value: middle-box
+      label: 'Middle box'
+    -
+      value: middle-logo
+      label: 'middle logo'
+    -
+      value: middle-logo-top
+      label: 'Middle logo top'
+    -
+      value: side
+      label: Side
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

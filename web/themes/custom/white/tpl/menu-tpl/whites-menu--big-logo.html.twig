@@ -1,0 +1,36 @@
+<header data-menu-anima="fade-top">
+    <div class="navbar navbar-default navbar-big-logo" role="navigation">
+        <div class="navbar-mini">
+            <div class="container">
+                <div class="nav navbar-nav navbar-left">
+                    {{ page.top_bar_left }}
+                </div>
+                <div class="nav navbar-nav navbar-right">
+                    <div class="minisocial-group">
+                        {{ page.top_bar_right }}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-main mega-menu-fullwidth">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('<front>') }}"><img src="{{ menu_big_logo ? menu_big_logo|first : '' }}" alt="{{ site_name }}" /> </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    {{ page.main_menu }}
+                    <div class="nav navbar-nav navbar-right">
+                        <div class="nav navbar-nav">
+                            {{ page.header_search|render|replace({'<form action':'<form class="navbar-form search-input" action','<input class="hidden button js-form-submit form-submit"':'<input class="btn btn-default button js-form-submit form-submit"','value="Search"':'value="GO"','placeholder="Search for..."':'placeholder="Search"'})|t }}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

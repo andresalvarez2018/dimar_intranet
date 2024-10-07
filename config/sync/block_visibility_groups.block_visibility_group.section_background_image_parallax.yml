@@ -1,0 +1,17 @@
+uuid: 33d5d50f-0947-49e1-8e57-5a6feae8dd6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: section_background_image_parallax
+label: 'Section background image parallax'
+logic: or
+conditions:
+  9cb41cde-a63f-418e-8f39-75537614d64c:
+    id: request_path
+    negate: false
+    uuid: 9cb41cde-a63f-418e-8f39-75537614d64c
+    context_mapping: {  }
+    pages: /node/93
+allow_other_conditions: false

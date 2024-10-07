@@ -1,0 +1,90 @@
+uuid: 5fcf4f45-d212-49a5-8499-538c67fc2c55
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pt_style
+field_name: field_pt_style
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: 'No page title'
+    -
+      value: base-default
+      label: 'Base default'
+    -
+      value: base-1
+      label: 'Base 1'
+    -
+      value: base-2
+      label: 'Base 2'
+    -
+      value: base-3
+      label: 'Base 3'
+    -
+      value: base-4
+      label: 'Base 4'
+    -
+      value: animation
+      label: Animation
+    -
+      value: animation-parallax
+      label: 'Animation parallax'
+    -
+      value: bootstrap
+      label: Bootstrap
+    -
+      value: image
+      label: Image
+    -
+      value: image-fullscreen
+      label: 'Image fullscreen'
+    -
+      value: image-fullscreen-parallax
+      label: 'Image fullscreen parallax'
+    -
+      value: image-parallax
+      label: 'Image parallax'
+    -
+      value: image-parallax-ken-burn
+      label: 'Image parallax ken burn'
+    -
+      value: slider
+      label: Slider
+    -
+      value: slider-fullscreen
+      label: 'Slider fullscreen'
+    -
+      value: slider-fullscreen-parallax
+      label: 'Slider fullscreen parallax'
+    -
+      value: slider-parallax
+      label: 'Slider parallax'
+    -
+      value: video-fullscreen
+      label: 'Video fullscreen'
+    -
+      value: video-fullscreen-parallax
+      label: 'Video fullscreen parallax'
+    -
+      value: video-mp4
+      label: 'Video MP4 basic'
+    -
+      value: video-parallax
+      label: 'Video parallax'
+    -
+      value: video-youtube
+      label: 'Video youtube'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,36 @@
+{% if node.field_menu_style.value  %}
+	{% set menu_style = node.field_menu_style.value %}
+{% else %}
+	{% set menu_style = theme_menu_style %}
+{% endif %}
+
+{% include theme_path_no_base ~ '/tpl/header/header.html.twig' %}
+
+
+{% include theme_path_no_base ~ '/tpl/menu-tpl/whites-menu--' ~ menu_style ~ '.html.twig' %}
+
+{{ page.slider }}
+{# content #}
+<div class="section-empty section-item">
+        <div class="container content">
+            <div class="row">
+                <div class="col-md-9 col-sm-12">
+                    <div class="grid-list whites-grid-list one-row-list">
+                        {{ page.highlighted }}
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 widget">
+                   {{ page.sidebar }}
+                </div>
+            </div>
+        </div>
+    </div>
+{{ page.section_content }}
+{# content #}
+
+
+
+
+
+
+

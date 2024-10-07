@@ -1,0 +1,19 @@
+uuid: f3e4559c-7990-4a5a-9123-4c79c08c4a3b
+langcode: es
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_enlace_logo
+field_name: field_enlace_logo
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

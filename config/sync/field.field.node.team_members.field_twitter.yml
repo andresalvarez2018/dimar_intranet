@@ -1,0 +1,19 @@
+uuid: 09a6448e-e6ea-4e5f-8583-f18308e2bf4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter
+    - node.type.team_members
+id: node.team_members.field_twitter
+field_name: field_twitter
+entity_type: node
+bundle: team_members
+label: Twitter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,8 @@
+uuid: aadf3214-cd5f-46fd-825d-5e397a680d9e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Portfolio categories'
+vid: portfolio_categories
+description: ''
+weight: 0

@@ -1,0 +1,17 @@
+uuid: 7a6cb215-f8b8-4570-a693-a0a47e69289c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: frontpage
+label: Frontpage
+logic: or
+conditions:
+  d81a2e82-80cb-4488-a1de-96d73040a76f:
+    id: request_path
+    negate: false
+    uuid: d81a2e82-80cb-4488-a1de-96d73040a76f
+    context_mapping: {  }
+    pages: '<front>'
+allow_other_conditions: false

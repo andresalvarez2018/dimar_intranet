@@ -1,0 +1,29 @@
+uuid: 13732098-dc0f-4c4c-aaf0-d9e92f0c63c4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_palabras_clave
+    - node.type.blog_post
+    - taxonomy.vocabulary.palabras_clave
+id: node.blog_post.field_palabras_clave
+field_name: field_palabras_clave
+entity_type: node
+bundle: blog_post
+label: 'Palabras clave'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      palabras_clave: palabras_clave
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

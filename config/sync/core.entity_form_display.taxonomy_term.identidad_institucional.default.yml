@@ -1,0 +1,54 @@
+uuid: ddaf890f-8cc1-4a5b-b93c-a6e11cf40fcf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.identidad_institucional.field_enlace
+    - taxonomy.vocabulary.identidad_institucional
+  module:
+    - link
+    - path
+    - text
+id: taxonomy_term.identidad_institucional.default
+targetEntityType: taxonomy_term
+bundle: identidad_institucional
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_enlace:
+    type: link_default
+    weight: 31
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

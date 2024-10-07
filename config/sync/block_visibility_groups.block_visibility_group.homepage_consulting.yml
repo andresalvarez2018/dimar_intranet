@@ -1,0 +1,17 @@
+uuid: b23acb88-d6d1-4df7-9728-0c0e7935cb57
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_consulting
+label: 'Homepage consulting'
+logic: or
+conditions:
+  ef577839-113c-4344-9e7d-362553e048dd:
+    id: request_path
+    negate: false
+    uuid: ef577839-113c-4344-9e7d-362553e048dd
+    context_mapping: {  }
+    pages: /node/45
+allow_other_conditions: false

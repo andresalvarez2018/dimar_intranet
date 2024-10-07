@@ -1,0 +1,40 @@
+uuid: 690beae4-635d-41f7-acd2-a3194017fca0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.herramientas_virtuales.body
+    - field.field.node.herramientas_virtuales.field_enlace_herramientas
+    - field.field.node.herramientas_virtuales.field_imagen_herramientas
+    - field.field.node.herramientas_virtuales.field_region
+    - node.type.herramientas_virtuales
+  module:
+    - text
+    - user
+id: node.herramientas_virtuales.teaser
+targetEntityType: node
+bundle: herramientas_virtuales
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_enlace_herramientas: true
+  field_imagen_herramientas: true
+  field_region: true
+  langcode: true

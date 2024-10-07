@@ -1,0 +1,47 @@
+uuid: a520c2b3-746b-4060-9517-b9c95ca89d44
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.frontpage
+    - views.view._whites_sidebar_widgets
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: 'latest-post-list list-blog'
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___whites_sidebar_widgets_sidebar_latest_posts
+theme: whites
+region: disabled
+weight: 0
+provider: null
+plugin: 'views_block:_whites_sidebar_widgets-sidebar_latest_posts'
+settings:
+  id: 'views_block:_whites_sidebar_widgets-sidebar_latest_posts'
+  label: Noticias
+  label_display: visible
+  provider: views
+  views_label: Noticias
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: frontpage

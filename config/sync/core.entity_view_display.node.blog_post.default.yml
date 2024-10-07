@@ -1,0 +1,221 @@
+uuid: f1bd8663-502d-4bf6-9b25-37104eafa529
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_archivos_adjuntos_noticias
+    - field.field.node.blog_post.field_blog_category
+    - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_tags
+    - field.field.node.blog_post.field_datos_propiedad_de_la_imag
+    - field.field.node.blog_post.field_display_mode
+    - field.field.node.blog_post.field_fecha_en_que_sucedio_la_no
+    - field.field.node.blog_post.field_image
+    - field.field.node.blog_post.field_imagen_pequena
+    - field.field.node.blog_post.field_mantener_en_la_cabecera_ha
+    - field.field.node.blog_post.field_palabras_clave
+    - field.field.node.blog_post.field_pt_animation_layer
+    - field.field.node.blog_post.field_pt_icon_class
+    - field.field.node.blog_post.field_pt_image_backgroun
+    - field.field.node.blog_post.field_pt_style
+    - field.field.node.blog_post.field_pt_video_id_youtube
+    - field.field.node.blog_post.field_pt_video_mp4
+    - field.field.node.blog_post.field_resumen
+    - field.field.node.blog_post.field_subtitle
+    - node.type.blog_post
+  module:
+    - comment
+    - datetime
+    - file
+    - image
+    - options
+    - text
+    - user
+_core:
+  default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
+id: node.blog_post.default
+targetEntityType: node
+bundle: blog_post
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_archivos_adjuntos_noticias:
+    type: file_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_blog_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_blog_comments:
+    type: comment_default
+    label: above
+    settings:
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_blog_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_datos_propiedad_de_la_imag:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_display_mode:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_fecha_en_que_sucedio_la_no:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_imagen_pequena:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_mantener_en_la_cabecera_ha:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_palabras_clave:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_pt_animation_layer:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_pt_icon_class:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_pt_image_backgroun:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_pt_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_pt_video_id_youtube:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_pt_video_mp4:
+    type: file_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_resumen:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_subtitle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

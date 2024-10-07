@@ -1,0 +1,40 @@
+
+{% if node.field_pt_icon_class.value %}
+    {% set icon_class = node.field_pt_icon_class.value %}
+{% else %}
+    {% set icon_class = theme_page_title_icon_class %}
+{% endif %}
+{# subtitle #}
+{% if node.field_subtitle.value %}
+    {% set subtitle = node.field_subtitle.value %}
+{% elseif current_page == 'blog' %}
+    {% set subtitle = blog_page_subtitle %}
+    {% set icon_class = blog_page_title_icon_class %}
+{% else %}
+    {% set subtitle = page_subtitle %}
+{% endif %}
+<div class="header-bootstrap">
+    <div class="title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row vertical-row">
+                        <div class="col-md-2">
+                            <i class="{{ icon_class }} anima icon text-xl"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <span>{{ subtitle ? subtitle }}</span>
+                            <h1>{{ current_title }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <ol class="breadcrumb b white right-side">
+                        {{ page.breadcrumb }}
+                    </ol>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+uuid: ac50114f-fa03-4b19-9a9a-5043103c1a80
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.forum
+id: node.forum
+target_entity_type_id: node
+target_bundle: forum
+default_langcode: site_default
+language_alterable: false

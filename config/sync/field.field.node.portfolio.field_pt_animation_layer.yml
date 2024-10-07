@@ -1,0 +1,23 @@
+uuid: e0aaa3e5-2c9b-49c3-a34f-72c14148ef66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_animation_layer
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_pt_animation_layer
+field_name: field_pt_animation_layer
+entity_type: node
+bundle: portfolio
+label: 'Animation layer'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: cloud
+default_value_callback: ''
+settings: {  }
+field_type: list_string

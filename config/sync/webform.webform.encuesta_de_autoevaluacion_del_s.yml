@@ -1,0 +1,2279 @@
+uuid: 877c4f59-b3d2-434d-904a-47347ae70e0e
+langcode: es
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 25
+template: false
+archive: false
+id: encuesta_de_autoevaluacion_del_s
+title: 'Encuesta de autoevaluación del Sistema de Gestión Institucional'
+description: ''
+categories: {  }
+elements: |-
+  contexto_de_la_organizacion:
+    '#type': fieldset
+    '#title': 'CONTEXTO DE LA ORGANIZACIÓN'
+  4_1_entendiendo_la_organizacion_y_su_contexto:
+    '#type': item
+    '#title': '4.1 Entendiendo la organización y su contexto'
+  1_considera_los_cambios_externos_e_internos_que_pueden_afectar_s:
+    '#type': select
+    '#title': '1.¿Considera los cambios externos e internos que pueden afectar su proceso/subproceso? '
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#unique': true
+    '#states':
+      required:
+        ':input[name="_como_realiza_la_identificacion_de_los_cambios_"]':
+          value: Si
+        ':input[name="_por_que_y_como_se_realizaria_el_analisis_del_contexto_"]':
+          value: 'No'
+  _como_realiza_la_identificacion_de_los_cambios_:
+    '#type': textarea
+    '#title': '¿Cómo realiza la identificación de los cambios?'
+    '#states':
+      visible:
+        ':input[name="1_considera_los_cambios_externos_e_internos_que_pueden_afectar_s"]':
+          value: Si
+  _por_que_y_como_se_realizaria_el_analisis_del_contexto_:
+    '#type': textarea
+    '#title': '¿Por qué y Cómo se realizaría el analisis del contexto?'
+    '#states':
+      visible:
+        ':input[name="1_considera_los_cambios_externos_e_internos_que_pueden_afectar_s"]':
+          value: 'No'
+  2_cree_pertinente_que_las_unidades_regionales_deban_participar_e:
+    '#type': select
+    '#title': '2. ¿Cree pertinente que las unidades regionales deban participar en la identificación de los factores que pueden afectar y/o beneficiar el proceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_lleva_llevara_a_cabo_dicha_participacion_"]':
+          value: Si
+        ':input[name="_por_que_y_como_la_haria_"]':
+          value: 'No'
+  _como_se_lleva_llevara_a_cabo_dicha_participacion_:
+    '#type': textarea
+    '#title': '¿Cómo se lleva(llevará) a cabo dicha participación?'
+    '#states':
+      visible:
+        ':input[name="2_cree_pertinente_que_las_unidades_regionales_deban_participar_e"]':
+          value: Si
+  _por_que_y_como_la_haria_:
+    '#type': textarea
+    '#title': '¿Por qué y Cómo la haría?'
+    '#states':
+      visible:
+        ':input[name="2_cree_pertinente_que_las_unidades_regionales_deban_participar_e"]':
+          value: 'No'
+  3_piensa_que_el_proceso_subproceso_deberia_emplear_una_metodolog:
+    '#type': select
+    '#title': '3. ¿Piensa que el proceso/subproceso deberia emplear una metodología para llevar a cabo el análisis de su contexto?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_es_sera_y_donde_se_puede_podra_consultar_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaria_"]':
+          value: 'No'
+  _cual_es_sera_y_donde_se_puede_podra_consultar_:
+    '#type': textarea
+    '#title': '¿Cúal es(será) y Dónde se puede(podrá) consultar?'
+    '#states':
+      visible:
+        ':input[name="3_piensa_que_el_proceso_subproceso_deberia_emplear_una_metodolog"]':
+          value: Si
+  _por_que_y_que_recomendaria_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaría?'
+    '#states':
+      visible:
+        ':input[name="3_piensa_que_el_proceso_subproceso_deberia_emplear_una_metodolog"]':
+          value: 'No'
+  4_2_comprension_de_las_necesidades_y_expectativas_de_los_trabaja:
+    '#type': item
+    '#title': '4.2 Comprensión de las Necesidades y Expectativas de los Trabajadores y de las Partes Interesadas'
+  1_considera_que_el_proceso_subproceso_opera_en_las_unidades_regi:
+    '#type': select
+    '#title': '1. ¿Considera que el proceso/subproceso opera en las unidades regionales?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_en_cuales_unidades_y_como_es_sera_su_funcionamiento_"]':
+          value: Si
+        ':input[name="_por_que_"]':
+          value: 'No'
+  _en_cuales_unidades_y_como_es_sera_su_funcionamiento_:
+    '#type': textarea
+    '#title': '¿En cuáles unidades y Cómo es(será) su funcionamiento?'
+    '#states':
+      visible:
+        ':input[name="1_considera_que_el_proceso_subproceso_opera_en_las_unidades_regi"]':
+          value: Si
+  _por_que_:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="1_considera_que_el_proceso_subproceso_opera_en_las_unidades_regi"]':
+          value: 'No'
+  2_es_relevante_que_el_proceso_subproceso_identifique_sus_actores:
+    '#type': select
+    '#title': '2. ¿Es relevante que el proceso/subproceso identifique sus actores o partes interesadas en sede central y regionales? Partes interesadas hace referencia a clientes, propietarios, personas de una organización, proveedores, banca, legisladores, sindicatos, socios o sociedad en general que puede incluir competidores o grupos de presión con intereses opuestos.'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_en_cuales_unidades_y_como_es_sera_su_funcionamiento_cuales_son_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaria_1"]':
+          value: 'No'
+  _en_cuales_unidades_y_como_es_sera_su_funcionamiento_cuales_son_:
+    '#type': textarea
+    '#title': '¿En cuáles unidades y Cómo es(será) su funcionamiento?¿Cúales son(serán) los beneficios y Dónde se pueden(podrán) consultar los actores o partes interesadas?'
+    '#states':
+      visible:
+        ':input[name="2_es_relevante_que_el_proceso_subproceso_identifique_sus_actores"]':
+          value: Si
+  _por_que_y_que_recomendaria_1:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaría?'
+    '#states':
+      visible:
+        ':input[name="2_es_relevante_que_el_proceso_subproceso_identifique_sus_actores"]':
+          value: 'No'
+  3_de_acuerdo_a_sus_actividades_es_destacable_que_el_proceso_iden:
+    '#type': select
+    '#title': '3. De acuerdo a sus actividades, ¿es destacable que el proceso identifique requerimientos ambientales específicos?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_seran_dichos_requerimientos_y_donde_se_pueden_podran"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugiere_"]':
+          value: 'No'
+  _cuales_son_seran_dichos_requerimientos_y_donde_se_pueden_podran:
+    '#type': textarea
+    '#title': '¿Cúales son(serán) dichos requerimientos y Dónde se pueden(podrán) consultar?'
+    '#states':
+      visible:
+        ':input[name="3_de_acuerdo_a_sus_actividades_es_destacable_que_el_proceso_iden"]':
+          value: Si
+  _por_que_y_que_sugiere_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugiere?'
+    '#states':
+      visible:
+        ':input[name="3_de_acuerdo_a_sus_actividades_es_destacable_que_el_proceso_iden"]':
+          value: 'No'
+  4_de_acuerdo_a_sus_actividades_el_proceso_cree_pertienente_estab:
+    '#type': select
+    '#title': '4. De acuerdo a sus actividades, ¿el proceso cree pertienente establecer requerimientos específicos en materia de seguridad y salud en el trabajo?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_seran_dichos_requerimientos_y_donde_se_puedendran"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugiere_2"]':
+          value: 'No'
+  _cuales_son_seran_dichos_requerimientos_y_donde_se_puedendran:
+    '#type': textarea
+    '#title': '¿Cúales son(serán) dichos requerimientos y Dónde se pueden(podrán) consultar?'
+    '#states':
+      visible:
+        ':input[name="4_de_acuerdo_a_sus_actividades_el_proceso_cree_pertienente_estab"]':
+          value: Si
+  _por_que_y_que_sugiere_2:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugiere?'
+    '#states':
+      visible:
+        ':input[name="4_de_acuerdo_a_sus_actividades_el_proceso_cree_pertienente_estab"]':
+          value: 'No'
+  5_considera_que_se_debe_realizar_la_identificacion_de_las_necesi:
+    '#type': select
+    '#title': '5. ¿Considera que se debe realizar la identificación de las necesidades y expectativas de los funcionarios y las partes interesadas?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_lleva_llevara_a_cabo_y_quienes_participan_participaran_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaria4"]':
+          value: 'No'
+  _como_se_lleva_llevara_a_cabo_y_quienes_participan_participaran_:
+    '#type': textarea
+    '#title': '¿Cómo se lleva(llevará) a cabo y Quienes participan(participarán)?'
+    '#states':
+      visible:
+        ':input[name="5_considera_que_se_debe_realizar_la_identificacion_de_las_necesi"]':
+          value: Si
+  _por_que_y_que_recomendaria4:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaría?'
+    '#states':
+      visible:
+        ':input[name="5_considera_que_se_debe_realizar_la_identificacion_de_las_necesi"]':
+          value: 'No'
+  4_3_determinacion_del_alcance_del_sistema_de_gestion_de_la_calid:
+    '#type': item
+    '#title': '4.3 Determinación del Alcance del Sistema de Gestión de la Calidad, SST y Ambiental'
+  1_cree_que_es_relevante_que_el_personal_en_sede_central_y_region:
+    '#type': select
+    '#title': '1. ¿Cree que es relevante que el personal en sede central y regional conozca los limites y aplicabilidad de su proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_y_donde_pueden_ser_consultados_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaria_8"]':
+          value: 'No'
+  _cuales_son_y_donde_pueden_ser_consultados_:
+    '#type': textarea
+    '#title': '¿Cuáles son y Dónde pueden ser consultados?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_relevante_que_el_personal_en_sede_central_y_region"]':
+          value: Si
+  _por_que_y_que_recomendaria_8:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaría?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_relevante_que_el_personal_en_sede_central_y_region"]':
+          value: 'No'
+  2_es_pertinente_identificar_requisitos_legales_y_de_otra_indole_:
+    '#type': select
+    '#title': '2. ¿Es pertinente identificar requisitos legales y de otra índole aplicables, que puedan tener impacto en el alcance de su proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_y_donde_pueden_ser_consultados_9"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaria_9"]':
+          value: 'No'
+  _cuales_son_y_donde_pueden_ser_consultados_9:
+    '#type': textarea
+    '#title': '¿Cuáles son y Dónde pueden ser consultados?'
+    '#states':
+      visible:
+        ':input[name="2_es_pertinente_identificar_requisitos_legales_y_de_otra_indole_"]':
+          value: Si
+  _por_que_y_que_recomendaria_9:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaría?'
+    '#states':
+      visible:
+        ':input[name="2_es_pertinente_identificar_requisitos_legales_y_de_otra_indole_"]':
+          value: 'No'
+  4_4_sistema_de_gestion_de_la_calidad_y_sus_procesos:
+    '#type': item
+    '#title': '4.4 Sistema de Gestión de la Calidad y sus Procesos'
+  1_es_relevante_que_el_proceso_subproceso_conozca_sus_interaccion:
+    '#type': select
+    '#title': '1. ¿Es relevante que el proceso/subproceso conozca sus interacciones con los demás procesos y subprocesos de la Entidad?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_los_beneficios_y_donde_pueden_ser_consultadas_las_in"]':
+          value: Si
+        ':input[name="_por_que_2"]':
+          value: 'No'
+  _cuales_son_los_beneficios_y_donde_pueden_ser_consultadas_las_in:
+    '#type': textarea
+    '#title': '¿Cuáles son los beneficios y Dónde pueden ser consultadas las interecciones?'
+    '#states':
+      visible:
+        ':input[name="1_es_relevante_que_el_proceso_subproceso_conozca_sus_interaccion"]':
+          value: Si
+  _por_que_2:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="1_es_relevante_que_el_proceso_subproceso_conozca_sus_interaccion"]':
+          value: 'No'
+  2_piensa_que_el_proceso_debe_identificar_las_caracteristicas_de_:
+    '#type': select
+    '#title': '2. ¿Piensa que el proceso debe identificar las características de cada entrada y salida de su proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_seran_caracterizan_caracterizadas_las_entradas_y_salida"]':
+          value: Si
+        ':input[name="_por_que_3"]':
+          value: 'No'
+  _como_se_seran_caracterizan_caracterizadas_las_entradas_y_salida:
+    '#type': textarea
+    '#title': ' ¿Cómo se(serán) caracterizan(caracterizadas) las entradas y salidas y Dónde pueden(podrán) ser consultadas dichas caracteristicas?'
+    '#states':
+      visible:
+        ':input[name="2_piensa_que_el_proceso_debe_identificar_las_caracteristicas_de_"]':
+          value: Si
+  _por_que_3:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="2_piensa_que_el_proceso_debe_identificar_las_caracteristicas_de_"]':
+          value: 'No'
+  3_cree_que_el_personal_debe_conocer_las_caracteristicas_tecnicas:
+    '#type': select
+    '#title': '3. ¿Cree que el personal debe conocer las características técnicas de las salidas de su proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_donde_pueden_podran_ser_consultadas_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _donde_pueden_podran_ser_consultadas_:
+    '#type': textarea
+    '#title': '¿Dónde pueden(podrán) ser consultadas?'
+    '#states':
+      visible:
+        ':input[name="3_cree_que_el_personal_debe_conocer_las_caracteristicas_tecnicas"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  5_liderazgo_participacion_de_los_trabajadores_y_compromiso:
+    '#type': item
+    '#title': '5.  LIDERAZGO, PARTICIPACIÓN DE LOS TRABAJADORES Y COMPROMISO'
+  1_es_pertinente_identificar_la_autoridad_responsabilidad_y_compr:
+    '#type': select
+    '#title': '1. ¿Es pertinente identificar la autoridad, responsabilidad y compromiso de los responsables de proceso/subproceso, frente a los requerimientos institucionales ?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_donde_pueden_ser_consultadas_y_que_beneficios_obtiene_de_esta_i"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _donde_pueden_ser_consultadas_y_que_beneficios_obtiene_de_esta_i:
+    '#type': textarea
+    '#title': '¿Dónde pueden ser consultadas y Qué beneficios obtiene de esta identificación?'
+    '#states':
+      visible:
+        ':input[name="1_es_pertinente_identificar_la_autoridad_responsabilidad_y_compr"]':
+          value: Si
+  _por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomiendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_es_pertinente_identificar_la_autoridad_responsabilidad_y_compr"]':
+          value: 'No'
+  2_considera_importante_que_se_pueden_identificar_y_consultar_las:
+    '#type': select
+    '#title': '2. ¿Considera importante que se pueden identificar y consultar  las responsabilidades que tiene cada funcionario desde la unidades regionales hasta la Alta Dirección ?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_obtiene_de_esta_identificacion_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_1"]':
+          value: 'No'
+  _que_beneficios_obtiene_de_esta_identificacion_:
+    '#type': textarea
+    '#title': ' ¿Qué beneficios obtiene de esta identificación?'
+    '#states':
+      visible:
+        ':input[name="2_considera_importante_que_se_pueden_identificar_y_consultar_las"]':
+          value: Si
+  _por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_1:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomiendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_considera_importante_que_se_pueden_identificar_y_consultar_las"]':
+          value: 'No'
+  3_es_relevante_obtener_retroalimentacion_de_las_partes_interesad:
+    '#type': select
+    '#title': '3. ¿Es relevante obtener retroalimentación de las partes interesadas acerca de la satisfacción del servicio/producto prestado?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_obtiene_obtendra_la_retroalimentacion_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_4"]':
+          value: 'No'
+  _como_obtiene_obtendra_la_retroalimentacion_:
+    '#type': textarea
+    '#title': ' ¿Cómo obtiene(obtendrá) la retroalimentación?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_obtener_retroalimentacion_de_las_partes_interesad"]':
+          value: Si
+  _por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_4:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomiendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_obtener_retroalimentacion_de_las_partes_interesad"]':
+          value: 'No'
+  4_piensa_que_es_importante_conocer_los_mecanismos_de_representac:
+    '#type': select
+    '#title': '4. ¿Piensa que es importante conocer los mecanismos de representación de los trabajadores en sede central y unidades regionales?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_obtiene_de_esta_identificacion_y_cuales_conoce_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_2"]':
+          value: 'No'
+  _que_beneficios_obtiene_de_esta_identificacion_y_cuales_conoce_:
+    '#type': textarea
+    '#title': ' ¿Qué beneficios obtiene de esta identificación y Cuáles conoce?'
+    '#states':
+      visible:
+        ':input[name="4_piensa_que_es_importante_conocer_los_mecanismos_de_representac"]':
+          value: Si
+  _por_que_y_que_recomiendaciones_plantea_frente_a_este_tema_2:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomiendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="4_piensa_que_es_importante_conocer_los_mecanismos_de_representac"]':
+          value: 'No'
+  6_planificacion:
+    '#type': item
+    '#title': '6. PLANIFICACIÓN'
+  1_considera_importante_relevante_que_el_proceso_identifique_sus_:
+    '#type': select
+    '#title': '1. ¿Considera importante, relevante que el proceso identifique sus riesgos y oportunidades?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_obtiene_de_esta_identificacion_y_donde_se_pueden"]':
+          value: Si
+        ':input[name="_por_que_4"]':
+          value: 'No'
+  _que_beneficios_obtiene_de_esta_identificacion_y_donde_se_pueden:
+    '#type': textarea
+    '#title': '¿Qué beneficios obtiene de esta identificación y Dónde se pueden consultar?'
+    '#states':
+      visible:
+        ':input[name="1_considera_importante_relevante_que_el_proceso_identifique_sus_"]':
+          value: Si
+  _por_que_4:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="1_considera_importante_relevante_que_el_proceso_identifique_sus_"]':
+          value: 'No'
+  6_1_acciones_para_abordar_riesgos_y_oportunidades:
+    '#type': item
+    '#title': '6.1 Acciones para Abordar Riesgos y Oportunidades'
+  2_piensa_que_los_riesgos_y_oportunidades_identificados_deberian_:
+    '#type': select
+    '#title': '2. ¿Piensa que los riesgos y oportunidades identificados deberian tener alcance en las unidades regionales?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_obtiene_y_como_lo_lleva_a_cabo_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_5"]':
+          value: 'No'
+  _que_beneficios_obtiene_y_como_lo_lleva_a_cabo_:
+    '#type': textarea
+    '#title': ' ¿Qué beneficios obtiene y Cómo lo lleva a cabo?'
+    '#states':
+      visible:
+        ':input[name="2_piensa_que_los_riesgos_y_oportunidades_identificados_deberian_"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_5:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_piensa_que_los_riesgos_y_oportunidades_identificados_deberian_"]':
+          value: 'No'
+  3_considera_importante_que_se_involucre_personal_de_sede_central:
+    '#type': select
+    '#title': '3. ¿Considera importante que se involucre personal de sede central, unidades y/o de otros procesos en la identificación de riesgos y oportunidades?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_participan_participaran_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_8"]':
+          value: 'No'
+  _como_participan_participaran_:
+    '#type': textarea
+    '#title': '¿Cómo participan(participarán)?'
+    '#states':
+      visible:
+        ':input[name="3_considera_importante_que_se_involucre_personal_de_sede_central"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_8:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_considera_importante_que_se_involucre_personal_de_sede_central"]':
+          value: 'No'
+  4_es_pertinente_hacer_monitoreo_de_los_riesgos_y_oportunidades_y:
+    '#type': select
+    '#title': '4. ¿Es pertinente hacer monitoreo de los riesgos y oportunidades y considera que esto contribuye  a la mejora del desempeño del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_ha_sido_sera_su_impacto_y_como_se_lleva_llevara_a_cabo_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_7"]':
+          value: 'No'
+  _cual_ha_sido_sera_su_impacto_y_como_se_lleva_llevara_a_cabo_:
+    '#type': textarea
+    '#title': ' ¿Cuál ha sido(será) su impacto y Cómo se lleva(llevará) a cabo?'
+    '#states':
+      visible:
+        ':input[name="4_es_pertinente_hacer_monitoreo_de_los_riesgos_y_oportunidades_y"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_7:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="4_es_pertinente_hacer_monitoreo_de_los_riesgos_y_oportunidades_y"]':
+          value: 'No'
+  5_destaca_la_importancia_que_las_unidades_regionales_participen_:
+    '#type': select
+    '#title': '5. ¿Destaca la importancia que las unidades regionales participen en la definición de los planes de mitigación y contingencia ?  '
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_lleva_llevara_a_cabo_la_participacion_1"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_1"]':
+          value: 'No'
+  _como_se_lleva_llevara_a_cabo_la_participacion_1:
+    '#type': textarea
+    '#title': '¿Cómo se lleva(llevará) a cabo la participación?'
+    '#states':
+      visible:
+        ':input[name="5_destaca_la_importancia_que_las_unidades_regionales_participen_"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_1:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="5_destaca_la_importancia_que_las_unidades_regionales_participen_"]':
+          value: 'No'
+  6_para_el_proceso_es_significativo_identificar_la_materializacio:
+    '#type': select
+    '#title': '6. ¿Para el proceso es significativo identificar la materialización de algún riesgo en las unidades regionales y/o en sede central?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_por_que_y_como_se_realiza_realizara_el_registro_o_manejo_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_5"]':
+          value: 'No'
+  _por_que_y_como_se_realiza_realizara_el_registro_o_manejo_:
+    '#type': textarea
+    '#title': ' ¿Por qué y  Cómo se realiza(realizará) el registro o manejo?'
+    '#states':
+      visible:
+        ':input[name="6_para_el_proceso_es_significativo_identificar_la_materializacio"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_5:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="6_para_el_proceso_es_significativo_identificar_la_materializacio"]':
+          value: 'No'
+  7_es_relevante_en_la_planificacion_del_plan_operativo_considerar:
+    '#type': select
+    '#title': '7. ¿Es relevante en la planificación del plan operativo considerar los riesgos y oportunidades identificadas ?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_seran_los_beneficios_obtenidos_1"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_7"]':
+          value: 'No'
+  _cuales_son_seran_los_beneficios_obtenidos_1:
+    '#type': textarea
+    '#title': '¿Cuáles son(serán) los beneficios obtenidos?'
+    '#states':
+      visible:
+        ':input[name="7_es_relevante_en_la_planificacion_del_plan_operativo_considerar"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_7:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="7_es_relevante_en_la_planificacion_del_plan_operativo_considerar"]':
+          value: 'No'
+  6_1_2_identificacion_de_peligros_y_valoracion_de_los_riesgos_y_l:
+    '#type': item
+    '#title': '6.1.2 Identificación de peligros y valoración de los riesgos y las oportunidades (sistema de gestión de la SST) 6.1.2 Aspectos ambientales (sistema de gestión ambiental)'
+  1_piensa_que_es_importante_reconocer_los_peligros_riesgos_y_aspe:
+    '#type': select
+    '#title': '1. ¿Piensa que es importante reconocer los peligros/riesgos y aspectos/impactos asociados a sus actividades?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_los_beneficios_obtenidos_y_donde_se_pueden_consultar"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_8"]':
+          value: 'No'
+  _cuales_son_los_beneficios_obtenidos_y_donde_se_pueden_consultar:
+    '#type': textarea
+    '#title': '¿Cuáles son los beneficios obtenidos y ¿Dónde se pueden consultar?'
+    '#states':
+      visible:
+        ':input[name="1_piensa_que_es_importante_reconocer_los_peligros_riesgos_y_aspe"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_8:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_piensa_que_es_importante_reconocer_los_peligros_riesgos_y_aspe"]':
+          value: 'No'
+  2_es_importante_incluir_en_la_planificacion_del_plan_operativo_l:
+    '#type': select
+    '#title': '2. ¿Es importante incluir en la planificación del plan operativo los riesgos e impactos identificados?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_por_que_y_como_se_realiza_realizara_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_2"]':
+          value: 'No'
+  _por_que_y_como_se_realiza_realizara_:
+    '#type': textarea
+    '#title': '¿Por qué y  Cómo se realiza(realizará)?'
+    '#states':
+      visible:
+        ':input[name="2_es_importante_incluir_en_la_planificacion_del_plan_operativo_l"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_2:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_es_importante_incluir_en_la_planificacion_del_plan_operativo_l"]':
+          value: 'No'
+  6_1_3_determinacion_de_los_requisitos_legales_aplicables_y_otros:
+    '#type': item
+    '#title': '6.1.3 Determinación de los requisitos legales aplicables y otros requisitos (sistema de gestión de la SST y ambiental)'
+  1_considera_que_consultar_los_requisitos_legales_y_de_otra_indol:
+    '#type': select
+    '#title': '1. ¿Considera que consultar los requisitos legales y de otra índole es relevante para el proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_con_que_frecuencia_y_quienes_la_consultan_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_9"]':
+          value: 'No'
+  _con_que_frecuencia_y_quienes_la_consultan_:
+    '#type': textarea
+    '#title': '¿Con qué frecuencia y Quienes la consultan? '
+    '#states':
+      visible:
+        ':input[name="1_considera_que_consultar_los_requisitos_legales_y_de_otra_indol"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_9:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_considera_que_consultar_los_requisitos_legales_y_de_otra_indol"]':
+          value: 'No'
+  2_cree_usted_que_el_proceso_subproceso_se_ha_beneficiado_al_veri:
+    '#type': select
+    '#title': '2. ¿Cree usted que el proceso/subproceso se ha beneficiado al verificar el cumplimiento de los requisitos legales?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_los_beneficios_obtenidos_y_como_se_puede_evidenciar_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_6"]':
+          value: 'No'
+  _cuales_son_los_beneficios_obtenidos_y_como_se_puede_evidenciar_:
+    '#type': textarea
+    '#title': ' ¿Cuáles son los beneficios obtenidos y Cómo se puede evidenciar?'
+    '#states':
+      visible:
+        ':input[name="2_cree_usted_que_el_proceso_subproceso_se_ha_beneficiado_al_veri"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_6:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_cree_usted_que_el_proceso_subproceso_se_ha_beneficiado_al_veri"]':
+          value: 'No'
+  3_es_relevante_para_el_proceso_subproceso_involucrar_la_particip:
+    '#type': select
+    '#title': '3. ¿Es relevante para el proceso/subproceso involucrar la participación de los funcionarios de las unidades regionales en la identificación y seguimiento de los requisitos legales y de otra índole?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_realiza_realizara_dicha_participacion_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_10"]':
+          value: 'No'
+  _como_se_realiza_realizara_dicha_participacion_:
+    '#type': textarea
+    '#title': '¿Cómo se realiza(realizará) dicha participación?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_para_el_proceso_subproceso_involucrar_la_particip"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_10:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_para_el_proceso_subproceso_involucrar_la_particip"]':
+          value: 'No'
+  6_1_4_planificacion_de_acciones_sistema_de_gestion_de_la_sst_:
+    '#type': item
+    '#title': '6.1.4 Planificación de acciones (sistema de gestión de la SST)'
+  1_cree_que_es_util_incluir_elementos_del_sgi_en_la_planificacion:
+    '#type': select
+    '#title': '1. ¿Cree que es útil incluir elementos del SGI en la planificación del plan operativo?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_elementos_del_sgi_considera_y_como_se_evidencia_evidenci"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_11"]':
+          value: 'No'
+  _cuales_elementos_del_sgi_considera_y_como_se_evidencia_evidenci:
+    '#type': textarea
+    '#title': '¿Cuáles elementos del SGI considera y Cómo se evidencia (evidenciaría)?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_util_incluir_elementos_del_sgi_en_la_planificacion"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_11:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_util_incluir_elementos_del_sgi_en_la_planificacion"]':
+          value: 'No'
+  2_considera_que_el_actual_plan_operativo_permite_identificar_el_:
+    '#type': select
+    '#title': '2. ¿Considera que el actual plan operativo permite identificar el cumplimiento del objetivo del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_evidencia_evidenciaria_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_12"]':
+          value: 'No'
+  _como_se_evidencia_evidenciaria_:
+    '#type': textarea
+    '#title': '¿Cómo se evidencia (evidenciaría)?'
+    '#states':
+      visible:
+        ':input[name="2_considera_que_el_actual_plan_operativo_permite_identificar_el_"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_12:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_considera_que_el_actual_plan_operativo_permite_identificar_el_"]':
+          value: 'No'
+  3_es_relevante_tener_en_cuenta_la_participacion_del_personal_de_:
+    '#type': select
+    '#title': '3. ¿Es relevante tener en cuenta la participación del personal de sede central y unidades regionales en la planificación del plan operativo?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_evidencia_evidenciaria_1"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_13"]':
+          value: 'No'
+  _como_se_evidencia_evidenciaria_1:
+    '#type': textarea
+    '#title': '¿Cómo se realiza(realizará) dicha participación?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_tener_en_cuenta_la_participacion_del_personal_de_"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_13:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_tener_en_cuenta_la_participacion_del_personal_de_"]':
+          value: 'No'
+  6_2_objetivos_de_la_calidad_sst_y_ambiental_y_planificacion_para:
+    '#type': item
+    '#title': '6.2 Objetivos de la Calidad, SST y ambiental y Planificación para Lograrlos'
+  1_considera_util_identificar_los_objetivos_del_sgi_que_le_aplica:
+    '#type': select
+    '#title': '1. ¿Considera útil identificar los objetivos del SGI que le aplican al proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_ha_obtenido_"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_por_qu"]':
+          value: 'No'
+  _que_beneficios_ha_obtenido_:
+    '#type': textarea
+    '#title': ' ¿Qué beneficios ha obtenido?'
+    '#states':
+      visible:
+        ':input[name="1_considera_util_identificar_los_objetivos_del_sgi_que_le_aplica"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_por_qu:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_considera_util_identificar_los_objetivos_del_sgi_que_le_aplica"]':
+          value: 'No'
+  2_califica_como_beneficioso_definir_estrategias_para_el_cumplimi:
+    '#type': select
+    '#title': '2. ¿Califica como beneficioso definir estrategias para el cumplimiento de dichos objetivos?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_ha_obtenido_indique_que_estrategias_se_han_plant"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_16"]':
+          value: 'No'
+  _que_beneficios_ha_obtenido_indique_que_estrategias_se_han_plant:
+    '#type': textarea
+    '#title': ' ¿Qué beneficios ha obtenido? Indique que estrategias se han planteado o se plantearían'
+    '#states':
+      visible:
+        ':input[name="2_califica_como_beneficioso_definir_estrategias_para_el_cumplimi"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_16:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_califica_como_beneficioso_definir_estrategias_para_el_cumplimi"]':
+          value: 'No'
+  3_cree_que_es_necesario_definir_mecanismos_de_medicion_y_seguimi:
+    '#type': select
+    '#title': '3. ¿Cree que es necesario definir mecanismos de medición y seguimiento para los aspectos criticos del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_beneficios_ha_obtenido_indique_que_estrategias_se_ha"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_117"]':
+          value: 'No'
+  _que_beneficios_ha_obtenido_indique_que_estrategias_se_ha:
+    '#type': textarea
+    '#title': 'Indique que mecanismos de medición y seguimiento se han planteado o se plantearían'
+    '#states':
+      visible:
+        ':input[name="3_cree_que_es_necesario_definir_mecanismos_de_medicion_y_seguimi"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_117:
+    '#type': textarea
+    '#title': '¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_cree_que_es_necesario_definir_mecanismos_de_medicion_y_seguimi"]':
+          value: 'No'
+  4_considera_relevante_evaluar_el_cumplimiento_de_los_objetivos_d:
+    '#type': select
+    '#title': '4. ¿Considera relevante evaluar el cumplimiento de los objetivos del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_lleva_llevara_a_cabo_dicha_evaluacion_16"]':
+          value: Si
+        ':input[name="_por_que_y_que_recomendaciones_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_lleva_llevara_a_cabo_dicha_evaluacion_16:
+    '#type': textarea
+    '#title': '¿Cómo se lleva(llevará) a cabo dicha evaluación?'
+    '#states':
+      visible:
+        ':input[name="4_considera_relevante_evaluar_el_cumplimiento_de_los_objetivos_d"]':
+          value: Si
+  _por_que_y_que_recomendaciones_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="4_considera_relevante_evaluar_el_cumplimiento_de_los_objetivos_d"]':
+          value: 'No'
+  6_3_planificacion_de_los_cambios_sistema_de_gestion_de_calidad_:
+    '#type': item
+    '#title': '6.3 Planificación de los Cambios (sistema de gestión de calidad)'
+  1_recuerda_algun_cambio_que_hubiese_impactado_o_modificado_los_o:
+    '#type': select
+    '#title': '1. ¿Recuerda algún cambio que hubiese impactado o modificado los objetivos y/o actividades de su proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_lleva_llevara_a_cabo_dicha_evaluacion_"]':
+          value: Si
+        ':input[name="_que_recomendaciones_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_lleva_llevara_a_cabo_dicha_evaluacion_:
+    '#type': textarea
+    '#title': ' ¿Cuál y cómo lo ha gestionado?'
+    '#states':
+      visible:
+        ':input[name="1_recuerda_algun_cambio_que_hubiese_impactado_o_modificado_los_o"]':
+          value: Si
+  _que_recomendaciones_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_recuerda_algun_cambio_que_hubiese_impactado_o_modificado_los_o"]':
+          value: 'No'
+  2_supone_necesario_reportar_los_cambios_que_impactan_la_ejecucio:
+    '#type': select
+    '#title': '2. ¿Supone necesario reportar los cambios que impactan la ejecucion de actividades u otros aspectos realacionados con la prestación del servicio prestado?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_mecansimo_emplea_empleara_para_el_reporte_"]':
+          value: Si
+        ':input[name="_que_recomendaciones_plantea_frente_a_este_tema_que_recomendacio"]':
+          value: 'No'
+  _que_mecansimo_emplea_empleara_para_el_reporte_:
+    '#type': textarea
+    '#title': '¿Qué mecansimo emplea(empleará) para el reporte?'
+    '#states':
+      visible:
+        ':input[name="2_supone_necesario_reportar_los_cambios_que_impactan_la_ejecucio"]':
+          value: Si
+  _que_recomendaciones_plantea_frente_a_este_tema_que_recomendacio:
+    '#type': textarea
+    '#title': '¿Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_supone_necesario_reportar_los_cambios_que_impactan_la_ejecucio"]':
+          value: 'No'
+  3_es_relevante_socializar_los_impactos_de_los_cambios_del_proces:
+    '#type': select
+    '#title': '3. ¿Es relevante socializar los impactos de los cambios del proceso/subproceso a las partes interesadas?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_mecansimo_emplea_empleara_para_el_reporte_15"]':
+          value: Si
+        ':input[name="_que_recomendaciones_plantea_frente_a_este_tema_78"]':
+          value: 'No'
+  _que_mecansimo_emplea_empleara_para_el_reporte_15:
+    '#type': textarea
+    '#title': '¿Qué mecansimo emplea(empleará) para la socialización?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_socializar_los_impactos_de_los_cambios_del_proces"]':
+          value: Si
+  _que_recomendaciones_plantea_frente_a_este_tema_78:
+    '#type': textarea
+    '#title': '¿Qué recomendaciones plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_es_relevante_socializar_los_impactos_de_los_cambios_del_proces"]':
+          value: 'No'
+  7_apoyo:
+    '#type': item
+    '#title': '7.  APOYO'
+  1_reconoce_como_suficiente_el_personal_asignado_para_la_atencion:
+    '#type': select
+    '#title': '1. ¿Reconoce como suficiente el personal asignado para la atención de los requerimientos dados por el SGI?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_tiene_alguna_recomendacion_frente_a_este_tema_20"]':
+          value: Si
+        ':input[name="_por_que_5"]':
+          value: 'No'
+  _tiene_alguna_recomendacion_frente_a_este_tema_20:
+    '#type': textarea
+    '#title': ' ¿Tiene alguna recomendación frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_reconoce_como_suficiente_el_personal_asignado_para_la_atencion"]':
+          value: Si
+  _por_que_5:
+    '#type': textarea
+    '#title': ' ¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="1_reconoce_como_suficiente_el_personal_asignado_para_la_atencion"]':
+          value: 'No'
+  2_considera_que_las_condiciones_ambientales_y_de_seguridad_permi:
+    '#type': select
+    '#title': '2. ¿Considera que las condiciones ambientales y de seguridad permiten la adecuada ejeución del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_tiene_alguna_recomendacion_frente_a_este_tema_87"]':
+          value: Si
+        ':input[name="_por_que_97"]':
+          value: 'No'
+  _tiene_alguna_recomendacion_frente_a_este_tema_87:
+    '#type': textarea
+    '#title': '¿Tiene alguna recomendación frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_considera_que_las_condiciones_ambientales_y_de_seguridad_permi"]':
+          value: Si
+  _por_que_97:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="2_considera_que_las_condiciones_ambientales_y_de_seguridad_permi"]':
+          value: 'No'
+  3_opina_que_identificar_los_equipos_criticos_tiene_impacto_sobre:
+    '#type': select
+    '#title': '3. ¿Opina que identificar los equipos criticos tiene impacto sobre el proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_tiene_alguna_recomendacion_frente_a_este_tema_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_9"]':
+          value: 'No'
+  _tiene_alguna_recomendacion_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Se cuenta con programas de mantenimiento y/o calibración?'
+    '#states':
+      visible:
+        ':input[name="3_opina_que_identificar_los_equipos_criticos_tiene_impacto_sobre"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_9:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_opina_que_identificar_los_equipos_criticos_tiene_impacto_sobre"]':
+          value: 'No'
+  4_califica_como_suficiente_adecuada_la_cantidad_de_equipos_criti:
+    '#type': select
+    '#title': '4. ¿Califica como suficiente (adecuada) la cantidad de equipos criticos para la atención de las necesidades del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_se_han_gestionado_estas_necesidades_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_10"]':
+          value: 'No'
+  _se_han_gestionado_estas_necesidades_:
+    '#type': textarea
+    '#title': '¿Se han gestionado estas necesidades?'
+    '#states':
+      visible:
+        ':input[name="4_califica_como_suficiente_adecuada_la_cantidad_de_equipos_criti"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_10:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="4_califica_como_suficiente_adecuada_la_cantidad_de_equipos_criti"]':
+          value: 'No'
+  5_piensa_que_es_importante_conocer_los_equipos_que_pueden_llegar:
+    '#type': select
+    '#title': '5. ¿Piensa que es importante conocer los equipos que pueden llegar a afectar el resultado del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_socializa_socializara_la_importancia_de_dichos_equipos_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema59"]':
+          value: 'No'
+  _como_se_socializa_socializara_la_importancia_de_dichos_equipos_:
+    '#type': textarea
+    '#title': '¿Cómo se socializa(socializará) la importancia de dichos equipos?'
+    '#states':
+      visible:
+        ':input[name="5_piensa_que_es_importante_conocer_los_equipos_que_pueden_llegar"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema59:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema'
+    '#states':
+      visible:
+        ':input[name="5_piensa_que_es_importante_conocer_los_equipos_que_pueden_llegar"]':
+          value: 'No'
+  6_cree_necesario_asegurar_el_conocimiento_tecnico_del_proceso_su:
+    '#type': select
+    '#title': '6. ¿Cree necesario asegurar el conocimiento técnico del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_socializa_socializara_la_importancia_de_dics_equipos_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_87"]':
+          value: 'No'
+  _como_se_socializa_socializara_la_importancia_de_dics_equipos_:
+    '#type': textarea
+    '#title': '¿Qué mecanismos emplea(empleará) para ello?'
+    '#states':
+      visible:
+        ':input[name="6_cree_necesario_asegurar_el_conocimiento_tecnico_del_proceso_su"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_87:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="6_cree_necesario_asegurar_el_conocimiento_tecnico_del_proceso_su"]':
+          value: 'No'
+  8_operacion:
+    '#type': item
+    '#title': '8. OPERACIÓN'
+  1_considera_relevante_identficar_los_servicios_y_o_productos_que:
+    '#type': select
+    '#title': '1. ¿Considera relevante identficar los servicios y/o productos que el proceso/subproceso ofrece?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_mecanismos_emplea_empleara_para_ello_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_90"]':
+          value: 'No'
+  _que_mecanismos_emplea_empleara_para_ello_:
+    '#type': textarea
+    '#title': '¿Dónde se pueden consultar?'
+    '#states':
+      visible:
+        ':input[name="1_considera_relevante_identficar_los_servicios_y_o_productos_que"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_90:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_considera_relevante_identficar_los_servicios_y_o_productos_que"]':
+          value: 'No'
+  8_1_planificacion_y_control_operacional:
+    '#type': item
+    '#title': '8.1 Planificación y Control Operacional'
+  2_reconoce_que_conocer_los_requisitos_tecnicos_y_de_tiempos_de_c:
+    '#type': select
+    '#title': '2. ¿Reconoce que conocer los requisitos (técnicos y de tiempos) de cada uno de los servicios y/o productos que el proceso/subproceso ofrece, aporta valor al desempeño del proceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_donde_se_pueden_consultar_"]':
+          value: Si
+        ':input[name="_por_que_78"]':
+          value: 'No'
+  _donde_se_pueden_consultar_:
+    '#type': textarea
+    '#title': '¿Dónde se pueden consultar los requisitos técnicos y de tiempos y Cómo se socializan(socializarán)?'
+    '#states':
+      visible:
+        ':input[name="2_reconoce_que_conocer_los_requisitos_tecnicos_y_de_tiempos_de_c"]':
+          value: Si
+  _por_que_78:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="2_reconoce_que_conocer_los_requisitos_tecnicos_y_de_tiempos_de_c"]':
+          value: 'No'
+  3_considera_beneficioso_definir_parametros_de_control_para_asegu:
+    '#type': select
+    '#title': '3. ¿Considera beneficioso definir parametros de control para asegurar la calidad de los servicios prestados? '
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_seran_dichos_parametros_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_4"]':
+          value: 'No'
+  _cuales_son_seran_dichos_parametros_:
+    '#type': textarea
+    '#title': '¿Cuáles son(serán) dichos parametros?'
+    '#states':
+      visible:
+        ':input[name="3_considera_beneficioso_definir_parametros_de_control_para_asegu"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_4:
+    '#type': textarea
+    '#title': '¿Por qué  y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_considera_beneficioso_definir_parametros_de_control_para_asegu"]':
+          value: 'No'
+  4_para_usted_es_importante_que_el_cliente_conozca_los_requisitos:
+    '#type': select
+    '#title': '4. ¿Para usted es importante que el cliente conozca los requisitos que debe presentar para solicitar un servicio o producto especifico?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_socializan_socializaran_y_donde_se_pueden_podran_consul"]':
+          value: Si
+        ':input[name="_por_que_58"]':
+          value: 'No'
+  _como_se_socializan_socializaran_y_donde_se_pueden_podran_consul:
+    '#type': textarea
+    '#title': '¿Cómo se socializan(socializarán) y Dónde se pueden(podrán) consultar?'
+    '#states':
+      visible:
+        ':input[name="4_para_usted_es_importante_que_el_cliente_conozca_los_requisitos"]':
+          value: Si
+  _por_que_58:
+    '#type': textarea
+    '#title': '¿Por qué?'
+    '#states':
+      visible:
+        ':input[name="4_para_usted_es_importante_que_el_cliente_conozca_los_requisitos"]':
+          value: 'No'
+  5_cree_que_es_ventajoso_tener_en_cuenta_la_minimizacion_del_impa:
+    '#type': select
+    '#title': '5. ¿Cree que es ventajoso tener en cuenta la minimización del impacto ambiental en la planificación y prestación del servicio?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_evidencia_evidenciara_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_89"]':
+          value: 'No'
+  _como_se_evidencia_evidenciara_:
+    '#type': textarea
+    '#title': '¿Cómo se evidencia(evidenciará)?'
+    '#states':
+      visible:
+        ':input[name="5_cree_que_es_ventajoso_tener_en_cuenta_la_minimizacion_del_impa"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_89:
+    '#type': textarea
+    '#title': '¿Por qué  y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="5_cree_que_es_ventajoso_tener_en_cuenta_la_minimizacion_del_impa"]':
+          value: 'No'
+  6_opina_que_se_debe_considerar_la_eliminacion_y_o_reduccion_de_l:
+    '#type': select
+    '#title': '6. ¿Opina que se debe considerar la eliminación y/o reducción de los riesgos en  la planificación y prestación del servicio?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_incluyen_incluiran_5"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_78"]':
+          value: 'No'
+  _como_se_incluyen_incluiran_5:
+    '#type': textarea
+    '#title': '¿Cómo se incluyen(incluirán)?'
+    '#states':
+      visible:
+        ':input[name="6_opina_que_se_debe_considerar_la_eliminacion_y_o_reduccion_de_l"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_78:
+    '#type': textarea
+    '#title': '¿Por qué  y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="6_opina_que_se_debe_considerar_la_eliminacion_y_o_reduccion_de_l"]':
+          value: 'No'
+  8_2_preparacion_y_respuesta_ante_emergencias_sistema_de_gestion_:
+    '#type': item
+    '#title': '8.2 Preparación y Respuesta ante Emergencias (sistema de gestion SST y ambiental)'
+  1_piensa_que_es_acertado_saber_actuar_en_caso_de_presentarse_alg:
+    '#type': select
+    '#title': '1. ¿Piensa que es acertado saber actuar en caso de presentarse algún desastre o amenaza colectiva (emergencias)?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_son_los_procedimientos_aplicados_y_se_encuentran_documen"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_85"]':
+          value: 'No'
+  _cuales_son_los_procedimientos_aplicados_y_se_encuentran_documen:
+    '#type': textarea
+    '#title': '¿Cúales son los procedimientos aplicados y Se encuentran documentados?'
+    '#states':
+      visible:
+        ':input[name="1_piensa_que_es_acertado_saber_actuar_en_caso_de_presentarse_alg"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_85:
+    '#type': textarea
+    '#title': ' ¿Por qué  y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_piensa_que_es_acertado_saber_actuar_en_caso_de_presentarse_alg"]':
+          value: 'No'
+  2_considera_conveniente_identificar_los_equipos_que_pueden_ser_u:
+    '#type': select
+    '#title': '2. ¿Considera conveniente identificar los equipos que pueden ser utilizados en la atención de emergencias?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_considera_que_son_suficientes_y_adecuados_y_por_que_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_95"]':
+          value: 'No'
+  _considera_que_son_suficientes_y_adecuados_y_por_que_:
+    '#type': textarea
+    '#title': '¿Considera que son suficientes y adecuados y Por qué?'
+    '#states':
+      visible:
+        ':input[name="2_considera_conveniente_identificar_los_equipos_que_pueden_ser_u"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_95:
+    '#type': textarea
+    '#title': '¿Por qué  y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_considera_conveniente_identificar_los_equipos_que_pueden_ser_u"]':
+          value: 'No'
+  8_2_requisitos_para_los_productos_y_servicios_sistema_de_gestion:
+    '#type': item
+    '#title': '8.2 Requisitos para los Productos y Servicios  (sistema de gestion de calidad)'
+  1_cree_que_es_util_realizar_seguimiento_para_no_exceder_los_tiem:
+    '#type': select
+    '#title': '1. ¿Cree que es útil realizar seguimiento para no exceder los tiempos establecidos para la prestación del servicio/producto?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuenta_con_alguna_herramienta_de_seguimiento_y_como_funciona_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_97"]':
+          value: 'No'
+  _cuenta_con_alguna_herramienta_de_seguimiento_y_como_funciona_:
+    '#type': textarea
+    '#title': '¿Cuenta con alguna herramienta de seguimiento y Cómo funciona?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_util_realizar_seguimiento_para_no_exceder_los_tiem"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_97:
+    '#type': textarea
+    '#title': '¿Por qué  y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_util_realizar_seguimiento_para_no_exceder_los_tiem"]':
+          value: 'No'
+  2_conoce_algun_caso_en_que_el_cliente_haya_manifestado_no_estar_:
+    '#type': select
+    '#title': '2. ¿Conoce algún caso en que el cliente haya manifestado no estar conforme con el servicio/producto recibido?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuenta_con_alguna_herram"]':
+          value: Si
+        ':input[name="_que_sugerencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _cuenta_con_alguna_herram:
+    '#type': textarea
+    '#title': '¿Cómo se ha manejado?'
+    '#states':
+      visible:
+        ':input[name="2_conoce_algun_caso_en_que_el_cliente_haya_manifestado_no_estar_"]':
+          value: Si
+  _que_sugerencias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_conoce_algun_caso_en_que_el_cliente_haya_manifestado_no_estar_"]':
+          value: 'No'
+  8_4_control_de_los_procesos_productos_y_servicios_suministrados_:
+    '#type': item
+    '#title': '8.4 Control de los procesos, productos y servicios suministrados externamente'
+  1_conoce_si_la_prestacion_servicio_producto_de_su_proceso_subpro:
+    '#type': select
+    '#title': '1. ¿Conoce si la prestación servicio/producto  de su proceso/subproceso depende de la contratación de un proveedor externo?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_es_proveedor_y_que_servicio_presta_"]':
+          value: Si
+        ':input[name="_que_sugerencias_plantea_frente_a_este_tema_789"]':
+          value: 'No'
+  _cual_es_proveedor_y_que_servicio_presta_:
+    '#type': textarea
+    '#title': '¿Cúal es proveedor y que servicio presta?'
+    '#states':
+      visible:
+        ':input[name="1_conoce_si_la_prestacion_servicio_producto_de_su_proceso_subpro"]':
+          value: Si
+  _que_sugerencias_plantea_frente_a_este_tema_789:
+    '#type': textarea
+    '#title': '¿Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_conoce_si_la_prestacion_servicio_producto_de_su_proceso_subpro"]':
+          value: 'No'
+  8_4_2_tipo_y_alcance_del_control:
+    '#type': item
+    '#title': '8.4.2 Tipo y alcance del control'
+  1_opina_que_es_significativo_conocer_el_alcance_de_los_servicios:
+    '#type': select
+    '#title': '1. ¿Opina que es significativo conocer el alcance de los servicios prestados por los proveedores externos con los que interactua?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_es_proveedor_y_que_se"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_a_este_tema_"]':
+          value: 'No'
+  _cual_es_proveedor_y_que_se:
+    '#type': textarea
+    '#title': '¿Cómos se consultan y Qué aportes brinda al proceso?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_significativo_conocer_el_alcance_de_los_servicios"]':
+          value: Si
+  _por_que_y_que_sugerencias_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_significativo_conocer_el_alcance_de_los_servicios"]':
+          value: 'No'
+  8_4_3_informacion_para_los_proveedores_externos:
+    '#type': item
+    '#title': '8.4.3 Información para los proveedores externos'
+  1_cree_que_es_esencial_comunicar_los_objetivos_y_mecanismos_de_s:
+    '#type': select
+    '#title': '1. ¿Cree que es esencial comunicar los objetivos y mecanismos de seguimiento al proveedor externo al inicio y durante la ejecución del contrato?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_comos_se_consultan_y_que_aportes_brinda_al_proceso_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_987"]':
+          value: 'No'
+  _comos_se_consultan_y_que_aportes_brinda_al_proceso_:
+    '#type': textarea
+    '#title': '¿Cómo se lleva a cabo la comunicación?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_esencial_comunicar_los_objetivos_y_mecanismos_de_s"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_987:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_esencial_comunicar_los_objetivos_y_mecanismos_de_s"]':
+          value: 'No'
+  8_5_produccion_y_provision_del_servicio_8_5_1_control_de_la_prod:
+    '#type': item
+    '#title': "8.5 Producción y Provisión del Servicio - 8.5.1 Control de la producción y de la provisión del servicio\t\t"
+  1_considera_significativo_conocer_quien_es_el_responsable_de_ide:
+    '#type': select
+    '#title': '1. ¿Considera significativo conocer quien es el responsable de identificar el servicio/producto que no cumple con las especificaciones ?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_consultan_los_responsables_"]':
+          value: Si
+        ':input[name="_por_querencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_consultan_los_responsables_:
+    '#type': textarea
+    '#title': ' ¿Cómo se consultan los responsables?'
+    '#states':
+      visible:
+        ':input[name="1_considera_significativo_conocer_quien_es_el_responsable_de_ide"]':
+          value: Si
+  _por_querencias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_considera_significativo_conocer_quien_es_el_responsable_de_ide"]':
+          value: 'No'
+  8_5_2_identificacion_y_trazabilidad:
+    '#type': item
+    '#title': '8.5.2 Identificación y trazabilidad'
+  1_es_relevante_emplear_un_mecanismo_para_la_identificacion_del_e:
+    '#type': select
+    '#title': '1. ¿Es relevante emplear un mecanismo para la identificación del estado de avance o desarrollo del servicio/producto solicitado por el cliente?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_mecanismo_emplea_empleara_"]':
+          value: Si
+        ':input[name="_sugerencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _cual_mecanismo_emplea_empleara_:
+    '#type': textarea
+    '#title': '¿Cuál mecanismo emplea(empleará)?'
+    '#states':
+      visible:
+        ':input[name="1_es_relevante_emplear_un_mecanismo_para_la_identificacion_del_e"]':
+          value: Si
+  _sugerencias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_es_relevante_emplear_un_mecanismo_para_la_identificacion_del_e"]':
+          value: 'No'
+  2_piensa_que_es_relevante_para_el_proceso_subproceso_informar_al:
+    '#type': select
+    '#title': '2. ¿Piensa que es relevante para el proceso/subproceso informar al cliente sobre el estado de su solicitud o requerimiento?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_informa_informara_al_cliente_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_fste_tema_"]':
+          value: 'No'
+  _como_se_informa_informara_al_cliente_:
+    '#type': textarea
+    '#title': '¿Cómo se informa(informará) al cliente?'
+    '#states':
+      visible:
+        ':input[name="2_piensa_que_es_relevante_para_el_proceso_subproceso_informar_al"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_fste_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_piensa_que_es_relevante_para_el_proceso_subproceso_informar_al"]':
+          value: 'No'
+  8_5_produccion_y_provision_del_se:
+    '#type': item
+    '#title': '8.5.5 Actividades posteriores a la entrega'
+  1_frente_a_la_solicitud_del_cliente_cree_que_es_util_informar_co:
+    '#type': select
+    '#title': '1. ¿Frente a la solicitud del cliente, creé que es útil informar como y cuando se le dará respuesta?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_informmara_al_cliente_"]':
+          value: Si
+        ':input[name="_por_que_yncias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_informmara_al_cliente_:
+    '#type': textarea
+    '#title': '¿Cómo se informa(informará) al cliente?'
+    '#states':
+      visible:
+        ':input[name="1_frente_a_la_solicitud_del_cliente_cree_que_es_util_informar_co"]':
+          value: Si
+  _por_que_yncias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_frente_a_la_solicitud_del_cliente_cree_que_es_util_informar_co"]':
+          value: 'No'
+  8_5_6_control_de_los_cambios:
+    '#type': item
+    '#title': '8.5.6 Control de los cambios'
+  1_conoce_si_el_proceso_ha_presentado_inconvenientes_en_la_presta:
+    '#type': select
+    '#title': '1. ¿Conoce si el proceso ha presentado inconvenientes en la prestación del servicio?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_ha_informado_al_cliente_y_al_personal_del_proceso_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tma"]':
+          value: 'No'
+  _como_se_ha_informado_al_cliente_y_al_personal_del_proceso_:
+    '#type': textarea
+    '#title': '¿Cómo se ha informado al cliente y al personal del proceso?'
+    '#states':
+      visible:
+        ':input[name="1_conoce_si_el_proceso_ha_presentado_inconvenientes_en_la_presta"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tma:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_conoce_si_el_proceso_ha_presentado_inconvenientes_en_la_presta"]':
+          value: 'No'
+  2_opina_que_es_provechoso_contar_con_un_mecanismo_de_comunicacio:
+    '#type': select
+    '#title': '2. ¿Opina que es provechoso contar con un mecanismo de comunicación para el reporte de inconvenientes que se presenten durante la prestación del servicio?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_es_el_mecanismo_e_emplea_empleara_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plante45a_frente_a_este_tema_"]':
+          value: 'No'
+  _cual_es_el_mecanismo_e_emplea_empleara_:
+    '#type': textarea
+    '#title': '¿Cuál es el mecanismo que emplea(empleará)?'
+    '#states':
+      visible:
+        ':input[name="2_opina_que_es_provechoso_contar_con_un_mecanismo_de_comunicacio"]':
+          value: Si
+  _por_que_y_que_sugerencias_plante45a_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_opina_que_es_provechoso_contar_con_un_mecanismo_de_comunicacio"]':
+          value: 'No'
+  8_6_liberacion_de_los_productos_y_servicios:
+    '#type': item
+    '#title': '8.6 Liberación de los Productos y Servicios'
+  1_considera_importante_emplear_un_mecanismo_de_verificacion_fina:
+    '#type': select
+    '#title': '1. ¿Considera importante  emplear un mecanismo de verificación final que determine que el servicio/producto se ajusta a la solicitud del cliente?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cual_es_el_mecanismo_que_emplea_empleara_8"]':
+          value: Si
+        ':input[name="_por_que_y_5que_sugerencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _cual_es_el_mecanismo_que_emplea_empleara_8:
+    '#type': textarea
+    '#title': '¿Cuál es el mecanismo que emplea(empleará)?'
+    '#states':
+      visible:
+        ':input[name="1_considera_importante_emplear_un_mecanismo_de_verificacion_fina"]':
+          value: Si
+  _por_que_y_5que_sugerencias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_considera_importante_emplear_un_mecanismo_de_verificacion_fina"]':
+          value: 'No'
+  8_7_control_de_las_salidas_no_conformes:
+    '#type': item
+    '#title': '8.7 Control de las salidas no conformes'
+  1_cree_que_es_valioso_identificar_las_acciones_que_se_deben_segu:
+    '#type': select
+    '#title': '1. ¿Cree que es valioso identificar las acciones que se deben seguir para el tratamiento de un servicio/producto no conforme?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_donde_se_pueden_podran_4consultar_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_frente_a_este_tema_58"]':
+          value: 'No'
+  _donde_se_pueden_podran_4consultar_:
+    '#type': textarea
+    '#title': '¿Dónde se pueden(podrán) consultar?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_valioso_identificar_las_acciones_que_se_deben_segu"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_frente_a_este_tema_58:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_es_valioso_identificar_las_acciones_que_se_deben_segu"]':
+          value: 'No'
+  9_evaluacion_del_desempeno:
+    '#type': item
+    '#title': '9. EVALUACIÓN DEL DESEMPEÑO'
+  1_opina_que_es_relevante_involucrar_al_personal_de_las_unidades_:
+    '#type': select
+    '#title': '1. ¿Opina que es relevante involucrar al personal de las unidades en la definición de los mecanismos de medición del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_involucra_involucrara_el_personal_d5e_las_unidades_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias87_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_involucra_involucrara_el_personal_d5e_las_unidades_:
+    '#type': textarea
+    '#title': ' ¿Cómo se involucra(involucrará) el personal de las unidades?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_relevante_involucrar_al_personal_de_las_unidades_"]':
+          value: Si
+  _por_que_y_que_sugerencias87_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_relevante_involucrar_al_personal_de_las_unidades_"]':
+          value: 'No'
+  9_1_seguimiento_medicion_analisis_y_evaluacion_9_1_1_generalidad:
+    '#type': item
+    '#title': "9.1 Seguimiento, Medición, Analisis y Evaluación - 9.1.1 Generalidades \t\t"
+  2_usted_considera_que_los_analisis_de_los_mecanismos_de_medicion:
+    '#type': select
+    '#title': '2. ¿Usted considera que los analisis de los mecanismos de medición han impactado en la toma de decisiones del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_evidencia_"]':
+          value: Si
+        ':input[name="_por_que_y_que_su5ias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_evidencia_:
+    '#type': textarea
+    '#title': ' ¿Cómo se evidencia?'
+    '#states':
+      visible:
+        ':input[name="2_usted_considera_que_los_analisis_de_los_mecanismos_de_medicion"]':
+          value: Si
+  _por_que_y_que_su5ias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_usted_considera_que_los_analisis_de_los_mecanismos_de_medicion"]':
+          value: 'No'
+  9_1_2_satisfaccion_del_cliente_:
+    '#type': item
+    '#title': "9.1.2 Satisfacción del cliente\t"
+  1_cree_que_la_retroalimentacion_del_cliente_ha_generado_mejoras_:
+    '#type': select
+    '#title': '1. ¿Cree que la retroalimentación del cliente ha generado mejoras al proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_"]':
+          value: Si
+        ':input[name="_por_que_y_que_su5gerencias_p5lantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_:
+    '#type': textarea
+    '#title': ' mencione algunas'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_la_retroalimentacion_del_cliente_ha_generado_mejoras_"]':
+          value: Si
+  _por_que_y_que_su5gerencias_p5lantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_la_retroalimentacion_del_cliente_ha_generado_mejoras_"]':
+          value: 'No'
+  9_1_3_analisis_y_evaluacion:
+    '#type': item
+    '#title': '9.1.3 Análisis y evaluación'
+  1_opina_que_es_necesario_llevar_registro_de_informacion_estadist:
+    '#type': select
+    '#title': '1. ¿Opina que es necesario llevar registro de información estadistica del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_donde_se_puede_consultar_dicha_informacion_"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plantea_fre8nte_a_este_tema_"]':
+          value: 'No'
+  _donde_se_puede_consultar_dicha_informacion_:
+    '#type': textarea
+    '#title': ' ¿Dónde se puede consultar dicha información?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_necesario_llevar_registro_de_informacion_estadist"]':
+          value: Si
+  _por_que_y_que_sugerencias_plantea_fre8nte_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_necesario_llevar_registro_de_informacion_estadist"]':
+          value: 'No'
+  2_conoce_si_la_informacion_estadistica_se_incluye_en_los_mecanis:
+    '#type': select
+    '#title': '2. ¿Conoce si la información estadistica se incluye en los mecanismos de medición del proceso o se analizan?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_evidencia_8"]':
+          value: Si
+        ':input[name="_por_que78_y_que_sugerencias_plantea_frente_a_este_tema_"]':
+          value: 'No'
+  _como_se_evidencia_8:
+    '#type': textarea
+    '#title': '  ¿Cómo se evidencia?'
+    '#states':
+      visible:
+        ':input[name="2_conoce_si_la_informacion_estadistica_se_incluye_en_los_mecanis"]':
+          value: Si
+  _por_que78_y_que_sugerencias_plantea_frente_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_conoce_si_la_informacion_estadistica_se_incluye_en_los_mecanis"]':
+          value: 'No'
+  3_considera_relevante_tener_en_cuenta_los_resultados_del_seguimi:
+    '#type': select
+    '#title': '3. ¿Considera relevante tener en cuenta los resultados del seguimiento de los requisitos legales y de otra indoles para implementar acciones de mejora?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="mencione_algunas_de_las_mejoras"]':
+          value: Si
+        ':input[name="_por_que_y_que_sugerencias_plan5tea_frente8_a_este_tema_"]':
+          value: 'No'
+  mencione_algunas_de_las_mejoras:
+    '#type': textarea
+    '#title': 'Mencione algunas de las mejoras'
+    '#states':
+      visible:
+        ':input[name="3_considera_relevante_tener_en_cuenta_los_resultados_del_seguimi"]':
+          value: Si
+  _por_que_y_que_sugerencias_plan5tea_frente8_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="3_considera_relevante_tener_en_cuenta_los_resultados_del_seguimi"]':
+          value: 'No'
+  9_2_auditoria_interna:
+    '#type': item
+    '#title': '9.2 Auditoria Interna'
+  1_usted_cree_que_las_auditorias_aportan_a_la_mejora_del_desempen:
+    '#type': select
+    '#title': '1. ¿Usted cree que las auditorias aportan a la mejora del desempeño del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_cuales_han_sido8_los_beneficios_obt6enidos_"]':
+          value: Si
+        ':input[name="_por_que_y_que_su7gerencias_plantea_fre5n6te_a_este_tema_"]':
+          value: 'No'
+  _cuales_han_sido8_los_beneficios_obt6enidos_:
+    '#type': textarea
+    '#title': '¿Cuáles han sido los beneficios obtenidos?'
+    '#states':
+      visible:
+        ':input[name="1_usted_cree_que_las_auditorias_aportan_a_la_mejora_del_desempen"]':
+          value: Si
+  _por_que_y_que_su7gerencias_plantea_fre5n6te_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_usted_cree_que_las_auditorias_aportan_a_la_mejora_del_desempen"]':
+          value: 'No'
+  9_2_auderna:
+    '#type': item
+    '#title': '9.3 Revisión por la Dirección'
+  1_cree_que_los_espacios_de_revision_por_la_direccion_rae_entre_o:
+    '#type': select
+    '#title': '1. ¿Cree que los espacios de revisión por la Dirección (RAE, entre otros) han permitido presentar información relevante de su proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_informacion_considera_pertinente_presentar_a_la_direccion_c"]':
+          value: Si
+        ':input[name="_por_que_y8_que_sugerencias_plantea_frent_este_tema_"]':
+          value: 'No'
+  _que_informacion_considera_pertinente_presentar_a_la_direccion_c:
+    '#type': textarea
+    '#title': '¿Qué información considera pertinente presentar a la Dirección como resultado del desempeño de su proceso/subproceso?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_los_espacios_de_revision_por_la_direccion_rae_entre_o"]':
+          value: Si
+  _por_que_y8_que_sugerencias_plantea_frent_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_cree_que_los_espacios_de_revision_por_la_direccion_rae_entre_o"]':
+          value: 'No'
+  9_3_revision_por_la_direccion:
+    '#type': item
+    '#title': '10. MEJORA'
+  1_opina_que_es_util_reportar_accidentes_o_incidentes_relacionado:
+    '#type': select
+    '#title': '1. ¿Opina que es útil reportar accidentes o incidentes relacionados con aspectos ambientales y de seguridad y salud en el trabajo?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_como_se_han_reportado_y_atendido_"]':
+          value: Si
+        ':input[name="_por_que_y_que_7sugerencia8s_plantea_frent9e_a_este_tema_"]':
+          value: 'No'
+  _como_se_han_reportado_y_atendido_:
+    '#type': textarea
+    '#title': '¿Cómo se han reportado y atendido?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_util_reportar_accidentes_o_incidentes_relacionado"]':
+          value: Si
+  _por_que_y_que_7sugerencia8s_plantea_frent9e_a_este_tema_:
+    '#type': textarea
+    '#title': ' ¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="1_opina_que_es_util_reportar_accidentes_o_incidentes_relacionado"]':
+          value: 'No'
+  2_considera_importante_definir_mecanismos_que_permiten_desarroll:
+    '#type': select
+    '#title': '2. ¿Considera importante definir mecanismos que permiten desarrollar estrategias de mejora del desempeño en los cuales se involucre al personal del proceso/subproceso?'
+    '#options':
+      Si: Si
+      'No': 'No'
+    '#states':
+      required:
+        ':input[name="_que_mecanismo_e7mplea_empleara_y_con_que5_frecuencia_"]':
+          value: Si
+        ':input[name="_por_que_y_qu7e_sugerencia8s_plante5a_frent1e_a_este_tema_"]':
+          value: 'No'
+  _que_mecanismo_e7mplea_empleara_y_con_que5_frecuencia_:
+    '#type': textarea
+    '#title': '¿Qué mecanismo emplea(empleará) y Con qué frecuencia?'
+    '#states':
+      visible:
+        ':input[name="2_considera_importante_definir_mecanismos_que_permiten_desarroll"]':
+          value: Si
+  _por_que_y_qu7e_sugerencia8s_plante5a_frent1e_a_este_tema_:
+    '#type': textarea
+    '#title': '¿Por qué y Qué sugerencias plantea frente a este tema?'
+    '#states':
+      visible:
+        ':input[name="2_considera_importante_definir_mecanismos_que_permiten_desarroll"]':
+          value: 'No'
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

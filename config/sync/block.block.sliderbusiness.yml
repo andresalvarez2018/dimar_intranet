@@ -1,0 +1,44 @@
+uuid: 3780e8df-f0c2-4729-b568-9c57b97b23e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_business
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - md_slider
+    - ntv_block_background
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: sliderbusiness
+theme: whites
+region: slider
+weight: -91
+provider: null
+plugin: 'md_slider_block:slider_business'
+settings:
+  id: 'md_slider_block:slider_business'
+  label: 'Slider business'
+  label_display: '0'
+  provider: md_slider
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_business

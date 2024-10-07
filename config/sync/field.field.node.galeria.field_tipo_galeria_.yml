@@ -1,0 +1,21 @@
+uuid: f2ea20a8-5064-4ac7-b5cb-d0e7f0ea669c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_galeria_
+    - node.type.galeria
+id: node.galeria.field_tipo_galeria_
+field_name: field_tipo_galeria_
+entity_type: node
+bundle: galeria
+label: 'Tipo Galería '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

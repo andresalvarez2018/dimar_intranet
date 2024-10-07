@@ -1,0 +1,9 @@
+uuid: ad4dee7a-a502-4604-ae62-906ba3ef80aa
+langcode: es
+status: true
+dependencies: {  }
+id: dependencias
+label: Dependencias
+weight: 6
+is_admin: null
+permissions: {  }

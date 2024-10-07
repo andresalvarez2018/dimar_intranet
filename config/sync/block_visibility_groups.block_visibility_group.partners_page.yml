@@ -1,0 +1,17 @@
+uuid: 5315919d-7043-4ff5-84a6-19b5357561e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: partners_page
+label: 'Partners page'
+logic: or
+conditions:
+  575f2e11-c20e-4360-81b2-7ab0a189b52e:
+    id: request_path
+    negate: false
+    uuid: 575f2e11-c20e-4360-81b2-7ab0a189b52e
+    context_mapping: {  }
+    pages: /node/70
+allow_other_conditions: false

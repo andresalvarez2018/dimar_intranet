@@ -1,0 +1,21 @@
+uuid: bc4c8622-cbb2-4bc3-8984-48a142d520a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.blog_post
+id: node.blog_post.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: blog_post
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: .
+default_value_callback: ''
+settings: {  }
+field_type: string

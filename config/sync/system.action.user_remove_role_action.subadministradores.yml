@@ -1,0 +1,14 @@
+uuid: 496d0aaa-4fca-4ee2-b23a-5eed240e92da
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.subadministradores
+  module:
+    - user
+id: user_remove_role_action.subadministradores
+label: 'Elimina el rol Subadministradores al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: subadministradores

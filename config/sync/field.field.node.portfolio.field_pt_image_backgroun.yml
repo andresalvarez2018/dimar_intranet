@@ -1,0 +1,38 @@
+uuid: 093f695b-439f-4130-bcc9-a2881eb715b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_image_backgroun
+    - node.type.portfolio
+  module:
+    - image
+id: node.portfolio.field_pt_image_backgroun
+field_name: field_pt_image_backgroun
+entity_type: node
+bundle: portfolio
+label: 'Image background'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 55f082ea-23ec-4603-ac8a-3a2ec71858e1
+    alt: bg-16
+    title: ''
+    width: 1920
+    height: 650
+field_type: image

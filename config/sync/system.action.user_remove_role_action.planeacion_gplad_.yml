@@ -1,0 +1,14 @@
+uuid: ff8ced12-8615-4b0c-9180-1df68e4d665d
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.planeacion_gplad_
+  module:
+    - user
+id: user_remove_role_action.planeacion_gplad_
+label: 'Elimina el rol Planeación (GPLAD) al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: planeacion_gplad_

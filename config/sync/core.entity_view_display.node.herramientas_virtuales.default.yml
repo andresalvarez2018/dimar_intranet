@@ -1,0 +1,73 @@
+uuid: 62a2a07f-d3e9-4a6e-9804-aedb142179dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.herramientas_virtuales.body
+    - field.field.node.herramientas_virtuales.field_enlace_herramientas
+    - field.field.node.herramientas_virtuales.field_imagen_herramientas
+    - field.field.node.herramientas_virtuales.field_region
+    - node.type.herramientas_virtuales
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.herramientas_virtuales.default
+targetEntityType: node
+bundle: herramientas_virtuales
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_enlace_herramientas:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_imagen_herramientas:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_region:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

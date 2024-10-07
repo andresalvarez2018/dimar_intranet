@@ -1,0 +1,11 @@
+uuid: a14903ef-e8e1-428a-ae5f-f2ee5cb84a28
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.normatividad
+id: node.normatividad
+target_entity_type_id: node
+target_bundle: normatividad
+default_langcode: site_default
+language_alterable: false

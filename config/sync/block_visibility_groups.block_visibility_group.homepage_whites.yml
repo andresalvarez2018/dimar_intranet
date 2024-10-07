@@ -1,0 +1,17 @@
+uuid: 5968f13b-3d35-4c8f-9c74-6e26a4ff7889
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_whites
+label: 'Homepage whites'
+logic: and
+conditions:
+  1685cca4-0233-4da5-b8d9-a126bd84e7e0:
+    id: request_path
+    negate: false
+    uuid: 1685cca4-0233-4da5-b8d9-a126bd84e7e0
+    context_mapping: {  }
+    pages: '<front>'
+allow_other_conditions: false

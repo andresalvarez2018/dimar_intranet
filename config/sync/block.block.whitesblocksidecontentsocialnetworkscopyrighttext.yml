@@ -1,0 +1,47 @@
+uuid: fd5e0054-0f72-41b6-bb41-8f7582503d96
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:25158f11-9e72-4381-8ff6-5d816f928ed3'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: whitesblocksidecontentsocialnetworkscopyrighttext
+theme: whites
+region: side_content
+weight: 0
+provider: null
+plugin: 'block_content:25158f11-9e72-4381-8ff6-5d816f928ed3'
+settings:
+  id: 'block_content:25158f11-9e72-4381-8ff6-5d816f928ed3'
+  label: '[Whites] Block side content - Social networks & copyright text'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

@@ -1,0 +1,52 @@
+uuid: 75ea52f2-671d-403a-9ab2-a77451723dfa
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view._whites_taxonomy_terms
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+    - views
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___whites_taxonomy_terms_block_1
+theme: whites
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:_whites_taxonomy_terms-block_1'
+settings:
+  id: 'views_block:_whites_taxonomy_terms-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: '10'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/Dependencias/grupo-coordinacion-general-grucog\r\n/grupo-coordinacion-general-grucog\r\n/Dependencias/Grupo-Coordinación-General-GRUCOG/Políticas-de-Gestión-Gobierno-en-Línea-y-Antitrámites/Gobierno-en-Línea/6-componentes-de-Gobierno-en-Línea/democracia-en-linea\r\n/Dependencias/Grupo-Coordinación-General-GRUCOG/Políticas-de-Gestión-Gobierno-en-Línea-y-Antitrámites/Gobierno-en-Línea/6-componentes-de-gobierno-en-linea\r\n/Dependencias/Grupo-Coordinación-General-GRUCOG/Políticas-de-Gestión-Gobierno-en-Línea-y-Antitrámites/gobierno-en-linea\r\n/Dependencias/Grupo-Coordinación-General-GRUCOG-/-Políticas-de-Gestión-Gobierno-en-Línea-y-Antitrámites/datos-abiertos-servicios-de-informacion-al-ciudadano\r\n/Dependencias/grupo-de-desarrollo-humano-grudhu\r\n/Dependencias/grupo-de-informatica-y-comunicaciones-gruinco\r\n/Dependencias/grupo-de-control-interno-grucoi\r\n/Dependencias/subdireccion-de-marina-mercante-submerc\r\n/Dependencias/grupo-legal-maritimo-glemar\r\n/Dependencias/subdireccion-de-desarrollo-maritimo-subdemar\r\n/Dependencias/subdireccion-administrativa-y-financiera-subafin\r\n/Dependencias/grupo-de-planeacion-gplad"

@@ -1,0 +1,34 @@
+uuid: bed23d75-0538-4611-bfad-adf189ec40e0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.album.body
+    - node.type.album
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: HFpOizORm-gGjwBtspgRLOoSvZUGkXMQX7vAQWYkhOc
+id: node.album.default
+targetEntityType: node
+bundle: album
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

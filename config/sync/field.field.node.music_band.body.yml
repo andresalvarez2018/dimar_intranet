@@ -1,0 +1,25 @@
+uuid: d4b60bf1-fc55-49a9-bfb3-9249bec91ccb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.music_band
+  module:
+    - text
+_core:
+  default_config_hash: bFTXe9fWkUUjP4XTAvikOyPsVEZNfGL7V_mrT69k4cI
+id: node.music_band.body
+field_name: body
+entity_type: node
+bundle: music_band
+label: Cuerpo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

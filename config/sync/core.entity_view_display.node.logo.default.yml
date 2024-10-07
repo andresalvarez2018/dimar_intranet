@@ -1,0 +1,64 @@
+uuid: ceca84be-3d8a-43c2-9717-ac38901cf8e5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.logo.field_enlace_logo
+    - field.field.node.logo.field_imagen_logo
+    - field.field.node.logo.field_region_logo
+    - node.type.logo
+  module:
+    - image
+    - link
+    - options
+    - user
+id: node.logo.default
+targetEntityType: node
+bundle: logo
+mode: default
+content:
+  field_enlace_logo:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_imagen_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_region_logo:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

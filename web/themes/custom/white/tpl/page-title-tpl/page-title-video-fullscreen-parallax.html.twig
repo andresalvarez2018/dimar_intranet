@@ -1,0 +1,40 @@
+{% if field_pt_image_backgroun %}
+    {% set bg_imgs = field_pt_image_backgroun %}
+{% else %}
+    {% set bg_imgs = background_page_title_image %}
+{% endif %}
+
+{% if node.field_pt_video_mp4.entity.uri.value %}
+    {% set video_mp4 = file_url(node.field_pt_video_mp4.entity.uri.value) %}
+{% else %}
+    {% set video_mp4 = background_page_title_video_mp4 %}
+{% endif %}
+
+{# subtitle #}
+{% if node.field_subtitle.value %}
+    {% set subtitle = node.field_subtitle.value %}
+{% elseif current_page == 'blog' %}
+    {% set subtitle = blog_page_subtitle %}
+    {% set bg_imgs = blog_background_page_title_image %}
+    {% set video_mp4 = blog_background_page_title_video_mp4 %}
+{% else %}
+    {% set subtitle = page_subtitle %}
+{% endif %}
+
+<div class="header-video header-parallax full-screen-title">
+    <div class="videobox layer-parallax">
+        <video autoplay loop muted poster="{{ bg_imgs ? bg_imgs|first }}">
+            <source src="{{ video_mp4 ? video_mp4 }}" type="video/mp4">
+        </video>
+    </div>
+    <div class="overlaybox">
+        <div class="container">
+            <div class="title-base">
+                <hr class="anima" />
+                <h1>{{ current_title }}</h1>
+   {% if "Lorem ipsum dolor sit ame" not in subtitle %}
+                <p>{{ subtitle ? subtitle }}</p> 
+            {% endif %}            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+nvs_geolocation-lib:
+  version: VERSION
+  js:
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

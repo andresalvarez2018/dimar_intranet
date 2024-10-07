@@ -1,0 +1,21 @@
+uuid: 840accce-05f9-42b7-a8eb-8b5ee64520c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: 'Send inquiry'
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: contact_form_2
+label: 'Contact form 2'
+recipients:
+  - support@example.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

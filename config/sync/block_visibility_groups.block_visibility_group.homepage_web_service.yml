@@ -1,0 +1,17 @@
+uuid: 83c5952b-4da8-46fb-b390-894ab1da1719
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: homepage_web_service
+label: 'Homepage web service'
+logic: or
+conditions:
+  613755aa-5a5d-42a7-96f2-fd41c9ac1e85:
+    id: request_path
+    negate: false
+    uuid: 613755aa-5a5d-42a7-96f2-fd41c9ac1e85
+    context_mapping: {  }
+    pages: /node/57
+allow_other_conditions: false

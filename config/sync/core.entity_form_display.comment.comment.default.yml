@@ -1,0 +1,41 @@
+uuid: 1ad1bc00-ca95-40a6-92a0-474a2e508c20
+langcode: es
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.field.comment.comment.field_comment_body
+    - field.field.comment.comment.field_email
+    - field.field.comment.comment.field_website
+_core:
+  default_config_hash: I0Pa0aQvT_jawlPo9oz4FE3h_ickc55dYKTPl6gILes
+id: comment.comment.default
+targetEntityType: comment
+bundle: comment
+mode: default
+content:
+  author:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_comment_body:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+hidden:
+  field_website: true
+  langcode: true
+  subject: true

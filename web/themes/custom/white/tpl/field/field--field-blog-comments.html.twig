@@ -1,0 +1,43 @@
+
+<div id="comments" class="section-bg-color">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="comment-list">
+                    <h4>{{ 'Comments'|t }}</h4>
+                    {{ comments ? comments }}
+                </div>
+            </div>
+            <div class="col-md-6">
+            	{% if comment_form %}
+	                <div class="form-box">
+	                    <h4>{{ 'Leave a comment'|t }}</h4>
+	                    {{ comment_form ? comment_form}}
+	                    <!-- <div class="row">
+	                        <div class="col-md-6">
+	                            <p>Name</p>
+	                            <input type="text" class="form-control" placeholder="">
+	                        </div>
+	                        <div class="col-md-6">
+	                            <p>Email</p>
+	                            <input type="text" class="form-control" placeholder="">
+	                        </div>
+	                    </div>
+	                    <hr class="space xs" />
+	                    <div class="row">
+	                        <div class="col-md-12">
+	                            <p>Website</p>
+	                            <input type="text" class="form-control" placeholder="">
+	                            <hr class="space xs" />
+	                            <p>Messagge</p>
+	                            <textarea name="messagge" class="form-control"></textarea>
+	                            <hr class="space s" />
+	                            <button class="btn btn-sm" type="button">Send comment</button>
+	                        </div>
+	                    </div> -->
+	                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

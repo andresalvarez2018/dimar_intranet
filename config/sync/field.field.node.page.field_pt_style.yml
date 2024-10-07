@@ -1,0 +1,23 @@
+uuid: 27a497a0-f763-4679-8bf4-8c4dfd40a881
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pt_style
+    - node.type.page
+  module:
+    - options
+id: node.page.field_pt_style
+field_name: field_pt_style
+entity_type: node
+bundle: page
+label: 'Page title style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: base-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

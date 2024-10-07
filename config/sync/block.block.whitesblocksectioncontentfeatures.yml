@@ -1,0 +1,49 @@
+uuid: f9e9e65a-0808-46a1-8c8a-8eef8baab82d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.homepage_activity
+  content:
+    - 'block_content:basic:d470c064-9694-447d-986a-892e467dc857'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - whites
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    sub_title: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: whitesblocksectioncontentfeatures
+theme: whites
+region: disabled
+weight: -13
+provider: null
+plugin: 'block_content:d470c064-9694-447d-986a-892e467dc857'
+settings:
+  id: 'block_content:d470c064-9694-447d-986a-892e467dc857'
+  label: 'Herramientas html'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: homepage_activity

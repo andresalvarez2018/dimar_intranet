@@ -1,0 +1,8 @@
+uuid: 010929fe-5c44-4c3e-a069-683b452c2b23
+langcode: es
+status: true
+dependencies: {  }
+name: 'Coronavirus Covid-19'
+vid: coronavirus_covid_19
+description: ''
+weight: 0

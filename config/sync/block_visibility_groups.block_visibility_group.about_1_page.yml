@@ -1,0 +1,17 @@
+uuid: 621c13b9-0cff-4239-ab28-379e3dc05028
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: about_1_page
+label: 'About 1 page'
+logic: or
+conditions:
+  54b38331-4ec9-43f6-a0f7-4a3c2009e04c:
+    id: request_path
+    negate: false
+    uuid: 54b38331-4ec9-43f6-a0f7-4a3c2009e04c
+    context_mapping: {  }
+    pages: /node/65
+allow_other_conditions: false

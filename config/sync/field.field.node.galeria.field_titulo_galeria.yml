@@ -1,0 +1,19 @@
+uuid: 82deec72-a934-42ea-af79-2cd52c5d32c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo_galeria
+    - node.type.galeria
+id: node.galeria.field_titulo_galeria
+field_name: field_titulo_galeria
+entity_type: node
+bundle: galeria
+label: Titulo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

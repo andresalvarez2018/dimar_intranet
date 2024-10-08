@@ -2234,7 +2234,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="{{ path(''entity.taxonomy_term.canonical'', {''taxonomy_term'': tid}) }}"><span>{{ name }}</span></a>'
+            text: "<a href=\"{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}\"><span>{{ name }}</span></a>"
             make_link: false
             path: ''
             absolute: false

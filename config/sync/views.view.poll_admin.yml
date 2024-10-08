@@ -5,7 +5,6 @@ dependencies:
   module:
     - poll
     - user
-    - views_autocomplete_filters
 _core:
   default_config_hash: 3kEzzukQtiq3RNSFBn-gP5Y_zDB-SA8JHZOG82Sc9V4
 id: poll_admin
@@ -382,6 +381,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:

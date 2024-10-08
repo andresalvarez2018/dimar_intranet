@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Menu Servicio y participación ciudadana'
 vid: menu_servicio_y_participacion_ci
-description: ''
+description: null
 weight: 0
+new_revision: false

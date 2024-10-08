@@ -1,9 +1,12 @@
 uuid: 718a8652-6d7f-40da-ad0d-760900b62f6e
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: normatividad_interna
 label: 'Normatividad interna'
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

@@ -1,6 +1,5 @@
 _core:
   default_config_hash: 1Zx0Kjl4zSJQScIJ6Nv5z_DDYfYKiEzS-LRnLBoKZS8
-langcode: es
 printable_entities:
   comment: comment
   node: node
@@ -16,9 +15,89 @@ printable_entities:
   taxonomy_term: '0'
   tour: '0'
   menu_link_content: '0'
+printable_entities_bundles:
+  comment:
+    _all: true
+    comment: false
+    comment_forum: false
+  node:
+    _all: true
+    album: false
+    article: false
+    blog_post: false
+    documentos: false
+    forum: false
+    galeria: false
+    gallery_album: false
+    herramientas_virtuales: false
+    homepage: false
+    imagen: false
+    logo: false
+    music_band: false
+    normatividad: false
+    noticias: false
+    page: false
+    partners: false
+    portfolio: false
+    services: false
+    simplenews_issue: false
+    team_members: false
+    testimonials: false
+    webform: false
+  user:
+    _all: true
+    user: false
+  block:
+    _all: false
+    block: false
+  block_content:
+    _all: false
+    basic: false
+    contact_form_2: false
+  contact_message:
+    _all: false
+    contact_form_2: false
+    feedback: false
+    personal: false
+  contact_form:
+    _all: false
+    contact_form: false
+  field_collection_item:
+    _all: false
+    field_demo_collection: false
+  file:
+    _all: false
+    file: false
+  shortcut:
+    _all: false
+    default: false
+  simplenews_subscriber:
+    _all: false
+    simplenews_subscriber: false
+  taxonomy_term:
+    _all: false
+    blog_categories: false
+    categoria_herramientas: false
+    coronavirus_covid_19: false
+    dependencias: false
+    estados_de_norma: false
+    forums: false
+    identidad_institucional: false
+    menu_regimen_interno_disciplinar: false
+    menu_servicio_y_participacion_ci: false
+    palabras_clave: false
+    portfolio_categories: false
+    tags: false
+    tipo_de_norma: false
+  tour:
+    _all: false
+    tour: false
+  menu_link_content:
+    _all: false
+    menu_link_content: false
 open_target_blank: true
 css_include: ''
-extract_links: '0'
+extract_links: none
 save_pdf: false
 pdf_tool: ''
 paper_size: A4
@@ -36,3 +115,6 @@ printable_pdf_link_locations:
   node: node
   comment: '0'
   user: '0'
+path_to_xvfb_run: null
+ignore_warnings: false
+exclude_printable_links: true

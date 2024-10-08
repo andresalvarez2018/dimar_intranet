@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Estados de norma'
 vid: estados_de_norma
-description: ''
+description: null
 weight: 0
+new_revision: false

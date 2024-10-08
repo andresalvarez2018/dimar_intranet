@@ -5,14 +5,12 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_demo_collection
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
   module:
     - comment
-    - field_collection
     - image
     - imce
     - path
@@ -43,12 +41,6 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_demo_collection:
-    type: field_collection_embed
-    weight: 121
     region: content
     settings: {  }
     third_party_settings: {  }

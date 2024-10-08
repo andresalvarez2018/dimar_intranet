@@ -1,6 +1,0 @@
-deny_message: "Debes iniciar sesión para ver esta página.\r\n"
-excluded_paths: /user/login
-auth_path: /user/login
-_core:
-  default_config_hash: M9Hw8DMb7iPsdnLnjDKowpM6Nxv3ND1jNflgWKc91Go
-langcode: es

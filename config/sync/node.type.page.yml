@@ -19,10 +19,10 @@ third_party_settings:
     hashtags: '0'
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
-name: 'Basic page'
+name: 'Página básica'
 type: page
-description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
-help: ''
+description: 'Use las <em>páginas básicas</em> para publicar contenido que no varía, como es el caso de una página "Sobre nosotros" o "Acerca de..."'
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

@@ -36,6 +36,11 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
@@ -50,3 +55,4 @@ hidden:
   field_opciones_de_ruta_url_: true
   field_tipo_norma_: true
   langcode: true
+  social_simple_buttons: true

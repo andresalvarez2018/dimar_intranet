@@ -1,9 +1,12 @@
 uuid: e65c1982-0ce4-4b3a-87f0-71ce886bab74
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: editor_de_fotos_internas_
 label: 'Editor de fotos internas'
 weight: 8
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

@@ -31,6 +31,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   taxonomy_forums:
     type: entity_reference_label
     label: above
@@ -45,3 +50,4 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   langcode: true
+  social_simple_buttons: true

@@ -1,9 +1,12 @@
 uuid: cb70bf55-986c-4b09-8a84-72b8ccc4cd43
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: editor_foros
 label: 'Editor Foros'
 weight: 9
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

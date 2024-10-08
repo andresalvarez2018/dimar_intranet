@@ -2,11 +2,9 @@ uuid: a5ef1cb8-af80-46ed-bdd6-a2517eb714b4
 langcode: es
 status: true
 dependencies:
-  config: {  }
   module:
     - simplenews
     - user
-    - views_autocomplete_filters
 _core:
   default_config_hash: WyIS3mrmy1vkSOWTl1IGi_Zi0UmkVqmtW06au3N9rXU
 id: simplenews_subscribers
@@ -368,6 +366,7 @@ display:
             offset: false
             offset_label: Desplazamiento
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:

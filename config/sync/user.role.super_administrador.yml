@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - entity_clone
+    - file
     - views_ui
 id: super_administrador
 label: 'Super Administrador'
@@ -34,4 +35,5 @@ permissions:
   - 'clone menu_link_content entity'
   - 'clone node entity'
   - 'clone node_type entity'
+  - 'delete own files'
   - 'select account cancellation method'

@@ -25,7 +25,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true
   links: true
   simplenews_issue: true

@@ -9,7 +9,6 @@ dependencies:
   module:
     - node
     - user
-    - views_autocomplete_filters
 _core:
   default_config_hash: Iw7k9dfnfx0hBMLFub4-CAgAuaeJZN_Aw1C8hdSrC3Y
 id: music_album_list
@@ -221,6 +220,7 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset: false
             offset_label: Desplazamiento
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:

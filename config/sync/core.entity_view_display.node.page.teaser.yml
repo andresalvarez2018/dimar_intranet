@@ -38,6 +38,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
@@ -52,3 +57,4 @@ hidden:
   field_pt_video_mp4: true
   field_subtitle: true
   langcode: true
+  social_simple_buttons: true

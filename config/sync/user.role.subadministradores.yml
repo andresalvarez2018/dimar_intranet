@@ -1,9 +1,12 @@
 uuid: 0c9fe973-ba68-4ab3-96b1-e152c55cba37
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: subadministradores
 label: Subadministradores
 weight: 5
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

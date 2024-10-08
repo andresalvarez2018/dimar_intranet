@@ -49,6 +49,11 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   social_simple_buttons:
     settings: {  }
     third_party_settings: {  }

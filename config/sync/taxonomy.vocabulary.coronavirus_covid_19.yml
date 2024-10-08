@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Coronavirus Covid-19'
 vid: coronavirus_covid_19
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -10,6 +10,7 @@ dependencies:
 _core:
   default_config_hash: iQNOEsNlbBFbVMOoSwtfUd8YC0XpRLzTjXv48HYfxwE
 id: node.email_html
-label: 'Email: HTML'
+label: 'Correo electrónico: HTML'
+description: ''
 targetEntityType: node
 cache: true

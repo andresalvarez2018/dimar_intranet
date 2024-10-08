@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'menu regimen interno disciplinario'
 vid: menu_regimen_interno_disciplinar
-description: ''
+description: null
 weight: 0
+new_revision: false

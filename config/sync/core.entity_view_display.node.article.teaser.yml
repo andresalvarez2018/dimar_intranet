@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.comment
-    - field.field.node.article.field_demo_collection
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.medium
@@ -64,6 +63,5 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_demo_collection: true
   field_tags: true
   langcode: true

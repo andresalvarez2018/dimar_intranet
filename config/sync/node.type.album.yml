@@ -13,8 +13,8 @@ _core:
   default_config_hash: 2H4TOSW3VKWk0DXrUGb5GV1oE0rbkhtZTEuvzPimtqo
 name: Álbum
 type: album
-description: ''
-help: ''
+description: null
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

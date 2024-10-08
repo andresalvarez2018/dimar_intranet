@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Categoria herramientas'
 vid: categoria_herramientas
-description: ''
+description: null
 weight: 0
+new_revision: false

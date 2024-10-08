@@ -131,9 +131,6 @@
         "patches": {
             "drupal/image_raw_formatter": {
                 "Automated Drupal 10 compatibility fixes" :"https://www.drupal.org/files/issues/2023-06-10/image_raw_formatter-d10_update-3297407-4.patch"
-            },
-            "drupal/field_collection":{
-                "Automated Drupal 10 compatibility fixes":"https://www.drupal.org/files/issues/2023-10-25/field_collection_for_drupal10.patch"
             }
         },
         "drupal-core-project-message": {

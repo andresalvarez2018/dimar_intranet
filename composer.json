@@ -40,7 +40,6 @@
         "drupal/entity_update": "^3.0",
         "drupal/externalauth": "^2.0",
         "drupal/faqfield": "^7.0",
-        "drupal/field_collection": "4.0.x-dev@dev",
         "drupal/field_group": "^3.3",
         "drupal/gin": "^3.0@RC",
         "drupal/imce": "^3.1",

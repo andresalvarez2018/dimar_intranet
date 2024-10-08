@@ -1,6 +1,0 @@
-puphpeteer.config:
-  title: Puppeteer Configuration
-  route_name: puphpeteer.config
-  parent: pdf_api.settings
-  description: 'Use Puppeteer to generate PDFs.'
-  weight: -20

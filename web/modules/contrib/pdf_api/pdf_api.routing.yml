@@ -1,7 +1,0 @@
-pdf_api.settings:
-  path: '/admin/config/system/pdf-api'
-  defaults:
-    _form: '\Drupal\pdf_api\Form\DompdfSettingsForm'
-    _title: 'Dompdf'
-  requirements:
-    _permission: 'administer site configuration'

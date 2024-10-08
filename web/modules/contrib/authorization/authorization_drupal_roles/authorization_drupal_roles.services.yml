@@ -1,5 +1,0 @@
-services:
-  authorization_drupal_roles.manager:
-    class: Drupal\authorization_drupal_roles\Service\AuthorizationDrupalRolesService
-    arguments:
-      - '@user.data'

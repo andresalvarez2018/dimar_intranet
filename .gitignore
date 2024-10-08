@@ -2,7 +2,6 @@
 /drush/contrib/
 /vendor/
 /core/core/
-/core/sites/laboratorio/themes/custom/fsfb_lab/node_modules
 /core/modules/contrib/
 /core/themes/contrib/
 /core/profiles/contrib/

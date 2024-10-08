@@ -7,7 +7,10 @@
 
 namespace Drupal\nvs_func\Twig;
 
-class PregMatchImgExtension extends \Twig_Extension {
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+class PregMatchImgExtension extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -21,9 +24,9 @@ class PregMatchImgExtension extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getSrcFromImgTag', array($this, 'getSrcFromImgTag'), array(
+      new TwigFunction('getSrcFromImgTag', array($this, 'getSrcFromImgTag'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }
@@ -46,6 +49,6 @@ class PregMatchImgExtension extends \Twig_Extension {
     $output = $out['url'];
     return $output;
   }
-  
+
 
 }

@@ -1,12 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_user\Processor;
 
+use Drupal\authorization\AuthorizationServiceInterface;
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandler;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\externalauth\Authmap;
 use Drupal\ldap_query\Controller\QueryController;
@@ -47,13 +48,6 @@ class GroupUserUpdateProcessor {
    * @var \Drupal\Core\State\StateInterface
    */
   protected $state;
-
-  /**
-   * Module handler.
-   *
-   * @var \Drupal\Core\Extension\ModuleHandler
-   */
-  protected $moduleHandler;
 
   /**
    * Entity Type Manager.
@@ -98,6 +92,20 @@ class GroupUserUpdateProcessor {
   protected $userStorage;
 
   /**
+   * Authorization service.
+   *
+   * @var \Drupal\authorization\AuthorizationServiceInterface
+   */
+  protected $authorizationManager;
+
+  /**
+   * Whether to use LDAP authorization.
+   *
+   * @var bool
+   */
+  protected $ldapAuthorizationExists = FALSE;
+
+  /**
    * Constructor for update process.
    *
    * @param \Psr\Log\LoggerInterface $logger
@@ -108,42 +116,48 @@ class GroupUserUpdateProcessor {
    *   Config factory.
    * @param \Drupal\Core\State\StateInterface $state
    *   State.
-   * @param \Drupal\Core\Extension\ModuleHandler $module_handler
-   *   Module handler.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   Module handler service.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   Entity type manager.
    * @param \Drupal\externalauth\Authmap $external_auth
    *   Externalauth.
-   * @param \Drupal\ldap_query\Controller\QueryController $query_controller
+   * @param \Drupal\ldap_query\Controller\QueryController|null $query_controller
    *   Query controller.
    * @param \Drupal\ldap_user\Processor\DrupalUserProcessor $drupal_user_processor
    *   Drupal user processor.
+   * @param \Drupal\authorization\AuthorizationServiceInterface|null $authorization_manager
+   *   Authorization service.
    */
   public function __construct(
     LoggerInterface $logger,
     LdapDetailLog $detail_log,
     ConfigFactory $config,
     StateInterface $state,
-    ModuleHandler $module_handler,
+    ModuleHandlerInterface $module_handler,
     EntityTypeManagerInterface $entity_type_manager,
     Authmap $external_auth,
-    QueryController $query_controller,
-    DrupalUserProcessor $drupal_user_processor) {
+    ?QueryController $query_controller,
+    DrupalUserProcessor $drupal_user_processor,
+    ?AuthorizationServiceInterface $authorization_manager,
+  ) {
     $this->logger = $logger;
     $this->detailLog = $detail_log;
     $this->config = $config->get('ldap_user.settings');
     $this->drupalUserProcessor = $drupal_user_processor;
     $this->state = $state;
-    $this->moduleHandler = $module_handler;
     $this->entityTypeManager = $entity_type_manager;
     $this->externalAuth = $external_auth;
     $this->queryController = $query_controller;
+    $this->authorizationManager = $authorization_manager;
 
     $this->ldapServer = $this->entityTypeManager
       ->getStorage('ldap_server')
       ->load($this->config->get('drupalAcctProvisionServer'));
     $this->userStorage = $this->entityTypeManager
       ->getStorage('user');
+
+    $this->ldapAuthorizationExists = $module_handler->moduleExists('ldap_authorization');
   }
 
   /**
@@ -198,21 +212,12 @@ class GroupUserUpdateProcessor {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   private function updateAuthorizations(UserInterface $user): void {
-    if ($this->moduleHandler->moduleExists('ldap_authorization')) {
-      // We are not injecting this service properly to avoid forcing this
-      // dependency on authorization.
-      /** @var \Drupal\authorization\AuthorizationController $authorization_manager */
-      // phpcs:ignore
-      $authorization_manager = \Drupal::service('authorization.manager');
-      $authorization_manager->setUser($user);
-      $authorization_manager->setAllProfiles();
-    }
-    else {
-      // We are saving here for sites without ldap_authorization since saving is
-      // embedded in setAllProfiles().
-      // @todo Provide method for decoupling saving users and use it instead.
+    if (!$this->ldapAuthorizationExists) {
       $user->save();
+      return;
     }
+    $this->authorizationManager->setUser($user);
+    $this->authorizationManager->setAllProfiles();
   }
 
   /**
@@ -273,6 +278,9 @@ class GroupUserUpdateProcessor {
 
     $uid = $this->externalAuth->getUid($username, 'ldap_user');
     if (!$uid) {
+      if ($this->config->get('userUpdateOnly')) {
+        return;
+      }
       $result = $this->drupalUserProcessor->createDrupalUserFromLdapEntry(
         [
           'name' => $username,
@@ -294,6 +302,13 @@ class GroupUserUpdateProcessor {
         );
         return;
       }
+    }
+    if (!$uid) {
+      $this->logger->error(
+        'Periodic update: Error creating user @name',
+        ['@name' => $username]
+      );
+      return;
     }
 
     // User exists and is mapped in authmap.

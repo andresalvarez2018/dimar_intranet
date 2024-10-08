@@ -6,3 +6,6 @@ Desktop.ini
 sonar*
 .sonar
 .idea
+vendor/*
+web/*
+.ddev/*

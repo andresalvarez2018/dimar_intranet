@@ -1,19 +1,19 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_user;
 
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityFieldManager;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandler;
+use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\Url;
 use Drupal\ldap_servers\Entity\Server;
 use Drupal\ldap_servers\LdapUserAttributesInterface;
 use Drupal\ldap_servers\Mapping;
-use Drupal\Core\Link;
-use Drupal\Core\Url;
 use function in_array;
 
 /**
@@ -40,7 +40,7 @@ class FieldProvider implements LdapUserAttributesInterface {
   /**
    * Module handler.
    *
-   * @var \Drupal\Core\Extension\ModuleHandler
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 
@@ -79,7 +79,7 @@ class FieldProvider implements LdapUserAttributesInterface {
    *   Config factory.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   Entity type manager.
-   * @param \Drupal\Core\Extension\ModuleHandler $module_handler
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   Module handler.
    * @param \Drupal\Core\Entity\EntityFieldManager $entity_field_manager
    *   Entity field manager.
@@ -87,8 +87,8 @@ class FieldProvider implements LdapUserAttributesInterface {
   public function __construct(
     ConfigFactory $config_factory,
     EntityTypeManagerInterface $entity_type_manager,
-    ModuleHandler $module_handler,
-    EntityFieldManager $entity_field_manager
+    ModuleHandlerInterface $module_handler,
+    EntityFieldManager $entity_field_manager,
   ) {
     $this->config = $config_factory->get('ldap_user.settings');
     $this->entityTypeManager = $entity_type_manager;

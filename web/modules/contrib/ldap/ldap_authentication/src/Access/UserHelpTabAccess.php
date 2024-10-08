@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_authentication\Access;
 
@@ -49,7 +49,8 @@ class UserHelpTabAccess implements AccessInterface {
   public function __construct(
     ConfigFactoryInterface $config_factory,
     AccountInterface $current_user,
-    Authmap $external_auth) {
+    Authmap $external_auth,
+  ) {
     $this->config = $config_factory->get('ldap_authentication.settings');
     $this->currentUser = $current_user;
     $this->externalAuth = $external_auth;
@@ -64,13 +65,13 @@ class UserHelpTabAccess implements AccessInterface {
   public function accessLdapHelpTab(): bool {
     $mode = $this->config->get('authenticationMode');
     if ($mode === 'mixed') {
-      if ($this->externalAuth->get($this->currentUser->id(), 'ldap_user')) {
+      if ($this->externalAuth->get((int) $this->currentUser->id(), 'ldap_user')) {
         return TRUE;
       }
     }
     else {
       if ($this->currentUser->isAnonymous() ||
-        $this->externalAuth->get($this->currentUser->id(), 'ldap_user')) {
+        $this->externalAuth->get((int) $this->currentUser->id(), 'ldap_user')) {
         return TRUE;
       }
     }

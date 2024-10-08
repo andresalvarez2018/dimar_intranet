@@ -7,10 +7,13 @@
 
 namespace Drupal\nvs_func\Twig;
 use Drupal\image\Entity\ImageStyle;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
 /**
  * Provides the NodeViewCount debugging function within Twig templates.
  */
-class NVSImageStyle extends \Twig_Extension {
+class NVSImageStyle extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -24,9 +27,9 @@ class NVSImageStyle extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getUrlByImageStyle', array($this, 'getUrlByImageStyle'), array(
+      new TwigFunction('getUrlByImageStyle', array($this, 'getUrlByImageStyle'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }
@@ -44,7 +47,7 @@ class NVSImageStyle extends \Twig_Extension {
    *   An array of parameters passed to the template.
    */
   public function getUrlByImageStyle($original_image_uri, $style_name){
-	
+
   	$style = ImageStyle::load($style_name);
 
   	//$uri = $style->buildUri($original_image_uri);

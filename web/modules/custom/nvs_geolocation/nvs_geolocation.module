@@ -1,5 +1,5 @@
 <?php
-
+use Drupal\Core\Url;
 function nvs_geolocation_preprocess_html(&$variables){
     if(\Drupal::config('nvs_geolocation.settings')->get('nvs_geolocation_api_key')){
       $api_key = \Drupal::config('nvs_geolocation.settings')->get('nvs_geolocation_api_key');
@@ -10,7 +10,7 @@ function nvs_geolocation_preprocess_html(&$variables){
       $variables['#attached']['library'][] = 'nvs_geolocation/nvs_geolocation-lib';
     }
 
-    $variables['#attached']['drupalSettings']['path']['nvs_geolocation_url'] = base_path().drupal_get_path('module','nvs_geolocation');
+    $variables['#attached']['drupalSettings']['path']['nvs_geolocation_url'] = Url::fromUri('internal:/'.\Drupal::service('extension.list.module')->getPath('nvs_geolocation'))->toString();
 
 }
 
@@ -39,6 +39,6 @@ function nvs_geolocation_preprocess(&$variables){
     }else{
       $variables['nvs_geolocation_lang'] = '';
     }*/
-   
+
 
 }

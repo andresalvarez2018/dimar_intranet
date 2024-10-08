@@ -1,12 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_user\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandler;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
@@ -17,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides the form to configure user configuration and field mapping.
  */
-class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInterface {
+final class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInterface {
 
   /**
    * {@inheritdoc}
@@ -29,7 +30,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
   /**
    * Module handler.
    *
-   * @var \Drupal\Core\Extension\ModuleHandler
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 
@@ -62,24 +63,41 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
   protected $currentConfig;
 
   /**
-   * {@inheritdoc}
+   * Constructor.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   Config factory.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   Module handler.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   Entity type manager.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface|null $config_type_manager
+   *   Config type manager.
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-    ModuleHandler $module_handler,
-    EntityTypeManagerInterface $entity_type_manager
+    ModuleHandlerInterface $module_handler,
+    EntityTypeManagerInterface $entity_type_manager,
+    ?TypedConfigManagerInterface $config_type_manager = NULL,
   ) {
-    parent::__construct($config_factory);
+    if (version_compare(\Drupal::VERSION, '10.2.0', '>=')) {
+      parent::__construct($config_factory, $config_type_manager);
+    }
+    else {
+      parent::__construct($config_factory);
+    }
+
     $this->moduleHandler = $module_handler;
     $this->entityTypeManager = $entity_type_manager;
 
     $storage = $this->entityTypeManager->getStorage('ldap_server');
     $ids = $storage
       ->getQuery()
+      ->accessCheck(FALSE)
       ->condition('status', 1)
       ->execute();
     foreach ($storage->loadMultiple($ids) as $sid => $server) {
-      /** @var \Drupal\ldap_servers\Entity\Server $server */
+      /** @var \Drupal\ldap_servers\ServerInterface $server */
       $enabled = ($server->get('status')) ? 'Enabled' : 'Disabled';
       $this->drupalAcctProvisionServerOptions[$sid] = $server->label() . ' (' . $server->get('address') . ') Status: ' . $enabled;
       $this->ldapEntryProvisionServerOptions[$sid] = $server->label() . ' (' . $server->get('address') . ') Status: ' . $enabled;
@@ -94,10 +112,11 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container): LdapUserAdminForm {
-    return new static(
+    return new self(
       $container->get('config.factory'),
       $container->get('module_handler'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('config.typed')
     );
   }
 
@@ -128,19 +147,21 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       return $form;
     }
 
-    $form['intro'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('<h1>LDAP User Settings</h1>'),
-    ];
-
     $form['server_mapping_preamble'] = [
       '#type' => 'markup',
       '#markup' => $this->t('The relationship between a Drupal user and an LDAP entry is defined within the LDAP server configurations. The mappings below are for user fields, properties and data that are not automatically mapped elsewhere. <br>Read-only mappings are generally configured on the server configuration page and shown here as a convenience to you.'),
     ];
 
+    $form['advanced'] = [
+      '#type' => 'vertical_tabs',
+      '#title' => $this->t('Advanced Settings'),
+      '#title_display' => 'invisible',
+    ];
+
     $form['manual_drupal_account_editing'] = [
-      '#type' => 'fieldset',
-      '#title' => $this->t('Manual Drupal Account Creation'),
+      '#type' => 'details',
+      '#title' => $this->t('Account Creation'),
+      '#group' => 'advanced',
     ];
 
     $form['manual_drupal_account_editing']['manualAccountConflict'] = [
@@ -157,8 +178,9 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
     ];
 
     $form['basic_to_drupal'] = [
-      '#type' => 'fieldset',
-      '#title' => $this->t('Basic Provisioning to Drupal Account Settings'),
+      '#type' => 'details',
+      '#title' => $this->t('Provisioning to Drupal'),
+      '#group' => 'advanced',
     ];
 
     $form['basic_to_drupal']['drupalAcctProvisionServer'] = [
@@ -206,7 +228,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       '#required' => TRUE,
       '#default_value' => $config->get('acctCreation'),
       '#options' => [
-        self::ACCOUNT_CREATION_LDAP_BEHAVIOUR => $this->t('Account creation settings at /admin/config/people/accounts/settings do not affect "LDAP Associated" Drupal accounts.'),
+        self::ACCOUNT_CREATION_LDAP_BEHAVIOR => $this->t('Account creation settings at /admin/config/people/accounts/settings do not affect "LDAP Associated" Drupal accounts.'),
         self::ACCOUNT_CREATION_USER_SETTINGS_FOR_LDAP => $this->t('Account creation policy at /admin/config/people/accounts/settings applies to both Drupal and LDAP Authenticated users. "Visitors" option automatically creates and account when they successfully LDAP authenticate. "Admin" and "Admin with approval" do not allow user to authenticate until the account is approved.'),
       ],
     ];
@@ -217,10 +239,11 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       '#default_value' => $config->get('disableAdminPasswordField'),
     ];
 
-    $form['basic_to_drupal']['userUpdateMechanism'] = [
-      '#type' => 'fieldset',
-      '#title' => 'Periodic user update mechanism',
+    $form['userUpdateMechanism'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Schedule user updates'),
       '#description' => $this->t('Allows you to sync the result of an LDAP query with your users. Creates new users and updates existing ones.'),
+      '#group' => 'advanced',
     ];
 
     if ($this->moduleHandler->moduleExists('ldap_query')) {
@@ -229,13 +252,14 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       $storage = $this->entityTypeManager->getStorage('ldap_query_entity');
       $ids = $storage
         ->getQuery()
+        ->accessCheck(FALSE)
         ->condition('status', 1)
         ->execute();
       $queries = $storage->loadMultiple($ids);
       foreach ($queries as $query) {
         $updateMechanismOptions[$query->id()] = $query->label();
       }
-      $form['basic_to_drupal']['userUpdateMechanism']['userUpdateCronQuery'] = [
+      $form['userUpdateMechanism']['userUpdateCronQuery'] = [
         '#type' => 'select',
         '#title' => $this->t('LDAP query containing the list of entries to update'),
         '#required' => FALSE,
@@ -243,7 +267,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
         '#options' => $updateMechanismOptions,
       ];
 
-      $form['basic_to_drupal']['userUpdateMechanism']['userUpdateCronInterval'] = [
+      $form['userUpdateMechanism']['userUpdateCronInterval'] = [
         '#type' => 'select',
         '#title' => $this->t('How often should each user be synced?'),
         '#default_value' => $config->get('userUpdateCronInterval'),
@@ -254,28 +278,35 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
           'monthly' => $this->t('Monthly'),
         ],
       ];
+
+      $form['userUpdateMechanism']['userUpdateOnly'] = [
+        '#type' => 'checkbox',
+        '#title' => $this->t('Only update existing. Users will not be created.'),
+        '#default_value' => $config->get('userUpdateOnly'),
+      ];
     }
     else {
-      $form['basic_to_drupal']['userUpdateMechanism']['userUpdateCronQuery'] = [
+      $form['userUpdateMechanism']['userUpdateCronQuery'] = [
         '#type' => 'value',
         '#value' => 'none',
       ];
-      $form['basic_to_drupal']['userUpdateMechanism']['userUpdateCronInterval'] = [
+      $form['userUpdateMechanism']['userUpdateCronInterval'] = [
         '#type' => 'value',
         '#value' => 'monthly',
       ];
-      $form['basic_to_drupal']['userUpdateMechanism']['notice'] = [
+      $form['userUpdateMechanism']['notice'] = [
         '#markup' => $this->t('Only available with LDAP Query enabled.'),
       ];
     }
 
-    $form['basic_to_drupal']['orphanedAccounts'] = [
-      '#type' => 'fieldset',
-      '#title' => 'Periodic orphaned accounts update mechanism',
+    $form['orphanedAccounts'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Orphan accounts'),
       '#description' => $this->t('<strong>Warning: Use this feature at your own risk!</strong>'),
+      '#group' => 'advanced',
     ];
 
-    $form['basic_to_drupal']['orphanedAccounts']['orphanedCheckQty'] = [
+    $form['orphanedAccounts']['orphanedCheckQty'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#title' => $this->t('Number of users to check each cron run.'),
@@ -290,7 +321,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       $account_options[$option_name] = $option_title;
     }
 
-    $form['basic_to_drupal']['orphanedAccounts']['orphanedDrupalAcctBehavior'] = [
+    $form['orphanedAccounts']['orphanedDrupalAcctBehavior'] = [
       '#type' => 'radios',
       '#title' => $this->t('Action to perform on Drupal accounts that no longer have corresponding LDAP entries'),
       '#default_value' => $config->get('orphanedDrupalAcctBehavior'),
@@ -298,7 +329,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       '#description' => $this->t('It is highly recommended to fetch an email report first before attempting to disable or even delete users.'),
     ];
 
-    $form['basic_to_drupal']['orphanedAccounts']['orphanedDrupalAcctReportingInbox'] = [
+    $form['orphanedAccounts']['orphanedDrupalAcctReportingInbox'] = [
       '#type' => 'email',
       '#title' => $this->t('Report recipient email address'),
       '#default_value' => $config->get('orphanedDrupalAcctReportingInbox'),
@@ -313,7 +344,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       ],
     ];
 
-    $form['basic_to_drupal']['orphanedAccounts']['orphanedCheckQty'] = [
+    $form['orphanedAccounts']['orphanedCheckQty'] = [
       '#type' => 'textfield',
       '#size' => 10,
       '#title' => $this->t('Number of users to check each cron run.'),
@@ -321,7 +352,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       '#required' => FALSE,
     ];
 
-    $form['basic_to_drupal']['orphanedAccounts']['orphanedAccountCheckInterval'] = [
+    $form['orphanedAccounts']['orphanedAccountCheckInterval'] = [
       '#type' => 'select',
       '#title' => $this->t('How often should each user be checked again?'),
       '#default_value' => $config->get('orphanedAccountCheckInterval'),
@@ -334,9 +365,17 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       '#required' => FALSE,
     ];
 
+    $form['orphanedAccounts']['orphanedIncludeDisabledUsers'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Check disabled accounts'),
+      '#default_value' => $config->get('orphanedIncludeDisabledUsers'),
+      '#description' => $this->t('If checked, disabled accounts will be checked for orphaned status.'),
+    ];
+
     $form['basic_to_ldap'] = [
-      '#type' => 'fieldset',
-      '#title' => $this->t('Basic Provisioning to LDAP Settings'),
+      '#type' => 'details',
+      '#title' => $this->t('Provisioning to LDAP'),
+      '#group' => 'advanced',
     ];
 
     $form['basic_to_ldap']['ldapEntryProvisionServer'] = [
@@ -368,6 +407,8 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       '#value' => 'Save',
     ];
 
+    $this->checkOrphans($config);
+
     return $form;
   }
 
@@ -386,6 +427,7 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       ->set('ldapEntryProvisionTriggers', $this->reduceTriggerList($form_state->getValue('ldapEntryProvisionTriggers')))
       ->set('userUpdateCronQuery', $form_state->getValue('userUpdateCronQuery'))
       ->set('userUpdateCronInterval', $form_state->getValue('userUpdateCronInterval'))
+      ->set('userUpdateOnly', $form_state->getValue('userUpdateOnly'))
       ->set('orphanedDrupalAcctBehavior', $form_state->getValue('orphanedDrupalAcctBehavior'))
       ->set('orphanedDrupalAcctReportingInbox', $form_state->getValue('orphanedDrupalAcctReportingInbox'))
       ->set('orphanedCheckQty', $form_state->getValue('orphanedCheckQty'))
@@ -394,8 +436,8 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       ->set('manualAccountConflict', $form_state->getValue('manualAccountConflict'))
       ->set('acctCreation', $form_state->getValue('acctCreation'))
       ->set('disableAdminPasswordField', $form_state->getValue('disableAdminPasswordField'))
+      ->set('orphanedIncludeDisabledUsers', $form_state->getValue('orphanedIncludeDisabledUsers'))
       ->save();
-    $form_state->getValues();
 
     $this->messenger()->addMessage($this->t('User synchronization configuration updated.'));
   }
@@ -417,6 +459,34 @@ class LdapUserAdminForm extends ConfigFormBase implements LdapUserAttributesInte
       }
     }
     return $result;
+  }
+
+  /**
+   * Check orphans.
+   */
+  private function checkOrphans($config) {
+    $server_id = $config->get('drupalAcctProvisionServer');
+
+    if (is_null($server_id)) {
+      return NULL;
+    }
+
+    if ($config->get('orphanedDrupalAcctBehavior') == 'ldap_user_orphan_do_not_check') {
+      return NULL;
+    }
+
+    /** @var \Drupal\ldap_servers\Entity\Server $server */
+    $server = $this->entityTypeManager->getStorage('ldap_server')->load($server_id);
+    if (is_null($server)) {
+      return NULL;
+    }
+    $unique_persistent_attr = $server->get('unique_persistent_attr');
+    if (!empty($unique_persistent_attr)) {
+      return NULL;
+    }
+
+    $this->messenger()->addWarning($this->t('Periodic orphaned accounts update mechanism requires the "Persistent and Unique User ID Attribute" to be set on the LDAP server configuration. Currently, it is not set on the server @server.',
+    ['@server' => $server->toLink($server->label(), 'edit-form')->toString()]));
   }
 
 }

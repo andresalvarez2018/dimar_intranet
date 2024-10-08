@@ -1,15 +1,17 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_user\Processor;
 
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\Core\Url;
+use Drupal\ldap_servers\LdapBridgeInterface;
 use Drupal\ldap_servers\LdapUserManager;
 use Drupal\user\UserInterface;
 use Psr\Log\LoggerInterface;
@@ -97,6 +99,20 @@ class OrphanProcessor {
   protected $ldapUserManager;
 
   /**
+   * LDAP Bridge.
+   *
+   * @var \Drupal\ldap_servers\LdapBridgeInterface
+   */
+  protected $ldapBridge;
+
+  /**
+   * Module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
    * Constructor.
    *
    * @param \Psr\Log\LoggerInterface $logger
@@ -113,6 +129,10 @@ class OrphanProcessor {
    *   Entity type manager.
    * @param \Drupal\ldap_servers\LdapUserManager $ldap_user_manager
    *   LDAP user manager.
+   * @param \Drupal\ldap_servers\LdapBridgeInterface $ldap_bridge
+   *   LDAP bridge.
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   Module handler.
    */
   public function __construct(
     LoggerInterface $logger,
@@ -121,7 +141,9 @@ class OrphanProcessor {
     LanguageManagerInterface $language_manager,
     StateInterface $state,
     EntityTypeManagerInterface $entity_type_manager,
-    LdapUserManager $ldap_user_manager
+    LdapUserManager $ldap_user_manager,
+    LdapBridgeInterface $ldap_bridge,
+    ModuleHandlerInterface $module_handler,
   ) {
     $this->logger = $logger;
     $this->configFactory = $config;
@@ -131,10 +153,33 @@ class OrphanProcessor {
     $this->state = $state;
     $this->entityTypeManager = $entity_type_manager;
     $this->ldapUserManager = $ldap_user_manager;
+    $this->ldapBridge = $ldap_bridge;
+    $this->moduleHandler = $module_handler;
 
     $storage = $this->entityTypeManager->getStorage('ldap_server');
-    $data = $storage->getQuery()->condition('status', 1)->execute();
+    $data = $storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('status', 1)
+      ->execute();
     $this->enabledServers = $storage->loadMultiple($data);
+  }
+
+  /**
+   * Check if the required LDAP Server is available.
+   *
+   * @param string $serverId
+   *   Server ID.
+   *
+   * @return bool
+   *   TRUE if the server is available, FALSE otherwise.
+   */
+  private function checkServerAvailability(string $serverId): bool {
+    $serverAvailable = FALSE;
+    if ($this->enabledServers[$serverId]) {
+      $this->ldapBridge->setServerByID($serverId);
+      $serverAvailable = $this->ldapBridge->bind();
+    }
+    return $serverAvailable;
   }
 
   /**
@@ -175,7 +220,7 @@ class OrphanProcessor {
    * Create a "binary safe" string for use in LDAP filters.
    *
    * @param string $value
-   *   Unsfe string.
+   *   Unsafe string.
    *
    * @return string
    *   Safe string.
@@ -273,9 +318,12 @@ class OrphanProcessor {
       ->exists('ldap_user_puid_sid')
       ->exists('ldap_user_puid')
       ->condition('uid', $lastUidChecked, '>')
-      ->condition('status', 1)
       ->sort('uid')
       ->range(0, $this->configLdapUser->get('orphanedCheckQty'));
+
+    if (!$this->configLdapUser->get('orphanedIncludeDisabledUsers')) {
+      $query->condition('status', 1);
+    }
 
     $group = $query->orConditionGroup();
     $group->notExists('ldap_user_last_checked');
@@ -353,14 +401,14 @@ class OrphanProcessor {
    *   Method.
    */
   private function cancelUser(UserInterface $account, string $method): void {
-    // Copied from user_canel().
+    // Copied from user_cancel().
     // When the 'user_cancel_delete' method is used, user_delete() is called,
     // which invokes hook_ENTITY_TYPE_predelete() and hook_ENTITY_TYPE_delete()
     // for the user entity. Modules should use those hooks to respond to the
     // account deletion.
     $edit = [];
     if ($method !== 'user_cancel_delete') {
-      \Drupal::moduleHandler()->invokeAll(
+      $this->moduleHandler->invokeAll(
         'user_cancel',
         [$edit, $account, $method]
       );
@@ -390,6 +438,10 @@ class OrphanProcessor {
     // Query LDAP and update the prepared users with the actual state.
     if (!isset($this->enabledServers[$serverId])) {
       $this->logger->error('Server %id not enabled, but needed to remove orphaned LDAP users', ['%id' => $serverId]);
+      throw new \Exception('Server not available, aborting.');
+    }
+    elseif (!$this->checkServerAvailability($serverId)) {
+      $this->logger->error('Server %id not available, but needed to remove orphaned LDAP users', ['%id' => $serverId]);
       throw new \Exception('Server not available, aborting.');
     }
 

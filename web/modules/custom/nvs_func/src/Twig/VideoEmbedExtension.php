@@ -7,10 +7,13 @@
 
 namespace Drupal\nvs_func\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
 /**
  * Provides the NodeViewCount debugging function within Twig templates.
  */
-class VideoEmbedExtension extends \Twig_Extension {
+class VideoEmbedExtension extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -24,9 +27,9 @@ class VideoEmbedExtension extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getThumbVideo', array($this, 'getThumbVideo'), array(
+      new TwigFunction('getThumbVideo', array($this, 'getThumbVideo'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }
@@ -46,7 +49,7 @@ class VideoEmbedExtension extends \Twig_Extension {
   public function getThumbVideo($nid){
     $n = node_load($nid);
     $build_video = $n->field_video_embed->view('taxonomy_mode');
-    $video_thumb = \Drupal::service('renderer')->renderRoot($build_video);  
+    $video_thumb = \Drupal::service('renderer')->renderRoot($build_video);
     $str_v = render($video_thumb);
     $str = strip_tags($str_v,'<img>');
     //$img = trim($str);
@@ -54,6 +57,6 @@ class VideoEmbedExtension extends \Twig_Extension {
     $output = $out['url'];
     return $output;
   }
-  
+
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_query\Plugin\views\argument;
 
@@ -23,7 +23,9 @@ class LdapVariableAttribute extends LdapAttribute {
   public function query($group_by = FALSE): void {
     $this->ensureMyTable();
     $this->realField = $this->options['attribute_name'];
-    $this->query->addWhere(0, $this->realField, $this->argument, '=');
+    /** @var \Drupal\views\Plugin\views\query\Sql $query */
+    $query = $this->query;
+    $query->addWhere(0, $this->realField, $this->argument, '=');
   }
 
 }

@@ -1,15 +1,17 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_user\Form;
 
-use Drupal\ldap_user\FieldProvider;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandler;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ldap_servers\Mapping;
+use Drupal\ldap_user\FieldProvider;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides the form to configure user configuration and field mapping.
@@ -38,11 +40,26 @@ class LdapUserMappingToLdapForm extends LdapUserMappingBaseForm {
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-    ModuleHandler $module_handler,
+    ModuleHandlerInterface $module_handler,
     EntityTypeManagerInterface $entity_type_manager,
-    FieldProvider $field_provider) {
-    parent::__construct($config_factory, $module_handler, $entity_type_manager, $field_provider);
+    FieldProvider $field_provider,
+    ?TypedConfigManagerInterface $config_type_manager = NULL,
+  ) {
+    parent::__construct($config_factory, $module_handler, $entity_type_manager, $field_provider, $config_type_manager);
     $this->server = $this->currentConfig->get('ldapEntryProvisionServer');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container):LdapUserMappingToLdapForm {
+    return new self(
+      $container->get('config.factory'),
+      $container->get('module_handler'),
+      $container->get('entity_type.manager'),
+      $container->get('ldap_user.field_provider'),
+      $container->get('config.typed')
+    );
   }
 
   /**

@@ -1,8 +1,7 @@
 name: printfriendly
 type: module
 description: Easily print any page through Printfriendly.
-core: '8.x'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 configure: printfriendly.config
 
 # Information added by Drupal.org packaging script on 2020-10-22

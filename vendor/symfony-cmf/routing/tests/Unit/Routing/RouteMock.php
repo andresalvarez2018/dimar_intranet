@@ -16,19 +16,19 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 
 class RouteMock extends SymfonyRoute implements RouteObjectInterface
 {
-    private $locale;
+    private ?string $locale = null;
 
-    public function setLocale($locale)
+    public function setLocale(string $locale): void
     {
         $this->locale = $locale;
     }
 
-    public function getContent()
+    public function getContent(): ?object
     {
-        return;
+        return null;
     }
 
-    public function getDefaults()
+    public function getDefaults(): array
     {
         $defaults = [];
         if (null !== $this->locale) {
@@ -38,7 +38,7 @@ class RouteMock extends SymfonyRoute implements RouteObjectInterface
         return $defaults;
     }
 
-    public function getRequirement($key)
+    public function getRequirement($key): ?string
     {
         if ('_locale' !== $key) {
             throw new \Exception();
@@ -47,8 +47,8 @@ class RouteMock extends SymfonyRoute implements RouteObjectInterface
         return $this->locale;
     }
 
-    public function getRouteKey()
+    public function getRouteKey(): ?string
     {
-        return;
+        return null;
     }
 }

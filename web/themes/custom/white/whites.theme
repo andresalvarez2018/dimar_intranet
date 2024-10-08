@@ -1,674 +1,726 @@
 <?php
+
+/**
+ * @file
+ */
+
 global $base_url;
-use Drupal\image\Entity\ImageStyle;
-use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Url;
 use Drupal\block\Entity\Block;
-use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\user\Entity\User;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 
+/**
+ *
+ */
 function whites_css_alter(&$css) {
-	global $base_url;
-	//$theme_path = drupal_get_path('theme', 'whites');
+  global $base_url;
 }
+
+/**
+ *
+ */
 function whites_theme_suggestions_html_alter(array &$suggestions, array $variables) {
-	if (\Drupal::routeMatch()->getParameter('node')) {
-		$node = \Drupal::routeMatch()->getParameter('node');
-		$suggestions[] = 'html__node__' . $node->getType();
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $suggestions[] = 'html__node__' . $node->getType();
 
-	}
+  }
 }
 
+/**
+ *
+ */
 function whites_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-	if (\Drupal::routeMatch()->getParameter('node')) {
-		$node = \Drupal::routeMatch()->getParameter('node');
-		$suggestions[] = 'page__node__' . $node->getType();
-		$suggestions[] = 'page__node__' . $node->nid->value;
-	}
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $suggestions[] = 'page__node__' . $node->getType();
+    $suggestions[] = 'page__node__' . $node->nid->value;
+  }
 }
+
+/**
+ *
+ */
 function whites_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
 }
+
+/**
+ *
+ */
 function whites_preprocess_block(&$variables) {
-	global $base_url;
-	switch ($variables['base_plugin_id']) {
-	    case 'system_branding_block':
-	      $variables['site_logo'] = '';
-	      if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
-	        $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
-	      }
-	    break;
+  global $base_url;
+  switch ($variables['base_plugin_id']) {
+    case 'system_branding_block':
+      $variables['site_logo'] = '';
+      if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+        $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+      }
+      break;
 
-  	}
-	if(isset($variables['elements']['#id']) && !empty($variables['elements']['#id'])){
-		$block_id = $variables['elements']['#id'];
-	  	$block = \Drupal\block\Entity\Block::load($block_id);
-	  	if($block->getRegion()){
-	  		$region = $block->getRegion();
-	  		$variables['region'] = $region;
-	  	}
-	//config as context module
-	}else{
-		$variables['region'] = $variables['elements']['#configuration']['region'];
-	}
-
+  }
+  if (isset($variables['elements']['#id']) && !empty($variables['elements']['#id'])) {
+    $block_id = $variables['elements']['#id'];
+    $block = Block::load($block_id);
+    if ($block->getRegion()) {
+      $region = $block->getRegion();
+      $variables['region'] = $region;
+    }
+    // Config as context module.
+  }
+  else {
+    $variables['region'] = $variables['elements']['#configuration']['region'];
+  }
 
 }
 
+/**
+ *
+ */
 function whites_preprocess_node(&$vars) {
-	global $base_url;
-	$site_name = \Drupal::config('system.site')->get('name');
-	$vars['site_name'] = $site_name;
-	$request = \Drupal::request();
-	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
-		$vars['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
-	}
+  global $base_url;
+  $site_name = \Drupal::config('system.site')->get('name');
+  $vars['site_name'] = $site_name;
+  $request = \Drupal::request();
+  if ($route = $request->attributes->get(RouteObjectInterface::ROUTE_OBJECT)) {
+    $vars['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+  }
 
-	$pageURL = 'http';
- 	if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'){
- 		$pageURL .= "s";
- 	}
-	$pageURL .= '://';
- 	if($_SERVER['SERVER_PORT'] != '80'){
-  	$pageURL .= $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
- 	}else{
-  		$pageURL .= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
- 	}
- 	$vars['pageURL'] = $pageURL;
- 	if(\Drupal::routeMatch()->getParameter('node')){
- 		$node = \Drupal::routeMatch()->getParameter('node');
- 		$ntype = $node->getType();
-	 	$author_uid = $node->getRevisionUserId();
-	 	//kint($author_uid);
-	    $account = \Drupal\user\Entity\User::load($author_uid); // pass your uid
-	    //$name = $account->getUsername();
+  $pageURL = 'http';
+  if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+    $pageURL .= "s";
+  }
+  $pageURL .= '://';
+  if ($_SERVER['SERVER_PORT'] != '80') {
+    $pageURL .= $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'];
+  }
+  else {
+    $pageURL .= $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  }
+  $vars['pageURL'] = $pageURL;
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $ntype = $node->getType();
+    $author_uid = $node->getRevisionUserId();
+    // kint($author_uid);
+    // Pass your uid.
+    $account = User::load($author_uid);
+    // $name = $account->getUsername();
+    // kint($account);
+    if ($account->field_full_name) {
+      $build_full_name = $account->field_full_name->view('default');
+      $full_name_with_link = \Drupal::service('renderer')->renderRoot($build_full_name);
+      // $full_name_with_link_cs = strip_tags(render($full_name_with_link),'<a>');
+      $vars['author_full_name'] = $full_name_with_link;
+    }
+    // Blog related.
+    if ($ntype == 'blog_post') {
+      // Related posts start.
+      $current_blog_category = [];
+      foreach ($node->field_blog_category as $key => $value) {
+        $current_blog_category[$key] = $value->target_id;
+      }
 
-	    //kint($account);
-	    if($account->field_full_name){
-			$build_full_name = $account->field_full_name->view('default');
-		    $full_name_with_link = \Drupal::service('renderer')->renderRoot($build_full_name);
-		    //$full_name_with_link_cs = strip_tags(render($full_name_with_link),'<a>');
-		    $vars['author_full_name'] = $full_name_with_link;
-		}
-		//blog related
-		if($ntype == 'blog_post'){
-			//related posts start
-			$current_blog_category = array();
-			foreach ($node->field_blog_category as $key => $value) {
-				$current_blog_category[$key] = $value->target_id;
-			}
-
-			$storage = \Drupal::entityManager()->getStorage('node');
-		    $nids = $storage->getQuery()
-		        ->condition('type', 'blog_post')
-		        ->condition('status', 1)
-		        ->condition('nid', $node->nid->value, '!=')
-		        ->condition('field_blog_category.target_id', $current_blog_category, 'in')
-		        ->sort('created','DESC')
-		        ->range(0,6)
-		        ->execute();
-		    $related_blog_posts = '<div class="section-empty section-item">
+      $storage = \Drupal::entityManager()->getStorage('node');
+      $nids = $storage->getQuery()
+        ->condition('type', 'blog_post')
+        ->condition('status', 1)
+        ->condition('nid', $node->nid->value, '!=')
+        ->condition('field_blog_category.target_id', $current_blog_category, 'in')
+        ->sort('created', 'DESC')
+        ->range(0, 6)
+        ->execute();
+      $related_blog_posts = '<div class="section-empty section-item">
         <div class="container content">
             <div class="flexslider carousel outer-navs" data-options="minWidth:300,itemMargin:30,numItems:3">
                 <ul class="slides">';
-		    foreach(entity_load_multiple('node',$nids) as $k => $n){
-			    $options = ['absolute' => TRUE];
-				$url_object = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $n->nid->value], $options);
-				if($n->field_image){
-					$img_uri = $n->field_image[0]->entity->uri->value;
-					$style_load = ImageStyle::load('image_360x205');
-				  	$image_360x205_url = $style_load->buildUrl($img_uri);
-				  	$img_url = file_create_url($img_uri);
-				}
-				$summary = $n->body->summary;
-				$length = strlen($summary);
-				$summary = substr($n->body->summary, 0, 190);
-				$full_name_with_link_cs = '';
-				$name_with_link_cs = '';
-				$author_uid = $n->getRevisionAuthor()->uid->value;
-			 	//kint($author_uid);
-			    $account = \Drupal\user\Entity\User::load($author_uid); // pass your uid
-		 		if($account->field_full_name){
-					$build_full_name = $account->field_full_name->view('default');
-				    $full_name_with_link = \Drupal::service('renderer')->renderRoot($build_full_name);
-				    $full_name_with_link_cs = strip_tags(render($full_name_with_link),'<a>');
-				}
-				if($account->name){
-					$build_name = $account->name->view('default');
-				    $name_with_link = \Drupal::service('renderer')->renderRoot($build_name);
-				    $name_with_link_cs = strip_tags(render($name_with_link),'<a>');
-				}
-				//category
-				if($n->field_blog_category){
-					$build_blog_category = $n->field_blog_category->view('default');
-				    $field_blog_category = \Drupal::service('renderer')->renderRoot($build_blog_category);
-				    //$field_blog_category_cs = strip_tags(render($field_blog_category),'<a>');
-				}
+      foreach (entity_load_multiple('node', $nids) as $k => $n) {
+        $options = ['absolute' => TRUE];
+        $url_object = Url::fromRoute('entity.node.canonical', ['node' => $n->nid->value], $options);
+        if ($n->field_image) {
+          $img_uri = $n->field_image[0]->entity->uri->value;
+          $style_load = ImageStyle::load('image_360x205');
+          $image_360x205_url = $style_load->buildUrl($img_uri);
+        }
+        $summary = $n->body->summary;
+        $length = strlen($summary);
+        $summary = substr($n->body->summary, 0, 190);
+        $full_name_with_link_cs = '';
+        $name_with_link_cs = '';
+        $author_uid = $n->getRevisionAuthor()->uid->value;
+        // kint($author_uid);
+        // Pass your uid.
+        $account = User::load($author_uid);
+        if ($account->field_full_name) {
+          $build_full_name = $account->field_full_name->view('default');
+          $full_name_with_link = \Drupal::service('renderer')->renderRoot($build_full_name);
+          $full_name_with_link_cs = strip_tags(render($full_name_with_link), '<a>');
+        }
+        if ($account->name) {
+          $build_name = $account->name->view('default');
+          $name_with_link = \Drupal::service('renderer')->renderRoot($build_name);
+          $name_with_link_cs = strip_tags(render($name_with_link), '<a>');
+        }
+        // Category.
+        if ($n->field_blog_category) {
+          $build_blog_category = $n->field_blog_category->view('default');
+          $field_blog_category = \Drupal::service('renderer')->renderRoot($build_blog_category);
+          // $field_blog_category_cs = strip_tags(render($field_blog_category),'<a>');
+        }
 
-				$timestamp = $n->created->value;
+        $timestamp = $n->created->value;
 
-				$related_blog_posts .= '<li>
+        $related_blog_posts .= '<li>
 				    <div class="advs-box niche-box-blog text-m">
 				        <div class="block-top">
 				            <div class="block-infos">
 				                <div class="block-data">
-				                    <p class="bd-day">'.format_date($timestamp, 'custom', 'd').'</p>
-				                    <p class="bd-month">'.format_date($timestamp, 'custom', 'F').'</p>
+				                    <p class="bd-day">' . format_date($timestamp, 'custom', 'd') . '</p>
+				                    <p class="bd-month">' . format_date($timestamp, 'custom', 'F') . '</p>
 				                </div>
-				                <a class="block-comment" href="'.$url_object->toString().'#comments">'.($n->field_blog_comments->comment_count ? $n->field_blog_comments->comment_count : '').' <i class="fa fa-comment-o"></i></a>
+				                <a class="block-comment" href="' . $url_object->toString() . '#comments">' . ($n->field_blog_comments->comment_count ? $n->field_blog_comments->comment_count : '') . ' <i class="fa fa-comment-o"></i></a>
 				            </div>
 				            <div class="block-title">
-				                <h2><a href="'.$url_object->toString().'">'.$n->title->value.'</a></h2>
+				                <h2><a href="' . $url_object->toString() . '">' . $n->title->value . '</a></h2>
 				                <div class="tag-row">
-				                    <span><i class="fa fa-bookmark"></i>'.($field_blog_category ? $field_blog_category : '').'</span>
-				                    <span><i class="fa fa-pencil"></i>'.($full_name_with_link_cs ? $full_name_with_link_cs : $name_with_link_cs).'</span>
+				                    <span><i class="fa fa-bookmark"></i>' . ($field_blog_category ? $field_blog_category : '') . '</span>
+				                    <span><i class="fa fa-pencil"></i>' . ($full_name_with_link_cs ? $full_name_with_link_cs : $name_with_link_cs) . '</span>
 				                </div>
 				            </div>
 				        </div>
-				        <a class="img-box img-scale-up" href="'.$url_object->toString().'">
-				            <img src="'.$image_360x205_url.'" alt="'.$n->title->value.'">
+				        <a class="img-box img-scale-up" href="' . $url_object->toString() . '">
+				            <img src="' . $image_360x205_url . '" alt="' . $n->title->value . '">
 				        </a>
-				        <p class="excerpt">'.($length > 190 ? $summary.'...' : $n->body->summary).'</p>
-				        <a class="btn btn-sm" href="'.$url_object->toString().'">Read more </a>
+				        <p class="excerpt">' . ($length > 190 ? $summary . '...' : $n->body->summary) . '</p>
+				        <a class="btn btn-sm" href="' . $url_object->toString() . '">Read more </a>
 				    </div>
 				</li>';
 
-			}
-			$related_blog_posts .= '</ul></div></div></div>';
-			if($nids){
-				$vars['related_blog_posts'] = $related_blog_posts;
-			}
-			//related posts end
-		}
+      }
+      $related_blog_posts .= '</ul></div></div></div>';
+      if ($nids) {
+        $vars['related_blog_posts'] = $related_blog_posts;
+      }
+      // Related posts end.
+    }
 
-
-	}
-
-}
-function whites_preprocess_html(&$variables){
-	global $base_url;
-  	$theme = \Drupal::theme()->getActiveTheme()->getName();
-  	$variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
-  	$variables['custom_css'] = theme_get_setting('custom_css', $theme);
-
-	$site_name = \Drupal::config('system.site')->get('name');
-	$variables['site_name'] = $site_name;
-	//$variables['#attached']['drupalSettings']['path']['themeUrl'] = base_path().drupal_get_path('theme', 'whites');
-	$variables['#attached']['library'][] = 'whites/whites-lib';
-
-	$variables['base_path'] = base_path();
-
-	if(\Drupal::routeMatch()->getParameter('node')){
- 		$node = \Drupal::routeMatch()->getParameter('node');
- 		$variables['_node'] = $node;
- 	}
-
+  }
 
 }
+
+/**
+ *
+ */
+function whites_preprocess_html(&$variables) {
+  global $base_url;
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
+  $variables['custom_css'] = theme_get_setting('custom_css', $theme);
+
+  $site_name = \Drupal::config('system.site')->get('name');
+  $variables['site_name'] = $site_name;
+  $variables['#attached']['library'][] = 'whites/whites-lib';
+
+  $variables['base_path'] = base_path();
+
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $variables['_node'] = $node;
+  }
+
+}
+
 /**
  * Implements template_preprocess_page().
  */
 function whites_preprocess_page(&$variables) {
-	/*if (isset($variables['page']['content']['system_main']['default_message'])) {
-  		unset($variables['page']['content']['system_main']['default_message']);
- 	} */
-	global $base_url;
-	$pageURL = 'http';
- 	if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'){
- 		$pageURL .= "s";
- 	}
-	$pageURL .= '://';
- 	if($_SERVER['SERVER_PORT'] != '80'){
-  		$pageURL .= $_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
- 	}else{
-  		$pageURL .= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
- 	}
- 	$variables['pageURL'] = $pageURL;
+  /*if (isset($variables['page']['content']['system_main']['default_message'])) {
+  unset($variables['page']['content']['system_main']['default_message']);
+  } */
+  global $base_url;
+  $pageURL = 'http';
+  if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+    $pageURL .= "s";
+  }
+  $pageURL .= '://';
+  if ($_SERVER['SERVER_PORT'] != '80') {
+    $pageURL .= $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'];
+  }
+  else {
+    $pageURL .= $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  }
+  $variables['pageURL'] = $pageURL;
 
-	$theme = \Drupal::theme()->getActiveTheme()->getName();
-	//get site name & slogan
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  // Get site name & slogan.
+  $request = \Drupal::request();
+  if ($route = $request->attributes->get(RouteObjectInterface::ROUTE_OBJECT)) {
+    $variables['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+  }
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $ntype = $node->getType();
+    if ($ntype == 'portfolio') {
+      // Next project start.
+      $storage = \Drupal::entityManager()->getStorage('node');
+      $nids = $storage->getQuery()
+        ->condition('type', 'portfolio')
+        ->condition('status', 1)
+        ->condition('nid', $node->nid->value, '!=')
+        ->condition('created', $node->created->value, '>')
+        ->range(0, 1)
+        ->execute();
 
-	$request = \Drupal::request();
-	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
-		$variables['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
-	}
- 	if(\Drupal::routeMatch()->getParameter('node')){
- 		$node = \Drupal::routeMatch()->getParameter('node');
- 		$ntype = $node->getType();
-		if($ntype == 'portfolio'){
-	  		//next project start
-			$storage = \Drupal::entityManager()->getStorage('node');
-		    $nids = $storage->getQuery()
-		        ->condition('type', 'portfolio')
-		        ->condition('status', 1)
-		        ->condition('nid',$node->nid->value, '!=')
-		        ->condition('created', $node->created->value, '>')
-		        ->range(0,1)
-		        ->execute();
+      $next_project = '<div class="col-md-2">';
+      $i = 0;
 
-		    $next_project = '<div class="col-md-2">';
-		    $i = 0;
+      foreach (entity_load_multiple('node', $nids) as $key => $n) {
+        if ($i > 0) {
+          break;
+        }
+        else {
+          $options = ['absolute' => TRUE];
+          $url_object = Url::fromRoute('entity.node.canonical', ['node' => $n->nid->value], $options);
 
-		    foreach (entity_load_multiple('node',$nids) as $key => $n) {
-		    	if($i > 0){
-		    		break;
-		    	}else{
-				    $options = ['absolute' => TRUE];
-					$url_object = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' =>$n->nid->value], $options);
-
-					$next_project .= '<div class="col-md-2 text-right">
+          $next_project .= '<div class="col-md-2 text-right">
                     <div class="icon-box icon-box-right" style="float:right" data-anima="scale-up" data-trigger="hover">
-                        <label class="text-s"><a href="'.$url_object->toString().'">NEXT</a></label><i class="fa fa-arrow-right text-m"></i>
+                        <label class="text-s"><a href="' . $url_object->toString() . '">NEXT</a></label><i class="fa fa-arrow-right text-m"></i>
                     </div>
                 </div>';
 
-		    		$i++;
-		    	}
-		    }
-		    $next_project .= '</div>';
-			//next project end
-			//Previous project start
-			$storage = \Drupal::entityManager()->getStorage('node');
-		    $nids = $storage->getQuery()
-		        ->condition('type', 'portfolio')
-		        ->condition('status', 1)
-		        ->condition('nid',$node->nid->value, '!=')
-		        ->condition('created', $node->created->value, '<')
-		        ->sort('created','DESC')
-		        ->range(0,1)
-		        ->execute();
-		        //print_r($nids);
-		    $previous_project = '<div class="col-md-2">';
-		    $i = 0;
-		    foreach (entity_load_multiple('node',$nids) as $key => $n) {
-		    	if($i > 0){
-		    		break;
-		    	}else{
-				    $options = ['absolute' => TRUE];
-					$url_object = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' =>$n->nid->value], $options);
-					$previous_project .= '
+          $i++;
+        }
+      }
+      $next_project .= '</div>';
+      // Next project end
+      // Previous project start.
+      $storage = \Drupal::entityManager()->getStorage('node');
+      $nids = $storage->getQuery()
+        ->condition('type', 'portfolio')
+        ->condition('status', 1)
+        ->condition('nid', $node->nid->value, '!=')
+        ->condition('created', $node->created->value, '<')
+        ->sort('created', 'DESC')
+        ->range(0, 1)
+        ->execute();
+      // print_r($nids);
+      $previous_project = '<div class="col-md-2">';
+      $i = 0;
+      foreach (entity_load_multiple('node', $nids) as $key => $n) {
+        if ($i > 0) {
+          break;
+        }
+        else {
+          $options = ['absolute' => TRUE];
+          $url_object = Url::fromRoute('entity.node.canonical', ['node' => $n->nid->value], $options);
+          $previous_project .= '
                     <div class="icon-box" data-anima="scale-up" data-trigger="hover">
-                        <i class="fa fa-arrow-left text-m"></i><label class="text-s"><a href="'.$url_object->toString().'">PREVIOUS</a></label>
+                        <i class="fa fa-arrow-left text-m"></i><label class="text-s"><a href="' . $url_object->toString() . '">PREVIOUS</a></label>
                     </div>';
-		    		$i++;
-		    	}
-		    }
-		    $previous_project .= '</div>';
-			//Previous project end
-
-			$variables['previous_project'] = $previous_project;
-			$variables['next_project'] = $next_project;
-
-		}
-	}
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-}
-function whites_preprocess(&$variables){
-	global $base_url;
-	global $product_field_page_title_background;
-	global $product_entity;
-	$config = \Drupal::config('system.site');
-  	$variables['site_name'] = $config->get('name');
-  	$theme_path = base_path().drupal_get_path('theme', 'whites');
-	$variables['theme_path'] = base_path().drupal_get_path('theme', 'whites');
-	$variables['theme_path_no_base'] = drupal_get_path('theme', 'whites');
-
-	//$variables['text_logo'] = theme_get_setting('text_logo', 'whites');
-	$variables['#cache']['contexts'][] = 'url';
-
-
-	//current_term
-	if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
-	  	$term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
-	  	$term = taxonomy_term_load($term_id);
-	  	//$term_name = $term_object->get('name')->value;
-	  	$vname = $term->vid->getValue()[0]['target_id'];
-		//$variables['current_term_view'] = $term;
-
-		$vv = $term->vid->getValue();
-	  	$vp = $vv[0];
-	  	$vn = $vp['target_id'];
-	  	$vname = $vn;
-
-	  	$variables['v_name'] = $vname;
-	  	//$current_term_id = $term_id;
-	}
-	///
-	if(\Drupal::routeMatch()->getParameter('node')){
- 		$node = \Drupal::routeMatch()->getParameter('node');
-		//if (isset($variables['node']->field_pt_image_backgroun)){
- 		//kint($node);
-	 	$image_bgs = [];
-	 	if(isset($node->field_pt_image_backgroun) && !empty($node->field_pt_image_backgroun)){
-		    $field_images = $node->field_pt_image_backgroun;
-		    //kint($field_images);
-		    // If a file has been uploaded, get it.
-
-			$first = $field_images->first();
-			if(isset($first) && !empty($first)){
-
-		    	foreach($field_images as $image){
-		    		//kint($image);
-		    		$path = $image->entity->uri->value;
-		    		$image_bgs[] = file_create_url($path);
-		    	}
-		    	$variables['field_pt_image_backgroun'] = $image_bgs;
-
-		    // Otherwise get the default if there is one.
-		    } else {
-
-		      	$default_image = $node->field_pt_image_backgroun->getFieldDefinition()->getSetting('default_image');
-
-		      	$file = Drupal::service('entity.repository')->loadEntityByUuid('file', $default_image['uuid']);
-		      	if($file){
-			      	$path = $file->getFileUri();
-			      	//$variables['background_image'] = ImageStyle::load('img_style_name')->buildUrl($path);
-			      	$image_bgs[] = file_create_url($path);
-			    	$variables['field_pt_image_backgroun'] = $image_bgs;
-			    }
-		    }
-		}
- 	}
-
-	//current title
-	$request = \Drupal::request();
-	if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
-		$variables['current_title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
-	}
-	//theme_menu_style
-
-	$theme_menu_style = theme_get_setting('theme_menu_style', 'whites');
-	if(isset($theme_menu_style) && !empty($theme_menu_style)){
-		$variables['theme_menu_style'] = $theme_menu_style;
-	}else{
-		$variables['theme_menu_style'] = 'default';
-	}
-	//theme_page_title_style
-	$theme_page_title_style = theme_get_setting('theme_page_title_style', 'whites');
-	if(isset($theme_page_title_style) && !empty($theme_page_title_style)){
-		$variables['theme_page_title_style'] = $theme_page_title_style;
-	}else{
-		$variables['theme_page_title_style'] = 'base-default';
-	}
-	//page_title_slide_images
-	$page_title_slide_images = [];
-    $page_title_slides = theme_get_setting('page_title_slides','whites');
-    if(!empty($page_title_slides) && is_array($page_title_slides)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($page_title_slides);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$page_title_slide_images[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['page_title_slide_images'] = $page_title_slide_images;
-	//background_page_title_image
-	$background_page_title_image = [];
-    $background_image = theme_get_setting('background_page_title_image','whites');
-    if(!empty($background_image) && is_array($background_image)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($background_image);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$background_page_title_image[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['background_page_title_image'] = $background_page_title_image;
-
-    //background_page_title_video_mp4
-    $background_page_title_video_mp4 = '';
-    $videos_mp4 = theme_get_setting('background_page_title_video_mp4','whites');
-
-    if(!empty($videos_mp4) && is_array($videos_mp4)){
-    	$file = \Drupal::entityTypeManager()->getStorage('file')->load($videos_mp4[0]);
-    	$file_uri = $file->getFileUri();
-    	$background_page_title_video_mp4 = file_create_url($file_uri);
+          $i++;
+        }
+      }
+      $previous_project .= '</div>';
+      // Previous project end.
+      $variables['previous_project'] = $previous_project;
+      $variables['next_project'] = $next_project;
 
     }
-    $variables['background_page_title_video_mp4'] = $background_page_title_video_mp4;
-
-    //theme_page_title_video_id
-
-    $theme_page_title_video_id = theme_get_setting('theme_page_title_video_id', 'whites');
-    if(isset($theme_page_title_video_id) && !empty($theme_page_title_video_id)){
-    	$variables['theme_page_title_video_id'] = $theme_page_title_video_id;
-    }
-    //theme_page_title_icon_class
-
-    $theme_page_title_icon_class = theme_get_setting('theme_page_title_icon_class', 'whites');
-    if(isset($theme_page_title_icon_class) && !empty($theme_page_title_icon_class)){
-    	$variables['theme_page_title_icon_class'] = $theme_page_title_icon_class;
-    }
-    //page_subtitle
-    $page_subtitle = theme_get_setting('page_subtitle', 'whites');
-    if(isset($page_subtitle) && !empty($page_subtitle)){
-    	$variables['page_subtitle'] = $page_subtitle;
-    }
-
-    //theme_page_title_animation_layer
-    $theme_page_title_animation_layer = theme_get_setting('theme_page_title_animation_layer', 'whites');
-    if(isset($theme_page_title_animation_layer) && !empty($theme_page_title_animation_layer)){
-    	$variables['theme_page_title_animation_layer'] = $theme_page_title_animation_layer;
-    }else{
-    	$variables['theme_page_title_animation_layer'] = 'none';
-    }
-
-    //blog_listing
-
-
-	//blog_page_title_style
-	$blog_page_title_style = theme_get_setting('blog_page_title_style', 'whites');
-	if(isset($blog_page_title_style) && !empty($blog_page_title_style)){
-		$variables['blog_page_title_style'] = $blog_page_title_style;
-	}else{
-		$variables['blog_page_title_style'] = 'base-default';
-	}
-	//blog_page_title_slides
-	$arr_blog_page_title_slides = [];
-    $blog_page_title_slides = theme_get_setting('blog_page_title_slides','whites');
-    if(!empty($blog_page_title_slides) && is_array($blog_page_title_slides)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($blog_page_title_slides);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$arr_blog_page_title_slides[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['arr_blog_page_title_slides'] = $arr_blog_page_title_slides;
-	//blog_background_page_title_image
-	$blog_background_page_title_image = [];
-    $background_image1 = theme_get_setting('blog_background_page_title_image','whites');
-    if(!empty($background_image1) && is_array($background_image1)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($background_image1);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$blog_background_page_title_image[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['blog_background_page_title_image'] = $blog_background_page_title_image;
-
-    //blog_background_page_title_video_mp4
-    $blog_background_page_title_video_mp4 = '';
-    $blog_videos_mp4 = theme_get_setting('blog_background_page_title_video_mp4','whites');
-
-    if(!empty($blog_videos_mp4) && is_array($blog_videos_mp4)){
-    	$file = \Drupal::entityTypeManager()->getStorage('file')->load($videos_mp4[0]);
-    	$file_uri = $file->getFileUri();
-    	$blog_background_page_title_video_mp4 = file_create_url($file_uri);
-
-    }
-    $variables['blog_background_page_title_video_mp4'] = $blog_background_page_title_video_mp4;
-
-    //blog_page_title_video_id
-
-    $blog_page_title_video_id = theme_get_setting('blog_page_title_video_id', 'whites');
-    if(isset($blog_page_title_video_id) && !empty($blog_page_title_video_id)){
-    	$variables['blog_page_title_video_id'] = $blog_page_title_video_id;
-    }
-    //blog_page_title_icon_class
-
-    $blog_page_title_icon_class = theme_get_setting('blog_page_title_icon_class', 'whites');
-    if(isset($blog_page_title_icon_class) && !empty($blog_page_title_icon_class)){
-    	$variables['blog_page_title_icon_class'] = $blog_page_title_icon_class;
-    }
-    //blog_page_subtitle
-    $blog_page_subtitle = theme_get_setting('blog_page_subtitle', 'whites');
-    if(isset($blog_page_subtitle) && !empty($blog_page_subtitle)){
-    	$variables['blog_page_subtitle'] = $blog_page_subtitle;
-    }
-
-    //blog_page_title_animation_layer
-    $blog_page_title_animation_layer = theme_get_setting('blog_page_title_animation_layer', 'whites');
-    if(isset($blog_page_title_animation_layer) && !empty($blog_page_title_animation_layer)){
-    	$variables['blog_page_title_animation_layer'] = $blog_page_title_animation_layer;
-    }else{
-    	$variables['blog_page_title_animation_layer'] = 'none';
-    }
-    //blog_listing_style
-
-    $blog_listing_style = theme_get_setting('blog_listing_style', 'whites');
-    if(isset($blog_listing_style) && !empty($blog_listing_style)){
-    	$variables['blog_listing_style'] = $blog_listing_style;
-    }else{
-    	$variables['blog_listing_style'] = 'classic';
-    }
-    //middle logo
-	$menu_middle_logo = [];
-    $image1 = theme_get_setting('menu_middle_logo','whites');
-    if(!empty($image1) && is_array($image1)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($image1);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$menu_middle_logo[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['menu_middle_logo'] = $menu_middle_logo;
-
-    //menu_big_logo
-	$menu_big_logo = [];
-    $image1 = theme_get_setting('menu_big_logo','whites');
-    if(!empty($image1) && is_array($image1)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($image1);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$menu_big_logo[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['menu_big_logo'] = $menu_big_logo;
-
-    //menu_retina_logo
-	$menu_retina_logo = [];
-    $image1 = theme_get_setting('menu_retina_logo','whites');
-    if(!empty($image1) && is_array($image1)){
-    	$files =  \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($image1);
-    	foreach($files as $fid => $file){
-    		$file_uri = $file->getFileUri();
-    		$menu_retina_logo[$fid] = file_create_url($file_uri);
-    	}
-    }
-    $variables['menu_retina_logo'] = $menu_retina_logo;
-
-	//theme_layout
-    $theme_layout = theme_get_setting('theme_layout', 'whites');
-    if(isset($theme_layout) && !empty($theme_layout)){
-    	$variables['theme_layout'] = $theme_layout;
-    }else{
-    	$variables['theme_layout'] = 'wide';
-    }
-
-    $variables['high_contrast'] = !empty($_SESSION['high_contrast']['enabled']) ? TRUE : FALSE;
+  }
 }
 
+/**
+ *
+ */
+function whites_preprocess(&$variables) {
+  global $base_url;
+  global $product_field_page_title_background;
+  global $product_entity;
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $theme_path = Url::fromUri('internal:/' . \Drupal::service('extension.list.theme')->getPath('whites'))->toString();
+  $variables['theme_path'] = $theme_path;
+  $variables['theme_path_no_base'] = \Drupal::service('extension.list.theme')->getPath('whites');
 
-function whites_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
-	if(preg_match('/search_block_form/i', $form_id)){
-		$form['keys']['#attributes']['class'] = array('form-control');
-		$form['actions']['submit']['#attributes']['class'] = array('hidden');
-	    $form['keys']['#attributes']['placeholder'] = t('Search for...');
+  // $variables['text_logo'] = theme_get_setting('text_logo', 'whites');
+  $variables['#cache']['contexts'][] = 'url';
 
+  // current_term.
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+    $term = taxonomy_term_load($term_id);
+    // $term_name = $term_object->get('name')->value;
+    $vname = $term->vid->getValue()[0]['target_id'];
+    // $variables['current_term_view'] = $term;
+    $vv = $term->vid->getValue();
+    $vp = $vv[0];
+    $vn = $vp['target_id'];
+    $vname = $vn;
 
+    $variables['v_name'] = $vname;
+    // $current_term_id = $term_id;
+  }
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    // If (isset($variables['node']->field_pt_image_backgroun)){
+    // kint($node);
+    $image_bgs = [];
+    if (isset($node->field_pt_image_backgroun) && !empty($node->field_pt_image_backgroun)) {
+      $field_images = $node->field_pt_image_backgroun;
+      // kint($field_images);
+      // If a file has been uploaded, get it.
+      $first = $field_images->first();
+      if (isset($first) && !empty($first)) {
 
+        foreach ($field_images as $image) {
+          // kint($image);
+          $path = $image->entity->uri->value;
+          $image_bgs[] = \Drupal::service('file_url_generator')->generateAbsoluteString($path);
+
+        }
+        $variables['field_pt_image_backgroun'] = $image_bgs;
+
+        // Otherwise get the default if there is one.
+      }
+      else {
+
+        $default_image = $node->field_pt_image_backgroun->getFieldDefinition()->getSetting('default_image');
+
+        $file = Drupal::service('entity.repository')->loadEntityByUuid('file', $default_image['uuid']);
+        if ($file) {
+          $path = $file->getFileUri();
+          // $variables['background_image'] = ImageStyle::load('img_style_name')->buildUrl($path);
+          $image_bgs[] = \Drupal::service('file_url_generator')->generateAbsoluteString($path);
+
+          $variables['field_pt_image_backgroun'] = $image_bgs;
+        }
+      }
     }
+  }
+
+  // Current title.
+  $request = \Drupal::request();
+  if ($route = $request->attributes->get(RouteObjectInterface::ROUTE_OBJECT)) {
+    $variables['current_title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+  }
+  // theme_menu_style.
+  $theme_menu_style = theme_get_setting('theme_menu_style', 'whites');
+  if (isset($theme_menu_style) && !empty($theme_menu_style)) {
+    $variables['theme_menu_style'] = $theme_menu_style;
+  }
+  else {
+    $variables['theme_menu_style'] = 'default';
+  }
+  // theme_page_title_style.
+  $theme_page_title_style = theme_get_setting('theme_page_title_style', 'whites');
+  if (isset($theme_page_title_style) && !empty($theme_page_title_style)) {
+    $variables['theme_page_title_style'] = $theme_page_title_style;
+  }
+  else {
+    $variables['theme_page_title_style'] = 'base-default';
+  }
+  // page_title_slide_images.
+  $page_title_slide_images = [];
+  $page_title_slides = theme_get_setting('page_title_slides', 'whites');
+  if (!empty($page_title_slides) && is_array($page_title_slides)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($page_title_slides);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $page_title_slide_images[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['page_title_slide_images'] = $page_title_slide_images;
+  // background_page_title_image.
+  $background_page_title_image = [];
+  $background_image = theme_get_setting('background_page_title_image', 'whites');
+  if (!empty($background_image) && is_array($background_image)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($background_image);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $background_page_title_image[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['background_page_title_image'] = $background_page_title_image;
+
+  // background_page_title_video_mp4.
+  $background_page_title_video_mp4 = '';
+  $videos_mp4 = theme_get_setting('background_page_title_video_mp4', 'whites');
+
+  if (!empty($videos_mp4) && is_array($videos_mp4)) {
+    $file = \Drupal::entityTypeManager()->getStorage('file')->load($videos_mp4[0]);
+    $file_uri = $file->getFileUri();
+    $background_page_title_video_mp4 = \Drupal::service('file_url_generator')->generateAbsoluteString(
+    $file_uri);
+
+  }
+  $variables['background_page_title_video_mp4'] = $background_page_title_video_mp4;
+
+  // theme_page_title_video_id.
+  $theme_page_title_video_id = theme_get_setting('theme_page_title_video_id', 'whites');
+  if (isset($theme_page_title_video_id) && !empty($theme_page_title_video_id)) {
+    $variables['theme_page_title_video_id'] = $theme_page_title_video_id;
+  }
+  // theme_page_title_icon_class.
+  $theme_page_title_icon_class = theme_get_setting('theme_page_title_icon_class', 'whites');
+  if (isset($theme_page_title_icon_class) && !empty($theme_page_title_icon_class)) {
+    $variables['theme_page_title_icon_class'] = $theme_page_title_icon_class;
+  }
+  // page_subtitle.
+  $page_subtitle = theme_get_setting('page_subtitle', 'whites');
+  if (isset($page_subtitle) && !empty($page_subtitle)) {
+    $variables['page_subtitle'] = $page_subtitle;
+  }
+
+  // theme_page_title_animation_layer.
+  $theme_page_title_animation_layer = theme_get_setting('theme_page_title_animation_layer', 'whites');
+  if (isset($theme_page_title_animation_layer) && !empty($theme_page_title_animation_layer)) {
+    $variables['theme_page_title_animation_layer'] = $theme_page_title_animation_layer;
+  }
+  else {
+    $variables['theme_page_title_animation_layer'] = 'none';
+  }
+
+  // blog_listing
+  // blog_page_title_style.
+  $blog_page_title_style = theme_get_setting('blog_page_title_style', 'whites');
+  if (isset($blog_page_title_style) && !empty($blog_page_title_style)) {
+    $variables['blog_page_title_style'] = $blog_page_title_style;
+  }
+  else {
+    $variables['blog_page_title_style'] = 'base-default';
+  }
+  // blog_page_title_slides.
+  $arr_blog_page_title_slides = [];
+  $blog_page_title_slides = theme_get_setting('blog_page_title_slides', 'whites');
+  if (!empty($blog_page_title_slides) && is_array($blog_page_title_slides)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($blog_page_title_slides);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $arr_blog_page_title_slides[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['arr_blog_page_title_slides'] = $arr_blog_page_title_slides;
+  // blog_background_page_title_image.
+  $blog_background_page_title_image = [];
+  $background_image1 = theme_get_setting('blog_background_page_title_image', 'whites');
+  if (!empty($background_image1) && is_array($background_image1)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($background_image1);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $blog_background_page_title_image[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['blog_background_page_title_image'] = $blog_background_page_title_image;
+
+  // blog_background_page_title_video_mp4.
+  $blog_background_page_title_video_mp4 = '';
+  $blog_videos_mp4 = theme_get_setting('blog_background_page_title_video_mp4', 'whites');
+
+  if (!empty($blog_videos_mp4) && is_array($blog_videos_mp4)) {
+    $file = \Drupal::entityTypeManager()->getStorage('file')->load($videos_mp4[0]);
+    $file_uri = $file->getFileUri();
+    $blog_background_page_title_video_mp4 = \Drupal::service('file_url_generator')->generateAbsoluteString(
+    $file_uri);
+
+  }
+  $variables['blog_background_page_title_video_mp4'] = $blog_background_page_title_video_mp4;
+
+  // blog_page_title_video_id.
+  $blog_page_title_video_id = theme_get_setting('blog_page_title_video_id', 'whites');
+  if (isset($blog_page_title_video_id) && !empty($blog_page_title_video_id)) {
+    $variables['blog_page_title_video_id'] = $blog_page_title_video_id;
+  }
+  // blog_page_title_icon_class.
+  $blog_page_title_icon_class = theme_get_setting('blog_page_title_icon_class', 'whites');
+  if (isset($blog_page_title_icon_class) && !empty($blog_page_title_icon_class)) {
+    $variables['blog_page_title_icon_class'] = $blog_page_title_icon_class;
+  }
+  // blog_page_subtitle.
+  $blog_page_subtitle = theme_get_setting('blog_page_subtitle', 'whites');
+  if (isset($blog_page_subtitle) && !empty($blog_page_subtitle)) {
+    $variables['blog_page_subtitle'] = $blog_page_subtitle;
+  }
+
+  // blog_page_title_animation_layer.
+  $blog_page_title_animation_layer = theme_get_setting('blog_page_title_animation_layer', 'whites');
+  if (isset($blog_page_title_animation_layer) && !empty($blog_page_title_animation_layer)) {
+    $variables['blog_page_title_animation_layer'] = $blog_page_title_animation_layer;
+  }
+  else {
+    $variables['blog_page_title_animation_layer'] = 'none';
+  }
+  // blog_listing_style.
+  $blog_listing_style = theme_get_setting('blog_listing_style', 'whites');
+  if (isset($blog_listing_style) && !empty($blog_listing_style)) {
+    $variables['blog_listing_style'] = $blog_listing_style;
+  }
+  else {
+    $variables['blog_listing_style'] = 'classic';
+  }
+  // Middle logo.
+  $menu_middle_logo = [];
+  $image1 = theme_get_setting('menu_middle_logo', 'whites');
+  if (!empty($image1) && is_array($image1)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($image1);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $menu_middle_logo[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['menu_middle_logo'] = $menu_middle_logo;
+
+  // menu_big_logo.
+  $menu_big_logo = [];
+  $image1 = theme_get_setting('menu_big_logo', 'whites');
+  if (!empty($image1) && is_array($image1)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($image1);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $menu_big_logo[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['menu_big_logo'] = $menu_big_logo;
+
+  // menu_retina_logo.
+  $menu_retina_logo = [];
+  $image1 = theme_get_setting('menu_retina_logo', 'whites');
+  if (!empty($image1) && is_array($image1)) {
+    $files = \Drupal::entityTypeManager()->getStorage('file')->loadMultiple($image1);
+    foreach ($files as $fid => $file) {
+      $file_uri = $file->getFileUri();
+      $menu_retina_logo[$fid] = \Drupal::service('file_url_generator')->generateAbsoluteString(
+      $file_uri);
+    }
+  }
+  $variables['menu_retina_logo'] = $menu_retina_logo;
+
+  // theme_layout.
+  $theme_layout = theme_get_setting('theme_layout', 'whites');
+  if (isset($theme_layout) && !empty($theme_layout)) {
+    $variables['theme_layout'] = $theme_layout;
+  }
+  else {
+    $variables['theme_layout'] = 'wide';
+  }
+
+  $variables['high_contrast'] = !empty($_SESSION['high_contrast']['enabled']) ? TRUE : FALSE;
 }
-function whites_preprocess_container(&$variables){
-	if(isset($variables['element']['#type'])){
-		$variables['container_type'] = $variables['element']['#type'];
-	}
-	if(isset($variables['element']['#parents'])){
-		$variables['parent_container'] = $variables['element']['#parents'][0];
-	}
 
+/**
+ *
+ */
+function whites_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (preg_match('/search_block_form/i', $form_id)) {
+    $form['keys']['#attributes']['class'] = ['form-control'];
+    $form['actions']['submit']['#attributes']['class'] = ['hidden'];
+    $form['keys']['#attributes']['placeholder'] = t('Search for...');
+
+  }
 }
 
-function whites_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
-
-	if(isset($form['subject']['widget'][0]['value']))
-		$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-control');
-
-	if(isset($form['author']['name']))
-		$form['author']['name']['#attributes']['class'] = array('form-control');
-
-
-
-	if(isset($form['field_comment_body']['widget'][0]['value']))
-		$form['field_comment_body']['widget'][0]['value']['#attributes']['class'] = array('form-control');
-
-	if(isset($form['field_website']['widget'][0]['value']))
-		$form['field_website']['widget'][0]['value']['#attributes']['class'] = array('form-control');
-
-	if(isset($form['field_email']['widget'][0]['value']))
-		$form['field_email']['widget'][0]['value']['#attributes']['class'] = array('form-control');
-
-	$form['actions']['submit']['#attributes']['value'] = t('Enviar');
-	$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-sm');
-	unset($form['actions']['preview']);
-}
-function whites_form_contact_message_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
-	unset($form['actions']['preview']);
-	$form['message']['widget'][0]['value']['#attributes']['class'] = array('form-text', 'form-control', 'form-value');
-	$form['subject']['widget'][0]['value']['#attributes']['class'] = array('form-text', 'form-control', 'form-value');
-	$form['mail']['#attributes']['class'] = array('form-email', 'form-control', 'form-value');
-	//$form['mail']['#title'] = t('Email: <span>*</span>');
-	$form['name']['#attributes']['class'] = array('form-text', 'form-control', 'form-value');
-	//$form['name']['#title'] = t('Name: <span>*</span>');
-	$form['actions']['submit']['#attributes']['class'] = array('btn', 'btn-sm');
-}
-
-
-
-function whites_preprocess_menu(&$variables){
-	if($variables['menu_name'] == 'main'){
-		foreach($variables['items'] as $key => $value){
-			// Check if 'class' exists and is an array or string before using preg_match
-			if (isset($value['attributes']['class']) && is_array($value['attributes']['class'])) {
-				// Convert array to string if necessary
-				$class_string = implode(' ', $value['attributes']['class']);
-			} elseif (isset($value['attributes']['class']) && is_string($value['attributes']['class'])) {
-				$class_string = $value['attributes']['class'];
-			} else {
-				// Default to an empty string if 'class' is not set
-				$class_string = '';
-			}
-
-			// lvl 0
-			if (preg_match('/whites-mega-menu/i', $class_string)) {
-				// lvl 1
-				if (isset($value['below']) && !empty($value['below'])) {
-					foreach($value['below'] as $k => $v){
-						$v['attributes']['class'] = array('whites-mega-menu-child');
-					}
-				}
-			}
-		}
-	}
-
-	if(\Drupal::routeMatch()->getParameter('node')){
- 		$node = \Drupal::routeMatch()->getParameter('node');
- 		$variables['menu__node'] = $node;
- 	}
+/**
+ *
+ */
+function whites_preprocess_container(&$variables) {
+  if (isset($variables['element']['#type'])) {
+    $variables['container_type'] = $variables['element']['#type'];
+  }
+  if (isset($variables['element']['#parents'])) {
+    $variables['parent_container'] = $variables['element']['#parents'][0];
+  }
 
 }
 
+/**
+ *
+ */
+function whites_form_comment_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if (isset($form['subject']['widget'][0]['value'])) {
+    $form['subject']['widget'][0]['value']['#attributes']['class'] = ['form-control'];
+  }
+
+  if (isset($form['author']['name'])) {
+    $form['author']['name']['#attributes']['class'] = ['form-control'];
+  }
+
+  if (isset($form['field_comment_body']['widget'][0]['value'])) {
+    $form['field_comment_body']['widget'][0]['value']['#attributes']['class'] = ['form-control'];
+  }
+
+  if (isset($form['field_website']['widget'][0]['value'])) {
+    $form['field_website']['widget'][0]['value']['#attributes']['class'] = ['form-control'];
+  }
+
+  if (isset($form['field_email']['widget'][0]['value'])) {
+    $form['field_email']['widget'][0]['value']['#attributes']['class'] = ['form-control'];
+  }
+
+  $form['actions']['submit']['#attributes']['value'] = t('Enviar');
+  $form['actions']['submit']['#attributes']['class'] = ['btn', 'btn-sm'];
+  unset($form['actions']['preview']);
+}
+
+/**
+ *
+ */
+function whites_form_contact_message_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  unset($form['actions']['preview']);
+  $form['message']['widget'][0]['value']['#attributes']['class'] = ['form-text', 'form-control', 'form-value'];
+  $form['subject']['widget'][0]['value']['#attributes']['class'] = ['form-text', 'form-control', 'form-value'];
+  $form['mail']['#attributes']['class'] = ['form-email', 'form-control', 'form-value'];
+  // $form['mail']['#title'] = t('Email: <span>*</span>');
+  $form['name']['#attributes']['class'] = ['form-text', 'form-control', 'form-value'];
+  // $form['name']['#title'] = t('Name: <span>*</span>');
+  $form['actions']['submit']['#attributes']['class'] = ['btn', 'btn-sm'];
+}
+
+/**
+ *
+ */
+function whites_preprocess_menu(&$variables) {
+  if ($variables['menu_name'] == 'main') {
+    foreach ($variables['items'] as $key => $value) {
+      // Check if 'class' exists and is an array or string before using preg_match.
+      if (isset($value['attributes']['class']) && is_array($value['attributes']['class'])) {
+        // Convert array to string if necessary.
+        $class_string = implode(' ', $value['attributes']['class']);
+      }
+      elseif (isset($value['attributes']['class']) && is_string($value['attributes']['class'])) {
+        $class_string = $value['attributes']['class'];
+      }
+      else {
+        // Default to an empty string if 'class' is not set.
+        $class_string = '';
+      }
+
+      // Lvl 0.
+      if (preg_match('/whites-mega-menu/i', $class_string)) {
+        // Lvl 1.
+        if (isset($value['below']) && !empty($value['below'])) {
+          foreach ($value['below'] as $k => $v) {
+            $v['attributes']['class'] = ['whites-mega-menu-child'];
+          }
+        }
+      }
+    }
+  }
+
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $variables['menu__node'] = $node;
+  }
+
+}

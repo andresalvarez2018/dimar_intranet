@@ -5,7 +5,10 @@
  */
 namespace Drupal\nvs_func\Twig;
 
-class TimeAgo extends \Twig_Extension {
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+class TimeAgo extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -19,9 +22,9 @@ class TimeAgo extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getTimeAgo', array($this, 'getTimeAgo'), array(
+      new TwigFunction('getTimeAgo', array($this, 'getTimeAgo'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }

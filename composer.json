@@ -21,13 +21,16 @@
         "drupal/allowed_formats": "^2.0",
         "drupal/authorization": "^1.0",
         "drupal/block_visibility_groups": "^2.0",
+        "drupal/ckeditor": "^1.0",
+        "drupal/coder": "^8.3",
+        "drupal/color": "^1.0",
         "drupal/composer_deploy": "^1.7",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/contact_block": "^2.0",
         "drupal/contact_storage": "^1.2",
-        "drupal/core-composer-scaffold": "9.5.11",
-        "drupal/core-project-message": "9.5.11",
-        "drupal/core-recommended": "9.5.11",
+        "drupal/core-composer-scaffold": "10.3.5",
+        "drupal/core-project-message": "10.3.5",
+        "drupal/core-recommended": "10.3.5",
         "drupal/devel": "^5.1",
         "drupal/devel_entity_updates": "^4.2",
         "drupal/devel_kint_extras": "^1.1",
@@ -35,14 +38,13 @@
         "drupal/entity_clone": "^2.0@beta",
         "drupal/entity_print": "^2.7",
         "drupal/entity_update": "^3.0",
-        "drupal/externalauth": "^1.4",
+        "drupal/externalauth": "^2.0",
         "drupal/faqfield": "^7.0",
         "drupal/field_collection": "4.0.x-dev@dev",
         "drupal/field_group": "^3.3",
         "drupal/gin": "^3.0@RC",
-        "drupal/image_raw_formatter": "^2.0",
         "drupal/imce": "^3.1",
-        "drupal/ldap": "^4.3",
+        "drupal/ldap": "^4.12",
         "drupal/libraries": "^4.0",
         "drupal/md_slider": "^1.5",
         "drupal/menu_breadcrumb": "^2.0@alpha",
@@ -52,19 +54,24 @@
         "drupal/poll": "^2.0@alpha",
         "drupal/printable": "^3.1",
         "drupal/printfriendly": "^3.5",
+        "drupal/quickedit": "^1.0",
+        "drupal/rdf": "^2.1",
         "drupal/redirect_after_login": "^2.7",
         "drupal/require_login": "^3.0",
         "drupal/sharethis": "^3.0",
         "drupal/simplenews": "^3.0@beta",
         "drupal/social_simple": "^2.0",
+        "drupal/stable": "^2.1",
         "drupal/stage_file_proxy": "^2.1",
         "drupal/tablefield": "^2.3",
         "drupal/ultimate_cron": "2.0-alpha7",
-        "drupal/upgrade_status": "^3.19",
+        "drupal/upgrade_status": "^4.3",
         "drupal/views_autocomplete_filters": "^1.7",
         "drupal/webform": "^6.1",
         "drush/drush": "*",
-        "mglaman/composer-drupal-lenient": "^1.0"
+        "mglaman/composer-drupal-lenient": "^1.0",
+        "squizlabs/php_codesniffer": "^3.10",
+        "symfony-cmf/routing": "^3.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -125,9 +132,6 @@
             },
             "drupal/field_collection":{
                 "Automated Drupal 10 compatibility fixes":"https://www.drupal.org/files/issues/2023-10-25/field_collection_for_drupal10.patch"
-            },
-            "drupal/ldap": {
-                "Automated Drupal 10 compatibility fixes":"https://www.drupal.org/files/issues/2023-02-16/3297516-drupal-10-compatibility-fixes.patch"
             }
         },
         "drupal-core-project-message": {
@@ -153,11 +157,10 @@
         },
         "drupal-lenient": {
             "allowed-list": [
+                "drupal/field_collection",
                 "drupal/token",
                 "drupal/image_raw_formatter",
                 "drupal/externalauth",
-                "drupal/ldap",
-                "drupal/field_collection",
                 "drupal/printfriendly"
             ]
         }

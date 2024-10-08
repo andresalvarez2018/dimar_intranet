@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Component\Routing\Tests\Routing;
+namespace Symfony\Cmf\Component\Routing\Tests\Unit\Routing;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +18,6 @@ use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Component\Routing\RouteProviderInterface;
 use Symfony\Component\Routing\CompiledRoute;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
-use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\Route as SymfonyRoute;
@@ -26,17 +25,17 @@ use Symfony\Component\Routing\Route as SymfonyRoute;
 class ProviderBasedGeneratorTest extends TestCase
 {
     /**
-     * @var Route|MockObject
+     * @var Route&MockObject
      */
     private $routeDocument;
 
     /**
-     * @var CompiledRoute|MockObject
+     * @var CompiledRoute
      */
     private $routeCompiled;
 
     /**
-     * @var RouteProviderInterface|MockObject
+     * @var RouteProviderInterface&MockObject
      */
     private $provider;
 
@@ -45,17 +44,11 @@ class ProviderBasedGeneratorTest extends TestCase
      */
     private $generator;
 
-    /**
-     * @var RequestContext|MockObject
-     */
-    private $context;
-
     public function setUp(): void
     {
         $this->routeDocument = $this->createMock(Route::class);
-        $this->routeCompiled = $this->createMock(CompiledRoute::class);
+        $this->routeCompiled = new CompiledRoute('', '', [], []);
         $this->provider = $this->createMock(RouteProviderInterface::class);
-        $this->context = $this->createMock(RequestContext::class);
 
         $this->generator = new TestableProviderBasedGenerator($this->provider);
     }
@@ -75,20 +68,6 @@ class ProviderBasedGeneratorTest extends TestCase
         ;
 
         $this->assertEquals('result_url', $this->generator->generate($name));
-    }
-
-    public function testGenerateNotFound(): void
-    {
-        $name = 'foo/bar';
-
-        $this->provider->expects($this->once())
-            ->method('getRouteByName')
-            ->with($name)
-            ->willReturn(null)
-        ;
-
-        $this->expectException(RouteNotFoundException::class);
-        $this->generator->generate($name);
     }
 
     public function testGenerateFromRoute(): void
@@ -116,37 +95,9 @@ class ProviderBasedGeneratorTest extends TestCase
         $this->assertEquals('result_url', $url);
     }
 
-    /**
-     * @group legacy
-     *
-     * @expectedDeprecation Passing an object as route name is deprecated since version 2.3. Pass the `RouteObjectInterface::OBJECT_BASED_ROUTE_NAME` as route name and the object in the parameters with key `RouteObjectInterface::ROUTE_OBJECT`
-     */
-    public function testGenerateFromRouteLegacy(): void
-    {
-        $this->provider->expects($this->never())
-            ->method('getRouteByName')
-        ;
-        $this->routeDocument->expects($this->once())
-            ->method('compile')
-            ->willReturn($this->routeCompiled)
-        ;
-
-        $this->assertEquals('result_url', $this->generator->generate($this->routeDocument));
-    }
-
-    public function testSupports(): void
-    {
-        $this->assertTrue($this->generator->supports('foo/bar'));
-        $this->assertTrue($this->generator->supports($this->routeDocument));
-        $this->assertFalse($this->generator->supports($this));
-    }
-
     public function testGetRouteDebugMessage(): void
     {
-        $this->assertStringContainsString('/some/key', $this->generator->getRouteDebugMessage(new RouteObject()));
-        $this->assertStringContainsString('/de/test', $this->generator->getRouteDebugMessage(new Route('/de/test')));
         $this->assertStringContainsString('/some/route', $this->generator->getRouteDebugMessage('/some/route'));
-        $this->assertStringContainsString('a:1:{s:10:"route_name";s:7:"example";}', $this->generator->getRouteDebugMessage(['route_name' => 'example']));
     }
 
     /**
@@ -180,7 +131,7 @@ class ProviderBasedGeneratorTest extends TestCase
  */
 class TestableProviderBasedGenerator extends ProviderBasedGenerator
 {
-    protected function doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $referenceType, $hostTokens, array $requiredSchemes = [])
+    protected function doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $referenceType, $hostTokens, $requiredSchemes = []): string
     {
         $url = 'result_url';
         if ($parameters && $query = http_build_query($parameters, '', '&', PHP_QUERY_RFC3986)) {

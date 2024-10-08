@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_query\Form;
 
@@ -48,11 +48,9 @@ class QueryEntityForm extends EntityForm {
 
     $storage = $this->entityTypeManager
       ->getStorage('ldap_server');
-    $servers = $storage->getQuery()->execute();
-
     $options = [];
     /** @var \Drupal\ldap_servers\Entity\Server $server */
-    foreach ($storage->loadMultiple($servers) as $server) {
+    foreach ($storage->loadMultiple() as $server) {
       $options[$server->id()] = $server->label();
     }
 
@@ -151,7 +149,7 @@ class QueryEntityForm extends EntityForm {
       '#description' => $this->t('
       <em>Subtree</em>: This value is used to indicate searching of all entries at all levels under and including the specified base DN.<br>
       <em>Base</em>: This value is used to indicate searching only the entry at the base DN, resulting in only that entry being returned (keep in mind that it also has to meet the search filter criteria).<br>
-      <em>One Level</em>: Thhis value is used to indicate searching all entries one level under the base DN - but not including the base DN and not including any entries under that one level under the base DN.'),
+      <em>One Level</em>: This value is used to indicate searching all entries one level under the base DN - but not including the base DN and not including any entries under that one level under the base DN.'),
     ];
 
     return $form;
@@ -182,6 +180,8 @@ class QueryEntityForm extends EntityForm {
         ]));
     }
     $form_state->setRedirectUrl($ldap_query_entity->toUrl('collection'));
+
+    return $status;
   }
 
 }

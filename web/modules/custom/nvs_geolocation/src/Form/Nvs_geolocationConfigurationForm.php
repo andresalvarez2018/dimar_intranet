@@ -35,21 +35,21 @@ class Nvs_geolocationConfigurationForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     global $base_url;
-    $my_path = drupal_get_path('module', 'nvs_geolocation');
+    $my_path = \Drupal::service('extension.list.module')->getPath('module', 'nvs_geolocation');
 
 
     $config = $this->config('nvs_geolocation.settings');
 
-    
-    $form = array();
-    
 
-    
+    $form = array();
+
+
+
     $form['googlemaps'] = array(
         '#type' => 'vertical_tabs',
         '#title' => t('Googlemaps settings'),
         '#open' => TRUE,
-        
+
     );
     $form['nvs_geolocation_api_key_wr'] = array(
         '#type' => 'details',
@@ -62,7 +62,7 @@ class Nvs_geolocationConfigurationForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#description' => t('How to <a href="https://developers.google.com/maps/documentation/embed/get-api-key">get API key</a><br>Please clear cache when changed'),
       '#default_value' => $config->get('nvs_geolocation_api_key'),
-      
+
     );
 /*    $form['nvs_geolocation_location_wr'] = array(
         '#type' => 'details',
@@ -75,16 +75,16 @@ class Nvs_geolocationConfigurationForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#description' => t('Eg: <em>47.670553</em>'),
       '#default_value' => $config->get('nvs_geolocation_location_lat'),
-      
+
     );
     $form['nvs_geolocation_location_wr']['nvs_geolocation_location_lang'] = array(
       '#title' => t('Longitude'),
       '#type' => 'textfield',
       '#description' => t('Eg: <em>9.588479</em>'),
       '#default_value' => $config->get('nvs_geolocation_location_lang'),
-      
+
     );*/
-   
+
     return parent::buildForm($form, $form_state);
   }
 

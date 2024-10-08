@@ -2,13 +2,13 @@
 
 namespace Drupal\externalauth\Plugin\migrate\destination;
 
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\externalauth\AuthmapInterface;
+use Drupal\migrate\Plugin\migrate\destination\DestinationBase;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
-use Drupal\migrate\Plugin\migrate\destination\DestinationBase;
 use Drupal\user\UserStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 /**
  * Drupal 8 authmap destination.
@@ -72,7 +72,7 @@ class Authmap extends DestinationBase implements ContainerFactoryPluginInterface
   /**
    * {@inheritdoc}
    */
-  public function getIds() {
+  public function getIds(): array {
     return [
       'uid' => [
         'type' => 'integer',
@@ -83,7 +83,7 @@ class Authmap extends DestinationBase implements ContainerFactoryPluginInterface
   /**
    * {@inheritdoc}
    */
-  public function fields(MigrationInterface $migration = NULL) {
+  public function fields(MigrationInterface $migration = NULL): array {
     return [
       'uid' => 'Primary key: users.uid for user.',
       'provider' => 'The name of the authentication provider providing the authname',
@@ -94,7 +94,7 @@ class Authmap extends DestinationBase implements ContainerFactoryPluginInterface
   /**
    * {@inheritdoc}
    */
-  public function import(Row $row, array $old_destination_id_values = []) {
+  public function import(Row $row, array $old_destination_id_values = []): array {
     /** @var \Drupal\user\UserInterface $account */
     $account = $this->userStorage->load($row->getDestinationProperty('uid'));
     $provider = $row->getDestinationProperty('provider');

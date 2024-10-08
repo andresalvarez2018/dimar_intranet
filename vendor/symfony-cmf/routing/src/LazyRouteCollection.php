@@ -17,12 +17,7 @@ use Symfony\Component\Routing\RouteCollection;
 
 class LazyRouteCollection extends RouteCollection
 {
-    /**
-     * The route provider for this generator.
-     *
-     * @var RouteProviderInterface
-     */
-    protected $provider;
+    private RouteProviderInterface $provider;
 
     public function __construct(RouteProviderInterface $provider)
     {
@@ -30,19 +25,9 @@ class LazyRouteCollection extends RouteCollection
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getIterator()
-    {
-        return new \ArrayIterator($this->all());
-    }
-
-    /**
      * Gets the number of Routes in this collection.
-     *
-     * @return int The number of routes
      */
-    public function count()
+    public function count(): int
     {
         return count($this->all());
     }
@@ -50,26 +35,24 @@ class LazyRouteCollection extends RouteCollection
     /**
      * Returns all routes in this collection.
      *
-     * @return Route[] An array of routes
+     * @return array<string, Route> An array of routes
      */
-    public function all()
+    public function all(): array
     {
-        return $this->provider->getRoutesByNames(null);
+        $routes = $this->provider->getRoutesByNames(null);
+        if (\is_array($routes)) {
+            return $routes;
+        }
+
+        return \iterator_to_array($routes);
     }
 
-    /**
-     * Gets a route by name.
-     *
-     * @param string $name The route name
-     *
-     * @return Route|null A Route instance or null when not found
-     */
-    public function get($name)
+    public function get(string $name): ?Route
     {
         try {
             return $this->provider->getRouteByName($name);
         } catch (RouteNotFoundException $e) {
-            return;
+            return null;
         }
     }
 }

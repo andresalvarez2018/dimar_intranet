@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_authentication\Controller;
 
@@ -97,10 +97,12 @@ class LoginValidatorLoginForm extends LoginValidatorBase {
    */
   public function testCredentials(): int {
     $authenticationResult = self::AUTHENTICATION_FAILURE_UNKNOWN;
-    foreach ($this->authenticationServers->getAvailableAuthenticationServers() as $server) {
-      $this->serverDrupalUser = $this->entityTypeManager
+    foreach ($this->authenticationServers->getAvailableAuthenticationServers() as $server_id) {
+      /** @var \Drupal\ldap_servers\ServerInterface $server */
+      $server = $this->entityTypeManager
         ->getStorage('ldap_server')
-        ->load($server);
+        ->load($server_id);
+      $this->serverDrupalUser = $server;
       $this->ldapBridge->setServer($this->serverDrupalUser);
       $this->detailLog->log(
         '%username: Trying server %id with %bind_method', [
@@ -120,11 +122,13 @@ class LoginValidatorLoginForm extends LoginValidatorBase {
 
       // Check if user exists in LDAP.
       $this->ldapUserManager->setServer($this->serverDrupalUser);
-      $entry = $this->ldapUserManager->queryAllBaseDnLdapForUsername($this->authName);
-      if ($entry) {
-        $this->ldapUserManager->sanitizeUserDataResponse($entry, $this->authName);
+      if ($this->authName) {
+        $entry = $this->ldapUserManager->queryAllBaseDnLdapForUsername($this->authName);
+        if ($entry) {
+          $this->ldapUserManager->sanitizeUserDataResponse($entry, $this->authName);
+          $this->ldapEntry = $entry;
+        }
       }
-      $this->ldapEntry = $entry;
 
       if (!$this->ldapEntry) {
         $authenticationResult = self::AUTHENTICATION_FAILURE_FIND;
@@ -198,7 +202,8 @@ class LoginValidatorLoginForm extends LoginValidatorBase {
    */
   public function validateCredentialsLoggedIn(UserInterface $account): int {
     $this->drupalUser = $account;
-    $data = $this->externalAuth->getAuthData($account->id(), 'ldap_user');
+    $user_id = (int) $account->id();
+    $data = $this->externalAuth->getAuthData($user_id, 'ldap_user');
     if (!empty($data) && $data['authname']) {
       $this->authName = $data['authname'];
       $this->drupalUserAuthMapped = TRUE;

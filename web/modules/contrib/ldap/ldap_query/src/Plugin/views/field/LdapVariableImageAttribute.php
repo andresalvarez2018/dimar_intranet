@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_query\Plugin\views\field;
 
@@ -23,7 +23,7 @@ class LdapVariableImageAttribute extends LdapVariableAttribute {
    * @param \Drupal\views\ResultRow $values
    *   Result row.
    *
-   * @return array|null
+   * @return array
    *   Markup with image if available.
    */
   public function render(ResultRow $values): array {

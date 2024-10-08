@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_servers;
 
@@ -16,7 +16,7 @@ interface ServerInterface extends ConfigEntityInterface {
   /**
    * Returns the formatted label of the bind method.
    *
-   * @return string
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
    *   The formatted text for the current bind.
    */
   public function getFormattedBind(): TranslatableMarkup;
@@ -149,7 +149,7 @@ interface ServerInterface extends ConfigEntityInterface {
    * @return bool
    *   Value.
    */
-  public function isGrouppNested(): bool;
+  public function isGroupNested(): bool;
 
   /**
    * Get the name group object class.

@@ -1,0 +1,18 @@
+--- ldap_user/ldap_user.services.yml
++++ ldap_user/ldap_user.services.yml
+@@ -19,6 +19,7 @@ services:
+       - '@event_dispatcher'
+       - '@ldap_user.field_provider'
+       - '@messenger'
++      - '@password_generator'
+   ldap_user.field_provider:
+     class: Drupal\ldap_user\FieldProvider
+     arguments:
+@@ -59,6 +60,7 @@ services:
+       - '@ldap.user_manager'
+       - '@ldap_user.field_provider'
+       - '@file_system'
++      - '@password_generator'
+     tags:
+       - { name: event_subscriber }
+   ldap_user.ldap_delete:

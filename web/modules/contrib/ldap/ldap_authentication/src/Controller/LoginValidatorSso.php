@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_authentication\Controller;
 
@@ -64,10 +64,12 @@ class LoginValidatorSso extends LoginValidatorBase {
    */
   public function testCredentials(): int {
     $authenticationResult = self::AUTHENTICATION_FAILURE_UNKNOWN;
-    foreach ($this->authenticationServers->getAvailableAuthenticationServers() as $server) {
-      $this->serverDrupalUser = $this->entityTypeManager
+    foreach ($this->authenticationServers->getAvailableAuthenticationServers() as $server_id) {
+      /** @var \Drupal\ldap_servers\ServerInterface $server */
+      $server = $this->entityTypeManager
         ->getStorage('ldap_server')
-        ->load($server);
+        ->load($server_id);
+      $this->serverDrupalUser = $server;
       $this->ldapBridge->setServer($this->serverDrupalUser);
       $this->detailLog->log(
         '%username: Trying server %id with %bind_method', [

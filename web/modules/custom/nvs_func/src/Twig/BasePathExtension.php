@@ -7,10 +7,13 @@
 
 namespace Drupal\nvs_func\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
 /**
  * Provides the NodeViewCount debugging function within Twig templates.
  */
-class BasePathExtension extends \Twig_Extension {
+class BasePathExtension extends AbstractExtension{
 
   /**
    * {@inheritdoc}
@@ -24,9 +27,9 @@ class BasePathExtension extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getThemePath', array($this, 'getThemePath'), array(
+      new TwigFunction('getThemePath', array($this, 'getThemePath'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }
@@ -44,9 +47,9 @@ class BasePathExtension extends \Twig_Extension {
    *   An array of parameters passed to the template.
    */
   public function getThemePath($theme_name){
-      $path = drupal_get_path('theme', $theme_name);
+      $path = \Drupal::service('extension.list.theme')->getPath($theme_name);
       return base_path().$path;
   }
-  
+
 
 }

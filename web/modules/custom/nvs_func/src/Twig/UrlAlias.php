@@ -7,10 +7,13 @@
 
 namespace Drupal\nvs_func\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
 /**
  * Provides the NodeViewCount debugging function within Twig templates.
  */
-class UrlAlias extends \Twig_Extension {
+class UrlAlias extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -24,9 +27,9 @@ class UrlAlias extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getPathAlias', array($this, 'getPathAlias'), array(
+      new TwigFunction('getPathAlias', array($this, 'getPathAlias'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }
@@ -46,9 +49,9 @@ class UrlAlias extends \Twig_Extension {
   public function getPathAlias($url_ori){
   	$path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($url_ori);
 	 $url = base_path().ltrim($path_alias,'/');
-      
+
     return $url;
   }
-  
+
 
 }

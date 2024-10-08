@@ -1,30 +1,31 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\ldap_user\Processor;
 
 use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandler;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\Core\Password\DefaultPasswordGenerator;
+use Drupal\Core\Password\PasswordGeneratorInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\externalauth\Authmap;
+use Drupal\Core\Utility\Token;
+use Drupal\externalauth\AuthmapInterface;
+use Drupal\ldap_servers\LdapUserAttributesInterface;
 use Drupal\ldap_servers\LdapUserManager;
 use Drupal\ldap_servers\Logger\LdapDetailLog;
 use Drupal\ldap_servers\Processor\TokenProcessor;
-use Drupal\ldap_servers\LdapUserAttributesInterface;
 use Drupal\ldap_servers\ServerInterface;
 use Drupal\ldap_user\Event\LdapUserLoginEvent;
 use Drupal\ldap_user\FieldProvider;
-use Drupal\Core\Utility\Token;
 use Drupal\user\Entity\User;
 use Drupal\user\UserInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use function in_array;
 
@@ -73,7 +74,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
   /**
    * Externalauth.
    *
-   * @var \Drupal\externalauth\Authmap
+   * @var \Drupal\externalauth\AuthmapInterface
    */
   protected $externalAuth;
 
@@ -87,7 +88,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
   /**
    * Filesystem.
    *
-   * @var \Drupal\Core\File\FileSystemInterface
+   * @var \Drupal\Core\File\FileSystemInterface|null
    */
   protected $fileSystem;
 
@@ -101,7 +102,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
   /**
    * Module handler.
    *
-   * @var \Drupal\Core\Extension\ModuleHandler
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 
@@ -136,7 +137,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
   /**
    * The server interacting with.
    *
-   * @var \Drupal\ldap_servers\Entity\Server
+   * @var \Drupal\ldap_servers\ServerInterface
    */
   private $server;
 
@@ -169,6 +170,27 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
   private $passwordGenerator;
 
   /**
+   * Password generator.
+   *
+   * @var \Drupal\Core\Password\PasswordGeneratorInterface
+   */
+  protected $passwordGenerator;
+
+  /**
+   * File repository.
+   *
+   * @var \Drupal\file\FileRepositoryInterface|null
+   */
+  protected $fileRepository;
+
+  /**
+   * File validator.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface|null
+   */
+  protected $fileValidator;
+
+  /**
    * Constructor.
    *
    * @todo Make this service smaller.
@@ -182,15 +204,15 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
    *   Detail log.
    * @param \Drupal\ldap_servers\Processor\TokenProcessor $token_processor
    *   Token processor.
-   * @param \Drupal\externalauth\Authmap $authmap
-   *   Authmap.
+   * @param \Drupal\externalauth\AuthmapInterface $authmap
+   *   AuthmapInterface.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   Entity type manager.
    * @param \Drupal\Core\File\FileSystemInterface $file_system
    *   File system.
    * @param \Drupal\Core\Utility\Token $token
    *   Token.
-   * @param \Drupal\Core\Extension\ModuleHandler $module_handler
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   Module handler.
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   Current user.
@@ -202,26 +224,30 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
    *   Field Provider.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   Messenger.
-   * @param \Drupal\Core\Password\DefaultPasswordGenerator $passwordGenerator
+   * @param \Drupal\Core\Password\PasswordGeneratorInterface $passwordGenerator
    *   Password Generator.
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   Container.
    */
   public function __construct(
     LoggerInterface $logger,
     ConfigFactory $config_factory,
     LdapDetailLog $detail_log,
     TokenProcessor $token_processor,
-    Authmap $authmap,
+    AuthmapInterface $authmap,
     EntityTypeManagerInterface $entity_type_manager,
     FileSystemInterface $file_system,
     Token $token,
-    ModuleHandler $module_handler,
+    ModuleHandlerInterface $module_handler,
     AccountInterface $current_user,
     LdapUserManager $ldap_user_manager,
     EventDispatcherInterface $event_dispatcher,
     FieldProvider $field_provider,
     MessengerInterface $messenger,
-    DefaultPasswordGenerator $passwordGenerator
-    ) {
+    PasswordGeneratorInterface $passwordGenerator,
+    ContainerInterface $container,
+  ) {
+
     $this->logger = $logger;
     $this->config = $config_factory->get('ldap_user.settings');
     $this->configAuthentication = $config_factory->get('ldap_authentication.settings');
@@ -238,6 +264,14 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
     $this->fieldProvider = $field_provider;
     $this->messenger = $messenger;
     $this->passwordGenerator = $passwordGenerator;
+
+    if ($this->moduleHandler->moduleExists('file')) {
+      $this->fileRepository = $container->get('file.repository');
+      if (version_compare(\Drupal::VERSION, '10.2.0', '>=')) {
+        $this->fileValidator = $container->get('file.validator');
+      }
+    }
+
   }
 
   /**
@@ -255,6 +289,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
       $admin_roles = $this->entityTypeManager
         ->getStorage('user_role')
         ->getQuery()
+        ->accessCheck(FALSE)
         ->condition('is_admin', TRUE)
         ->execute();
       if (!empty(array_intersect($account->getRoles(), $admin_roles))) {
@@ -290,7 +325,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
       return FALSE;
     }
 
-    /** @var \Drupal\ldap_servers\Entity\Server $ldap_server */
+    /** @var \Drupal\ldap_servers\ServerInterface $ldap_server */
     $ldap_server = $this->entityTypeManager
       ->getStorage('ldap_server')
       ->load($this->config->get('drupalAcctProvisionServer'));
@@ -347,11 +382,11 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
     $this->account = $this->entityTypeManager
       ->getStorage('user')
       ->create($user_data);
-
-    $this->server = $this->entityTypeManager
+    /** @var \Drupal\ldap_servers\ServerInterface $server */
+    $server = $this->entityTypeManager
       ->getStorage('ldap_server')
       ->load($this->config->get('drupalAcctProvisionServer'));
-
+    $this->server = $server;
     // Get an LDAP user from the LDAP server.
     if ($this->config->get('drupalAcctProvisionServer')) {
       $this->ldapUserManager->setServer($this->server);
@@ -396,19 +431,19 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
   /**
    * Set flag to exclude user from LDAP association.
    *
-   * @param string $drupalUsername
+   * @param string $drupal_username
    *   The account username.
    *
    * @return bool
    *   TRUE on success, FALSE on error or failure because of invalid user.
    */
-  public function ldapExcludeDrupalAccount(string $drupalUsername): bool {
-    /** @var \Drupal\user\Entity\User $account */
+  public function ldapExcludeDrupalAccount(string $drupal_username): bool {
+    /** @var \Drupal\user\Entity\User $accounts */
     $accounts = $this->entityTypeManager
       ->getStorage('user')
-      ->loadByProperties(['name' => $drupalUsername]);
+      ->loadByProperties(['name' => $drupal_username]);
     if (!$accounts) {
-      $this->logger->error('Failed to exclude user from LDAP association because Drupal account %username was not found', ['%username' => $drupalUsername]);
+      $this->logger->error('Failed to exclude user from LDAP association because Drupal account %username was not found', ['%username' => $drupal_username]);
       return FALSE;
     }
     $account = reset($accounts);
@@ -423,6 +458,9 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
    *   The Drupal user.
    */
   public function drupalUserUpdate(UserInterface $account): void {
+    if ($this->account && $this->account->id() != $account->id()) {
+      $this->reset();
+    }
     $this->account = $account;
     if ($this->excludeUser($this->account)) {
       return;
@@ -453,12 +491,9 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
     }
 
     $event = new LdapUserLoginEvent($account);
-    if (version_compare(\Drupal::VERSION, '9.1', '>=')) {
-      $this->eventDispatcher->dispatch($event, LdapUserLoginEvent::EVENT_NAME);
-    }
-    else {
-      $this->eventDispatcher->dispatch(LdapUserLoginEvent::EVENT_NAME, $event);
-    }
+    $this->eventDispatcher->dispatch($event);
+
+    $this->saveAccount();
   }
 
   /**
@@ -526,11 +561,11 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
       return NULL;
     }
 
-    $ldapUserPicture = $this->ldapEntry->getAttribute($picture_attribute, FALSE)[0];
+    $ldap_user_picture = $this->ldapEntry->getAttribute($picture_attribute, FALSE)[0];
     $currentUserPicture = $this->account->get('user_picture')->getValue();
 
     if (empty($currentUserPicture)) {
-      return $this->saveUserPicture($this->account->get('user_picture'), $ldapUserPicture);
+      return $this->saveUserPicture($this->account->get('user_picture'), $ldap_user_picture);
     }
 
     /** @var \Drupal\file\Entity\File $file */
@@ -539,13 +574,13 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
       ->load($currentUserPicture[0]['target_id']);
     if ($file && file_exists($file->getFileUri())) {
       $file_data = file_get_contents($file->getFileUri());
-      if (md5($file_data) === md5($ldapUserPicture)) {
+      if (md5($file_data) === md5($ldap_user_picture)) {
         // Same image, do nothing.
         return NULL;
       }
     }
 
-    return $this->saveUserPicture($this->account->get('user_picture'), $ldapUserPicture);
+    return $this->saveUserPicture($this->account->get('user_picture'), $ldap_user_picture);
   }
 
   /**
@@ -553,25 +588,33 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
    *
    * @param \Drupal\Core\Field\FieldItemListInterface $field
    *   The field attached to the user.
-   * @param string $ldapUserPicture
+   * @param string $ldap_user_picture
    *   The picture itself.
    *
    * @return array|null
    *   Nullable array of form ['target_id' => 123].
    */
-  private function saveUserPicture(FieldItemListInterface $field, string $ldapUserPicture): ?array {
+  private function saveUserPicture(FieldItemListInterface $field, string $ldap_user_picture): ?array {
     // Create tmp file to get image format and derive extension.
     $fileName = uniqid('', FALSE);
     $unmanagedFile = $this->fileSystem->getTempDirectory() . '/' . $fileName;
-    file_put_contents($unmanagedFile, $ldapUserPicture);
+    $unmanaged_file_length = file_put_contents($unmanagedFile, $ldap_user_picture);
+    if ($unmanaged_file_length === FALSE) {
+      $this->detailLog
+        ->log('Unable to save file @file',
+          ['@file' => $unmanagedFile]
+        );
+
+      return NULL;
+    }
     // @todo Declare dependency on exif or resolve it.
     $image_type = exif_imagetype($unmanagedFile);
     $extension = image_type_to_extension($image_type, FALSE);
     unlink($unmanagedFile);
 
-    $fieldSettings = $field->getFieldDefinition()->getItemDefinition()->getSettings();
-    $directory = $this->token->replace($fieldSettings['file_directory']);
-    $directory_path = $fieldSettings['uri_scheme'] . '://' . $directory;
+    $field_settings = $field->getFieldDefinition()->getItemDefinition()->getSettings();
+    $directory = $this->token->replace($field_settings['file_directory']);
+    $directory_path = $field_settings['uri_scheme'] . '://' . $directory;
     $realpath = $this->fileSystem->realpath($directory_path);
 
     if ($realpath && !is_dir((string) $realpath)) {
@@ -579,24 +622,29 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
     }
 
     $managed_file_path = $directory_path . '/' . $fileName . '.' . $extension;
-    if (version_compare(\Drupal::VERSION, '9.3', '>=')) {
-      /** @var \Drupal\file\FileRepositoryInterface $file_repository */
-      $file_repository = \Drupal::service('file.repository');
-      $managed_file = $file_repository->writeData($ldapUserPicture, $managed_file_path);
+    $managed_file = $this->fileRepository->writeData($ldap_user_picture, $managed_file_path);
+    $errors = [];
+    $has_error = FALSE;
+    if (version_compare(\Drupal::VERSION, '10.2.0', '<')) {
+      $validators = [
+        'file_validate_is_image' => [],
+        'file_validate_extensions' => [$field_settings['file_extensions']],
+        'file_validate_image_resolution' => [$field_settings['max_resolution']],
+        'file_validate_size' => [$field_settings['max_filesize']],
+      ];
+      // @phpstan-ignore-next-line
+      $errors = file_validate($managed_file, $validators);
+      $has_error = (bool) count($errors);
     }
     else {
-      $managed_file = file_save_data($ldapUserPicture, $managed_file_path);
-    }
-
-    $validators = [
-      'file_validate_is_image' => [],
-      'file_validate_image_resolution' => [$fieldSettings['max_resolution']],
-      'file_validate_size' => [$fieldSettings['max_filesize']],
-    ];
-
-    $errors = file_validate($managed_file, $validators);
-    if ($managed_file && empty(file_validate($managed_file, $validators))) {
-      return ['target_id' => $managed_file->id()];
+      $validators = [
+        'FileIsImage' => [],
+        'FileExtension' => ['extensions' => $field_settings['file_extensions']],
+        'FileImageDimensions' => ['maxDimensions' => $field_settings['max_resolution']],
+        'FileSizeLimit' => ['fileLimit' => (int) $field_settings['max_filesize']],
+      ];
+      $errors = $this->fileValidator->validate($managed_file, $validators);
+      $has_error = $errors->count() > 0;
     }
 
     // @todo Verify file garbage collection.
@@ -606,7 +654,12 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
           ['@error' => $error]
         );
     }
-    return NULL;
+
+    if (!$managed_file || $has_error) {
+      return NULL;
+    }
+
+    return ['target_id' => $managed_file->id()];
   }
 
   /**
@@ -712,13 +765,7 @@ class DrupalUserProcessor implements LdapUserAttributesInterface {
       $this->account->set('mail', $derived_mail);
     }
     if (!$this->account->getPassword()) {
-      if (version_compare(\Drupal::VERSION, '9.1', '>=')) {
-        // phpcs:ignore
-        $this->account->set('pass', $this->passwordGenerator->generate(20));
-      }
-      else {
-        $this->account->set('pass', user_password(20));
-      }
+      $this->account->set('pass', $this->passwordGenerator->generate(20));
     }
     if (!$this->account->getInitialEmail()) {
       $this->account->set('init', $derived_mail);

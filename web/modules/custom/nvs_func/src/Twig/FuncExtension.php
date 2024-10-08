@@ -7,10 +7,13 @@
 
 namespace Drupal\nvs_func\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
 /**
  * Provides the NodeViewCount debugging function within Twig templates.
  */
-class FuncExtension extends \Twig_Extension {
+class FuncExtension extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -24,9 +27,9 @@ class FuncExtension extends \Twig_Extension {
    */
   public function getFunctions() {
     return array(
-      new \Twig_SimpleFunction('getNodeViewCount', array($this, 'getNodeViewCount'), array(
+      new TwigFunction('getNodeViewCount', array($this, 'getNodeViewCount'), array(
         'is_safe' => array('html'),
-        
+
       )),
     );
   }
@@ -48,6 +51,6 @@ class FuncExtension extends \Twig_Extension {
     $output = $s['totalcount'];
       return $output;
   }
-  
+
 
 }

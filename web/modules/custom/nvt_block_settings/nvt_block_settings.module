@@ -79,7 +79,7 @@ function nvt_block_settings_form_block_form_alter(&$form, \Drupal\Core\Form\Form
         if($bg_image = $block->getThirdPartySetting('ntv_block_background', 'bg_image')) {
             // Thumbnail preview (optional).
             $file = File::load($bg_image[0]);
-            $image_path = file_create_url($file->getFileUri());
+            $image_path = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
             //$image = theme('image', $image_op);
               $form['third_party_settings']['ntv_block_background']['thumbnail_preview'] = array(
                 '#title' => t('Background Image'),
@@ -155,18 +155,18 @@ function nvt_block_settings_preprocess_block(&$variables) {
 			$variables['attributes']['id'] = $id;
 			$variables['block_id'] = $id;
 		}
-                
+
 		if ($sub_title = $block->getThirdPartySetting('block_attributes', 'sub_title')) {
 			$variables['sub_title'] = $sub_title;
 		} else $variables['sub_title'] = '';
-                
+
         if($block->getThirdPartySetting('ntv_block_background', 'disable') == 'enable') {
             if ($bg_color = $block->getThirdPartySetting('ntv_block_background', 'color')) {
                 $variables['attributes']['data-bg-color'] = $bg_color;
             }
             if ($bg_image = $block->getThirdPartySetting('ntv_block_background', 'bg_image')) {
                 $file = File::load($bg_image[0]);
-                $url = file_create_url($file->getFileUri());
+                $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
                 $variables['attributes']['data-bg-image'] = $url;
             }
             if ($bg_image_type = $block->getThirdPartySetting('ntv_block_background', 'bg_image_type')) {

@@ -1,0 +1,5 @@
+name: 'ntv_block_background'
+type: module
+description: 'Allows settings attributes block advanced.'
+core_version_requirement: ^9 || ^10
+package: NaviTeam

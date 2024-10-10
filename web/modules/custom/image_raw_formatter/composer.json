@@ -1,0 +1,21 @@
+{
+    "name": "drupal/image_raw_formatter",
+    "type": "drupal-module",
+    "description": "Image raw formatter that provides absolute url to image or image style.",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "George Anderson (geoanders)",
+            "homepage": "https://www.drupal.org/u/geoanders",
+            "role": "Maintainer"
+        }
+    ],
+    "homepage": "https://drupal.org/project/image_raw_formatter",
+    "support": {
+        "issues": "https://drupal.org/project/issues/image_raw_formatter",
+        "source": "https://git.drupalcode.org/project/image_raw_formatter"
+    },
+    "require": {
+        "drupal/core": "^8 || ^9"
+    }
+}

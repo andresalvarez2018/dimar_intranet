@@ -21,6 +21,7 @@
         "drupal/allowed_formats": "^2.0",
         "drupal/authorization": "^1.0",
         "drupal/bartik": "^1.0",
+        "drupal/block_attributes": "^2.0",
         "drupal/block_visibility_groups": "^2.0",
         "drupal/ckeditor": "^1.0",
         "drupal/coder": "^8.3",

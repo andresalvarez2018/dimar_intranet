@@ -42,7 +42,6 @@ module:
   field_ui: 0
   file: 0
   filter: 0
-  gin_toolbar: 0
   help: 0
   history: 0
   image: 0
@@ -67,6 +66,7 @@ module:
   nvs_func: 0
   nvs_geolocation: 0
   nvs_widget: 0
+  nvt_block_background: 0
   nvt_block_settings: 0
   options: 0
   page_cache: 0

@@ -1,25 +1,18 @@
 <?php
 
-/**
- * @file
- * Contains
- *   \Drupal\image_raw_formatter\Plugin\Field\FieldFormatter\ImageRawFormatter.
- */
-
 namespace Drupal\image_raw_formatter\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Image\ImageFactory;
-use Drupal\image\Entity\ImageStyle;
-use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatterBase;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Image\ImageFactory;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Utility\LinkGeneratorInterface;
+use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatterBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Plugin implementation of the 'image_raw_formatter' formatter.
@@ -99,7 +92,7 @@ class ImageRawFormatter extends ImageFormatterBase implements ContainerFactoryPl
     AccountInterface $current_user,
     LinkGeneratorInterface $link_generator,
     EntityStorageInterface $image_style_storage,
-    ImageFactory $image_factory
+    ImageFactory $image_factory,
   ) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);
     $this->currentUser = $current_user;
@@ -132,10 +125,10 @@ class ImageRawFormatter extends ImageFormatterBase implements ContainerFactoryPl
    */
   public static function defaultSettings() {
     return [
-        'image_style' => '',
-        'image_link' => '',
-        'image_markup' => '',
-      ] + parent::defaultSettings();
+      'image_style' => '',
+      'image_link' => '',
+      'image_markup' => '',
+    ] + parent::defaultSettings();
   }
 
   /**
@@ -223,8 +216,9 @@ class ImageRawFormatter extends ImageFormatterBase implements ContainerFactoryPl
           ->buildUri($image_uri);
       }
       else {
-        // Get absolute path for original image.
-        $absolute_path = Url::fromUri(file_create_url($image_uri))->getUri();
+        $file_url_generator = \Drupal::service('file_url_generator');
+        $absolute_path = $file_url_generator->generateAbsoluteString($image_uri);
+
       }
 
       $image_toolkit = $this->imageFactory->get($image_uri)->getToolkit();

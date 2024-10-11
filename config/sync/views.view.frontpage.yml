@@ -37,8 +37,8 @@ display:
           tags:
             next: 'Siguiente >'
             previous: '‹ Anterior'
-            first: '« Primero'
-            last: 'Último »'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Elementos por página'
@@ -51,7 +51,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Aplicar
+          submit_button: Apply
           reset_button: false
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'

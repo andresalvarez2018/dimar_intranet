@@ -1039,7 +1039,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: Todo(s)
+            title: All
           title_enable: true
           title: 'Información de uso del fichero para {{ arguments.fid }}'
           default_argument_type: fixed

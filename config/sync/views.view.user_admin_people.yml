@@ -469,8 +469,8 @@ display:
           tags:
             next: 'Siguiente >'
             previous: '‹ Anterior'
-            first: '« Primero'
-            last: 'Último »'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Elementos por página'

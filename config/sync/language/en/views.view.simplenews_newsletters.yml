@@ -1,4 +1,5 @@
-label: Newsletters
+label: 'Newsletter issues'
+description: 'Find and manage newsletter issues.'
 display:
   default:
     display_title: Master
@@ -43,7 +44,7 @@ display:
         simplenews_issue_target_id_1:
           expose:
             label: Newsletter
-      title: Newsletters
+      title: 'Newsletter issues'
       empty:
         area:
           content:

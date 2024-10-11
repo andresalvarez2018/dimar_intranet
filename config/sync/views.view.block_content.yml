@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: msYnighLW1IbiBfyQbwbQwb2cU-5LECiFryt60k0Nfk
 id: block_content
-label: 'Content blocks'
+label: 'Biblioteca de bloques personalizados'
 module: views
 description: 'Encontrar y administrar bloques personalizados.'
 tag: default
@@ -291,7 +291,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Aplicar
+          submit_button: Apply
           reset_button: false
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'

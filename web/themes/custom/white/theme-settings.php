@@ -84,7 +84,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload logo'),
 
-    '#upload_location' => file_default_scheme() . '://logos_upload',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://logos_upload',
 
     '#default_value' => theme_get_setting('menu_middle_logo', 'whites'),
 
@@ -117,7 +117,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload logo'),
 
-    '#upload_location' => file_default_scheme() . '://logos_upload',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://logos_upload',
 
     '#default_value' => theme_get_setting('menu_big_logo', 'whites'),
 
@@ -150,7 +150,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload logo'),
 
-    '#upload_location' => file_default_scheme() . '://logos_upload',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://logos_upload',
 
     '#default_value' => theme_get_setting('menu_retina_logo', 'whites'),
 
@@ -734,7 +734,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload image'),
 
-    '#upload_location' => file_default_scheme() . '://background_images',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://background_images',
 
     '#default_value' => theme_get_setting('background_page_title_image', 'whites'),
 
@@ -800,7 +800,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload images'),
 
-    '#upload_location' => file_default_scheme() . '://slides',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://slides',
 
     '#default_value' => theme_get_setting('page_title_slides', 'whites'),
 
@@ -892,7 +892,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#description' => t('If you don\'t jave direct access to the server, use this field to upload your video. Only MP4 extensions'),
 
-    '#upload_location' => file_default_scheme() . '://upload_videos',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://upload_videos',
 
     '#default_value' => theme_get_setting('background_page_title_video_mp4', 'whites'),
 
@@ -1220,7 +1220,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload image'),
 
-    '#upload_location' => file_default_scheme() . '://background_images',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://background_images',
 
     '#default_value' => theme_get_setting('blog_background_page_title_image', 'whites'),
 
@@ -1286,7 +1286,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#title' => t('Upload images'),
 
-    '#upload_location' => file_default_scheme() . '://slides',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://slides',
 
     '#default_value' => theme_get_setting('blog_page_title_slides', 'whites'),
 
@@ -1378,7 +1378,7 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     '#description' => t('If you don\'t jave direct access to the server, use this field to upload your video. Only MP4 extensions'),
 
-    '#upload_location' => file_default_scheme() . '://upload_videos',
+    '#upload_location' => \Drupal::config('system.file')->get('default_scheme') . '://upload_videos',
 
     '#default_value' => theme_get_setting('blog_background_page_title_video_mp4', 'whites'),
 

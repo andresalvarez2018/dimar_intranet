@@ -18,7 +18,7 @@ base_field: id
 display:
   default:
     id: default
-    display_title: Máster
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -267,7 +267,7 @@ display:
           entity_type: contact_message
           entity_field: created
           plugin_id: date
-          label: Creado
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -366,6 +366,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 20
           total_pages: null
           id: 0
@@ -383,11 +384,10 @@ display:
             offset: false
             offset_label: Desplazamiento
           quantity: 9
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
-          submit_button: Aplicar
+          submit_button: Apply
           reset_button: false
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'

@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: HuVRq8jAJW0fd2D6rM4IFSjVVl0zaXy3GRZMHpgstik
 id: simplenews_newsletters
-label: Boletines
+label: 'Newsletter issues'
 module: views
 description: ''
 tag: ''
@@ -20,11 +20,11 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Máster
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
-      title: Boletines
+      title: 'Newsletter issues'
       fields:
         node_bulk_form:
           id: node_bulk_form
@@ -422,6 +422,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -439,11 +440,10 @@ display:
             offset: false
             offset_label: Desplazamiento
           quantity: 9
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
-          submit_button: Aplicar
+          submit_button: Apply
           reset_button: false
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'

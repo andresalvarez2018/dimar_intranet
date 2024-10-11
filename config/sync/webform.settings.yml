@@ -29,7 +29,7 @@ settings:
   default_form_submit_back: false
   default_form_details_toggle: true
   default_form_file_limit: ''
-  default_wizard_prev_button_label: '< Previous Page'
+  default_wizard_prev_button_label: '< Previous'
   default_wizard_next_button_label: 'Next Page >'
   default_wizard_start_label: Start
   default_wizard_confirmation_label: Complete

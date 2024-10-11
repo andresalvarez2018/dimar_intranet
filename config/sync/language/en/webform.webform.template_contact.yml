@@ -23,6 +23,7 @@ elements: |
     '#submit__label': 'Send message'
 settings:
   confirmation_message: 'Your message has been sent.'
+  confirmation_url: '<front>'
 handlers:
   email_confirmation:
     label: 'Email confirmation'

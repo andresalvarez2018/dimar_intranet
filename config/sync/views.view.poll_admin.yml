@@ -97,7 +97,7 @@ display:
           admin_label: ''
           entity_type: poll
           plugin_id: poll_status
-          label: Active
+          label: Activo
           exclude: false
           alter:
             alter_text: false
@@ -318,7 +318,7 @@ display:
           admin_label: ''
           entity_type: poll
           plugin_id: entity_operations
-          label: 'Operations links'
+          label: 'Enlaces de operación'
           exclude: false
           alter:
             alter_text: false
@@ -364,14 +364,15 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
           tags:
-            next: 'next ›'
-            previous: '‹ previous'
-            first: '« first'
-            last: 'last »'
+            next: 'siguiente ›'
+            previous: '‹ anterior'
+            first: '« primero'
+            last: 'última »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -381,7 +382,6 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -486,7 +486,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: Active
+            label: Activo
             description: ''
             identifier: status
             optional: true
@@ -598,7 +598,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Página
     display_plugin: page
     position: 1
     display_options:

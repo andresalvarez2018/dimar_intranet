@@ -135,6 +135,9 @@
             },
             "drupal/image_raw_formatter": {
                 "Automated Drupal 10 compatibility fixes" :"https://www.drupal.org/files/issues/2023-06-10/image_raw_formatter-d10_update-3297407-4.patch"
+            },
+            "drupal/php" :{
+                "update module php" : "patches/phpmodule.patch"
             }
         },
         "drupal-core-project-message": {

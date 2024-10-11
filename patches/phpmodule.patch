@@ -1,0 +1,48 @@
+diff --git a/php.module b/php.module
+index 8f9f29e5..506e485e 100644
+--- a/php.module
++++ b/php.module
+@@ -62,28 +62,27 @@ function php_library_info_alter(&$libraries, $extension) {
+  * @see php_filter_info()
+  */
+ function php_eval($code) {
+-  /* FIXME global $theme_path, $theme_info;
++  // Obtiene la ruta del tema activo actual utilizando el servicio correspondiente en Drupal 10.
++  $theme_path_service = \Drupal::service('extension.list.theme');
++  $default_theme = \Drupal::config('system.theme')->get('default');
++  $theme_path = $theme_path_service->getPath($default_theme);
+
+-  // Store current theme path.
+-  $old_theme_path = $theme_path;
++  // Captura la salida usando output buffering.
++  ob_start();
+
+-  // Restore theme_path to the theme, as long as php_eval() executes,
+-  // so code evaluated will not see the caller module as the current theme.
+-  // If theme info is not initialized get the path from default theme.
+-  if (!isset($theme_info)) {
+-    $theme_path = drupal_get_path('theme', Drupal::config('system.theme')->get('default'));
++  // Ejecuta el código PHP proporcionado. Este código sigue utilizando eval(), pero asegúrate de controlar bien qué código se ejecuta.
++  try {
++    eval('?>' . $code);
++  }
++  catch (\Throwable $e) {
++    // En caso de un error en el código evaluado, captura y registra el error.
++    \Drupal::logger('php_eval')->error('Error al ejecutar código PHP: @message', ['@message' => $e->getMessage()]);
+   }
+-  else {
+-    $theme_path = dirname($theme_info->filename);
+-  }*/
+
+-  ob_start();
+-  print eval('?>' . $code);
++  // Obtiene y limpia el buffer de salida.
+   $output = ob_get_contents();
+   ob_end_clean();
+
+-  // Recover original theme path.
+-  /* $theme_path = $old_theme_path; */
+-
++  // Retorna la salida capturada.
+   return $output;
+ }

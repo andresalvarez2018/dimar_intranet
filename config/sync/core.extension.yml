@@ -64,6 +64,7 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
+  ntv_block_background: 0
   nvs_func: 0
   nvs_geolocation: 0
   nvs_widget: 0

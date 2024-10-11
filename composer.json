@@ -131,7 +131,7 @@
         },
         "patches": {
             "drupal/core": {
-               "translations" : "https://www.drupal.org/files/issues/2024-10-10/%20TranslatableMarkupError.patch"
+               "Translation error when installing modules" : "https://www.drupal.org/files/issues/2024-10-10/%20TranslatableMarkupError.patch"
             },
             "drupal/image_raw_formatter": {
                 "Automated Drupal 10 compatibility fixes" :"https://www.drupal.org/files/issues/2023-06-10/image_raw_formatter-d10_update-3297407-4.patch"

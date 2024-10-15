@@ -56,7 +56,6 @@
         "drupal/plupload": "^2.1",
         "drupal/poll": "^2.0@alpha",
         "drupal/printable": "^3.1",
-        "drupal/printfriendly": "^3.5",
         "drupal/quickedit": "^1.0",
         "drupal/rdf": "^2.1",
         "drupal/redirect_after_login": "^2.7",

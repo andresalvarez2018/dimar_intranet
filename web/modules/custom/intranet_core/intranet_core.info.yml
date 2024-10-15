@@ -1,0 +1,5 @@
+name: 'Intranet'
+type: module
+description: 'Intranet'
+package: Intranet
+core_version_requirement: ^9 || ^10

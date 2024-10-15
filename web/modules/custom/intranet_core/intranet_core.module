@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function intranet_core_update_9001(&$sandbox) {
+  // Fixed bugs with table related path_alias module.
+  $database = \Drupal::database();
+  $query = $database->query("ALTER TABLE `path_alias` CHANGE `id` `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identifier', CHANGE `revision_id` `revision_id` INT(10) UNSIGNED NULL DEFAULT NULL COMMENT 'Revision ID';");
+
+  $database = \Drupal::database();
+  $query = $database->query("ALTER TABLE `path_alias_revision` CHANGE `id` `id` INT(10) UNSIGNED NOT NULL COMMENT 'Identifier', CHANGE `revision_id` `revision_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Revision ID';");
+}

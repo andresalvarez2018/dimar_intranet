@@ -48,6 +48,7 @@ module:
   image: 0
   image_raw_formatter: 0
   imce: 0
+  intranet_core: 0
   jquery_ui: 0
   language: 0
   ldap_authentication: 0

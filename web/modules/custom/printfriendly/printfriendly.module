@@ -5,11 +5,11 @@
  * Adds PrintFriendly button to chosen node types and provides a block.
  */
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Url;
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
-use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_help().
@@ -138,7 +138,7 @@ function printfriendly_page_attachments(array &$page) {
  */
 function printfriendly_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
   $config = \Drupal::config('printfriendly.settings');
-  $config_display = $config->get('printfriendly_display', array('full'));
+  $config_display = $config->get('printfriendly_display', ['full']);
   if (!is_array($config_display)) {
     $config_display = [];
   }

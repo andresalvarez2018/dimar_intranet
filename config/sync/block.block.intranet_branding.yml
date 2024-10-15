@@ -1,0 +1,25 @@
+uuid: 8b2154a3-b1f9-4b06-982c-b4286c6ff870
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - intranet
+_core:
+  default_config_hash: nuW1Z5MdvzbCCEZ9RQojaEWB6Zni32zTq-v5OWbS2sc
+id: intranet_branding
+theme: intranet
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

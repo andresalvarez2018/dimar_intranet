@@ -128,4 +128,5 @@ theme:
   gin: 0
   stable9: 0
   bootstrap5: 0
+  intranet: 0
 profile: standard

@@ -5,6 +5,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
 
 /**
  *
@@ -1713,57 +1714,38 @@ function whites_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
  * Background_page_title_validate.
  */
 function whites_theme_settings_form_submit(&$form, FormStateInterface $form_state) {
-
   // $account = \Drupal::currentUser();
   $values = $form_state->getValues();
 
   $_wfiles = [
-
     $values['page_title_slides'],
-
     $values['background_page_title_image'],
-
     $values['background_page_title_video_mp4'],
-
     // Blog.
     $values['blog_page_title_slides'],
-
     $values['blog_background_page_title_image'],
-
     $values['blog_background_page_title_video_mp4'],
-
     // Logo.
     $values['menu_middle_logo'],
-
-    // menu_big_logo.
     $values['menu_big_logo'],
-
     $values['menu_retina_logo'],
-
   ];
 
   foreach ($_wfiles as $wfile) {
-
     if (isset($wfile) && !empty($wfile) && is_array($wfile)) {
-
       foreach ($wfile as $fid) {
+        // Cargar el archivo utilizando la entidad 'file'.
+        $file = File::load($fid);
 
-        // Load the file via file.fid.
-        $file = file_load($fid);
+        if ($file) {
+          // Cambiar el estado a permanente.
+          $file->setPermanent();
+          $file->save();
 
-        // Change status to permanent.
-        $file->setPermanent();
-
-        $file->save();
-
-        $file_usage = \Drupal::service('file.usage');
-
-        $file_usage->add($file, 'whites', 'theme', 1);
-
+          $file_usage = \Drupal::service('file.usage');
+          $file_usage->add($file, 'whites', 'theme', 1);
+        }
       }
-
     }
-
   }
-
 }

@@ -131,8 +131,7 @@
         },
         "patches": {
             "drupal/core": {
-               "Translation error when installing modules" : "https://www.drupal.org/files/issues/2024-10-10/%20TranslatableMarkupError.patch",
-               "error type data": "https://www.drupal.org/files/issues/2023-06-21/drupal10.typeddata-deprecated_dynamic_propert_3368250-1.patch"
+               "Translation error when installing modules" : "https://www.drupal.org/files/issues/2024-10-10/%20TranslatableMarkupError.patch"
             },
             "drupal/image_raw_formatter": {
                 "Automated Drupal 10 compatibility fixes" :"https://www.drupal.org/files/issues/2023-06-10/image_raw_formatter-d10_update-3297407-4.patch"

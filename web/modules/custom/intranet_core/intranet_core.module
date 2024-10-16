@@ -22,5 +22,11 @@ function intranet_core_theme($existing, $type, $theme, $path) {
       ],
       'render element' => 'children',
     ],
+    'block_image_custom' => [
+      'variables' => [
+        'image' => NULL,
+      ],
+      'render element' => 'children',
+    ],
   ];
 }

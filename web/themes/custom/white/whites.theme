@@ -361,7 +361,8 @@ function whites_preprocess(&$variables) {
   // current_term.
   if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
     $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
-    $term = taxonomy_term_load($term_id);
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_id);
+
     // $term_name = $term_object->get('name')->value;
     $vname = $term->vid->getValue()[0]['target_id'];
     // $variables['current_term_view'] = $term;

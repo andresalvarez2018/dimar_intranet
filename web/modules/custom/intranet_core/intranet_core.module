@@ -10,9 +10,17 @@
  */
 function intranet_core_theme($existing, $type, $theme, $path) {
   return [
-    'header' => [
-      'template' => 'header',
-      'variables' => ['title' => NULL],
+    'logo_dimar_block' => [
+      'variables' => [
+        'image' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'logo_defensa_block' => [
+      'variables' => [
+        'image' => NULL,
+      ],
+      'render element' => 'children',
     ],
   ];
 }

@@ -59,7 +59,7 @@
         "drupal/printfriendly": "^3.5",
         "drupal/quickedit": "^1.0",
         "drupal/rdf": "^2.1",
-        "drupal/redirect_after_login": "^2.7",
+        "drupal/redirect_after_login": "^3.0",
         "drupal/require_login": "^3.0",
         "drupal/seven": "^1.0",
         "drupal/sharethis": "^3.0",

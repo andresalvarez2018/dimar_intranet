@@ -5,6 +5,7 @@
  */
 
 global $base_url;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\block\Entity\Block;
@@ -127,7 +128,7 @@ function whites_preprocess_node(&$vars) {
         $current_blog_category[$key] = $value->target_id;
       }
 
-      $storage = \Drupal::entityManager()->getStorage('node');
+      $storage = \Drupal::entityTypeManager()->getStorage('node');
       $nids = $storage->getQuery()
         ->condition('type', 'blog_post')
         ->condition('status', 1)
@@ -135,12 +136,14 @@ function whites_preprocess_node(&$vars) {
         ->condition('field_blog_category.target_id', $current_blog_category, 'in')
         ->sort('created', 'DESC')
         ->range(0, 6)
+        ->accessCheck(TRUE)
         ->execute();
       $related_blog_posts = '<div class="section-empty section-item">
         <div class="container content">
             <div class="flexslider carousel outer-navs" data-options="minWidth:300,itemMargin:30,numItems:3">
                 <ul class="slides">';
-      foreach (entity_load_multiple('node', $nids) as $k => $n) {
+      foreach ($storage->loadMultiple($nids) as $k => $n) {
+
         $options = ['absolute' => TRUE];
         $url_object = Url::fromRoute('entity.node.canonical', ['node' => $n->nid->value], $options);
         if ($n->field_image) {
@@ -153,54 +156,58 @@ function whites_preprocess_node(&$vars) {
         $summary = substr($n->body->summary, 0, 190);
         $full_name_with_link_cs = '';
         $name_with_link_cs = '';
-        $author_uid = $n->getRevisionAuthor()->uid->value;
+        $author_uid = $n->getRevisionUserId();
         // kint($author_uid);
         // Pass your uid.
         $account = User::load($author_uid);
         if ($account->field_full_name) {
           $build_full_name = $account->field_full_name->view('default');
           $full_name_with_link = \Drupal::service('renderer')->renderRoot($build_full_name);
-          $full_name_with_link_cs = strip_tags(render($full_name_with_link), '<a>');
+          $full_name_with_link_cs = strip_tags($full_name_with_link, '<a>');
         }
         if ($account->name) {
           $build_name = $account->name->view('default');
           $name_with_link = \Drupal::service('renderer')->renderRoot($build_name);
-          $name_with_link_cs = strip_tags(render($name_with_link), '<a>');
+          $name_with_link_cs = strip_tags($name_with_link, '<a>');
         }
+
         // Category.
         if ($n->field_blog_category) {
           $build_blog_category = $n->field_blog_category->view('default');
           $field_blog_category = \Drupal::service('renderer')->renderRoot($build_blog_category);
-          // $field_blog_category_cs = strip_tags(render($field_blog_category),'<a>');
+          // $field_blog_category_cs = strip_tags($field_blog_category, '<a>');
         }
 
-        $timestamp = $n->created->value;
+        $timestamp = $n->getCreatedTime();
+
+        $day = DrupalDateTime::createFromTimestamp($timestamp)->format('d');
+        $month = DrupalDateTime::createFromTimestamp($timestamp)->format('F');
 
         $related_blog_posts .= '<li>
-				    <div class="advs-box niche-box-blog text-m">
-				        <div class="block-top">
-				            <div class="block-infos">
-				                <div class="block-data">
-				                    <p class="bd-day">' . format_date($timestamp, 'custom', 'd') . '</p>
-				                    <p class="bd-month">' . format_date($timestamp, 'custom', 'F') . '</p>
-				                </div>
-				                <a class="block-comment" href="' . $url_object->toString() . '#comments">' . ($n->field_blog_comments->comment_count ? $n->field_blog_comments->comment_count : '') . ' <i class="fa fa-comment-o"></i></a>
-				            </div>
-				            <div class="block-title">
-				                <h2><a href="' . $url_object->toString() . '">' . $n->title->value . '</a></h2>
-				                <div class="tag-row">
-				                    <span><i class="fa fa-bookmark"></i>' . ($field_blog_category ? $field_blog_category : '') . '</span>
-				                    <span><i class="fa fa-pencil"></i>' . ($full_name_with_link_cs ? $full_name_with_link_cs : $name_with_link_cs) . '</span>
-				                </div>
-				            </div>
-				        </div>
-				        <a class="img-box img-scale-up" href="' . $url_object->toString() . '">
-				            <img src="' . $image_360x205_url . '" alt="' . $n->title->value . '">
-				        </a>
-				        <p class="excerpt">' . ($length > 190 ? $summary . '...' : $n->body->summary) . '</p>
-				        <a class="btn btn-sm" href="' . $url_object->toString() . '">Read more </a>
-				    </div>
-				</li>';
+<div class="advs-box niche-box-blog text-m">
+    <div class="block-top">
+        <div class="block-infos">
+            <div class="block-data">
+                <p class="bd-day">' . $day . '</p>
+                <p class="bd-month">' . $month . '</p>
+            </div>
+            <a class="block-comment" href="' . $url_object->toString() . '#comments">' . ($n->field_blog_comments->comment_count ? $n->field_blog_comments->comment_count : '') . ' <i class="fa fa-comment-o"></i></a>
+        </div>
+        <div class="block-title">
+            <h2><a href="' . $url_object->toString() . '">' . $n->title->value . '</a></h2>
+            <div class="tag-row">
+                <span><i class="fa fa-bookmark"></i>' . ($field_blog_category ? $field_blog_category : '') . '</span>
+                <span><i class="fa fa-pencil"></i>' . ($full_name_with_link_cs ? $full_name_with_link_cs : $name_with_link_cs) . '</span>
+            </div>
+        </div>
+    </div>
+    <a class="img-box img-scale-up" href="' . $url_object->toString() . '">
+        <img src="' . $image_360x205_url . '" alt="' . $n->title->value . '">
+    </a>
+    <p class="excerpt">' . ($length > 190 ? $summary . '...' : $n->body->summary) . '</p>
+    <a class="btn btn-sm" href="' . $url_object->toString() . '">Read more </a>
+</div>
+</li>';
 
       }
       $related_blog_posts .= '</ul></div></div></div>';

@@ -13,18 +13,21 @@ function intranet_core_theme($existing, $type, $theme, $path) {
     'logo_dimar_block' => [
       'variables' => [
         'image' => NULL,
+        'link' => NULL,
       ],
       'render element' => 'children',
     ],
     'logo_defensa_block' => [
       'variables' => [
         'image' => NULL,
+        'link' => NULL,
       ],
       'render element' => 'children',
     ],
     'block_image_custom' => [
       'variables' => [
         'image' => NULL,
+        'link' => NULL,
       ],
       'render element' => 'children',
     ],

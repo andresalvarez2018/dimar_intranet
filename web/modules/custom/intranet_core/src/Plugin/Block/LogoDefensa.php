@@ -40,6 +40,14 @@ class LogoDefensa extends BlockBase {
       '#required' => FALSE,
     ];
 
+    $form['link'] = [
+      '#type' => 'textfield',
+      '#title' => t('Enlace'),
+      '#default_value' => $this->configuration['link'] ?? '',
+      '#description' => t('Introduce la URL a la que dirigirá el enlace.'),
+      '#required' => FALSE,
+    ];
+
     return $form;
   }
 
@@ -54,8 +62,9 @@ class LogoDefensa extends BlockBase {
       $image->save();
     }
 
+    // Guardar el enlace
     $this->configuration['image'] = $values['image'];
-
+    $this->configuration['link'] = $values['link']; // Guardar el enlace
   }
 
   /**
@@ -73,6 +82,7 @@ class LogoDefensa extends BlockBase {
     }
 
     $build['#image'] = $url;
+    $build['#link'] = $this->configuration['link'] ?? '';
 
     return $build;
   }

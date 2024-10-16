@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Intranet core module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function intranet_core_theme($existing, $type, $theme, $path) {
+  return [
+    'header' => [
+      'template' => 'header',
+      'variables' => ['title' => NULL],
+    ],
+  ];
+}

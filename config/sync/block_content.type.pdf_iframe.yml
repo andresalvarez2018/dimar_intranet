@@ -1,0 +1,8 @@
+uuid: b8ca3c1e-2365-4ab1-9954-acab459fa1e4
+langcode: es
+status: true
+dependencies: {  }
+id: pdf_iframe
+label: 'PDF iframe'
+revision: false
+description: 'Bloque para agregar y visualizar documentos pdf'

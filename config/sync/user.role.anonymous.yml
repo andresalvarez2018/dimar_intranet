@@ -10,6 +10,7 @@ dependencies:
     - entity_print
     - entity_print_views
     - filter
+    - media
     - search
     - simplenews
     - statistics
@@ -31,4 +32,5 @@ permissions:
   - 'search content'
   - 'subscribe to newsletters'
   - 'use text format restricted_html'
+  - 'view media'
   - 'view post access counter'

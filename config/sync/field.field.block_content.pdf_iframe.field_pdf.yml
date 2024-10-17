@@ -1,0 +1,29 @@
+uuid: 77f507de-2e46-4cb7-ab4d-1bb55ae17f0c
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.pdf_iframe
+    - field.storage.block_content.field_pdf
+    - media.type.pdf
+id: block_content.pdf_iframe.field_pdf
+field_name: field_pdf
+entity_type: block_content
+bundle: pdf_iframe
+label: pdf
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      pdf: pdf
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference

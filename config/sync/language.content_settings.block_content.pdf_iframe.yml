@@ -1,0 +1,11 @@
+uuid: efba217c-97c6-4161-9db8-53eb7fb06106
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.pdf_iframe
+id: block_content.pdf_iframe
+target_entity_type_id: block_content
+target_bundle: pdf_iframe
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,26 @@
+uuid: 21614c36-de42-4c53-942d-646a437d66ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.pdf_iframe
+    - field.field.block_content.pdf_iframe.field_pdf
+id: block_content.pdf_iframe.default
+targetEntityType: block_content
+bundle: pdf_iframe
+mode: default
+content:
+  field_pdf:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

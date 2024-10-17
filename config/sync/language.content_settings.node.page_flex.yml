@@ -1,0 +1,11 @@
+uuid: 5456a03f-26ae-43a3-97d4-cd8650e1fe37
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.page_flex
+id: node.page_flex
+target_entity_type_id: node
+target_bundle: page_flex
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,41 @@
+uuid: 96ecfb28-211e-47dc-9b74-b259c25adaae
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page_flex.body
+    - field.field.node.page_flex.layout_builder__layout
+    - node.type.page_flex
+  module:
+    - text
+    - user
+id: node.page_flex.teaser
+targetEntityType: node
+bundle: page_flex
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  layout_builder__layout: true

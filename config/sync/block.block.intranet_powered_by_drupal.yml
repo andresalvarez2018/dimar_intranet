@@ -1,0 +1,22 @@
+uuid: 915a5c6c-f551-43e7-a4ab-722a58ee3642
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - intranet
+_core:
+  default_config_hash: 2_xxaOb8b_0AUgYFdJLxIBDDwufyh6YozhGfBd97p38
+id: intranet_powered_by_drupal
+theme: intranet
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

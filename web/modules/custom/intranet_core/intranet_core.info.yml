@@ -1,0 +1,5 @@
+name: 'INTRANET CORE'
+type: module
+description: 'modulo para funciones de intranet'
+package: Intranet
+core_version_requirement: ^9 || ^10

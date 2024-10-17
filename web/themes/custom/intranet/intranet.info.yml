@@ -1,0 +1,23 @@
+name: Intranet
+type: theme
+description: 'Tema base de bootstrap5'
+core_version_requirement: ^9 || ^10
+base theme : "bootstrap5"
+
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+
+libraries:
+  - bootstrap5/base
+  - bootstrap5/messages
+  - core/normalize
+  - bootstrap5/bootstrap5-js-latest
+  - bootstrap5/global-styling

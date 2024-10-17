@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09758851eb48bb1c60939593fc8ae29e",
+    "content-hash": "f005bc3d427d7a8e0797a40d9366e1eb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3856,6 +3856,67 @@
                     "url": "https://paypal.me/saschaeggi"
                 }
             ]
+        },
+        {
+            "name": "drupal/gin_lb",
+            "version": "1.0.0-rc8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gin_lb.git",
+                "reference": "1.0.0-rc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gin_lb-1.0.0-rc8.zip",
+                "reference": "1.0.0-rc8",
+                "shasum": "426a45cf2929eb21af33430176ae9b70b0ab5aea"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11",
+                "drupal/gin": "^3.0-rc11",
+                "drupal/gin_toolbar": "^1.0"
+            },
+            "conflict": {
+                "drupal/lb_claro": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-rc8",
+                    "datestamp": "1722577167",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Christian.wiedemann",
+                    "homepage": "https://www.drupal.org/user/861002"
+                },
+                {
+                    "name": "Duwid",
+                    "homepage": "https://www.drupal.org/user/2693877"
+                },
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "sch4lly",
+                    "homepage": "https://www.drupal.org/user/856550"
+                }
+            ],
+            "description": "Layout Builder in Gin style.",
+            "homepage": "https://www.drupal.org/project/gin_lb",
+            "support": {
+                "source": "https://git.drupalcode.org/project/gin_lb"
+            }
         },
         {
             "name": "drupal/gin_toolbar",
@@ -12510,6 +12571,7 @@
         "drupal/conditional_fields": 15,
         "drupal/entity_clone": 10,
         "drupal/gin": 5,
+        "drupal/gin_lb": 5,
         "drupal/gin_toolbar": 5,
         "drupal/menu_breadcrumb": 15,
         "drupal/poll": 15

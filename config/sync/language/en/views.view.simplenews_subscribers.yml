@@ -5,8 +5,20 @@ display:
         title: Subscribers
     display_title: Page
   default:
-    display_title: Master
     display_options:
+      filters:
+        subscriptions_status:
+          expose:
+            label: Status
+        mail:
+          expose:
+            label: Email
+        subscriptions_target_id:
+          expose:
+            label: Newsletters
+        status:
+          expose:
+            label: Status
       exposed_form:
         options:
           submit_button: Apply
@@ -34,27 +46,15 @@ display:
           label: Subscriptions
           separator: ', '
         status:
-          label: Active
+          label: Status
         created:
           label: Created
         operations:
           label: Operations
-      filters:
-        mail:
-          expose:
-            label: Email
-        subscriptions_target_id:
-          expose:
-            label: Newsletters
-        status:
-          expose:
-            label: Active
-        subscriptions_status:
-          expose:
-            label: Status
       title: Subscribers
       empty:
         area:
           content:
             value: 'No subscribers found.'
+    display_title: Master
 label: Subscribers

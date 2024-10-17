@@ -134,7 +134,7 @@ display:
           entity_type: user
           entity_field: status
           plugin_id: field
-          label: Estado
+          label: Activo
           exclude: false
           alter:
             alter_text: false
@@ -602,7 +602,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: Estado
+            label: Activo
             description: ''
             identifier: status
             optional: true

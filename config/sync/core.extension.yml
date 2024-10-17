@@ -83,7 +83,6 @@ module:
   plupload: 0
   poll: 0
   printable: 0
-  printfriendly: 0
   quickedit: 0
   rdf: 0
   redirect_after_login: 0

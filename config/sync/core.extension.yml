@@ -52,6 +52,8 @@ module:
   intranet_core: 0
   jquery_ui: 0
   language: 0
+  layout_builder: 0
+  layout_discovery: 0
   ldap_authentication: 0
   ldap_authorization: 0
   ldap_help: 0

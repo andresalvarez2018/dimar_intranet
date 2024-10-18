@@ -1,0 +1,13 @@
+platforms:
+  facebook:
+    label: Facebook
+  youtube:
+    label: Youtube
+  linkedin:
+    label: Linkedin
+  x:
+    label: X
+  instagram:
+    label: Instagram
+  pinterest:
+    label: Pinterest

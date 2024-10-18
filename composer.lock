@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7758dce04e75b1ab73921503d554690f",
+    "content-hash": "3598775cdc7c5ac9beb240251b67ebc1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5766,6 +5766,54 @@
             "homepage": "https://www.drupal.org/project/simplenews",
             "support": {
                 "source": "https://git.drupalcode.org/project/simplenews"
+            }
+        },
+        {
+            "name": "drupal/social_media_platforms",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/social_media_platforms.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/social_media_platforms-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "859778851e3b5307b3bd489b1af9c38b793b6834"
+            },
+            "require": {
+                "drupal/core": "^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1710163893",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "guiu.rocafort.ferrer",
+                    "homepage": "https://www.drupal.org/user/3562631"
+                },
+                {
+                    "name": "shoshina.ekaterina",
+                    "homepage": "https://www.drupal.org/user/3804167"
+                }
+            ],
+            "description": "Allows to add social media links to the pages via a block.",
+            "homepage": "https://www.drupal.org/project/social_media_platforms",
+            "support": {
+                "source": "https://git.drupalcode.org/project/social_media_platforms"
             }
         },
         {

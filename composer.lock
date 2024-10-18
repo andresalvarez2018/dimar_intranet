@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b53f877f0068def82b0b247ac55d9c92",
+    "content-hash": "7758dce04e75b1ab73921503d554690f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5766,50 +5766,6 @@
             "homepage": "https://www.drupal.org/project/simplenews",
             "support": {
                 "source": "https://git.drupalcode.org/project/simplenews"
-            }
-        },
-        {
-            "name": "drupal/social_simple",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/social_simple.git",
-                "reference": "2.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/social_simple-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "c73f174051e198caeef1add761f27c1c4bffbcc4"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1698095852",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "flocondetoile",
-                    "homepage": "https://www.drupal.org/user/2006064"
-                }
-            ],
-            "description": "Provide simple social share links for social networks.",
-            "homepage": "https://www.drupal.org/project/social_simple",
-            "support": {
-                "source": "https://git.drupalcode.org/project/social_simple"
             }
         },
         {

@@ -1,0 +1,8 @@
+uuid: 8dbba85a-9798-4f15-a9e7-1b870aa04412
+langcode: es
+status: true
+dependencies: {  }
+id: acordeon
+label: Acordeon
+revision: false
+description: null

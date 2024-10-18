@@ -1,8 +1,8 @@
 name: Intranet
 type: theme
-description: 'Tema base de bootstrap5'
+description: 'Tema custom intranet'
 core_version_requirement: ^9 || ^10
-base theme : "bootstrap5"
+base theme : "stable9"
 
 regions:
   header: Header
@@ -14,10 +14,3 @@ regions:
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   footer: Footer
-
-libraries:
-  - bootstrap5/base
-  - bootstrap5/messages
-  - core/normalize
-  - bootstrap5/bootstrap5-js-latest
-  - bootstrap5/global-styling

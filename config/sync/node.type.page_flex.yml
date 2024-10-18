@@ -1,0 +1,25 @@
+uuid: 1b03c4ef-2e21-45ba-b3de-9838d57f12bc
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - social_simple
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  social_simple:
+    share: 0
+    title: ''
+    networks: {  }
+    hashtags: '0'
+    forward_integration: null
+name: 'Pagina flexible'
+type: page_flex
+description: 'Tipo de contenido para crear páginas flexibles con layout builder'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

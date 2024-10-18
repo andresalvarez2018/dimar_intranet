@@ -1,0 +1,21 @@
+uuid: c98aa629-bea0-4a99-a9d1-0d12c14f919d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.page_flex
+  module:
+    - layout_builder
+id: node.page_flex.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: page_flex
+label: Diseño
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

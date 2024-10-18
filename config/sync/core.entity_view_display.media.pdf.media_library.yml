@@ -1,0 +1,36 @@
+uuid: c8078cc9-29b4-4479-9a59-8b49b59afccd
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.pdf.field_media_file
+    - image.style.medium
+    - media.type.pdf
+  module:
+    - image
+id: media.pdf.media_library
+targetEntityType: media
+bundle: pdf
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_file: true
+  langcode: true
+  name: true
+  uid: true

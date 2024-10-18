@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64de23a5b77478b59c18ab77d85bd76b",
+    "content-hash": "b53f877f0068def82b0b247ac55d9c92",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2015,6 +2015,54 @@
             }
         },
         {
+            "name": "drupal/better_social_sharing_buttons",
+            "version": "4.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/better_social_sharing_buttons.git",
+                "reference": "4.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/better_social_sharing_buttons-4.0.7.zip",
+                "reference": "4.0.7",
+                "shasum": "45f63c1b4124c8ba9e765e8d3dc6a894b2b25b6a"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.7",
+                    "datestamp": "1694802520",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "flyke",
+                    "homepage": "https://www.drupal.org/user/2750085"
+                },
+                {
+                    "name": "shelane",
+                    "homepage": "https://www.drupal.org/user/2674989"
+                }
+            ],
+            "description": "Provides a settings page, a field, a paragraph, and a block for social sharing buttons",
+            "homepage": "https://www.drupal.org/project/better_social_sharing_buttons",
+            "support": {
+                "source": "https://git.drupalcode.org/project/better_social_sharing_buttons"
+            }
+        },
+        {
             "name": "drupal/block_attributes",
             "version": "2.0.0",
             "source": {
@@ -3491,6 +3539,70 @@
             }
         },
         {
+            "name": "drupal/entity_reference_revisions",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_reference_revisions.git",
+                "reference": "8.x-1.12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.12.zip",
+                "reference": "8.x-1.12",
+                "shasum": "2a2ff8617c7ce01b56df1caaf0a563da04948e26"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/diff": "^1 || ^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.12",
+                    "datestamp": "1722804497",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Frans",
+                    "homepage": "https://www.drupal.org/user/514222"
+                },
+                {
+                    "name": "jeroen.b",
+                    "homepage": "https://www.drupal.org/user/1853532"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                }
+            ],
+            "description": "Entity Reference Revisions",
+            "homepage": "https://www.drupal.org/project/entity_reference_revisions",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_reference_revisions"
+            }
+        },
+        {
             "name": "drupal/entity_update",
             "version": "3.0.0",
             "source": {
@@ -3808,6 +3920,67 @@
                     "url": "https://paypal.me/saschaeggi"
                 }
             ]
+        },
+        {
+            "name": "drupal/gin_lb",
+            "version": "1.0.0-rc8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gin_lb.git",
+                "reference": "1.0.0-rc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gin_lb-1.0.0-rc8.zip",
+                "reference": "1.0.0-rc8",
+                "shasum": "426a45cf2929eb21af33430176ae9b70b0ab5aea"
+            },
+            "require": {
+                "drupal/core": "^10.1 || ^11",
+                "drupal/gin": "^3.0-rc11",
+                "drupal/gin_toolbar": "^1.0"
+            },
+            "conflict": {
+                "drupal/lb_claro": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-rc8",
+                    "datestamp": "1722577167",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Christian.wiedemann",
+                    "homepage": "https://www.drupal.org/user/861002"
+                },
+                {
+                    "name": "Duwid",
+                    "homepage": "https://www.drupal.org/user/2693877"
+                },
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "sch4lly",
+                    "homepage": "https://www.drupal.org/user/856550"
+                }
+            ],
+            "description": "Layout Builder in Gin style.",
+            "homepage": "https://www.drupal.org/project/gin_lb",
+            "support": {
+                "source": "https://git.drupalcode.org/project/gin_lb"
+            }
         },
         {
             "name": "drupal/gin_toolbar",
@@ -4603,6 +4776,87 @@
             "homepage": "https://www.drupal.org/project/menu_breadcrumb",
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_breadcrumb"
+            }
+        },
+        {
+            "name": "drupal/paragraphs",
+            "version": "1.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/paragraphs.git",
+                "reference": "8.x-1.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.18.zip",
+                "reference": "8.x-1.18",
+                "shasum": "594e2937ea5c95fc88b60420590c4d83f5cd71ee"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11",
+                "drupal/entity_reference_revisions": "~1.3"
+            },
+            "require-dev": {
+                "drupal/block_field": "1.x-dev",
+                "drupal/diff": "1.x-dev",
+                "drupal/entity_browser": "2.x-dev",
+                "drupal/entity_usage": "2.x-dev",
+                "drupal/feeds": "^3",
+                "drupal/field_group": "3.x-dev",
+                "drupal/inline_entity_form": "1.x-dev",
+                "drupal/paragraphs-paragraphs_library": "*",
+                "drupal/replicate": "1.x-dev",
+                "drupal/search_api": "^1",
+                "drupal/search_api_db": "*"
+            },
+            "suggest": {
+                "drupal/entity_browser": "Recommended for an improved user experience when using the Paragraphs library module"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.18",
+                    "datestamp": "1723029144",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Frans",
+                    "homepage": "https://www.drupal.org/user/514222"
+                },
+                {
+                    "name": "jeroen.b",
+                    "homepage": "https://www.drupal.org/user/1853532"
+                },
+                {
+                    "name": "jstoller",
+                    "homepage": "https://www.drupal.org/user/99012"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                },
+                {
+                    "name": "Primsi",
+                    "homepage": "https://www.drupal.org/user/282629"
+                }
+            ],
+            "description": "Enables the creation of Paragraphs entities.",
+            "homepage": "https://www.drupal.org/project/paragraphs",
+            "support": {
+                "source": "https://git.drupalcode.org/project/paragraphs"
             }
         },
         {
@@ -12462,6 +12716,7 @@
         "drupal/conditional_fields": 15,
         "drupal/entity_clone": 10,
         "drupal/gin": 5,
+        "drupal/gin_lb": 5,
         "drupal/gin_toolbar": 5,
         "drupal/menu_breadcrumb": 15,
         "drupal/poll": 15

@@ -54,3 +54,7 @@ cloneable_entities:
   - entity_view_mode
   - base_field_override
   - ultimate_cron_job
+  - media
+  - media_type
+  - paragraphs_type
+  - paragraph

@@ -48,10 +48,10 @@
   set classes = [
     'js-form-item',
     'form-item',
-    'js-form-type-' ~ type|clean_class,
     'form-type-' ~ type|clean_class,
-    'js-form-item-' ~ name|clean_class,
+    'js-form-type-' ~ type|clean_class,
     'form-item-' ~ name|clean_class,
+    'js-form-item-' ~ name|clean_class,
     title_display not in ['after', 'before'] ? 'form-no-label',
     disabled == 'disabled' ? 'form-disabled',
     errors ? 'form-item--error',
@@ -84,7 +84,7 @@
   {% endif %}
   {% if errors %}
     <div class="form-item--error-message">
-      <strong>{{ errors }}</strong>
+      {{ errors }}
     </div>
   {% endif %}
   {% if description_display in ['after', 'invisible'] and description.content %}

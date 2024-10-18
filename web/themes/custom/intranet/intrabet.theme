@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Functions theme customization.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * @file
+ * Functions to support theming.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain settings have configured.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function intranet_theme_suggestions_block_alter(&$suggestions, $variables) {
+  if (!empty($variables['elements']['content']['#block_content'])) {
+    $block = $variables['elements']['content']['#block_content'];
+    $block_type = $block->bundle();
+    $base_suggestion = 'block__' . $block_type;
+    $suggestions[] = $base_suggestion;
+    if (!empty($variables['elements']['content']['#view_mode'])) {
+      $suggestions[] = $base_suggestion . '__' . $variables['elements']['content']['#view_mode'];
+    }
+  }
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
+function intranet_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function intranet_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Verifica si el parámetro de la ruta es un nodo válido.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views unformatted template suggestions.
+ *
+ * @inheritdoc
+ */
+function intranet_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  $view_id = $view->id();
+  $display_id = $view->getDisplay()->display['id'];
+
+  $suggestions[] = 'views_view_unformatted__' . $view_id . '_' . $display_id;
+}
+
+/**
+ *
+ */
+function intranet_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  $view_id = $view->id();
+  $display_id = $view->getDisplay()->display['id'];
+
+  $suggestions[] = 'views_view__' . $view_id . '_' . $display_id;
+}

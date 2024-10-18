@@ -1,0 +1,13 @@
+uuid: 03ee9ac1-44c5-4d30-8ec1-409e269a785d
+langcode: es
+status: true
+dependencies: {  }
+id: pdf
+label: Pdf
+description: ''
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

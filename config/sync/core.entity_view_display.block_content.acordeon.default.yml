@@ -1,0 +1,16 @@
+uuid: c67d0734-e6f7-42b6-8fb8-36cdf60c42ab
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.acordeon
+id: block_content.acordeon.default
+targetEntityType: block_content
+bundle: acordeon
+mode: default
+content: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

@@ -1,25 +1,48 @@
 _core:
   default_config_hash: 1Zx0Kjl4zSJQScIJ6Nv5z_DDYfYKiEzS-LRnLBoKZS8
 printable_entities:
-  comment: comment
-  node: node
-  user: user
   block: '0'
   block_content: '0'
-  contact_message: '0'
+  comment: '0'
   contact_form: '0'
-  field_collection_item: '0'
+  contact_message: '0'
   file: '0'
+  node: '0'
+  path_alias: '0'
+  poll: '0'
+  poll_choice: '0'
   shortcut: '0'
   simplenews_subscriber: '0'
+  simplenews_subscriber_history: '0'
   taxonomy_term: '0'
   tour: '0'
+  user: '0'
+  webform: '0'
+  webform_submission: '0'
   menu_link_content: '0'
 printable_entities_bundles:
+  block:
+    _all: false
+    block: false
+  block_content:
+    _all: false
+    basic: false
+    contact_form_2: false
   comment:
     _all: true
     comment: false
     comment_forum: false
+  contact_form:
+    _all: false
+    contact_form: false
+  contact_message:
+    _all: false
+    contact_form_2: false
+    feedback: false
+    personal: false
+  file:
+    _all: false
+    file: false
   node:
     _all: true
     album: false
@@ -37,6 +60,7 @@ printable_entities_bundles:
     normatividad: false
     noticias: false
     page: false
+    page_flex: false
     partners: false
     portfolio: false
     services: false
@@ -44,36 +68,24 @@ printable_entities_bundles:
     team_members: false
     testimonials: false
     webform: false
-  user:
+  path_alias:
     _all: true
-    user: false
-  block:
-    _all: false
-    block: false
-  block_content:
-    _all: false
-    basic: false
-    contact_form_2: false
-  contact_message:
-    _all: false
-    contact_form_2: false
-    feedback: false
-    personal: false
-  contact_form:
-    _all: false
-    contact_form: false
-  field_collection_item:
-    _all: false
-    field_demo_collection: false
-  file:
-    _all: false
-    file: false
+    path_alias: false
+  poll:
+    _all: true
+    poll: false
+  poll_choice:
+    _all: true
+    poll_choice: false
   shortcut:
     _all: false
     default: false
   simplenews_subscriber:
     _all: false
     simplenews_subscriber: false
+  simplenews_subscriber_history:
+    _all: true
+    simplenews_subscriber_history: false
   taxonomy_term:
     _all: false
     blog_categories: false
@@ -92,12 +104,46 @@ printable_entities_bundles:
   tour:
     _all: false
     tour: false
+  user:
+    _all: true
+    user: false
+  webform:
+    _all: true
+    webform: false
+  webform_submission:
+    _all: true
+    capitania_de_tumaco: false
+    cloud: false
+    contact: false
+    cuestionario_dia_del_reciclaje: false
+    encuesta_cliente_interno_planeac: false
+    encuesta_clima_laboral: false
+    encuesta_de_autoevaluacion_del_s: false
+    encuesta_de_satisfaccion_acceso_: false
+    encuesta_de_satisfaccion_del_aud: false
+    encuesta_de_satisfaccion_del_ud: false
+    encuesta_perfil_sociodemo: false
+    encuesta_perfil_sociodemografico: false
+    encuesta_sobre_condiciones_fisic: false
+    medicion_de_clima_organizacional: false
+    servicio_al_ciudadano: false
+    template_contact: false
+    template_employee_evaluation: false
+    template_feedback: false
+    template_issue: false
+    template_job_application: false
+    template_job_seeker_profile: false
+    template_registration: false
+    template_session_evaluation: false
+    template_subscribe: false
+    template_user_profile: false
   menu_link_content:
     _all: false
     menu_link_content: false
 open_target_blank: true
 css_include: ''
 extract_links: none
+link_canonical: false
 save_pdf: false
 pdf_tool: ''
 paper_size: A4

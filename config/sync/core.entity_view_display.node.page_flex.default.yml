@@ -1,0 +1,87 @@
+uuid: fd38aebd-d787-4137-b6c4-f1b94f5583dc
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.page_flex.body
+    - field.field.node.page_flex.layout_builder__layout
+    - node.type.page_flex
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          27b8074c-5cee-44ff-a939-1b6d122d43be:
+            uuid: 27b8074c-5cee-44ff-a939-1b6d122d43be
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page_flex:sharethis'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          da0adeda-083d-4a8e-9037-3f80672ed8a0:
+            uuid: da0adeda-083d-4a8e-9037-3f80672ed8a0
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page_flex:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          3b241a73-7c36-4d02-8562-13101304bb01:
+            uuid: 3b241a73-7c36-4d02-8562-13101304bb01
+            region: content
+            configuration:
+              id: 'field_block:node:page_flex:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: node.page_flex.default
+targetEntityType: node
+bundle: page_flex
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharethis:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  layout_builder__layout: true

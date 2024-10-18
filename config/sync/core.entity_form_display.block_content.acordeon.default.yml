@@ -1,0 +1,27 @@
+uuid: f315d2d3-0f61-4691-9d1d-73d92a80f753
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.acordeon
+id: block_content.acordeon.default
+targetEntityType: block_content
+bundle: acordeon
+mode: default
+content:
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

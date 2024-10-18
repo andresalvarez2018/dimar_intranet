@@ -12,6 +12,7 @@ dependencies:
     - entity_print_views
     - file
     - filter
+    - media
     - search
     - shortcut
     - simplenews
@@ -37,4 +38,5 @@ permissions:
   - 'subscribe to newsletters'
   - 'use text format basic_html'
   - 'use text format webform_default'
+  - 'view media'
   - 'view post access counter'

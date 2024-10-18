@@ -1,0 +1,31 @@
+uuid: 18939a37-6a3e-4143-8e26-b1b636cf0a66
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.acordeon
+    - field.storage.block_content.field_acordeon
+    - paragraphs.paragraphs_type.acordeon_item
+  module:
+    - entity_reference_revisions
+id: block_content.acordeon.field_acordeon
+field_name: field_acordeon
+entity_type: block_content
+bundle: acordeon
+label: Acordeon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      acordeon_item: acordeon_item
+    negate: 0
+    target_bundles_drag_drop:
+      acordeon_item:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

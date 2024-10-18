@@ -1,0 +1,21 @@
+uuid: 5307da12-7e5a-4059-b633-122a1aa8b241
+langcode: es
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_title_acordeon
+field_name: field_title_acordeon
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

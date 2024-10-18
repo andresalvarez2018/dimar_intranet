@@ -1,0 +1,10 @@
+uuid: 0ea78091-5fe0-4464-afd8-c2ff461bdb2b
+langcode: es
+status: true
+dependencies: {  }
+id: acordeon_item
+label: 'Acordeon item'
+icon_uuid: null
+icon_default: null
+description: 'paragraphs para acordeon'
+behavior_plugins: {  }

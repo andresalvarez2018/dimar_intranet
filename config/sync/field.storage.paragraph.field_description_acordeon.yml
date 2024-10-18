@@ -1,0 +1,19 @@
+uuid: 2f08c603-f623-44cb-92d4-25c5b6f44fe0
+langcode: es
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_description_acordeon
+field_name: field_description_acordeon
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: d1151729-eba4-49c8-84e7-4179ab1a89c7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description_acordeon
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.acordeon_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: paragraph.acordeon_item.field_description_acordeon
+field_name: field_description_acordeon
+entity_type: paragraph
+bundle: acordeon_item
+label: Descripción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

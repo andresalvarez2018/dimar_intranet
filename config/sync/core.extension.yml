@@ -36,6 +36,7 @@ module:
   entity_clone: 0
   entity_print: 0
   entity_print_views: 0
+  entity_reference_revisions: 0
   entity_update: 0
   faqfield: 0
   field: 0
@@ -125,6 +126,7 @@ module:
   webform_bootstrap: 1
   externalauth: 10
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   stable: 0

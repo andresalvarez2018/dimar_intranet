@@ -53,6 +53,7 @@
         "drupal/libraries": "^4.0",
         "drupal/md_slider": "^1.5",
         "drupal/menu_breadcrumb": "^2.0@alpha",
+        "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.10",
         "drupal/php": "^1.2",
         "drupal/plupload": "^2.1",

@@ -3,7 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.card_he
     - field.storage.node.body
     - field.storage.node.field_enlace_herramientas
     - field.storage.node.field_imagen_herramientas
@@ -546,7 +546,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: full
+          view_mode: card_he
       defaults:
         title: false
         pager: false

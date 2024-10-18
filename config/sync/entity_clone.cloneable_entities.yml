@@ -56,3 +56,5 @@ cloneable_entities:
   - ultimate_cron_job
   - media
   - media_type
+  - paragraphs_type
+  - paragraph

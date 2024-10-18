@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - menu_ui
-    - social_simple
   enforced:
     module:
       - forum
@@ -13,13 +12,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-  social_simple:
-    share: 1
-    title: ''
-    networks:
-      twitter: twitter
-      facebook: facebook
-    hashtags: '0'
 _core:
   default_config_hash: ERCHDVB33lub-cz7DSYR7HuBlYJjmVUdPw0IIYa3ZXc
 name: 'Forum topic'
